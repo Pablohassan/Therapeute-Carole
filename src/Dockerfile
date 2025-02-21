@@ -2,41 +2,40 @@
 FROM node:20-alpine AS build
 LABEL maintainer="Pablo Hassan <sesmanovic@gmail.com>"
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to leverage Docker cache
+# Copy package files
 COPY package*.json ./
+COPY pnpm-lock.yaml ./
+
+# Install pnpm
+RUN npm install -g pnpm
 
 # Install dependencies
-RUN npm install
+RUN pnpm install
 
 # Copy the rest of the application code
 COPY . .
 
+# Set build-time arguments and environment variables
 ARG VITE_CLERK_PUBLISHABLE_KEY
 ENV VITE_CLERK_PUBLISHABLE_KEY=${VITE_CLERK_PUBLISHABLE_KEY}
 
-
-
 # Build the application
-RUN npm run build
+RUN pnpm run build
 
 # Stage 2: Production Stage
 FROM nginx:alpine
 LABEL maintainer="Pablo Hassan <sesmanovic@gmail.com>"
 
-# Remove the default Nginx configuration
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copy the custom Nginx configuration that listens on port 5174
-# COPY ./src/nginx_frontend.conf /etc/nginx/conf.d/
-
 # Copy the built static files from the build stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 5174 for Nginx
+# Copy a custom nginx configuration that handles client-side routing
+COPY ./src/nginx_frontend.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 5173
 EXPOSE 5173
 
-# Start the Nginx server
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
