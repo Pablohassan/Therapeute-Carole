@@ -5,12 +5,12 @@ import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
 
-const CouplePage: React.FC = () => {
+const PonctuellePage: React.FC = () => {
     return (
         <Layout>
             <div className="font-sans text-gray-700">
                 {/* Hero Section */}
-                <section className="bg-purple-50 py-20 px-4 bg-[url('src/assets/abstrait1.png')] bg-cover ">
+                <section className="bg-purple-500 py-20 px-4 bg-[url('src/assets/abstrait1.png')]/20 bg-cover ">
                     <div className="max-w-3xl mx-auto text-center">
                         <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl font-dancing text-stone-200 mt-36 mb-6"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
@@ -201,4 +201,4 @@ const CouplePage: React.FC = () => {
     );
 };
 
-export default CouplePage;
+export default PonctuellePage;

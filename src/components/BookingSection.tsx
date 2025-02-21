@@ -32,7 +32,7 @@ const BookingSection: React.FC = () => {
                     <div className="bg-white rounded-lg shadow-xl p-6 md:p-8">
                         <div className="h-[800px]">
                             <InlineWidget
-                                url="https://calendly.com/carole-lagardere/30min"
+                                url="https://calendly.com/carolelagardere33/consultation/"
                                 pageSettings={{
                                     backgroundColor: 'ffffff',
                                     hideEventTypeDetails: false,
