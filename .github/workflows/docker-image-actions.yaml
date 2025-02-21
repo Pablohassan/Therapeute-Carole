@@ -29,8 +29,8 @@ jobs:
      - name: Build and Push Frontend Docker image
        run: |
          docker buildx build --platform linux/arm64 \
-          --build-arg VITE_BACKEND_URL=https://api.improrap.fr \
-           --no-cache -t pablohassan/carole-therapie-front:1.0 \
+         --build-arg VITE_REACT_APP_CLERK_PUBLISHABLE_KEY="${{ secrets.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY }}" \
+           --no-cache -t pablohassan/carole-therapie-front:1.1 \
            -f ./src/Dockerfile --push .
 
   
