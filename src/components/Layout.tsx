@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children, isHomePage = false }) => {
     return (
         <ParallaxProvider>
             <CookieConsent />
-            <div className="relative bg-orange-100/60">
+            <div className="relative ">
                 {isHomePage ? (
                     // For HomePage, Navbar is positioned absolutely over the HeroSection
                     <div className="relative min-h-screen">
@@ -26,7 +26,7 @@ const Layout: React.FC<LayoutProps> = ({ children, isHomePage = false }) => {
                     // For other pages, Navbar is fixed at the top with content below
                     <>
                         <Navbar />
-                        <div className=" bg-blue-900/30">{children}</div>
+                        <div className="">{children}</div>
                     </>
                 )}
                 <Footer />

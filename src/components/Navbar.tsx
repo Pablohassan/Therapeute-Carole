@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
     }, []);
 
     return (
-        <nav className={`fixed w-full transition-all font-montserrat font-light  duration-300 ${isScrolled
+        <nav className={`fixed w-full z-15 transition-all font-montserrat font-light  duration-300 ${isScrolled
             ? 'bg-stone-700/80 shadow-md py-2'
             : 'bg-transparent py-4'
             }`}>
@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
                         className={`uppercase tracking-wide ${isScrolled ? 'text-slate-300' : 'text-slate-200'
                             } hover:text-natural-green transition-colors`}
                     >
-                        Ponctuelle
+                        Individuel
                     </Link>
                     <Link
                         to="/bio"

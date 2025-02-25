@@ -45,15 +45,16 @@ const HeroSection: React.FC = () => {
                 transition={{ duration: 1 }}
                 style={{ opacity }}
             >
-                <h1 className="text-lg md:text-2xl  lg:text-4xl md:text-3xl font-light uppercase tracking-wider mb-48 sm:mb-16 leading-tight"
+                <h1 className="text-lg md:text-2xl  lg:text-4xl md:text-3xl font-light  tracking-wider mb-48 sm:mb-16 leading-tight"
                     style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                 >
-                    Redécouvrez l'Harmonie et la Sérénité en Famille
+                    Redécouvrez le plaisir d’être ensemble, en famille, en couple
                 </h1>
-                <p className="text- md:text-xl mb-32 sm:mb-16 font-light uppercase  tracking-wide max-w-2xl mx-auto"
+                <p className="text- md:text-xl mb-32 sm:mb-16 font-light   tracking-wide max-w-2xl mx-auto"
                     style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                 >
-                    Nous aidons les familles à se reconnecter et à se renforcer grâce à un accompagnement bienveillant.
+                    Retrouvez le lien familial pour reprendre du plaisir ensemble, se valoriser mutuellement,
+                    valoriser ses enfants.
                 </p>
                 {/* <motion.a
                     href="#services"

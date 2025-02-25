@@ -3,29 +3,32 @@ import React from 'react';
 import Layout from '../components/Layout';
 import BookingSection from '../components/BookingSection';
 import { sectionIds } from '../constants/navigation';
-import { CheckIcon } from '@heroicons/react/24/solid';
+
 
 const FamilyPage: React.FC = () => {
     return (
         <Layout>
-            <div className="font-sans text-gray-700">
+            <div className="font-sans text-gray-700  ">
                 {/* Hero Section */}
-                <section className="bg-purple-50 py-20 px-4 bg-[url('src/assets/abstrait2.jpg')] bg-cover ">
+                <section className="bg-purple-50 py-20 gap-4 bg-[url('src/assets/abstrait2.jpg')] bg-cover ">
                     <div className="max-w-3xl mx-auto text-center">
-                        <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl font-montserrat  text-stone-200 mt-36 mb-6"
+                        <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl font-montserrat py-4 text-stone-200 mt-36 mb-8"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
-                            Thérapie Familiale
+                            THERAPIE FAMILIALE SYSTEMIQUE
                         </h1>
-                        <p className="text-xl text-stone-200 mb-8"
-                            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                        <p className="text-xl text-stone-200 mb-8 italic font-light py-4"
+                            style={{ textShadow: '2px 2px 2px rgba(0, 0, 0, 0.8)' }}
                         >
-                            Une expérience enrichissante pour aborder les enjeux de santé mentale
+                            « La thérapie familiale a pour but l’amélioration du fonctionnement familial à différents niveaux,
+                            la revalorisation de la compréhension mutuelle et du soutien émotionnel entre les membres de
+                            la famille, le développement des compétences afin de résoudre les problèmes auxquels la
+                            famille est confrontée. » EFTA
                         </p>
-                        <div className="flex justify-center gap-4">
+                        <div className="flex justify-center mt-16">
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="text-lg sm:text-lg bg-stone-100/20 inline-block border border-stone-100/40 px-8 sm:px-16 sm:py-4 py-2 hover:bg-soft-beige text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl hover:scale-105 transform hover:duration-500 hover:ease-in-out   hover:bg-stone-100/90  hover:text-stone-900"
+                                className="text-lg sm:text-lg bg-stone-100/20 inline-block border border-stone-100/40 px-12 sm:px-16 sm:py-4 py-4 hover:bg-soft-beige text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl hover:scale-105 transform hover:duration-500 hover:ease-in-out   hover:bg-stone-100/90  hover:text-stone-900"
                                 style={{ textShadow: '1px 2px 4px rgba(0, 0, 0, 0.9)' }}
                             >
                                 Réserver un rendez-vous
@@ -34,30 +37,38 @@ const FamilyPage: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="bg-purple-50 py-20 px-4">
-                    <div className="max-w-4xl grid grid-cols-3 mx-auto text-center h-screen">
+                <section className="bg-purple-50 py-20 px-4 ">
+                    <div className="max-w-3xl grid grid-cols-3 mx-auto ">
                         <img
                             src={('./src/assets/livingroom.jpg')}
                             alt="Couple"
-                            className="h-full p-4 object-cover "
+                            className="h-[80%] p-4 object-cover "
                         />
-                        <div className="flex justify-center gap-4 flex flex-col col-span-2">
-                            <h1 className="text-2xl md:text-3xl uppercase text-gray-900 mb-6 uppercase ">
-                                Les relations familiales <br /> ça comptent énormément
+                        <div className="max-w-3xl flex gap-4 flex flex-col col-span-2 p-4 px-12">
+                            <h1 className="text-2xl md:text-3xl uppercase text-gray-900 text-justify mb-6 uppercase mb-4 ">
+                                La relation est au <br /> cœur de la thérapie
                             </h1>
-
-                            <p className="text-md text-gray-600 mb-8 justify-center text-justify p-16 ">
-                                Quelqu'un dans votre famille souffre-t-il, bien que vous ayez l'impression d'avoir tout essayé pour l'aider?
-                                Deux membres ou plus de votre famille sont-ils constamment en désaccord, affectant la vie des autres?
-                                Avez-vous souvent l'impression qu'il y a un "éléphant dans la pièce", quelque chose d'important que vous ne savez pas comment aborder?
-                                La thérapie familiale en ligne pourrait être votre solution, que certains ou tous les membres de votre famille souhaitent y participer.
-                                En tant que thérapeute familial expérimenté, j'aide les familles à comprendre comment chaque membre de votre système influence directement et indirectement les autres membres. Nous identifions comment les schémas de communication créent et maintiennent des symptômes néfastes pour la santé mentale. Et vous guérissez vos relations pour atteindre des niveaux plus profonds de proximité.
+                            <p className="text-md text-gray-600  justify-center text-justify  italic ">
+                                Retrouver le lien familial, reprendre du plaisir ensemble,
+                                se valoriser mutuellement, valoriser ses enfants.
                             </p>
 
-                            <div className="flex justify-center gap-4">
+                            <p className="text-md text-gray-600   justify-center text-justify  ">
+                                C’est souvent avec les personnes qui sont le plus proches de nous que nous éprouvons une
+                                forme d’appréhension à parler de nos émotions, de nos sentiments profonds. Peut-être parce
+                                que nous avons peur de les blesser, de leur faire du mal.
+                            </p>
+                            <p className="text-md text-gray-600 mb-16 justify-center text-justify   ">
+                                La thérapie permet de faire vivre à la famille des échanges différents de ceux qui ont cours à la
+                                maison et de permettre à chacun de s’exprimer, de se sentir entendu sans pour cela nier l’autre.
+                            </p>
+
+
+
+                            <div className="flex justify-center gap-4 mt-8">
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="text-lg sm:text-lg bg-blue-900/20 inline-block border border-stone-100/40 px-8 sm:px-16 sm:py-4 py-2 hover:bg-blue-900/30 text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl   hover:text-stone-900"
+                                    className="text-lg sm:text-lg bg-blue-900/20 inline-block border border-stone-100/40 px-12 sm:px-16 sm:py-4 py-2 hover:bg-blue-900/30 text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl   hover:text-stone-900"
                                     style={{ textShadow: '1px 2px 4px rgba(0, 0, 0, 0.9)' }}
                                 >
                                     Aller de l'avant
@@ -68,24 +79,29 @@ const FamilyPage: React.FC = () => {
 
                     </div>
                 </section>
-                <section className="bg-yellow-500/90 py-20 px-4 ">
-                    <div className="max-w-4xl grid grid-cols-3 mx-auto text-center h-screen" >
+                <section className="bg-yellow-500/90 py-20 px-12 ">
+                    <div className="max-w-3xl grid grid-cols-3 gap-4 mx-auto text-center h-screen" >
 
 
 
 
-                        <div className="flex justify-center gap-4 flex flex-col col-span-2">
-                            <h1 className="text-2xl md:text-4xl uppercase text-gray-900  mt-8">
-                                Qu'est-ce que la thérapie de couple en ligne ?
-
+                        <div className="flex   gap-4 flex flex-col col-span-2 p-4">
+                            <h1 className="text-2xl md:text-3xl uppercase text-gray-900 mb-8 mt-8">
+                                Car parfois les mots <br /> sont usés...
                             </h1>
 
-                            <p className="text-md text-gray-600 mb-8 justify-center text-justify p-16 ">
-                                La relation au cœur de la thérapie
-                                La thérapie de couple en ligne offre une expérience transformatrice où votre relation devient le centre de l'attention thérapeutique, vous permettant de construire une vie commune plus épanouissante et satisfaisante.
-                                Contrairement à la thérapie individuelle où la personne est le client, en thérapie de couple, c'est votre relation qui est considérée comme une entité à part entière, plus riche que la simple addition de vos deux individualités.
-                                Ensemble, nous explorerons comment chacun de vous perçoit et vit cette relation. Nous analyserons avec soin votre histoire commune et vos dynamiques actuelles pour comprendre ce qui façonne et maintient votre relation aujourd'hui.
-                                Notre objectif est d'optimiser le fonctionnement de votre relation tout en soutenant l'épanouissement de chacun dans ce cadre partagé. Cette approche équilibrée permet de renforcer tant le lien qui vous unit que votre bien-être individuel.
+                            <p className="text-md text-gray-600  justify-center text-justify px-12 ">
+                                Ont été trop entendu par la famille, et ne provoquent plus de
+                                réaction. Le problème forme une boucle, il est à ce moment-là important de créer la surprise et
+                                de changer les habitudes de communication, soit en invitant la famille à se raconter autrement
+                                ou en utilisant d’autres moyens d’expression, comme le langage du corps, le jeu.
+                            </p>
+
+                            <p className="text-md text-gray-600   justify-center text-justify px-12 ">Outils de médiation, intermédiaire, le jeu en thérapie permet de créer des liens entre les
+                                membres de la famille, de renforcer le sentiment d’appartenance, d’expliciter des émotions, des
+                                ressentis, des représentations. </p>
+                            <p className="text-md text-gray-600 mb-4 justify-center text-justify px-12 ">L’idée est de créer une expérience d’interaction positive permettant de se vivre, de vivre les
+                                autres et de vivre la famille différemment de ce dont elle a l’habitude.
                             </p>
 
 
@@ -94,98 +110,85 @@ const FamilyPage: React.FC = () => {
                         <img src={('./src/assets/couplelaptop.jpg')} alt="Couple" className=" h-[80%] p-2 object-cover mt-12" />
                     </div>
                 </section>
+                <div className="text-lg max-w-[80%] bg-purple-200 mx-auto translate-y-[-100px] overflow-y-[100px] z-10  md:text-2xl xl:text-3xl italic font-light text-gray-900 text-center uppercase p-20 italic">     « En séance, le thérapeute porte une attention particulière  aux besoins de chacun »  </div>
+                <section className=" px-4 mb-20 h-screen">
+
+                    <div className="max-w-4xl grid grid-cols-3 mx-auto text-center">
+                        <img
+                            src={('./src/assets/livingroom.jpg')}
+                            alt="Couple"
+                            className="h-full p-4 object-cover "
+                        />
+                        <div className="flex  gap-1 flex flex-col col-span-2 p-4 text-justify">
+                            {/* <h1 className="text-lg md:text-xl xl:text-2xl italic font-light text-gray-900 mb-6 uppercase mb-4 ">
+                                « En séance, le thérapeute porte une attention particulière  aux besoins de chacun »
+                            </h1> */}
+                            <p className="text-md text-gray-600 mb-4  justify-center text-justify px-12  ">
+                                En séance, le thérapeute porte une attention particulière aux besoins de chacun, à leurs
+                                expressions, à la manière dont la parole circule, son contenu, son adresse, son intention. Il
+                                s’agit de faire un état des lieux et engager une réflexion sur les places et les rôles de chacun.
+                            </p>
+
+                            <p className="text-md text-gray-600 mb-4 justify-center text-justify px-12 ">
+                                Chaque famille est unique, il n’existe pas de technique généralisée applicable à n’importe quelle
+                                famille. Le thérapeute s’adapte à chaque famille, et tente de repérer et mobiliser les ressources,
+                                en faisant preuve de souplesse et de créativité.
+                            </p>
+                            <p className="text-md text-gray-600 mb-16 justify-center text-justify px-12 ">
+                                La thérapie familiale est un espace de rencontre entre les individus, le système, le thérapeute. Il
+                                se crée un lieu, un univers unique, entre représentations, modèles internes, valeurs,
+                                construction du monde, résonnances. Le thérapeute accueille cette complexité tout en assurant
+                                un cadre contenant et rassurant.
+                            </p>
 
 
 
-
-
-                {/* Therapy Approaches Section */}
-                <section className="py-16 px-4 bg-white">
-                    <div className="max-w-6xl mx-auto">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-                            Therapeutic Approaches
-                        </h2>
-                        <div className="grid md:grid-cols-2 gap-12">
-                            <div className="space-y-6">
-                                <h3 className="text-2xl font-semibold text-purple-600">
-                                    Psychodynamic Couples Therapy
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed">
-                                    A depth-based, insight-oriented approach to relational healing that analyzes
-                                    conscious and unconscious behaviors, thoughts, and feelings impacting the couple.
-                                </p>
-                            </div>
-                            <div className="space-y-6">
-                                <h3 className="text-2xl font-semibold text-purple-600">
-                                    Emotionally Focused Therapy
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed">
-                                    Focused on creating and strengthening emotional bonds between partners through
-                                    structured, evidence-based interventions.
-                                </p>
+                            <div className="flex justify-center gap-4 mt-8">
+                                <a
+                                    href={`#${sectionIds.booking}`}
+                                    className="text-lg sm:text-lg bg-blue-900/20 inline-block border border-stone-100/40 px-12 sm:px-16 sm:py-4 py-2 hover:bg-blue-900/30 text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl   hover:text-stone-900"
+                                    style={{ textShadow: '1px 2px 4px rgba(0, 0, 0, 0.9)' }}
+                                >
+                                    Aller de l'avant
+                                </a>
                             </div>
                         </div>
+
+
                     </div>
                 </section>
 
-                {/* Areas of Specialty Section */}
-                <section className="py-16 px-4 bg-gray-50">
-                    <div className="max-w-6xl mx-auto">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-                            Areas of Specialty
-                        </h2>
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div className="space-y-6">
-                                {[
-                                    'Anxiety, depression, or stage-of-life transitions',
-                                    'Difficulty identifying or expressing thoughts and feelings',
-                                    'Managing needs of the couple amidst parenting',
-                                    'Navigating challenging family dynamics',
-                                    'Understanding impact of sexuality and gender'
-                                ].map((item) => (
-                                    <div key={item} className="flex items-start gap-3">
-                                        <CheckIcon className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
-                                        <p className="text-gray-600">{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="space-y-6">
-                                {[
-                                    'Improving physical, sexual, and emotional intimacy',
-                                    'Exploring monogamy and ethical non-monogamy',
-                                    'Root causes of hard-to-change behavior patterns',
-                                    'Making good relationships feel great',
-                                    'Addressing communication breakdowns'
-                                ].map((item) => (
-                                    <div key={item} className="flex items-start gap-3">
-                                        <CheckIcon className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
-                                        <p className="text-gray-600">{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
+
+
+                <div className="h-[1px] bg-gray-900/20 mx-auto ">
+
+                </div>
 
                 {/* Effectiveness Section */}
                 <section className="py-16 px-4 bg-white">
-                    <div className="max-w-3xl mx-auto text-center">
+                    <div className="max-w-3xl mx-auto text-center max-w-2xl">
                         <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                            Does Couples Therapy Work?
+                            Concretement :
                         </h2>
-                        <p className="text-xl text-gray-600 mb-6">
-                            Effective for those open and willing to engage in treatment. While initial hesitation
-                            is normal, commitment to the process leads to meaningful change.
+                        <p className="text-lg md:text-xl text-gray-600 font-light mb-6 text-justify max-w-2xl mx-auto">
+                            Une séance de thérapie familiale dure entre 60 et 90 minutes; l’intervalle entre les séances
+                            varie de une à plusieurs semaines en fonction des problèmes présentés, des besoins des
+                            membres de la famille, de l’étape du traitement et d’autres variables. Les décisions sur ces
+                            points sont négociées entre les clients et le thérapeute. Bien que ce soit difficile à estimer et que
+                            cela diffère largement, la durée moyenne du traitement pour une thérapie familiale se situe entre
+                            6 et 20 séances. Vous pouvez cependant décider d’y mettre fin quand vous le souhaitez.
+                        </p>
+                        <p className="text-lg md:text-xl text-gray-600 font-light mb-6 text-justify max-w-2xl mx-auto">
+                            Les séances regroupent plusieurs membres de la famille mais les séances individuelles ou les
+                            rencontres avec les parents (sans leur enfant par exemple) sont également proposées si cela
+                            se révèle nécessaire. Tant la longueur que la configuration de la thérapie familiale est le résultat
+                            d’une collaboration et d’un accord mutuel entre le thérapeute et la famille.
                         </p>
                         <div className="space-y-4 max-w-2xl mx-auto">
-                            <p className="text-gray-600"
 
-                            >
-                                We focus on building trust and safety while honoring each individual's history
-                                and experiences that shape the relationship.
-                            </p>
-                            <button className="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700">
-                                Begin Your Journey
+                            <button className="bg-purple-600 text-white px-12 py-3  mt-16 hover:bg-purple-700">
+                                Réserver un rendez-vous
                             </button>
                         </div>
                     </div>

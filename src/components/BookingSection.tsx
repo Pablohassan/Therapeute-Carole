@@ -13,7 +13,7 @@ registerLocale('fr', fr);
 
 const BookingSection: React.FC = () => {
     return (
-        <section id="rendez-vous" className="py-16 bg-soft-beige">
+        <section id="rendez-vous" className="py-16 bg-purple-50">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

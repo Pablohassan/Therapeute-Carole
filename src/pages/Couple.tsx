@@ -1,7 +1,7 @@
 // src/pages/Couple.tsx
 import React from 'react';
 import Layout from '../components/Layout';
-import { CheckIcon } from '@heroicons/react/24/outline';
+// import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
 
@@ -12,10 +12,10 @@ const CouplePage: React.FC = () => {
                 {/* Hero Section */}
                 <section className="bg-purple-50 py-20 px-4 bg-[url('src/assets/abstrait1.png')] bg-cover ">
                     <div className="max-w-3xl mx-auto text-center">
-                        <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl font-dancing text-stone-200 mt-36 mb-6"
+                        <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl  text-stone-200 mt-36 mb-6"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
-                            Relations et Therapie de Couple
+                            Therapie de Couple
                         </h1>
                         <p className="text-xl text-stone-200 mb-8"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
@@ -34,32 +34,39 @@ const CouplePage: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="bg-purple-50 py-20 px-4">
-                    <div className="max-w-4xl grid grid-cols-3 mx-auto text-center h-screen">
+                <section className="bg-purple-50 py-20 px-4 ">
+                    <div className="max-w-3xl grid grid-cols-3 mx-auto text-center">
                         <img
                             src={('./src/assets/hand.jpg')}
                             alt="Couple"
-                            className="h-full p-4 object-cover "
+                            className="h-[105%] p-4 object-cover "
                         />
-                        <div className="flex justify-center gap-4 flex flex-col col-span-2">
-                            <h1 className="text-2xl md:text-4xl uppercase text-gray-900 mb-6">
-                                Reconstruire et renforcer <br /> votre relation
+                        <div className="flex justify-center gap-4 flex flex-col col-span-2 px-12">
+                            <h1 className="text-xl md:text-3xl uppercase text-gray-900  mb-8 ">
+                                « Vous traversez chacun, et ensemble, <br /> une période douloureuse »
                             </h1>
 
-                            <p className="text-md text-gray-600 mb-8 justify-center text-justify p-16 ">
-                                Vos tentatives pour résoudre vos problèmes de couple n'ont-elles abouti qu'à des soulagements temporaires ? Vous sentez-vous démunis face aux solutions possibles ? Éprouvez-vous des difficultés à communiquer de manière à ce que chacun se sente écouté et compris ?
-                                La thérapie de couple en ligne peut être le soutien dont vous avez besoin pour surmonter vos blocages relationnels. En tant que thérapeute, je vous accompagne pour :
+                            <p className="text-md text-gray-600   justify-center text-justify  ">
+                                En thérapie, l’objectif n’est pas de déterminer qui a tort ou qui a raison, ni de faire changer
+                                l’autre mais d’arriver à une collaboration afin de modifier le fonctionnement du « système
+                                couple » et ainsi de supprimer ou d’atténuer la souffrance.
+                            </p>
+                            <p className="text-md text-gray-600   justify-center text-justify  ">
 
-                                Décoder votre dynamique de communication
-                                Identifier les opportunités d'engagement personnel plus profond
-                                Développer votre capacité d'introspection et d'empathie
-                                Guérir les blessures émotionnelles qui entravent la confiance et le sentiment de sécurité
+                                Pour cela, le thérapeute accueille le couple, observe le fonctionnement, interroge ce qui a
+                                provoqué la crise et le choix du moment pour amorcer une thérapie. Il est essentiel que
+                                chacun s’engage dans le travail thérapeutique.
+                            </p>
+                            <p className="text-md text-gray-600   justify-center text-justify  ">
 
-                                Je vous accueille dans votre relation exactement là où vous en êtes. Ensemble, nous valoriserons vos forces existantes tout en explorant des stratégies concrètes pour faire évoluer votre relation.
-                                Retrouvez une connexion authentique et épanouissante avec votre partenaire grâce à un accompagnement personnalisé et bienveillant.
+                                Il s’agit d’offrir la possibilité à chacun d’exposer sa perception de la situation, son vécu et ses
+                                attentes et aussi d’entendre et de reconnaître la perception de l’autre. Identifier les besoins
+                                d’attachement, la construction du monde de chacun nous permettra d’éclairer les liens du
+                                couple dans le présent.
                             </p>
 
-                            <div className="flex justify-center gap-4">
+
+                            <div className="flex justify-center gap-4 mt-8">
                                 <a
                                     href={`#${sectionIds.booking}`}
                                     className="text-lg sm:text-lg bg-blue-900/20 inline-block border border-stone-100/40 px-8 sm:px-16 sm:py-4 py-2 hover:bg-blue-900/30 text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl   hover:text-stone-900"
@@ -73,39 +80,72 @@ const CouplePage: React.FC = () => {
 
                     </div>
                 </section>
-                <section className="bg-yellow-500/90 py-20 px-4 ">
-                    <div className="max-w-4xl grid grid-cols-3 mx-auto text-center h-screen" >
+                <section className="bg-yellow-500/90  py-20 px-4   ">
+                    <div className="max-w-3xl grid grid-cols-3 mx-auto  h-screen " >
 
 
 
 
-                        <div className="flex justify-center gap-4 flex flex-col col-span-2">
-                            <h1 className="text-2xl md:text-4xl uppercase text-gray-900  mt-8">
-                                Qu'est-ce que la thérapie de couple en ligne ?
+                        <div className="flex gap-4  flex flex-col col-span-2 px-12 ">
+                            <h1 className="text-xl md:text-2xl lg:text-3xl uppercase text-gray-900 mt-8">
+                                Réencrer le « système couple » dans l’histoire de chacun...
 
                             </h1>
+                            <h2 className="text-md sm:text-lg xl:text-xl italic text-gray-600 mb-4 justify-center   " >
+                                en analysant les liens
+                                transgénérationnels, en utilisant par exemple le génogramme.
+                            </h2>
 
-                            <p className="text-md text-gray-600 mb-8 justify-center text-justify p-16 ">
-                                La relation au cœur de la thérapie
-                                La thérapie de couple en ligne offre une expérience transformatrice où votre relation devient le centre de l'attention thérapeutique, vous permettant de construire une vie commune plus épanouissante et satisfaisante.
-                                Contrairement à la thérapie individuelle où la personne est le client, en thérapie de couple, c'est votre relation qui est considérée comme une entité à part entière, plus riche que la simple addition de vos deux individualités.
-                                Ensemble, nous explorerons comment chacun de vous perçoit et vit cette relation. Nous analyserons avec soin votre histoire commune et vos dynamiques actuelles pour comprendre ce qui façonne et maintient votre relation aujourd'hui.
-                                Notre objectif est d'optimiser le fonctionnement de votre relation tout en soutenant l'épanouissement de chacun dans ce cadre partagé. Cette approche équilibrée permet de renforcer tant le lien qui vous unit que votre bien-être individuel.
+
+
+                            <p className="text-lg text-gray-600 mb-4 justify-center text-justify ">
+                                Comprendre les règles de fonctionnement du couple, son histoire spécifique au-delà de deux
+                                histoires individuelles d’assouplir la structure qui le maintient pour permettre un
+                                remaniement des places et des attentes de chacun.
                             </p>
 
 
 
+
                         </div>
-                        <img src={('./src/assets/couplelaptop.jpg')} alt="Couple" className=" h-[80%] p-2 object-cover mt-12" />
+                        <div className="rounded-xl">
+                            <img src={('./src/assets/genealogie.jpg')} alt="Couple" className=" h-[60%]  p-2 object-cover mt-12" />
+                        </div>
+                    </div>
+                </section>
+
+                <section className="bg-purple-50 py-20 px-4 ">
+                    <div className="max-w-3xl grid grid-cols-3 mx-auto text-center">
+                        <img src={('./src/assets/therapist.jpg')} alt="Couple" className=" h-full p-2 object-cover mt-12" />
+                        <div className="flex justify-center gap-4 flex flex-col col-span-2  px-12">
+                            <h1 className="text-xl md:text-2xl lg:text-3xl uppercase text-gray-900  mt-8">
+                                La posture du thérapeute en séance :
+                            </h1>
+
+                            <p className="text-md text-gray-600 mb-4 justify-center text-justify ">
+                                La simple présence du thérapeute produit du neuf. <br /> Il
+                                impacte le couple avec tout son être, il est partie prenante du système. Il met ses
+                                résonnances au service du couple et partage ses hypothèses, ses observations. Il est attentif
+                                aux sensations corporelles, manifestations émotionnelles dans l’ici et maintenant et aux faits
+                                extérieurs ou antérieurs. Il favorise les échanges, pointe les évitements de contact, les
+                                refuges dans le passé ou l’irresponsabilité.
+                            </p>
+
+                            <p className="text-md text-gray-600 mb-4 justify-center text-justify  ">
+                                La reconstruction passe par un réaménagement du connu, de nouvelles manières de
+                                communiquer, moins défensives.
+                            </p>
+                        </div>
+
+
                     </div>
                 </section>
 
 
 
 
-
                 {/* Therapy Approaches Section */}
-                <section className="py-16 px-4 bg-white">
+                {/* <section className="py-16 px-4 bg-white">
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
                             Therapeutic Approaches
@@ -131,10 +171,10 @@ const CouplePage: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Areas of Specialty Section */}
-                <section className="py-16 px-4 bg-gray-50">
+                {/* <section className="py-16 px-4 bg-gray-50">
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
                             Areas of Specialty
@@ -170,28 +210,21 @@ const CouplePage: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Effectiveness Section */}
                 <section className="py-16 px-4 bg-white">
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                            Does Couples Therapy Work?
+                            Est-ce que la thérapie de couple fonctionne ?
                         </h2>
                         <p className="text-xl text-gray-600 mb-6">
-                            Effective for those open and willing to engage in treatment. While initial hesitation
-                            is normal, commitment to the process leads to meaningful change.
+                            Effective pour ceux qui sont ouverts et prêts à engager le traitement. Bien que l'hésitation
+                            soit normale, l'engagement dans le processus mène à un changement significatif.
                         </p>
                         <div className="space-y-4 max-w-2xl mx-auto">
-                            <p className="text-gray-600"
 
-                            >
-                                We focus on building trust and safety while honoring each individual's history
-                                and experiences that shape the relationship.
-                            </p>
-                            <button className="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700">
-                                Begin Your Journey
-                            </button>
+
                         </div>
                     </div>
                 </section>

@@ -30,7 +30,7 @@ const ServicesSection: React.FC = () => {
                     </div>
                     <div className="bg-stone-300/40 shadow hover:shadow-xl rounded p-6 flex flex-col items-center hover:scale-105 transition-all duration-500">
                         <FaUser className="text-3xl text-calming-blue mb-4" />
-                        <h3 className="font-semibold text-xl mb-2">Accompagnement Individuel</h3>
+                        <h3 className="font-semibold text-xl mb-2">Therapie Individuelle</h3>
                         <p className="text-center">
                             Développement personnel et découverte de soi pour vous épanouir
                             dans tous les aspects de votre vie.
