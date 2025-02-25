@@ -5,13 +5,14 @@ import BookingSection from '../components/BookingSection';
 import { sectionIds } from '../constants/navigation';
 import livingroomImage from '../assets/livingroom.jpg';
 import couplelaptopImage from '../assets/couplelaptop.jpg';
-
+import abstrait2 from '../assets/abstrait2.jpg';
 const FamilyPage: React.FC = () => {
     return (
         <Layout>
             <div className="font-sans text-gray-700  ">
                 {/* Hero Section */}
-                <section className="bg-purple-50 py-20 gap-4 bg-[url('src/assets/abstrait2.jpg')] bg-cover ">
+                <section className="bg-purple-50 py-20 gap-4 bg-cover"
+                    style={{ backgroundImage: `url(${abstrait2})` }}>
                     <div className="max-w-3xl mx-auto text-center">
                         <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl font-montserrat py-4 text-stone-200 mt-36 mb-8"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}

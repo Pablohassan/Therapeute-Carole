@@ -4,13 +4,16 @@ import Layout from '../components/Layout';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
-
+import abstrait1 from '../assets/abstrait1.png';
+import couplelaptopImage from '../assets/couplelaptop.jpg';
+import handImage from '../assets/hand.jpg';
 const PonctuellePage: React.FC = () => {
     return (
         <Layout>
             <div className="font-sans text-gray-700">
                 {/* Hero Section */}
-                <section className="bg-purple-500 py-20 px-4 bg-[url('src/assets/abstrait1.png')]/20 bg-cover ">
+                <section className="bg-purple-500 py-20 px-4 bg-cover"
+                    style={{ backgroundImage: `url(${abstrait1})` }}>
                     <div className="max-w-3xl mx-auto text-center">
                         <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl font-dancing text-stone-200 mt-36 mb-6"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
@@ -37,9 +40,10 @@ const PonctuellePage: React.FC = () => {
                 <section className="bg-purple-50 py-20 px-4">
                     <div className="max-w-4xl grid grid-cols-3 mx-auto text-center h-screen">
                         <img
-                            src={('./src/assets/hand.jpg')}
+                            src={handImage}
                             alt="Couple"
                             className="h-full p-4 object-cover "
+                            loading="lazy"
                         />
                         <div className="flex justify-center gap-4 flex flex-col col-span-2">
                             <h1 className="text-2xl md:text-4xl uppercase text-gray-900 mb-6">
@@ -96,7 +100,8 @@ const PonctuellePage: React.FC = () => {
 
 
                         </div>
-                        <img src={('./src/assets/couplelaptop.jpg')} alt="Couple" className=" h-[80%] p-2 object-cover mt-12" />
+                        <img src={couplelaptopImage} alt="Couple" className=" h-[80%] p-2 object-cover mt-12"
+                            loading="lazy" />
                     </div>
                 </section>
 

@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import hand from '../assets/hand.jpg';
 import genealogieImage from '../assets/genealogie.jpg';
 import therapistImage from '../assets/therapist.jpg';
+import abstrait1 from '../assets/abstrait1.png';
 // import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
@@ -13,7 +14,8 @@ const CouplePage: React.FC = () => {
         <Layout>
             <div className="font-sans text-gray-700">
                 {/* Hero Section */}
-                <section className="bg-purple-50 py-20 px-4 bg-[url('src/assets/abstrait1.png')] bg-cover ">
+                <section className="bg-purple-50 py-20 px-4 bg-cover"
+                    style={{ backgroundImage: `url(${abstrait1})` }}>
                     <div className="max-w-3xl mx-auto text-center">
                         <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl  text-stone-200 mt-36 mb-6"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
@@ -43,6 +45,7 @@ const CouplePage: React.FC = () => {
                             src={hand}
                             alt="Couple"
                             className="h-[105%] p-4 object-cover "
+                            loading="lazy"
                         />
                         <div className="flex justify-center gap-4 flex flex-col col-span-2 px-12">
                             <h1 className="text-xl md:text-3xl uppercase text-gray-900  mb-8 ">
@@ -112,14 +115,18 @@ const CouplePage: React.FC = () => {
 
                         </div>
                         <div className="rounded-xl">
-                            <img src={genealogieImage} alt="Couple" className=" h-[60%]  p-2 object-cover mt-12" />
+                            <img src={genealogieImage} alt="Couple" className=" h-[60%]  p-2 object-cover mt-12"
+                                loading="lazy"
+                            />
                         </div>
                     </div>
                 </section>
 
                 <section className="bg-purple-50 py-20 px-4 ">
                     <div className="max-w-3xl grid grid-cols-3 mx-auto text-center">
-                        <img src={therapistImage} alt="Couple" className=" h-full p-2 object-cover mt-12" />
+                        <img src={therapistImage} alt="Couple" className=" h-full p-2 object-cover mt-12"
+                            loading="lazy"
+                        />
                         <div className="flex justify-center gap-4 flex flex-col col-span-2  px-12">
                             <h1 className="text-xl md:text-2xl lg:text-3xl uppercase text-gray-900  mt-8">
                                 La posture du thérapeute en séance :
