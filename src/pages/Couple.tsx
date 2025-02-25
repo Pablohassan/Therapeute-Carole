@@ -1,6 +1,9 @@
 // src/pages/Couple.tsx
 import React from 'react';
 import Layout from '../components/Layout';
+import hand from '../assets/hand.jpg';
+import genealogieImage from '../assets/genealogie.jpg';
+import therapistImage from '../assets/therapist.jpg';
 // import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
@@ -37,7 +40,7 @@ const CouplePage: React.FC = () => {
                 <section className="bg-purple-50 py-20 px-4 ">
                     <div className="max-w-3xl grid grid-cols-3 mx-auto text-center">
                         <img
-                            src={('./src/assets/hand.jpg')}
+                            src={hand}
                             alt="Couple"
                             className="h-[105%] p-4 object-cover "
                         />
@@ -47,21 +50,21 @@ const CouplePage: React.FC = () => {
                             </h1>
 
                             <p className="text-md text-gray-600   justify-center text-justify  ">
-                                En thérapie, l’objectif n’est pas de déterminer qui a tort ou qui a raison, ni de faire changer
-                                l’autre mais d’arriver à une collaboration afin de modifier le fonctionnement du « système
-                                couple » et ainsi de supprimer ou d’atténuer la souffrance.
+                                En thérapie, l'objectif n'est pas de déterminer qui a tort ou qui a raison, ni de faire changer
+                                l'autre mais d'arriver à une collaboration afin de modifier le fonctionnement du « système
+                                couple » et ainsi de supprimer ou d'atténuer la souffrance.
                             </p>
                             <p className="text-md text-gray-600   justify-center text-justify  ">
 
                                 Pour cela, le thérapeute accueille le couple, observe le fonctionnement, interroge ce qui a
                                 provoqué la crise et le choix du moment pour amorcer une thérapie. Il est essentiel que
-                                chacun s’engage dans le travail thérapeutique.
+                                chacun s'engage dans le travail thérapeutique.
                             </p>
                             <p className="text-md text-gray-600   justify-center text-justify  ">
 
-                                Il s’agit d’offrir la possibilité à chacun d’exposer sa perception de la situation, son vécu et ses
-                                attentes et aussi d’entendre et de reconnaître la perception de l’autre. Identifier les besoins
-                                d’attachement, la construction du monde de chacun nous permettra d’éclairer les liens du
+                                Il s'agit d'offrir la possibilité à chacun d'exposer sa perception de la situation, son vécu et ses
+                                attentes et aussi d'entendre et de reconnaître la perception de l'autre. Identifier les besoins
+                                d'attachement, la construction du monde de chacun nous permettra d'éclairer les liens du
                                 couple dans le présent.
                             </p>
 
@@ -88,7 +91,7 @@ const CouplePage: React.FC = () => {
 
                         <div className="flex gap-4  flex flex-col col-span-2 px-12 ">
                             <h1 className="text-xl md:text-2xl lg:text-3xl uppercase text-gray-900 mt-8">
-                                Réencrer le « système couple » dans l’histoire de chacun...
+                                Réencrer le « système couple » dans l'histoire de chacun...
 
                             </h1>
                             <h2 className="text-md sm:text-lg xl:text-xl italic text-gray-600 mb-4 justify-center   " >
@@ -100,7 +103,7 @@ const CouplePage: React.FC = () => {
 
                             <p className="text-lg text-gray-600 mb-4 justify-center text-justify ">
                                 Comprendre les règles de fonctionnement du couple, son histoire spécifique au-delà de deux
-                                histoires individuelles d’assouplir la structure qui le maintient pour permettre un
+                                histoires individuelles d'assouplir la structure qui le maintient pour permettre un
                                 remaniement des places et des attentes de chacun.
                             </p>
 
@@ -109,14 +112,14 @@ const CouplePage: React.FC = () => {
 
                         </div>
                         <div className="rounded-xl">
-                            <img src={('./src/assets/genealogie.jpg')} alt="Couple" className=" h-[60%]  p-2 object-cover mt-12" />
+                            <img src={genealogieImage} alt="Couple" className=" h-[60%]  p-2 object-cover mt-12" />
                         </div>
                     </div>
                 </section>
 
                 <section className="bg-purple-50 py-20 px-4 ">
                     <div className="max-w-3xl grid grid-cols-3 mx-auto text-center">
-                        <img src={('./src/assets/therapist.jpg')} alt="Couple" className=" h-full p-2 object-cover mt-12" />
+                        <img src={therapistImage} alt="Couple" className=" h-full p-2 object-cover mt-12" />
                         <div className="flex justify-center gap-4 flex flex-col col-span-2  px-12">
                             <h1 className="text-xl md:text-2xl lg:text-3xl uppercase text-gray-900  mt-8">
                                 La posture du thérapeute en séance :
@@ -126,9 +129,9 @@ const CouplePage: React.FC = () => {
                                 La simple présence du thérapeute produit du neuf. <br /> Il
                                 impacte le couple avec tout son être, il est partie prenante du système. Il met ses
                                 résonnances au service du couple et partage ses hypothèses, ses observations. Il est attentif
-                                aux sensations corporelles, manifestations émotionnelles dans l’ici et maintenant et aux faits
+                                aux sensations corporelles, manifestations émotionnelles dans l'ici et maintenant et aux faits
                                 extérieurs ou antérieurs. Il favorise les échanges, pointe les évitements de contact, les
-                                refuges dans le passé ou l’irresponsabilité.
+                                refuges dans le passé ou l'irresponsabilité.
                             </p>
 
                             <p className="text-md text-gray-600 mb-4 justify-center text-justify  ">
