@@ -57,7 +57,7 @@ const BookingSection: React.FC = () => {
 
                     <div className="mt-8 text-center text-gray-600 text-sm">
                         <p>Si vous préférez prendre rendez-vous par téléphone, vous pouvez me joindre au</p>
-                        <p className="font-medium text-base mt-1">+33 XX XX XX XX XX</p>
+                        <p className="font-medium text-base mt-1">+33 7 78 24 09 60</p>
                     </div>
                 </motion.div>
             </div>

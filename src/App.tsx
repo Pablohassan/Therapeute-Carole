@@ -32,104 +32,82 @@ function WelcomePage() {
             Connecte toi
           </button>
         </SignInButton>
-
-
       </div>
     </div>
   );
 }
 
-// Protected layout that checks authentication
-function ProtectedLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <SignedIn>
-      <Layout>{children}</Layout>
-    </SignedIn>
-  );
-}
-
 function App() {
+  console.log('App rendering');
+
   return (
     <ClerkLoaded>
       <HelmetProvider>
         <Router>
           <Routes>
-            {/* Default route - Welcome/Login page for non-authenticated users */}
-            <Route
-              path="/"
-              element={
-                <>
-                  <SignedIn>
-                    <Navigate to="/home" replace />
-                  </SignedIn>
-                  <SignedOut>
-                    <WelcomePage />
-                  </SignedOut>
-                </>
-              }
-            />
-
-            {/* Auth routes */}
-            <Route
-              path="/sign-in/*"
-              element={<SignIn routing="path" path="/sign-in" signUpUrl="/sign-up" />}
-            />
-            <Route
-              path="/sign-up/*"
-              element={<SignUp routing="path" path="/sign-up" signInUrl="/sign-in" />}
-            />
-
-            {/* Protected routes - Only accessible when authenticated */}
-            <Route
-              path="/home"
-              element={
-                <ProtectedLayout>
-                  <HomePage />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/couple"
-              element={
-                <ProtectedLayout>
-                  <CouplePage />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/family"
-              element={
-                <ProtectedLayout>
-                  <FamilyPage />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/individuel"
-              element={
-                <ProtectedLayout>
-                  <IndividuelPage />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/bio"
-              element={
-                <ProtectedLayout>
-                  <Apropos />
-                </ProtectedLayout>
-              }
-            />
-
-            {/* Catch-all route - Redirect to welcome page if not authenticated */}
-            <Route
-              path="*"
-              element={
+            {/* Default route */}
+            <Route path="/" element={
+              <>
                 <SignedIn>
                   <Navigate to="/home" replace />
                 </SignedIn>
-              }
-            />
+                <SignedOut>
+                  <WelcomePage />
+                </SignedOut>
+              </>
+            } />
+
+            {/* Auth routes */}
+            <Route path="/sign-in/*" element={<SignIn routing="path" path="/sign-in" signUpUrl="/sign-up" />} />
+            <Route path="/sign-up/*" element={<SignUp routing="path" path="/sign-up" signInUrl="/sign-in" />} />
+
+            {/* Protected routes */}
+            <Route path="/home" element={
+              <SignedIn>
+                <Layout isHomePage={true}>
+                  <HomePage />
+                </Layout>
+              </SignedIn>
+            } />
+
+            <Route path="/couple" element={
+              <SignedIn>
+                <Layout>
+                  <CouplePage />
+                </Layout>
+              </SignedIn>
+            } />
+
+            <Route path="/family" element={
+              <SignedIn>
+                <Layout>
+                  <FamilyPage />
+                </Layout>
+              </SignedIn>
+            } />
+
+            <Route path="/individuel" element={
+              <SignedIn>
+                <Layout>
+                  <IndividuelPage />
+                </Layout>
+              </SignedIn>
+            } />
+
+            <Route path="/apropos" element={
+              <SignedIn>
+                <Layout>
+                  <Apropos />
+                </Layout>
+              </SignedIn>
+            } />
+
+            {/* Catch-all route */}
+            <Route path="*" element={
+              <SignedIn>
+                <Navigate to="/home" replace />
+              </SignedIn>
+            } />
           </Routes>
         </Router>
       </HelmetProvider>

@@ -1,6 +1,5 @@
 // src/pages/Family.tsx
 import React from 'react';
-import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { therapyServiceData } from '../constants/structuredData';
 import BookingSection from '../components/BookingSection';
@@ -10,6 +9,7 @@ import ResponsiveImage from '../components/ResponsiveImage';
 import livingroomImage from '../assets/livingroom.webp';
 import couplelaptopImage from '../assets/couplelaptop.webp';
 import mur from '../assets/mur.webp';
+import famille from '../assets/famille-therapie-talence.webp'
 
 const FamilyPage: React.FC = () => {
     // Create specific service data for family therapy
@@ -21,7 +21,7 @@ const FamilyPage: React.FC = () => {
     };
 
     return (
-        <Layout>
+        <>
             <SEO
                 title="Thérapie Familiale Systémique"
                 description="Retrouvez le lien familial, reprenez du plaisir ensemble, valorisez-vous mutuellement. La thérapie familiale permet d'améliorer la communication et de résoudre les conflits."
@@ -33,7 +33,7 @@ const FamilyPage: React.FC = () => {
             <div className="font-sans text-gray-700">
                 {/* Hero Section */}
                 <section
-                    className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+                    className="relative h-screen flex items-center justify-center overflow-hidden"
                     style={{
                         backgroundImage: `url(${mur})`,
                         backgroundSize: 'cover',
@@ -43,18 +43,18 @@ const FamilyPage: React.FC = () => {
                     <div className="absolute inset-0 bg-black/40 bg-opacity-40"></div>
 
                     <motion.div
-                        className="relative container mx-auto px-6 text-center z-10 max-w-4xl"
+                        className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl py-4 md:py-16"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-white mb-8"
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-white mb-8 md:mb-16"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
                             Thérapie Familiale Systémique
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-white mb-12 italic font-light leading-relaxed"
+                        <p className="text-md md:text-2xl text-white mb-12 italic font-light leading-relaxed"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
                             « La thérapie familiale a pour but l'amélioration du fonctionnement familial à différents niveaux,
@@ -70,7 +70,7 @@ const FamilyPage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-transparent border-2 border-white px-8 sm:px-12 py-3 text-white font-light uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-stone-800 shadow-lg hover:shadow-xl "
+                                className="inline-block bg-transparent border-2 border-white px-12 sm:px-16 py-4 md:py-6 mt-8 text-white font-light uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-stone-800 shadow-lg hover:shadow-xl "
                             >
                                 Réserver un rendez-vous
                             </a>
@@ -79,7 +79,7 @@ const FamilyPage: React.FC = () => {
                 </section>
 
                 {/* Introduction Section */}
-                <section className="py-20 px-6 bg-stone-50">
+                <section className="py-20 px-4 md:px-8  bg-stone-50">
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
@@ -88,18 +88,19 @@ const FamilyPage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="lg:col-span-1">
-                                <img
-                                    src={livingroomImage}
-                                    alt="Espace thérapeutique"
-                                    className="w-full h-auto object-cover  shadow-md"
-                                    loading="lazy"
-                                    width="600"
-                                    height="800"
+                            <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
+                                <ResponsiveImage
+                                    src={famille}
+                                    alt="Communication familiale"
+                                    className="absolute inset-0 h-full w-full object-cover shadow-md rounded-sm"
+                                    width={800}
+                                    height={600}
+                                    sizes="(max-width: 1024px) 100vw, 33vw"
+                                    priority={true}
                                 />
                             </div>
 
-                            <div className="lg:col-span-2 space-y-6">
+                            <div className="lg:col-span-2 space-y-6 font-light">
                                 <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-6">
                                     La relation est au cœur de la thérapie
                                 </h2>
@@ -134,8 +135,8 @@ const FamilyPage: React.FC = () => {
                 </section>
 
                 {/* Alternative Communication Section */}
-                <section className="py-20 px-6 bg-amber-50">
-                    <div className="container mx-auto max-w-4xl">
+                <section className="py-20 px-4 md:px-8 bg-amber-50">
+                    <div className="container mx-auto font-light max-w-4xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
                             initial={{ opacity: 0, y: 20 }}
@@ -143,8 +144,8 @@ const FamilyPage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="lg:col-span-2 space-y-6 order-2 lg:order-1">
-                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-6">
+                            <div className="lg:col-span-2 space-y-4 md:space-y-8 order-2 lg:order-1">
+                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-8">
                                     Car parfois les mots sont usés...
                                 </h2>
 
@@ -186,21 +187,21 @@ const FamilyPage: React.FC = () => {
 
                 {/* Quote Section */}
                 <motion.div
-                    className="py-16 px-6   text-white"
+                    className="py-16 px-6    text-white"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div className="container mx-auto p-16 transform-y-[-200px] overflow-y-[-200px] max-w-[80%] bg-stone-700 text-center">
-                        <p className=" mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
+                    <div className="container mx-auto p-4 md:p-8 max-w-[98%]  md:max-w-[80%] bg-stone-700 text-center">
+                        <p className=" mx-auto text-xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
                             « En séance, le thérapeute porte une attention particulière aux besoins de chacun »
                         </p>
                     </div>
                 </motion.div>
 
                 {/* Therapeutic Approach Section */}
-                <section className="py-20 px-6 bg-white">
+                <section className="py-8 md:py-20 px-6 bg-white">
                     <div className="container mx-auto max-w-6xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
@@ -220,7 +221,7 @@ const FamilyPage: React.FC = () => {
                                 />
                             </div>
 
-                            <div className="lg:col-span-2 space-y-6">
+                            <div className="lg:col-span-2 space-y-6 font-light">
                                 <div className="space-y-6">
                                     <p className="text-lg text-gray-600 leading-relaxed">
                                         En séance, le thérapeute porte une attention particulière aux besoins de chacun, à leurs
@@ -273,7 +274,7 @@ const FamilyPage: React.FC = () => {
                             </div>
 
                             <div className="bg-white p-8  shadow-md">
-                                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
                                     Une séance de thérapie familiale dure entre 60 et 90 minutes; l'intervalle entre les séances
                                     varie de une à plusieurs semaines en fonction des problèmes présentés, des besoins des
                                     membres de la famille, de l'étape du traitement et d'autres variables. Les décisions sur ces
@@ -337,7 +338,7 @@ const FamilyPage: React.FC = () => {
 
             {/* Booking Section */}
             <BookingSection />
-        </Layout>
+        </>
     );
 };
 

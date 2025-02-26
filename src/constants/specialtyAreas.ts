@@ -63,3 +63,36 @@ export const familySpecialtyAreas = [
       "Intervention sur les comportements problématiques des enfants et adolescents.",
   },
 ];
+
+export const individualSpecialtyAreas = [
+  {
+    title: "Anxiété et stress",
+    description:
+      "Accompagnement pour gérer l'anxiété, les attaques de panique et le stress chronique à travers des techniques adaptées.",
+  },
+  {
+    title: "Dépression",
+    description:
+      "Soutien thérapeutique pour surmonter les périodes de dépression et retrouver un équilibre émotionnel.",
+  },
+  {
+    title: "Transitions de vie",
+    description:
+      "Accompagnement lors des changements majeurs (déménagement, changement professionnel, séparation) qui nécessitent une adaptation.",
+  },
+  {
+    title: "Estime de soi",
+    description:
+      "Travail sur la confiance en soi, l'image de soi et le développement personnel pour une vie plus épanouie.",
+  },
+  {
+    title: "Deuil et pertes",
+    description:
+      "Soutien dans le processus de deuil et d'acceptation suite à une perte significative.",
+  },
+  {
+    title: "Difficultés relationnelles",
+    description:
+      "Exploration des schémas relationnels et développement de compétences pour des relations plus satisfaisantes.",
+  },
+];

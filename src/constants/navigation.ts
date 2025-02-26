@@ -4,6 +4,7 @@ export interface SectionIds {
   whyChooseUs: string;
   booking: string;
   faqBlog: string;
+  contact: string;
 }
 
 export const sectionIds: SectionIds = {
@@ -12,4 +13,5 @@ export const sectionIds: SectionIds = {
   whyChooseUs: "pourquoi-nous-choisir",
   booking: "rendez-vous",
   faqBlog: "faq-blog",
+  contact: "contact",
 };

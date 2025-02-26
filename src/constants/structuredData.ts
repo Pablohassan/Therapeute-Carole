@@ -4,7 +4,7 @@ export const therapyPracticeData = {
   name: "Carole Lagardère - Thérapeute Familiale",
   image: "https://www.carole-lagardere.com/assets/therapist.webp",
   url: "https://www.carole-lagardere.com",
-  telephone: "+33XXXXXXXXX", // Add your phone number
+  ephone: "+33 7 78 24 09 60", // Add your phone number
   address: {
     "@type": "PostalAddress",
     streetAddress: "123 Rue Example", // Add your address
@@ -20,9 +20,9 @@ export const therapyPracticeData = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
+      dayOfWeek: ["Monday", "Wednesday"],
+      opens: "08:30",
+      closes: "17:30",
     },
   ],
   priceRange: "€€",

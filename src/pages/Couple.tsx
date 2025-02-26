@@ -1,6 +1,5 @@
 // src/pages/Couple.tsx
 import React from 'react';
-import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 import hand from '../assets/hand.webp';
 import genealogieImage from '../assets/genealogie.webp';
@@ -24,7 +23,7 @@ const CouplePage: React.FC = () => {
     };
 
     return (
-        <Layout>
+        <>
             <SEO
                 title="Thérapie de Couple"
                 description="Transformez votre relation afin de vous permettre de vous sentir plus satisfait et épanoui. La thérapie de couple permet d'améliorer la communication et de résoudre les conflits."
@@ -37,7 +36,7 @@ const CouplePage: React.FC = () => {
             <div className="font-sans text-gray-700">
                 {/* Hero Section */}
                 <section
-                    className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+                    className="relative h-screen flex items-center justify-center overflow-hidden"
                     style={{
                         backgroundImage: `url(${abstrait1})`,
                         backgroundSize: 'cover',
@@ -47,18 +46,18 @@ const CouplePage: React.FC = () => {
                     <div className="absolute inset-0 bg-black/60"></div>
 
                     <motion.div
-                        className="relative container mx-auto px-6 text-center z-10 max-w-4xl"
+                        className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-white mb-8"
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-white mb-8 md:mb-16"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
                             Thérapie de Couple
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-white mb-12 font-light leading-relaxed"
+                        <p className="text-xl md:text-2xl text-white font-light mb-8  md:mb-16 leading-relaxed"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
                             Transformez votre relation afin de vous permettre de vous sentir plus satisfait et de vous sentir plus rempli.
@@ -71,7 +70,7 @@ const CouplePage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-transparent border-2 border-white px-8 sm:px-12 py-3 text-white font-light uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-stone-800 shadow-lg hover:shadow-xl "
+                                className="inline-block bg-transparent border-2 border-white px-8 md:px-16 py-4 md:py-6 text-white font-light uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-white hover:text-stone-800 shadow-lg hover:shadow-xl "
                             >
                                 Réserver un rendez-vous
                             </a>
@@ -327,7 +326,7 @@ const CouplePage: React.FC = () => {
             </div>
 
             <BookingSection />
-        </Layout>
+        </>
     );
 };
 

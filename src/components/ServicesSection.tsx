@@ -37,6 +37,19 @@ const ServicesSection: React.FC = () => {
                         </p>
                     </div>
                 </div>
+                <section className="mt-12 mb-16 p-6 bg-stone-300/40 rounded-lg shadow-md">
+                    <div className="max-w-2xl mx-auto">
+                        <h3 className="text-2xl font-bold mb-4 text-calming-blue">Tarifs</h3>
+                        <div className="text-xl font-semibold mb-3">
+                            70€ la séance d'une heure
+                        </div>
+                        <p className="text-gray-700">
+                            Afin de rendre les consultations accessibles à tous, un tarif réduit est proposé aux étudiants,
+                            aux demandeurs d'emploi et personnes en situation de précarité.
+                            <span className="block mt-2 font-medium">N'hésitez pas à me contacter pour en discuter.</span>
+                        </p>
+                    </div>
+                </section>
             </div>
         </section>
     );
