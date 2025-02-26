@@ -37,31 +37,6 @@ const FaqAndBlogSection: React.FC = () => {
                 </div>
 
                 {/* Blog Preview */}
-                <div className="text-center mb-4">
-                    <h3 className="text-2xl font-bold mb-2">Blog</h3>
-                    <p>Explorez nos articles sur la communication, les relations et le bien-être mental.</p>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                    {/* Cartes de blog exemple */}
-                    {/* <div className="bg-white rounded shadow-sm p-4">
-                        <h4 className="font-semibold text-lg mb-2">Le Pouvoir de l'Écoute Active</h4>
-                        <p className="text-sm mb-2">
-                            Découvrez comment une écoute véritable peut désamorcer les conflits et renforcer les liens.
-                        </p> */}
-                    <Link to="/blog" className="text-calming-blue hover:underline">
-                        Lire la suite...
-                    </Link>
-                    {/* </div> */}
-                    <div className="bg-white rounded shadow-sm p-4">
-                        <h4 className="font-semibold text-lg mb-2">Établir des Limites Saines</h4>
-                        <p className="text-sm mb-2">
-                            Apprenez l'importance de fixer et de respecter des limites personnelles au sein des familles.
-                        </p>
-                        <Link to="/blog" className="text-calming-blue hover:underline">
-                            Lire la suite...
-                        </Link>
-                    </div>
-                </div>
             </div>
         </section>
     );

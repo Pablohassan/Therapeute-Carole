@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
-import WhyChooseUsSection from '../components/WhyChooseUsSection';
+// import WhyChooseUsSection from '../components/WhyChooseUsSection';
 import BookingSection from '../components/BookingSection';
 import FaqAndBlogSection from '../components/FaqAndBlogSection';
 
@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
             <HeroSection />
             <AboutSection />
             <ServicesSection />
-            <WhyChooseUsSection />
+            {/* <WhyChooseUsSection /> */}
             <BookingSection />
             <FaqAndBlogSection />
         </Layout>

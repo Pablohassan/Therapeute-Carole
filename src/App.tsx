@@ -13,8 +13,9 @@ import HomePage from "./pages/HomePage";
 import CouplePage from "./pages/Couple";
 import Apropos from "./pages/Apropos";
 import FamilyPage from "./pages/Family";
-import PonctuellePage from "./pages/Ponctuelle";
+import IndividuelPage from "./pages/Individuel";
 import Layout from "./components/Layout";
+import { HelmetProvider } from 'react-helmet-async';
 // import DashboardPage from "./pages/Dashboard";
 
 // Welcome/Login page component
@@ -50,86 +51,88 @@ function ProtectedLayout({ children }: { children: React.ReactNode }) {
 function App() {
   return (
     <ClerkLoaded>
-      <Router>
-        <Routes>
-          {/* Default route - Welcome/Login page for non-authenticated users */}
-          <Route
-            path="/"
-            element={
-              <>
+      <HelmetProvider>
+        <Router>
+          <Routes>
+            {/* Default route - Welcome/Login page for non-authenticated users */}
+            <Route
+              path="/"
+              element={
+                <>
+                  <SignedIn>
+                    <Navigate to="/home" replace />
+                  </SignedIn>
+                  <SignedOut>
+                    <WelcomePage />
+                  </SignedOut>
+                </>
+              }
+            />
+
+            {/* Auth routes */}
+            <Route
+              path="/sign-in/*"
+              element={<SignIn routing="path" path="/sign-in" signUpUrl="/sign-up" />}
+            />
+            <Route
+              path="/sign-up/*"
+              element={<SignUp routing="path" path="/sign-up" signInUrl="/sign-in" />}
+            />
+
+            {/* Protected routes - Only accessible when authenticated */}
+            <Route
+              path="/home"
+              element={
+                <ProtectedLayout>
+                  <HomePage />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/couple"
+              element={
+                <ProtectedLayout>
+                  <CouplePage />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/family"
+              element={
+                <ProtectedLayout>
+                  <FamilyPage />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/individuel"
+              element={
+                <ProtectedLayout>
+                  <IndividuelPage />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/bio"
+              element={
+                <ProtectedLayout>
+                  <Apropos />
+                </ProtectedLayout>
+              }
+            />
+
+            {/* Catch-all route - Redirect to welcome page if not authenticated */}
+            <Route
+              path="*"
+              element={
                 <SignedIn>
                   <Navigate to="/home" replace />
                 </SignedIn>
-                <SignedOut>
-                  <WelcomePage />
-                </SignedOut>
-              </>
-            }
-          />
-
-          {/* Auth routes */}
-          <Route
-            path="/sign-in/*"
-            element={<SignIn routing="path" path="/sign-in" signUpUrl="/sign-up" />}
-          />
-          <Route
-            path="/sign-up/*"
-            element={<SignUp routing="path" path="/sign-up" signInUrl="/sign-in" />}
-          />
-
-          {/* Protected routes - Only accessible when authenticated */}
-          <Route
-            path="/home"
-            element={
-              <ProtectedLayout>
-                <HomePage />
-              </ProtectedLayout>
-            }
-          />
-          <Route
-            path="/couple"
-            element={
-              <ProtectedLayout>
-                <CouplePage />
-              </ProtectedLayout>
-            }
-          />
-          <Route
-            path="/family"
-            element={
-              <ProtectedLayout>
-                <FamilyPage />
-              </ProtectedLayout>
-            }
-          />
-          <Route
-            path="/ponctuelle"
-            element={
-              <ProtectedLayout>
-                <PonctuellePage />
-              </ProtectedLayout>
-            }
-          />
-          <Route
-            path="/bio"
-            element={
-              <ProtectedLayout>
-                <Apropos />
-              </ProtectedLayout>
-            }
-          />
-
-          {/* Catch-all route - Redirect to welcome page if not authenticated */}
-          <Route
-            path="*"
-            element={
-              <SignedIn>
-                <Navigate to="/home" replace />
-              </SignedIn>
-            }
-          />
-        </Routes>
-      </Router>
+              }
+            />
+          </Routes>
+        </Router>
+      </HelmetProvider>
     </ClerkLoaded>
   );
 }

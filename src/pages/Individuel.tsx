@@ -4,10 +4,10 @@ import Layout from '../components/Layout';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
-import abstrait1 from '../assets/abstrait1.png';
-import couplelaptopImage from '../assets/couplelaptop.jpg';
-import handImage from '../assets/hand.jpg';
-const PonctuellePage: React.FC = () => {
+import abstrait1 from '../assets/abstrait1.webp';
+import couplelaptopImage from '../assets/couplelaptop.webp';
+import handImage from '../assets/hand.webp';
+const IndividuelPage: React.FC = () => {
     return (
         <Layout>
             <div className="font-sans text-gray-700">
@@ -206,4 +206,4 @@ const PonctuellePage: React.FC = () => {
     );
 };
 
-export default PonctuellePage;
+export default IndividuelPage;

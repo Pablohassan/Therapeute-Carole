@@ -1,149 +1,218 @@
 // src/components/AboutSection.tsx
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const AboutSection: React.FC = () => {
     return (
-        <section className="p-8 bg-soft-beige" id="about">
-
-
-            <div className="mb-16 text-center space-y-8 mt-16">
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light uppercase tracking-wider text-stone-900 mb-4"
-                    style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)' }}
+        <section className="py-20 bg-soft-beige" id="about">
+            <div className="container mx-auto px-4 md:px-8">
+                {/* Header with elegant animation */}
+                <motion.div
+                    className="mb-16 text-center space-y-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
                 >
-                    Carole Lagardère
-                </h1>
-                <h2 className="text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-stone-600 tracking-wide mb-4"
-                    style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)' }}
-                >
-                    Thérapeute familiale et de couple
-                </h2>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light uppercase tracking-wider text-stone-800"
+                        style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)' }}
+                    >
+                        Carole Lagardère
+                    </h1>
+                    <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-stone-600 tracking-wide"
+                        style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
+                    >
+                        Thérapeute familiale et de couple
+                    </h2>
+                </motion.div>
 
-
-            </div>
-
-            {/* Parcours professionnel */}
-            <div className="space-y-16 flex flex-col items-center ">
-                <div className="grid grid-cols-1 lg:grid-cols-2 mt-16 mb-8 gap-y-8 sm:gap-y-2 sm:gap-x-8  md:gap-8 lg:gap-8">
-                    <div className="space-y-4   ">
-                        <h3 className="text-xl h-22 flex items-center uppercase tracking-wider text-stone-900  border-l-4 p-4 border-soft-beige "
-                            style={{ textShadow: '1px 2px 4px rgba(0, 0, 0, 0.5)' }}
-                        >
-                            Parcours & Certification
-                        </h3>
-                        <ul className="space-y-2 text-md  list-none pl-4 text-stone-600 leading-relaxed mt-8"
-                            style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)' }}
-                        >
-                            <li>- Formation longue, thérapie familiale approche systémique (4 ans) à l’IDES Bordeaux
-                                (Institut D’Etudes Systémique) 2014</li>
-                            <li>- Diplôme d’état d’éducatrice spécialisée (DEES) 2006</li>
-
-                        </ul>
-                    </div>
-                    <div className="">
-                        <h3 className="text-xl uppercase tracking-wider text-stone-900 border-l-4 pl-4 p-4 border-soft-beige  "
-                            style={{ textShadow: '1px 2px 4px rgba(0, 0, 0, 0.5)' }}
-                        >
-                            20 ANNEES D’EXPERIENCE DANS L’ACCOMPAGNEMENT DES FAMILLES
-                        </h3>
-                        <div className="text-stone-600 leading-relaxed"
-
-                        >
-                            <ul className="space-y-2 text-md list-none pl-4 mt-8 text-stone-600 leading-relaxed"
-                                style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)' }}
+                {/* Professional background with subtle animations */}
+                <div className="space-y-16 max-w-6xl mx-auto">
+                    <motion.div
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="space-y-6 bg-white/50 p-8 rounded-lg shadow-sm">
+                            <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-stone-400"
+                                style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
                             >
-                                <li> - Entretien individuel : enfant, adolescent, parent</li>
-                                <li> - Soutien à la parentalité / guidance parentale</li>
-                                <li> - Entretiens familiaux : médiation, réaccordage parent, enfant</li>
+                                Parcours & Certification
+                            </h3>
+                            <ul className="space-y-4 text-md list-none pl-4 text-stone-600 leading-relaxed">
+                                <li className="flex items-start">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Formation longue, thérapie familiale approche systémique (4 ans) à l'IDES Bordeaux (Institut D'Etudes Systémique) 2014</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Diplôme d'état d'éducatrice spécialisée (DEES) 2006</span>
+                                </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
 
-            </div>
+                        <div className="space-y-6 bg-white/50 p-8 rounded-lg shadow-sm">
+                            <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-stone-400"
+                                style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
+                            >
+                                20 années d'expérience dans l'accompagnement des familles
+                            </h3>
+                            <ul className="space-y-4 text-md list-none pl-4 text-stone-600 leading-relaxed">
+                                <li className="flex items-start">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Entretien individuel : enfant, adolescent, parent</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Soutien à la parentalité / guidance parentale</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Entretiens familiaux : médiation, réaccordage parent, enfant</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </motion.div>
 
-
-            <div className="grid grid-cols-1 md:grid-row-2 mt-16 mb-8 sm:gap-8  md:gap-8 lg:gap-8">
-
-                <h3 className="text-lg font-montserrat font-light mb-4 text-justify mt-16">
-
-
-                    <div className="text-md md:text-xl lg:text-2xl font-montserrat  text-center italic space-x-4 sm:space-x-16 md:space-x-20 lg:space-x-16 xl:space-x-16 mb-16 "
-                        style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)' }}
+                    {/* Inspirational quote */}
+                    <motion.div
+                        className="text-center my-16 mt-32"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        viewport={{ once: true }}
                     >
-                        Vous vous êtes connectés à notre site par curiosité... Peut-être aussi est-ce par conscience
-                        d&#39;un mal être qui vous perturbe et/ou perturbe votre entourage... </div>
+                        <p className="text-xl md:text-2xl lg:text-3xl font-light italic text-stone-700 max-w-4xl  mx-auto"
+                            style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
+                        >
+                            Si vous êtes sur ce site, c'est peut-être que vous cherchez à améliorer les relations avec vos proches.
+                        </p>
+                    </motion.div>
 
-                    <br />
-
-
-                    <br />
-
-                    <div className="text-md md:text-xl lg:text-2xl font-montserrat space-y-4  text-center italic space-x-4 sm:space-x-16 md:space-x-20 lg:space-x-16 xl:space-x-16 mb-16 "
-                        style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)' }}
-
-                    >Si vous êtes sur ce site, c’est peut-être que vous cherchez à améliorer les relations avec vos
-                        proches.</div>
-
-                    <div className="text-sm  md:text-md lg:text-xl xl:text-xl font-montserrat font-light text-center text-justify italic px-2 sm:px-4 md:px-8 lg:px-16 xl:px-24 ">
-
-
-                        <div className="text-xl md:text-3xl lg:text-5xl font-dancing font-light text-center italic space-x-4 sm:space-x-16 md:space-x-20 lg:space-x-16 xl:space-x-16 mb-16 "
-                            style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)' }}
+                    {/* Quote with elegant styling */}
+                    <motion.div
+                        className="my-16 text-center"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <p className="text-2xl md:text-3xl lg:text-4xl font-dancing font-light italic text-stone-700 space-y-8 mb-16"
+                            style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
                         >
                             « Que pouvons-nous faire ensemble ? »
+                        </p>
+
+                        <div className="text-md md:text-lg text-stone-600 max-w-4xl mx-auto leading-relaxed text-justify md:text-center">
+                            <p className="mb-4">
+                                Vous appréhendez le retour à la maison, les relations sont tendues, les conflits récurrents.
+                                Le quotidien est pesant, chacun semble malheureux, isolé, déconnecté de l'autre. Votre vie
+                                de famille, de couple est morose, traversée par de nombreuses tensions, des cris…
+                            </p>
+                            <p>
+                                Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique,
+                                nous espérons par les contenus de ce site, pouvoir vous apporter quelques pistes
+                                susceptibles de nourrir votre réflexion… et pourquoi pas, trouver l'élan, faire le pas pour
+                                nous rencontrer !
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* Context section */}
+                    <motion.div
+                        className="my-16"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="text-lg text-stone-800 max-w-4xl mx-auto mb-8">
+                            <p className="mb-4 font-montserrat font-medium text-xl">Que cela concerne votre contexte familial :</p>
+                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4 pl-6"
+                                style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
+                            >
+                                <li className="flex items-center">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Votre jeune enfant</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Votre adolescent</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Un adulte ou vous-même</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>Votre couple (conjugalité)</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <span className="text-stone-400 mr-2">•</span>
+                                    <span>La relation avec vos enfants (parentalité)</span>
+                                </li>
+                            </ul>
+                            <p>Ou que cela concerne votre contexte professionnel ou social, nous pouvons vous accompagner.</p>
                         </div>
 
+                        <div className="text-center my-16">
+                            <p className="text-xl md:text-2xl lg:text-3xl  italic text-stone-700"
+                                style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
+                            >
+                                Et si on en parlait ?
+                            </p>
+                        </div>
+                    </motion.div>
 
-                        Vous appréhendez le retour à la maison, les relations sont tendues, les conflits récurrents.
-                        Le quotidien est pesant, chacun semble malheureux, isolé, déconnecté de l’autre. Votre vie
-                        de famille, de couple est morose, traversée par de nombreuses tensions, des cris…
-                        Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique,
-                        nous espérons par les contenus de ce site, pouvoir vous apporter quelques pistes
-                        susceptibles de nourrir votre réflexion… et pourquoi pas, trouver l&#39;élan, faire le pas pour
-                        nous rencontrer !
-                    </div>
-                </h3>
+                    {/* Approach section */}
+                    <motion.div
+                        className="space-y-8 max-w-4xl mx-auto"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <p className="text-lg text-stone-600 leading-relaxed">
+                            Je vous accueille dans un espace chaleureux, sécurisé, bienveillant et confidentiel. Je serai à
+                            votre écoute et engagée à vos côtés pour vous aider à vous aider. Ensemble, pour
+                            comprendre vos fonctionnements, faire émerger de nouvelles possibilités en remobilisant
+                            vos ressources et compétences. Accompagner, verbaliser, expérimenter le changement au
+                            sein de vos relations.
+                        </p>
 
+                        <p className="text-lg text-stone-600 leading-relaxed">
+                            Educatrice spécialisée depuis 2006, 20 années de pratique en protection de l'enfance.
+                            Expérience d'accompagnement des enfants, adolescents et leurs parents. Organiser des
+                            rencontres, mener des entretiens familiaux, individuels, afin d'identifier les difficultés et
+                            accompagner vers l'apaisement, le changement.
+                        </p>
+                    </motion.div>
 
-                <br />
-                <div className="text-lg text-center md:text-2xl lg:text-3xl font-montserrat font-light  text-center italic space-x-4 sm:space-x-16 md:space-x-20 lg:space-x-16 xl:space-x-16  mt-8 "
-                    style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)' }}
-                >
-                    <p>
-                        Et si on en parlait ?
-                    </p>
-                </div>
+                    {/* Value proposition cards */}
+                    <motion.div
+                        className="flex flex-col md:flex-row justify-center items-stretch gap-4 mt-16"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 1.2, staggerChildren: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="bg-white p-6 rounded-lg shadow-md flex-1 border-t-4 border-stone-400 hover:shadow-lg transition-shadow">
+                            <h3 className="font-semibold text-xl mb-3 text-stone-700">Écoute active</h3>
+                            <p className="text-stone-600">L'empathie et l'acceptation sont au cœur de chaque session pour créer un espace de confiance.</p>
+                        </div>
 
-                <h3 className="text-xl font-light  text-justify px-2 sm:px-4 md:px-8 lg:px-16 xl:px-24">
-                    Je vous accueille dans un espace chaleureux, sécurisé, bienveillant et confidentiel. Je serai à
-                    votre écoute et engagée à vos côtés pour vous aider à vous aider. Ensemble, pour
-                    comprendre vos fonctionnements, faire émerger de nouvelles possibilités en remobilisant
-                    vos ressources et compétences. Accompagner, verbaliser, expérimenter le changement au
-                    sein de vos relations.
-                </h3>
+                        <div className="bg-white p-6 rounded-lg shadow-md flex-1 border-t-4 border-stone-400 hover:shadow-lg transition-shadow">
+                            <h3 className="font-semibold text-xl mb-3 text-stone-700">Accompagnement personnalisé</h3>
+                            <p className="text-stone-600">Nous adaptons les techniques thérapeutiques à vos dynamiques familiales uniques.</p>
+                        </div>
 
-                <h3 className="text-xl font-light mb-4 text-justify  px-2 sm:px-4 md:px-8 lg:px-16 xl:px-24">
-
-                    Educatrice spécialisée depuis 2006, 20 années de pratique en protection de l’enfance.
-                    Expérience d’accompagnement des enfants, adolescents et leurs parents. Organiser des
-                    rencontres, mener des entretiens familiaux, individuels, afin d’identifier les difficultés et
-                    accompagner vers l’apaisement, le changement.
-
-                </h3>
-
-                <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-                    <div className="bg-stone-200/20 p-4 border border-stone-200/80 rounded shadow-sm w-72">
-                        <h3 className="font-semibold text-lg mb-2">Ecoute active</h3>
-                        <p>L'empathie et l'acceptation sont au cœur de chaque session.</p>
-                    </div>
-                    <div className="bg-stone-200/20 p-4 border border-stone-200/80 rounded shadow-sm w-72">
-                        <h3 className="font-semibold text-lg mb-2">Accompagnement personnalisé et créatif</h3>
-                        <p>Nous adaptons les techniques thérapeutiques à vos dynamiques familiales uniques.</p>
-                    </div>
-                    <div className="bg-stone-200/20 p-4 border border-stone-200/80 rounded shadow-sm w-72">
-                        <h3 className="font-semibold text-lg mb-2">Engagement éthique</h3>
-                        <p>Chaque étape de votre parcours est conçue avec vos besoins spécifiques en tête.</p>
-                    </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md flex-1 border-t-4 border-stone-400 hover:shadow-lg transition-shadow">
+                            <h3 className="font-semibold text-xl mb-3 text-stone-700">Engagement éthique</h3>
+                            <p className="text-stone-600">Chaque étape de votre parcours est conçue avec vos besoins spécifiques en tête.</p>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

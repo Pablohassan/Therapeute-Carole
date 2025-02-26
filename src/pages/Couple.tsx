@@ -1,244 +1,331 @@
 // src/pages/Couple.tsx
 import React from 'react';
 import Layout from '../components/Layout';
-import hand from '../assets/hand.jpg';
-import genealogieImage from '../assets/genealogie.jpg';
-import therapistImage from '../assets/therapist.jpg';
-import abstrait1 from '../assets/abstrait1.png';
+import { motion } from 'framer-motion';
+import hand from '../assets/hand.webp';
+import genealogieImage from '../assets/genealogie.webp';
+import therapistImage from '../assets/therapist.webp';
+import abstrait1 from '../assets/abstrait1.webp';
 // import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
+import ResponsiveImage from '../components/ResponsiveImage';
+import SEO from '../components/SEO';
+import { therapyServiceData } from '../constants/structuredData';
+import { coupleSpecialtyAreas } from '../constants/specialtyAreas';
 
 const CouplePage: React.FC = () => {
+    // Create specific service data for couple therapy
+    const coupleTherapyData = {
+        ...therapyServiceData,
+        name: "Thérapie de Couple",
+        serviceType: "Thérapie de Couple",
+        description: "La thérapie de couple vise à transformer votre relation pour vous permettre de vous sentir plus satisfait et épanoui. Elle aide à améliorer la communication et à résoudre les conflits."
+    };
+
     return (
         <Layout>
+            <SEO
+                title="Thérapie de Couple"
+                description="Transformez votre relation afin de vous permettre de vous sentir plus satisfait et épanoui. La thérapie de couple permet d'améliorer la communication et de résoudre les conflits."
+                canonicalUrl="https://www.carole-lagardere.com/couple"
+                ogImage="/images/couple.webp"
+                keywords={["thérapie de couple", "problèmes de couple", "communication couple", "crise relationnelle", "Bordeaux"]}
+                structuredData={coupleTherapyData}
+            />
+
             <div className="font-sans text-gray-700">
                 {/* Hero Section */}
-                <section className="bg-purple-50 py-20 px-4 bg-cover"
-                    style={{ backgroundImage: `url(${abstrait1})` }}>
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h1 className="text-3xl md:text-4xl  bg-cover bg-center lg:text-6xl  text-stone-200 mt-36 mb-6"
+                <section
+                    className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+                    style={{
+                        backgroundImage: `url(${abstrait1})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                >
+                    <div className="absolute inset-0 bg-black/60"></div>
+
+                    <motion.div
+                        className="relative container mx-auto px-6 text-center z-10 max-w-4xl"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-white mb-8"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
-                            Therapie de Couple
+                            Thérapie de Couple
                         </h1>
-                        <p className="text-xl text-stone-200 mb-8"
+
+                        <p className="text-xl md:text-2xl text-white mb-12 font-light leading-relaxed"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
                             Transformez votre relation afin de vous permettre de vous sentir plus satisfait et de vous sentir plus rempli.
                         </p>
-                        <div className="flex justify-center gap-4">
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                        >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="text-lg sm:text-lg bg-stone-100/20 inline-block border border-stone-100/40 px-8 sm:px-16 sm:py-4 py-2 hover:bg-soft-beige text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl hover:scale-105 transform hover:duration-500 hover:ease-in-out   hover:bg-stone-100/90  hover:text-stone-900"
-                                style={{ textShadow: '1px 2px 4px rgba(0, 0, 0, 0.9)' }}
+                                className="inline-block bg-transparent border-2 border-white px-8 sm:px-12 py-3 text-white font-light uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-stone-800 shadow-lg hover:shadow-xl "
                             >
                                 Réserver un rendez-vous
                             </a>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </section>
 
-                <section className="bg-purple-50 py-20 px-4 ">
-                    <div className="max-w-3xl grid grid-cols-3 mx-auto text-center">
-                        <img
-                            src={hand}
-                            alt="Couple"
-                            className="h-[105%] p-4 object-cover "
-                            loading="lazy"
-                        />
-                        <div className="flex justify-center gap-4 flex flex-col col-span-2 px-12">
-                            <h1 className="text-xl md:text-3xl uppercase text-gray-900  mb-8 ">
-                                « Vous traversez chacun, et ensemble, <br /> une période douloureuse »
-                            </h1>
-
-                            <p className="text-md text-gray-600   justify-center text-justify  ">
-                                En thérapie, l'objectif n'est pas de déterminer qui a tort ou qui a raison, ni de faire changer
-                                l'autre mais d'arriver à une collaboration afin de modifier le fonctionnement du « système
-                                couple » et ainsi de supprimer ou d'atténuer la souffrance.
-                            </p>
-                            <p className="text-md text-gray-600   justify-center text-justify  ">
-
-                                Pour cela, le thérapeute accueille le couple, observe le fonctionnement, interroge ce qui a
-                                provoqué la crise et le choix du moment pour amorcer une thérapie. Il est essentiel que
-                                chacun s'engage dans le travail thérapeutique.
-                            </p>
-                            <p className="text-md text-gray-600   justify-center text-justify  ">
-
-                                Il s'agit d'offrir la possibilité à chacun d'exposer sa perception de la situation, son vécu et ses
-                                attentes et aussi d'entendre et de reconnaître la perception de l'autre. Identifier les besoins
-                                d'attachement, la construction du monde de chacun nous permettra d'éclairer les liens du
-                                couple dans le présent.
-                            </p>
-
-
-                            <div className="flex justify-center gap-4 mt-8">
-                                <a
-                                    href={`#${sectionIds.booking}`}
-                                    className="text-lg sm:text-lg bg-blue-900/20 inline-block border border-stone-100/40 px-8 sm:px-16 sm:py-4 py-2 hover:bg-blue-900/30 text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl   hover:text-stone-900"
-                                    style={{ textShadow: '1px 2px 4px rgba(0, 0, 0, 0.9)' }}
-                                >
-                                    Aller de l'avant
-                                </a>
+                {/* Introduction Section */}
+                <section className="py-20 px-6 bg-stone-50">
+                    <div className="container mx-auto max-w-5xl">
+                        <motion.div
+                            className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="lg:col-span-1 h-full">
+                                <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
+                                    <img
+                                        src={hand}
+                                        alt="Mains de couple"
+                                        className="absolute inset-0 h-full w-full object-cover shadow-md "
+                                        loading="lazy"
+                                    />
+                                </div>
                             </div>
-                        </div>
 
+                            <div className="lg:col-span-2 space-y-6">
+                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-6">
+                                    « Vous traversez chacun, et ensemble, <br /> une période douloureuse »
+                                </h2>
 
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    En thérapie, l'objectif n'est pas de déterminer qui a tort ou qui a raison, ni de faire changer
+                                    l'autre mais d'arriver à une collaboration afin de modifier le fonctionnement du « système
+                                    couple » et ainsi de supprimer ou d'atténuer la souffrance.
+                                </p>
+
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Pour cela, le thérapeute accueille le couple, observe le fonctionnement, interroge ce qui a
+                                    provoqué la crise et le choix du moment pour amorcer une thérapie. Il est essentiel que
+                                    chacun s'engage dans le travail thérapeutique.
+                                </p>
+
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Il s'agit d'offrir la possibilité à chacun d'exposer sa perception de la situation, son vécu et ses
+                                    attentes et aussi d'entendre et de reconnaître la perception de l'autre. Identifier les besoins
+                                    d'attachement, la construction du monde de chacun nous permettra d'éclairer les liens du
+                                    couple dans le présent.
+                                </p>
+
+                                <div className="pt-6">
+                                    <a
+                                        href={`#${sectionIds.booking}`}
+                                        className="inline-block bg-stone-700 px-8 py-3 text-white font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
+                                    >
+                                        Aller de l'avant
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </section>
-                <section className="bg-yellow-500/90  py-20 px-4   ">
-                    <div className="max-w-3xl grid grid-cols-3 mx-auto  h-screen " >
+
+                {/* Quote Section */}
+                <motion.div
+                    className="py-16 px-6 text-white"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <div className="container mx-auto p-16 max-w-[80%] bg-yellow-950/60 text-center">
+                        <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
+                            « Réencrer le système couple dans l'histoire de chacun »
+                        </p>
+                    </div>
+                </motion.div>
+
+                {/* Genealogy Section */}
+                <section className="py-20 px-6 bg-amber-50">
+                    <div className="container mx-auto max-w-5xl">
+                        <motion.div
+                            className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="lg:col-span-2 space-y-6">
+                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-6">
+                                    Réencrer le « système couple » dans l'histoire de chacun...
+                                </h2>
+
+                                <h3 className="text-xl italic text-gray-600 mb-4">
+                                    en analysant les liens transgénérationnels, en utilisant par exemple le génogramme.
+                                </h3>
+
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Comprendre les règles de fonctionnement du couple, son histoire spécifique au-delà de deux
+                                    histoires individuelles d'assouplir la structure qui le maintient pour permettre un
+                                    remaniement des places et des attentes de chacun.
+                                </p>
+                            </div>
+
+                            <div className="lg:col-span-1 h-full">
+                                <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
+                                    <ResponsiveImage
+                                        src={genealogieImage}
+                                        alt="Génogramme"
+                                        className="absolute inset-0 h-full w-full object-cover shadow-md "
+                                        width={800}
+                                        height={600}
+                                        sizes="(max-width: 1024px) 100vw, 33vw"
+                                        priority={true}
+                                    />
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Therapist Approach Section */}
+                <section className="py-20 px-6 bg-white">
+                    <div className="container mx-auto max-w-5xl">
+                        <motion.div
+                            className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="lg:col-span-1 h-full">
+                                <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
+                                    {/* Direct image tag as fallback */}
+                                    {/* <img
+                                        src={therapistImage}
+                                        alt="Thérapeute"
+                                        className="absolute inset-0 h-full w-full object-cover shadow-md rounded-lg"
+                                        loading="lazy"
+                                    /> */}
 
 
+                                    <ResponsiveImage
+                                        src={therapistImage}
+                                        alt="Thérapeute"
+                                        className="absolute inset-0 h-full w-full object-cover shadow-md rounded-sm"
+                                        width={800}
+                                        height={600}
+                                        sizes="(max-width: 1024px) 100vw, 33vw"
+                                        priority={true} // Try setting priority to true
+                                    />
 
+                                </div>
+                            </div>
 
-                        <div className="flex gap-4  flex flex-col col-span-2 px-12 ">
-                            <h1 className="text-xl md:text-2xl lg:text-3xl uppercase text-gray-900 mt-8">
-                                Réencrer le « système couple » dans l'histoire de chacun...
+                            <div className="lg:col-span-2 space-y-6">
+                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-6">
+                                    La posture du thérapeute en séance :
+                                </h2>
 
-                            </h1>
-                            <h2 className="text-md sm:text-lg xl:text-xl italic text-gray-600 mb-4 justify-center   " >
-                                en analysant les liens
-                                transgénérationnels, en utilisant par exemple le génogramme.
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    La simple présence du thérapeute produit du neuf. Il
+                                    impacte le couple avec tout son être, il est partie prenante du système. Il met ses
+                                    résonnances au service du couple et partage ses hypothèses, ses observations. Il est attentif
+                                    aux sensations corporelles, manifestations émotionnelles dans l'ici et maintenant et aux faits
+                                    extérieurs ou antérieurs. Il favorise les échanges, pointe les évitements de contact, les
+                                    refuges dans le passé ou l'irresponsabilité.
+                                </p>
+
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    La reconstruction passe par un réaménagement du connu, de nouvelles manières de
+                                    communiquer, moins défensives.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Specialty Areas Section */}
+                <section className="py-20 px-6 bg-amber-50">
+                    <div className="container mx-auto max-w-6xl">
+                        <motion.div
+                            className="text-center mb-16"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-6">
+                                Domaines d'intervention
                             </h2>
 
+                            <div className="w-20 h-1 bg-stone-400 mx-auto mb-8"></div>
 
-
-                            <p className="text-lg text-gray-600 mb-4 justify-center text-justify ">
-                                Comprendre les règles de fonctionnement du couple, son histoire spécifique au-delà de deux
-                                histoires individuelles d'assouplir la structure qui le maintient pour permettre un
-                                remaniement des places et des attentes de chacun.
+                            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                                La thérapie de couple peut vous aider dans de nombreuses situations.
+                                Voici les principaux domaines dans lesquels j'interviens :
                             </p>
+                        </motion.div>
 
-
-
-
-                        </div>
-                        <div className="rounded-xl">
-                            <img src={genealogieImage} alt="Couple" className=" h-[60%]  p-2 object-cover mt-12"
-                                loading="lazy"
-                            />
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {coupleSpecialtyAreas.map((area, index: number) => (
+                                <motion.div
+                                    key={index}
+                                    className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-500 ease-in-out"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <h3 className="text-xl font-medium text-gray-900 mb-4">{area.title}</h3>
+                                    <p className="text-gray-600">{area.description}</p>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </section>
-
-                <section className="bg-purple-50 py-20 px-4 ">
-                    <div className="max-w-3xl grid grid-cols-3 mx-auto text-center">
-                        <img src={therapistImage} alt="Couple" className=" h-full p-2 object-cover mt-12"
-                            loading="lazy"
-                        />
-                        <div className="flex justify-center gap-4 flex flex-col col-span-2  px-12">
-                            <h1 className="text-xl md:text-2xl lg:text-3xl uppercase text-gray-900  mt-8">
-                                La posture du thérapeute en séance :
-                            </h1>
-
-                            <p className="text-md text-gray-600 mb-4 justify-center text-justify ">
-                                La simple présence du thérapeute produit du neuf. <br /> Il
-                                impacte le couple avec tout son être, il est partie prenante du système. Il met ses
-                                résonnances au service du couple et partage ses hypothèses, ses observations. Il est attentif
-                                aux sensations corporelles, manifestations émotionnelles dans l'ici et maintenant et aux faits
-                                extérieurs ou antérieurs. Il favorise les échanges, pointe les évitements de contact, les
-                                refuges dans le passé ou l'irresponsabilité.
-                            </p>
-
-                            <p className="text-md text-gray-600 mb-4 justify-center text-justify  ">
-                                La reconstruction passe par un réaménagement du connu, de nouvelles manières de
-                                communiquer, moins défensives.
-                            </p>
-                        </div>
-
-
-                    </div>
-                </section>
-
-
-
-
-                {/* Therapy Approaches Section */}
-                {/* <section className="py-16 px-4 bg-white">
-                    <div className="max-w-6xl mx-auto">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-                            Therapeutic Approaches
-                        </h2>
-                        <div className="grid md:grid-cols-2 gap-12">
-                            <div className="space-y-6">
-                                <h3 className="text-2xl font-semibold text-purple-600">
-                                    Psychodynamic Couples Therapy
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed">
-                                    A depth-based, insight-oriented approach to relational healing that analyzes
-                                    conscious and unconscious behaviors, thoughts, and feelings impacting the couple.
-                                </p>
-                            </div>
-                            <div className="space-y-6">
-                                <h3 className="text-2xl font-semibold text-purple-600">
-                                    Emotionally Focused Therapy
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed">
-                                    Focused on creating and strengthening emotional bonds between partners through
-                                    structured, evidence-based interventions.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
-
-                {/* Areas of Specialty Section */}
-                {/* <section className="py-16 px-4 bg-gray-50">
-                    <div className="max-w-6xl mx-auto">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-                            Areas of Specialty
-                        </h2>
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div className="space-y-6">
-                                {[
-                                    'Anxiety, depression, or stage-of-life transitions',
-                                    'Difficulty identifying or expressing thoughts and feelings',
-                                    'Managing needs of the couple amidst parenting',
-                                    'Navigating challenging family dynamics',
-                                    'Understanding impact of sexuality and gender'
-                                ].map((item) => (
-                                    <div key={item} className="flex items-start gap-3">
-                                        <CheckIcon className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
-                                        <p className="text-gray-600">{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="space-y-6">
-                                {[
-                                    'Improving physical, sexual, and emotional intimacy',
-                                    'Exploring monogamy and ethical non-monogamy',
-                                    'Root causes of hard-to-change behavior patterns',
-                                    'Making good relationships feel great',
-                                    'Addressing communication breakdowns'
-                                ].map((item) => (
-                                    <div key={item} className="flex items-start gap-3">
-                                        <CheckIcon className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
-                                        <p className="text-gray-600">{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
 
                 {/* Effectiveness Section */}
-                <section className="py-16 px-4 bg-white">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                            Est-ce que la thérapie de couple fonctionne ?
-                        </h2>
-                        <p className="text-xl text-gray-600 mb-6">
-                            Effective pour ceux qui sont ouverts et prêts à engager le traitement. Bien que l'hésitation
-                            soit normale, l'engagement dans le processus mène à un changement significatif.
-                        </p>
-                        <div className="space-y-4 max-w-2xl mx-auto">
+                <section className="py-20 px-6 bg-stone-50">
+                    <div className="container mx-auto max-w-3xl">
+                        <motion.div
+                            className="text-center space-y-8"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-6">
+                                Est-ce que la thérapie de couple fonctionne ?
+                            </h2>
 
+                            <div className="w-20 h-1 bg-stone-400 mx-auto mb-8"></div>
 
-                        </div>
+                            <p className="text-xl text-gray-600 leading-relaxed">
+                                Effective pour ceux qui sont ouverts et prêts à engager le traitement. Bien que l'hésitation
+                                soit normale, l'engagement dans le processus mène à un changement significatif.
+                            </p>
+
+                            <div className="pt-8">
+                                <a
+                                    href={`#${sectionIds.booking}`}
+                                    className="inline-block bg-stone-700 px-10 py-4 text-white font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
+                                >
+                                    Réserver un rendez-vous
+                                </a>
+                            </div>
+                        </motion.div>
                     </div>
                 </section>
             </div>
+
             <BookingSection />
         </Layout>
     );

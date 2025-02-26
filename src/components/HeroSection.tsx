@@ -1,8 +1,9 @@
 // src/components/HeroSection.tsx
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import heroImage from '../assets/familytogether.jpg';
+import heroImage from '../assets/familytogether.webp';
 import { sectionIds } from '../constants/navigation';
+
 
 const HeroSection: React.FC = () => {
     const [windowHeight, setWindowHeight] = useState(0);
