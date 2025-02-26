@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
                 <div className="hidden lg:flex items-center space-x-8">
                     <NavLink to="/home" isScrolled={isScrolled}>Accueil</NavLink>
                     <NavLink to="/family" isScrolled={isScrolled}> Familiale</NavLink>
-                    <NavLink to="/couple" isScrolled={isScrolled}> de Couple</NavLink>
+                    <NavLink to="/couple" isScrolled={isScrolled}> Couple</NavLink>
                     <NavLink to="/individuel" isScrolled={isScrolled}> Individuelle</NavLink>
                     <NavLink to="/apropos" isScrolled={isScrolled}>À Propos</NavLink>
 
@@ -136,7 +136,7 @@ const Navbar: React.FC = () => {
                                 Familiale
                             </MobileNavLink>
                             <MobileNavLink to="/couple" onClick={() => setIsMobileMenuOpen(false)}>
-                                de Couple
+                                Couple
                             </MobileNavLink>
                             <MobileNavLink to="/individuel" onClick={() => setIsMobileMenuOpen(false)}>
                                 Individuelle

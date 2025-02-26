@@ -324,7 +324,7 @@ const FamilyPage: React.FC = () => {
                                 {specialtyAreas.map((area, index) => (
                                     <div
                                         key={index}
-                                        className="bg-white p-6  shadow-md hover:shadow-lg transition-shadow"
+                                        className="bg-white p-6  shadow-md hover:shadow-lg transition-shadow  hover:scale-105 transition-all duration-500 ease-in-out"
                                     >
                                         <h3 className="text-xl font-medium text-gray-800 mb-3">{area.title}</h3>
                                         <p className="text-gray-600">{area.description}</p>
