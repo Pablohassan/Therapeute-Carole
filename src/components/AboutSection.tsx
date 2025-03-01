@@ -108,15 +108,14 @@ const AboutSection: React.FC = () => {
                         <div className="text-md md:text-lg text-stone-600 max-w-4xl mx-auto leading-relaxed text-justify md:text-center">
                             <p className="mb-4">
                                 Vous appréhendez le retour à la maison, les relations sont tendues, les conflits récurrents.
-                                Le quotidien est pesant, chacun semble malheureux, isolé, déconnecté de l'autre. Votre vie
-                                de famille, de couple est morose, traversée par de nombreuses tensions, des cris…
+
                             </p>
-                            <p>
+                            {/* <p>
                                 Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique,
                                 nous espérons par les contenus de ce site, pouvoir vous apporter quelques pistes
                                 susceptibles de nourrir votre réflexion… et pourquoi pas, trouver l'élan, faire le pas pour
                                 nous rencontrer !
-                            </p>
+                            </p> */}
                         </div>
                     </motion.div>
 
@@ -182,12 +181,6 @@ const AboutSection: React.FC = () => {
                             sein de vos relations.
                         </p>
 
-                        <p className="text-lg text-stone-600 leading-relaxed">
-                            Educatrice spécialisée depuis 2006, 20 années de pratique en protection de l'enfance.
-                            Expérience d'accompagnement des enfants, adolescents et leurs parents. Organiser des
-                            rencontres, mener des entretiens familiaux, individuels, afin d'identifier les difficultés et
-                            accompagner vers l'apaisement, le changement.
-                        </p>
                     </motion.div>
 
                     {/* Value proposition cards */}
@@ -200,18 +193,59 @@ const AboutSection: React.FC = () => {
                     >
                         <div className="bg-white p-6 rounded-lg shadow-md flex-1 border-t-4 border-stone-400 hover:shadow-lg transition-shadow">
                             <h3 className="font-semibold text-xl mb-3 text-stone-700">Écoute active</h3>
-                            <p className="text-stone-600">L'empathie et l'acceptation sont au cœur de chaque session pour créer un espace de confiance.</p>
+                            <p className="text-stone-600">Etre
+                                accueilli sans jugement,
+                                être entendu et reconnu
+                                dans l’expression de ses
+                                émotions et de sa
+                                souffrance.</p>
                         </div>
 
                         <div className="bg-white p-6 rounded-lg shadow-md flex-1 border-t-4 border-stone-400 hover:shadow-lg transition-shadow">
-                            <h3 className="font-semibold text-xl mb-3 text-stone-700">Accompagnement personnalisé</h3>
-                            <p className="text-stone-600">Nous adaptons les techniques thérapeutiques à vos dynamiques familiales uniques.</p>
+                            <h3 className="font-semibold text-xl mb-3 text-stone-700">Accompagnement
+                                personnalisé et créatif</h3>
+                            <p className="text-stone-600">Analyser les dynamiques
+                                familiales et de couple,
+                                mobiliser les ressources
+                                et les compétences de
+                                chacun. Utiliser différents
+                                outils et techniques
+                                (génogramme,
+                                métaphore, sculptures,
+                                jeux de rôles…)</p>
                         </div>
 
                         <div className="bg-white p-6 rounded-lg shadow-md flex-1 border-t-4 border-stone-400 hover:shadow-lg transition-shadow">
                             <h3 className="font-semibold text-xl mb-3 text-stone-700">Engagement éthique</h3>
-                            <p className="text-stone-600">Chaque étape de votre parcours est conçue avec vos besoins spécifiques en tête.</p>
+                            <p className="text-stone-600">Proposer un cadre
+                                sécurisant, bienveillant,
+                                confidentiel et chaleureux</p>
                         </div>
+                    </motion.div>
+                    {/* Approach section */}
+                    <motion.div
+                        className="space-y-8 max-w-4xl mx-auto"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <p className="text-lg text-stone-600 leading-relaxed">
+                            Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique,
+                            j’espère par les contenus de ce site, pouvoir vous apporter quelques pistes susceptibles de
+                            nourrir votre réflexion… et pourquoi pas, trouver l&#39;élan, faire le pas pour nous rencontrer !
+                        </p>
+
+                        <p className="text-lg text-stone-600 leading-relaxed">
+                            Educatrice spécialisée depuis 2006, 20 années de pratique en protection de l'enfance.
+                            Expérience d'accompagnement des enfants, adolescents et leurs parents. Organiser des
+                            rencontres, mener des entretiens familiaux, individuels, afin d'identifier les difficultés et
+                            accompagner vers l'apaisement, le changement.
+                        </p>
+                        <p className="text-lg text-stone-600 leading-relaxed">
+                            L’enfant, l’adolescent et la famille ont toujours été au cœur de mes préoccupations
+                            professionnelles.
+                        </p>
                     </motion.div>
                 </div>
             </div>

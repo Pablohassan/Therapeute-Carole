@@ -16,6 +16,7 @@ import FamilyPage from "./pages/Family";
 import IndividuelPage from "./pages/Individuel";
 import Layout from "./components/Layout";
 import { HelmetProvider } from 'react-helmet-async';
+import ConditionsGenerales from "./pages/ConditionsGenerales";
 // import DashboardPage from "./pages/Dashboard";
 
 // Welcome/Login page component
@@ -98,6 +99,14 @@ function App() {
               <SignedIn>
                 <Layout>
                   <Apropos />
+                </Layout>
+              </SignedIn>
+            } />
+
+            <Route path="/conditions-generales" element={
+              <SignedIn>
+                <Layout>
+                  <ConditionsGenerales />
                 </Layout>
               </SignedIn>
             } />

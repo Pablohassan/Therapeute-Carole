@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
                     <NavLink to="/home" isScrolled={isScrolled}>Accueil</NavLink>
                     <NavLink to="/family" isScrolled={isScrolled}> Familiale</NavLink>
                     <NavLink to="/couple" isScrolled={isScrolled}> Couple</NavLink>
-                    <NavLink to="/individuel" isScrolled={isScrolled}> Individuelle</NavLink>
+                    <NavLink to="/individuel" isScrolled={isScrolled}> Individuel</NavLink>
                     <NavLink to="/apropos" isScrolled={isScrolled}>À Propos</NavLink>
 
                     {/* Auth buttons */}
@@ -139,7 +139,7 @@ const Navbar: React.FC = () => {
                                 Couple
                             </MobileNavLink>
                             <MobileNavLink to="/individuel" onClick={() => setIsMobileMenuOpen(false)}>
-                                Individuelle
+                                Individuel
                             </MobileNavLink>
                             <MobileNavLink to="/apropos" onClick={() => setIsMobileMenuOpen(false)}>
                                 À Propos

@@ -333,7 +333,7 @@ const AproposPage: React.FC = () => {
                                         <div>
                                             <p className="font-medium text-stone-800">Email</p>
                                             <a href="mailto:contact@carole-lagardere.com" className="text-stone-600 hover:text-stone-800 transition-colors">
-                                                contact@carole-lagardere.com
+                                                therapie@carole-lagardere.com
                                             </a>
                                         </div>
                                     </div>
