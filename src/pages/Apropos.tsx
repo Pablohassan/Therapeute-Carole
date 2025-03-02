@@ -11,10 +11,10 @@ const AproposPage: React.FC = () => {
         <>
             <SEO
                 title="À Propos de Carole Lagardère"
-                description="Thérapeute familiale systémique certifiée EFTA, spécialisée dans la thérapie familiale, de couple et individuelle à Bordeaux."
-                canonicalUrl="https://www.carole-lagardere.com/apropos"
-                ogImage="/images/therapist.webp"
-                keywords={["thérapeute familiale", "thérapie systémique", "Carole Lagardère", "Bordeaux", "EFTA"]}
+                description="Thérapeute familiale systémique certifiée EFTA, spécialisée dans la thérapie familiale, de couple et individuelle à Talence."
+                canonicalUrl="https://www.carole-lagardere.fr/apropos"
+                ogImage="/public/carole-lagardere-therapeute-familiale.webp"
+                keywords={["thérapeute familiale", "thérapie systémique", "thérapie de couple", "thérapie individuelle", "Carole Lagardère", "Talence", "EFTA"]}
             />
 
             <main className="font-montserrat text-stone-800 font-light">
@@ -332,8 +332,8 @@ const AproposPage: React.FC = () => {
                                         </svg>
                                         <div>
                                             <p className="font-medium text-stone-800">Email</p>
-                                            <a href="mailto:contact@carole-lagardere.com" className="text-stone-600 hover:text-stone-800 transition-colors">
-                                                therapie@carole-lagardere.com
+                                            <a href="mailto:contact@carole-lagardere.de" className="text-stone-600 hover:text-stone-800 transition-colors">
+                                                therapie@carole-lagardere.fr
                                             </a>
                                         </div>
                                     </div>

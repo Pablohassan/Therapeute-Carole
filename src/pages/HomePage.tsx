@@ -5,10 +5,17 @@ import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import BookingSection from '../components/BookingSection';
 import FaqAndBlogSection from '../components/FaqAndBlogSection';
+import SEO from '../components/SEO';
 
 const HomePage: React.FC = () => {
     return (
         <>
+            <SEO
+                title="Carole Lagardère - Thérapeute Familiale Talence"
+                description="Carole Lagardère est une thérapeute familiale, spécialisée dans la thérapie familiale, de couple et individuelle à  Talence - Bordeaux."
+                canonicalUrl="https://www.carole-lagardere.fr/"
+                keywords={["thérapeute familiale", "thérapie familiale", "thérapie de couple", "thérapie individuelle", "Bordeaux", "Talence"]}
+            />
             <HeroSection />
             <AboutSection />
             <ServicesSection />

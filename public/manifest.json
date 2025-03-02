@@ -1,0 +1,28 @@
+{
+  "name": "Carole Lagardère - Thérapeute Familiale",
+  "short_name": "Carole Lagardère",
+  "description": "Thérapeute familiale systémique certifiée EFTA, spécialisée dans la thérapie familiale, de couple et individuelle à Talence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#78716c",
+  "icons": [
+    {
+      "src": "/public/theralogoP.png",
+      "sizes": "320x320",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "categories": ["health", "therapy", "family"],
+  "screenshots": [
+    {
+      "src": "/screenshots/home-screen.webp",
+      "sizes": "1280x720",
+      "type": "image/webp"
+    }
+  ]
+}

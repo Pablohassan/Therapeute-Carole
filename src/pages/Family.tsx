@@ -25,7 +25,7 @@ const FamilyPage: React.FC = () => {
             <SEO
                 title="Thérapie Familiale Systémique"
                 description="Retrouvez le lien familial, reprenez du plaisir ensemble, valorisez-vous mutuellement. La thérapie familiale permet d'améliorer la communication et de résoudre les conflits."
-                canonicalUrl="https://www.carole-lagardere.com/family"
+                canonicalUrl="https://www.carole-lagardere.de/family"
                 ogImage="/images/family.webp"
                 keywords={["thérapie familiale", "thérapie systémique", "conflits familiaux", "communication famille", "Bordeaux"]}
                 structuredData={familyTherapyData}

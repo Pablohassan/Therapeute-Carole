@@ -27,7 +27,7 @@ const CouplePage: React.FC = () => {
             <SEO
                 title="Thérapie de Couple"
                 description="Transformez votre relation afin de vous permettre de vous sentir plus satisfait et épanoui. La thérapie de couple permet d'améliorer la communication et de résoudre les conflits."
-                canonicalUrl="https://www.carole-lagardere.com/couple"
+                canonicalUrl="https://www.carole-lagardere.fr/couple"
                 ogImage="/images/couple.webp"
                 keywords={["thérapie de couple", "problèmes de couple", "communication couple", "crise relationnelle", "Bordeaux"]}
                 structuredData={coupleTherapyData}

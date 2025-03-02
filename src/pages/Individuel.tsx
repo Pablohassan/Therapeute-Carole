@@ -26,9 +26,9 @@ const IndividuelPage: React.FC = () => {
             <SEO
                 title="Thérapie Individuelle"
                 description="Explorez vos pensées, émotions et comportements pour surmonter les difficultés personnelles et développer votre potentiel grâce à la thérapie individuelle."
-                canonicalUrl="https://www.carole-lagardere.com/individuel"
+                canonicalUrl="https://www.carole-lagardere.fr/individuel"
                 ogImage="/images/individuel.webp"
-                keywords={["thérapie individuelle", "psychothérapie", "développement personnel", "bien-être mental", "Bordeaux"]}
+                keywords={["thérapie individuelle", "psychothérapie", "développement personnel", "bien-être mental", "Talence"]}
                 structuredData={individualTherapyData}
             />
 

@@ -1,0 +1,31 @@
+# robots.txt for carole-lagardere.fr
+User-agent: *
+Allow: /
+
+# Disallow admin and authentication pages
+Disallow: /sign-in/
+Disallow: /sign-up/
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /api/
+
+# Disallow specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Allow specific assets
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /sitemap.xml$
+
+# Crawl delay for better server performance
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://www.carole-lagardere.fr/sitemap.xml 
