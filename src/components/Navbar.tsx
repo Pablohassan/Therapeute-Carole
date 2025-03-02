@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center space-x-8">
                     <NavLink to="/home" isScrolled={isScrolled}>Accueil</NavLink>
-                    <NavLink to="/family" isScrolled={isScrolled}> Familiale</NavLink>
+                    <NavLink to="/family" isScrolled={isScrolled}> Famille</NavLink>
                     <NavLink to="/couple" isScrolled={isScrolled}> Couple</NavLink>
                     <NavLink to="/individuel" isScrolled={isScrolled}> Individuel</NavLink>
                     <NavLink to="/apropos" isScrolled={isScrolled}>À Propos</NavLink>
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
                                 Accueil
                             </MobileNavLink>
                             <MobileNavLink to="/family" onClick={() => setIsMobileMenuOpen(false)}>
-                                Familiale
+                                Famille
                             </MobileNavLink>
                             <MobileNavLink to="/couple" onClick={() => setIsMobileMenuOpen(false)}>
                                 Couple

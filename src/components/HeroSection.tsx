@@ -11,7 +11,8 @@ const HeroSection: React.FC = () => {
 
     // Transform values for parallax effect
     const y = useTransform(scrollY, [0, windowHeight], [0, 150]);
-    const opacity = useTransform(scrollY, [0, windowHeight * 0.5], [1, 0]);
+    // We'll use this for the parallax fade effect on scroll
+    const backgroundOpacity = useTransform(scrollY, [0, windowHeight * 0.5], [1, 0]);
 
     useEffect(() => {
         // Get window height for parallax calculations
@@ -28,7 +29,7 @@ const HeroSection: React.FC = () => {
             {/* Background Image with Overlay */}
             <motion.div
                 className="absolute inset-0 w-full h-full"
-                style={{ y }}
+                style={{ y, opacity: backgroundOpacity }}
             >
                 <img
                     src={heroImage}
@@ -41,22 +42,29 @@ const HeroSection: React.FC = () => {
             {/* Hero Content */}
             <motion.div
                 className="relative container mx-auto px-4 text-center text-slate-100 max-w-7xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                style={{ opacity }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
             >
-                <h1 className="text-lg md:text-2xl  lg:text-4xl md:text-3xl font-light  tracking-wider mb-48 sm:mb-16 leading-tight"
+                <motion.h1
+                    className="text-lg md:text-2xl lg:text-4xl md:text-3xl font-light tracking-wider mb-48 sm:mb-16 leading-tight"
                     style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
                 >
-                    Redécouvrez le plaisir d’être ensemble, en famille, en couple
-                </h1>
-                <p className="text- md:text-xl mb-32 sm:mb-16 font-light   tracking-wide max-w-2xl mx-auto"
+                    Redécouvrez le plaisir d'être ensemble, en famille, en couple
+                </motion.h1>
+                <motion.p
+                    className="text- md:text-xl mb-32 sm:mb-16 font-light tracking-wide max-w-2xl mx-auto"
                     style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     Retrouvez le lien familial pour reprendre du plaisir ensemble, se valoriser mutuellement,
                     valoriser ses enfants.
-                </p>
+                </motion.p>
                 {/* <motion.a
                     href="#services"
                     className="inline-block border border-white px-16 py-4  hover:bg-soft-beige text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl transform   hover:bg-stone-100/90  hover:text-stone-900"
@@ -66,14 +74,18 @@ const HeroSection: React.FC = () => {
                     Découvrir Nos Services
                 </motion.a> */}
 
-
-                <a
-                    href={`#${sectionIds.booking}`}
-                    className="text-lg sm:text-lg inline-block border border-white px-8 sm:px-16 sm:py-4 py-2 hover:bg-soft-beige text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl hover:scale-105 transform hover:duration-500 hover:ease-in-out   hover:bg-stone-100/90  hover:text-stone-900"
-
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                    Réserver un rendez-vous
-                </a>
+                    <a
+                        href={`#${sectionIds.booking}`}
+                        className="text-lg sm:text-lg inline-block border border-white px-8 sm:px-16 sm:py-4 py-2 hover:bg-soft-beige text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl hover:scale-105 transform hover:duration-500 hover:ease-in-out hover:bg-stone-100/90 hover:text-stone-900"
+                    >
+                        Réserver un rendez-vous
+                    </a>
+                </motion.div>
             </motion.div>
         </section>
     );
