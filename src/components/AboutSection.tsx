@@ -224,7 +224,7 @@ const AboutSection: React.FC = () => {
                     </motion.div>
                     {/* Approach section */}
                     <motion.div
-                        className="space-y-8 max-w-4xl mx-auto"
+                        className="space-y-8 max-w-5xl mx-auto"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 1 }}

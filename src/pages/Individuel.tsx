@@ -5,12 +5,14 @@ import abstractio from '../assets/abstraitbico.webp';
 import psychologueImage from '../assets/psycho.webp';
 import piedsImage from '../assets/pieds.webp';
 import couplelaptopImage from '../assets/couplelaptop.webp';
-import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
 import ResponsiveImage from '../components/ResponsiveImage';
 import SEO from '../components/SEO';
 import { therapyServiceData } from '../constants/structuredData';
 import { individualSpecialtyAreas } from '../constants/specialtyAreas';
+import SnapScrollContainer from '../components/SnapScrollContainer';
+import SectionNavigation from '../components/SectionNavigation';
+import { sectionIds } from '../constants/navigation';
 
 const IndividuelPage: React.FC = () => {
     // Create specific service data for individual therapy
@@ -20,6 +22,9 @@ const IndividuelPage: React.FC = () => {
         serviceType: "Thérapie Individuelle",
         description: "La thérapie individuelle vous aide à explorer vos pensées, émotions et comportements pour surmonter les difficultés personnelles et développer votre potentiel."
     };
+
+    const totalSections = 7;
+    const sectionNames = ['Accueil', 'Introduction', 'Approche', 'Thérapeutique', 'Domaines', 'Fonctionnement', 'Réservation'];
 
     return (
         <>
@@ -32,7 +37,9 @@ const IndividuelPage: React.FC = () => {
                 structuredData={individualTherapyData}
             />
 
-            <div className="font-sans text-gray-700">
+            <SectionNavigation totalSections={totalSections} sectionNames={sectionNames} />
+
+            <SnapScrollContainer>
                 {/* Hero Section */}
                 <section
                     className="relative h-screen flex items-center justify-center overflow-hidden"
@@ -78,7 +85,7 @@ const IndividuelPage: React.FC = () => {
                 </section>
 
                 {/* Introduction Section */}
-                <section className="py-20 px-6 bg-stone-50">
+                <section className="py-20 px-6 bg-stone-50 flex items-center">
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
@@ -131,24 +138,24 @@ const IndividuelPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Quote Section */}
-                <motion.div
-                    className="py-16 px-6 text-white"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <div className="container mx-auto p-16 max-w-[80%] bg-yellow-950/60 text-center">
-                        <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
-                            « Se comprendre pour mieux avancer »
-                        </p>
-                    </div>
-                </motion.div>
-
-                {/* Approach Section */}
-                <section className="py-20 px-6 bg-amber-50">
+                {/* Approach Section with Quote */}
+                <section className="py-20 px-6 bg-amber-50 flex items-center">
                     <div className="container mx-auto max-w-5xl">
+                        {/* Quote at the top of the Approach section */}
+                        <motion.div
+                            className="text-center mb-16"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="p-10 bg-yellow-950/60 text-white mb-12">
+                                <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
+                                    « Se comprendre pour mieux avancer »
+                                </p>
+                            </div>
+                        </motion.div>
+
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
                             initial={{ opacity: 0, y: 20 }}
@@ -196,7 +203,7 @@ const IndividuelPage: React.FC = () => {
                 </section>
 
                 {/* Therapeutic Approach Section */}
-                <section className="py-20 px-6 bg-white">
+                <section className="py-20 px-6 bg-white flex items-center">
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
@@ -206,13 +213,12 @@ const IndividuelPage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <div className="lg:col-span-1 w-full h-full">
-                                <div className="w-full h-full relative" >
+                                <div className="w-full h-full relative" style={{ minHeight: '400px' }}>
                                     <ResponsiveImage
                                         src={psychologueImage}
                                         alt="Accompagnement thérapeutique"
                                         className="absolute inset-0 h-full w-full object-cover shadow-md rounded-sm"
-
-
+                                        width={800}
                                         height={800}
                                         sizes="(max-width: 1024px) 100vw, 33vw"
                                         priority={true}
@@ -242,7 +248,7 @@ const IndividuelPage: React.FC = () => {
                 </section>
 
                 {/* Specialty Areas Section */}
-                <section className="py-20 px-6 bg-amber-50">
+                <section className="py-20 px-6 bg-amber-50 flex items-center">
                     <div className="container mx-auto max-w-6xl">
                         <motion.div
                             className="text-center mb-16"
@@ -316,7 +322,7 @@ const IndividuelPage: React.FC = () => {
                         </motion.div>
                     </div>
                 </section>
-            </div>
+            </SnapScrollContainer>
 
             <BookingSection />
         </>

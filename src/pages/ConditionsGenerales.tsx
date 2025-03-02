@@ -1,11 +1,10 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 
 const ConditionsGenerales: React.FC = () => {
     return (
-        <Layout>
+        <>
             <SEO
                 title="Conditions Générales | Carole Lagardère"
                 description="Conditions générales d'utilisation et de service pour les consultations avec Carole Lagardère, thérapeute à Bordeaux."
@@ -154,7 +153,7 @@ const ConditionsGenerales: React.FC = () => {
                     </motion.div>
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 

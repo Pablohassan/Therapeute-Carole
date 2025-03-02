@@ -13,7 +13,7 @@ const AproposPage: React.FC = () => {
                 title="À Propos de Carole Lagardère"
                 description="Thérapeute familiale systémique certifiée EFTA, spécialisée dans la thérapie familiale, de couple et individuelle à Talence."
                 canonicalUrl="https://www.carole-lagardere.fr/apropos"
-                ogImage="/public/carole-lagardere-therapeute-familiale.webp"
+                ogImage="/carole-lagardere-therapeute-familiale.webp"
                 keywords={["thérapeute familiale", "thérapie systémique", "thérapie de couple", "thérapie individuelle", "Carole Lagardère", "Talence", "EFTA"]}
             />
 
@@ -27,14 +27,14 @@ const AproposPage: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light uppercase tracking-wider text-stone-800 mb-6">
+                            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-stone-800 mb-6">
                                 Carole Lagardère
                             </h1>
-                            <p className="text-xl md:text-2xl text-stone-600 mb-4">
+                            <p className="text-xl md:text-2xl xl:text-3xl font-light text-stone-600 mb-4">
                                 Thérapeute familiale et de couple
                             </p>
                             <div className="w-24 h-1 bg-stone-400 mx-auto my-8"></div>
-                            <p className="text-lg text-stone-600 italic max-w-2xl mx-auto">
+                            <p className="text-lg md:text-xl xl:text-2xl text-stone-600 italic max-w-2xl mx-auto font-light">
                                 "Accompagner le changement pour retrouver une forme d'équilibre et restaurer les relations"
                             </p>
                         </motion.div>
@@ -186,10 +186,10 @@ const AproposPage: React.FC = () => {
                                     viewport={{ once: true }}
                                 >
                                     <a
-                                        href={`#${sectionIds.booking}`}
+                                        href={`#${sectionIds.contact}`}
                                         className="inline-block bg-stone-700 px-10 py-4 text-white font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
                                     >
-                                        Prendre rendez-vous
+                                        Me contacter
                                     </a>
                                 </motion.div>
                             </div>
@@ -245,7 +245,7 @@ const AproposPage: React.FC = () => {
                 </section>
 
                 {/* Contact & Social Media Section */}
-                <section className="py-20 px-6 bg-white">
+                <section id={sectionIds.contact} className="py-20 px-6 bg-white">
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="text-center mb-16"
@@ -332,8 +332,14 @@ const AproposPage: React.FC = () => {
                                         </svg>
                                         <div>
                                             <p className="font-medium text-stone-800">Email</p>
-                                            <a href="mailto:contact@carole-lagardere.de" className="text-stone-600 hover:text-stone-800 transition-colors">
-                                                therapie@carole-lagardere.fr
+                                            <a
+                                                href="mailto:therapie@carole-lagardere.fr"
+                                                className="text-stone-600 hover:text-stone-800 transition-colors inline-flex items-center hover:bg-stone-100 px-2 py-1 rounded-sm"
+                                            >
+                                                <span>therapie@carole-lagardere.fr</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                </svg>
                                             </a>
                                         </div>
                                     </div>
@@ -405,7 +411,7 @@ const AproposPage: React.FC = () => {
                                     </a>
 
                                     <a
-                                        href="https://linkedin.com"
+                                        href="https://www.linkedin.com/in/carole-lagardere-ba828b33a/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex items-center p-4 bg-white border border-stone-200 rounded-sm hover:shadow-md transition-shadow"

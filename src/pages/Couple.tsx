@@ -12,6 +12,8 @@ import ResponsiveImage from '../components/ResponsiveImage';
 import SEO from '../components/SEO';
 import { therapyServiceData } from '../constants/structuredData';
 import { coupleSpecialtyAreas } from '../constants/specialtyAreas';
+import SnapScrollContainer from '../components/SnapScrollContainer';
+import SectionNavigation from '../components/SectionNavigation';
 
 const CouplePage: React.FC = () => {
     // Create specific service data for couple therapy
@@ -21,6 +23,9 @@ const CouplePage: React.FC = () => {
         serviceType: "Thérapie de Couple",
         description: "La thérapie de couple vise à transformer votre relation pour vous permettre de vous sentir plus satisfait et épanoui. Elle aide à améliorer la communication et à résoudre les conflits."
     };
+
+    const totalSections = 6;
+    const sectionNames = ['Accueil', 'Introduction', 'Généalogie', 'Approche', 'Domaines', 'Réservation'];
 
     return (
         <>
@@ -33,10 +38,12 @@ const CouplePage: React.FC = () => {
                 structuredData={coupleTherapyData}
             />
 
-            <div className="font-sans text-gray-700">
+            <SectionNavigation totalSections={totalSections} sectionNames={sectionNames} />
+
+            <SnapScrollContainer>
                 {/* Hero Section */}
                 <section
-                    className="relative h-screen flex items-center justify-center overflow-hidden"
+                    className="relative  h-screen flex items-center justify-center overflow-hidden"
                     style={{
                         backgroundImage: `url(${abstrait1})`,
                         backgroundSize: 'cover',
@@ -79,7 +86,7 @@ const CouplePage: React.FC = () => {
                 </section>
 
                 {/* Introduction Section */}
-                <section className="py-20 px-6 bg-stone-50">
+                <section className="py-20 px-6 bg-stone-50 flex items-center mt-[10%] pt-8 md:pt-16">
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
@@ -137,23 +144,26 @@ const CouplePage: React.FC = () => {
                 </section>
 
                 {/* Quote Section */}
-                <motion.div
-                    className="py-16 px-6 text-white"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <div className="container mx-auto p-16 max-w-[80%] bg-yellow-950/60 text-center">
-                        <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
-                            « Réencrer le système couple dans l'histoire de chacun »
-                        </p>
-                    </div>
-                </motion.div>
+
 
                 {/* Genealogy Section */}
-                <section className="py-20 px-6 bg-amber-50">
+                <section className="py-20 px-6 bg-amber-50 flex items-center">
                     <div className="container mx-auto max-w-5xl">
+
+                        <motion.div
+                            className="py-16 px-6 text-white flex items-center justify-center"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="container mx-auto p-16 max-w-[80%] bg-yellow-950/60 text-center">
+                                <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
+                                    « Réencrer le système couple dans l'histoire de chacun »
+                                </p>
+                            </div>
+                        </motion.div>
+
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
                             initial={{ opacity: 0, y: 20 }}
@@ -195,7 +205,7 @@ const CouplePage: React.FC = () => {
                 </section>
 
                 {/* Therapist Approach Section */}
-                <section className="py-20 px-6 bg-white">
+                <section className="py-20 px-6 bg-white flex items-center mt-[10%] pt-8 md:pt-16">
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
@@ -206,15 +216,6 @@ const CouplePage: React.FC = () => {
                         >
                             <div className="lg:col-span-1 h-full">
                                 <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
-                                    {/* Direct image tag as fallback */}
-                                    {/* <img
-                                        src={therapistImage}
-                                        alt="Thérapeute"
-                                        className="absolute inset-0 h-full w-full object-cover shadow-md rounded-lg"
-                                        loading="lazy"
-                                    /> */}
-
-
                                     <ResponsiveImage
                                         src={therapistImage}
                                         alt="Thérapeute"
@@ -252,8 +253,8 @@ const CouplePage: React.FC = () => {
                 </section>
 
                 {/* Specialty Areas Section */}
-                <section className="py-20 px-6 bg-amber-50">
-                    <div className="container mx-auto max-w-6xl">
+                <section className="py-20 px-6 bg-amber-50 flex items-center mt-[2%] pt-8 md:pt-16">
+                    <div className="container h-screen mx-auto max-w-6xl">
                         <motion.div
                             className="text-center mb-16"
                             initial={{ opacity: 0, y: 20 }}
@@ -323,9 +324,10 @@ const CouplePage: React.FC = () => {
                         </motion.div>
                     </div>
                 </section>
-            </div>
+            </SnapScrollContainer>
 
             <BookingSection />
+
         </>
     );
 };

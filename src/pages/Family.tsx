@@ -9,7 +9,9 @@ import ResponsiveImage from '../components/ResponsiveImage';
 import livingroomImage from '../assets/livingroom.webp';
 import couplelaptopImage from '../assets/couplelaptop.webp';
 import mur from '../assets/mur.webp';
-import famille from '../assets/famille-therapie-talence.webp'
+import famille from '../assets/famille-therapie-talence.webp';
+import SnapScrollContainer from '../components/SnapScrollContainer';
+import SectionNavigation from '../components/SectionNavigation';
 
 const FamilyPage: React.FC = () => {
     // Create specific service data for family therapy
@@ -19,6 +21,9 @@ const FamilyPage: React.FC = () => {
         serviceType: "Thérapie Familiale",
         description: "La thérapie familiale a pour but l'amélioration du fonctionnement familial à différents niveaux, la revalorisation de la compréhension mutuelle et du soutien émotionnel entre les membres de la famille."
     };
+
+    const totalSections = 7;
+    const sectionNames = ['Accueil', 'Introduction', 'Communication', 'Approche', 'Informations', 'Domaines', 'Réservation'];
 
     return (
         <>
@@ -30,7 +35,10 @@ const FamilyPage: React.FC = () => {
                 keywords={["thérapie familiale", "thérapie systémique", "conflits familiaux", "communication famille", "Bordeaux"]}
                 structuredData={familyTherapyData}
             />
-            <div className="font-sans text-gray-700">
+
+            <SectionNavigation totalSections={totalSections} sectionNames={sectionNames} />
+
+            <SnapScrollContainer>
                 {/* Hero Section */}
                 <section
                     className="relative h-screen flex items-center justify-center overflow-hidden"
@@ -79,16 +87,16 @@ const FamilyPage: React.FC = () => {
                 </section>
 
                 {/* Introduction Section */}
-                <section className="py-20 px-4 md:px-8  bg-stone-50">
-                    <div className="container mx-auto max-w-5xl">
+                <section className="py-20 px-4 md:px-8 bg-stone-50 flex items-center  pt-[10%] mt-8 md:mt-16">
+                    <div className="container h-full mx-auto max-w-5xl">
                         <motion.div
-                            className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
+                            className="grid  grid-cols-1 lg:grid-cols-3 gap-12 items-center "
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
+                            <div className="h-full w-full relative " style={{ minHeight: '400px' }}>
                                 <ResponsiveImage
                                     src={famille}
                                     alt="Communication familiale"
@@ -135,8 +143,8 @@ const FamilyPage: React.FC = () => {
                 </section>
 
                 {/* Alternative Communication Section */}
-                <section className="py-20 px-4 md:px-8 bg-amber-50">
-                    <div className="container mx-auto font-light max-w-4xl">
+                <section className="py-20 px-4 md:px-8 bg-amber-50 flex items-center  pt-[10%] mt-8 md:mt-16">
+                    <div className="container h-screen mx-auto font-light max-w-4xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
                             initial={{ opacity: 0, y: 20 }}
@@ -186,23 +194,25 @@ const FamilyPage: React.FC = () => {
                 </section>
 
                 {/* Quote Section */}
-                <motion.div
-                    className="py-16 px-6    text-white"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <div className="container mx-auto p-4 md:p-8 max-w-[98%]  md:max-w-[80%] bg-stone-700 text-center">
-                        <p className=" mx-auto text-xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
-                            « En séance, le thérapeute porte une attention particulière aux besoins de chacun »
-                        </p>
-                    </div>
-                </motion.div>
+
 
                 {/* Therapeutic Approach Section */}
-                <section className="py-8 md:py-20 px-6 bg-white">
+                <section className="py-8 md:py-20 px-6 bg-white flex items-center">
                     <div className="container mx-auto max-w-6xl">
+
+                        <motion.div
+                            className="py-16 px-6 text-white flex items-center justify-center"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="container mx-auto p-4 md:p-6 max-w-[98%]  md:max-w-[80%] bg-stone-700 text-center">
+                                <p className=" mx-auto text-xl md:text-2xl lg:text-3xl italic font-light leading-relaxed">
+                                    « En séance, le thérapeute porte une attention particulière aux besoins de chacun »
+                                </p>
+                            </div>
+                        </motion.div>
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
                             initial={{ opacity: 0, y: 20 }}
@@ -257,8 +267,8 @@ const FamilyPage: React.FC = () => {
                 </section>
 
                 {/* Practical Information Section */}
-                <section className="py-20 px-6 bg-stone-100">
-                    <div className="container mx-auto max-w-4xl">
+                <section className="py-20 px-6 bg-stone-100 flex items-center mt-[10@] pt-8 md:pt-16">
+                    <div className="container h-screen mx-auto max-w-4xl">
                         <motion.div
                             className="space-y-10"
                             initial={{ opacity: 0, y: 20 }}
@@ -266,14 +276,14 @@ const FamilyPage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="text-center mb-12">
+                            <div className="text-center mb-12 mt-8 md:mt-16">
                                 <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-6">
                                     Concrètement
                                 </h2>
                                 <div className="w-20 h-1 bg-stone-400 mx-auto"></div>
                             </div>
 
-                            <div className="bg-white p-8  shadow-md">
+                            <div className="bg-white p-8 rounded-sm shadow-md">
                                 <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
                                     Une séance de thérapie familiale dure entre 60 et 90 minutes; l'intervalle entre les séances
                                     varie de une à plusieurs semaines en fonction des problèmes présentés, des besoins des
@@ -304,7 +314,7 @@ const FamilyPage: React.FC = () => {
                 </section>
 
                 {/* Areas of Specialty Section */}
-                <section className="py-20 px-6 bg-amber-50">
+                <section className="py-20 px-6 bg-amber-50 flex items-center">
                     <div className="container mx-auto max-w-4xl">
                         <motion.div
                             className="space-y-12"
@@ -314,7 +324,7 @@ const FamilyPage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <div className="text-center mb-12">
-                                <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-6">
+                                <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-8 mt-8 md:mt-16">
                                     Domaines d'intervention
                                 </h2>
                                 <div className="w-20 h-1 bg-stone-400 mx-auto"></div>
@@ -334,10 +344,10 @@ const FamilyPage: React.FC = () => {
                         </motion.div>
                     </div>
                 </section>
-            </div>
 
-            {/* Booking Section */}
-            <BookingSection />
+                {/* Booking Section */}
+                <BookingSection />
+            </SnapScrollContainer>
         </>
     );
 };

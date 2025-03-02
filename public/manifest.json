@@ -8,7 +8,7 @@
   "theme_color": "#78716c",
   "icons": [
     {
-      "src": "/public/theralogoP.png",
+      "src": "/theralogoP.png",
       "sizes": "320x320",
       "type": "image/png",
       "purpose": "any maskable"

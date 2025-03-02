@@ -11,14 +11,14 @@ registerLocale('fr', fr);
 
 const BookingSection: React.FC = () => {
     return (
-        <section id="rendez-vous" className="py-12 md:py-16 bg-purple-50">
+        <section id="rendez-vous" className="py-12 md:py-16 bg-purple-50 mt-[2%]">
             <div className="container mx-auto px-4 sm:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="max-w-4xl mx-auto"
+                    className="max-w-5xl mx-auto"
                 >
                     <h2 className="text-3xl md:text-4xl font-light uppercase tracking-wide text-center mb-6">
                         Prenez Rendez-vous

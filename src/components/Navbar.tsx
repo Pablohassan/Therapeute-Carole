@@ -1,5 +1,5 @@
 // src/components/Navbar.tsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
 import { UserButton, SignInButton, SignUpButton, useUser } from "@clerk/clerk-react";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { isSignedIn } = useUser();
+    const snapScrollContainerRef = useRef<HTMLElement | null>(null);
 
     // Close mobile menu when clicking outside
     useEffect(() => {
@@ -24,12 +25,69 @@ const Navbar: React.FC = () => {
 
     // Handle scroll events
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 80);
+        // Find the snap scroll container
+        const findSnapContainer = () => {
+            // Look for the snap-y container
+            const snapContainer = document.querySelector('.snap-y.snap-mandatory') as HTMLElement;
+            if (snapContainer) {
+                snapScrollContainerRef.current = snapContainer;
+                return true;
+            }
+            return false;
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        const handleScroll = () => {
+            // If we have a snap container, use its scroll position
+            if (snapScrollContainerRef.current) {
+                setIsScrolled(snapScrollContainerRef.current.scrollTop > 80);
+            } else {
+                // Otherwise use window scroll position
+                setIsScrolled(window.scrollY > 80);
+            }
+        };
+
+        // Initial check
+        const hasSnapContainer = findSnapContainer();
+        handleScroll();
+
+        // Add event listeners to the appropriate scroll target
+        if (hasSnapContainer && snapScrollContainerRef.current) {
+            snapScrollContainerRef.current.addEventListener('scroll', handleScroll);
+        } else {
+            window.addEventListener('scroll', handleScroll);
+        }
+
+        // Set up a MutationObserver to detect when the snap container is added to the DOM
+        const observer = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                    // Check if any of the added nodes contain our snap container
+                    if (findSnapContainer()) {
+                        // Remove the old scroll listener from window
+                        window.removeEventListener('scroll', handleScroll);
+
+                        // Add the listener to the new snap container
+                        if (snapScrollContainerRef.current) {
+                            snapScrollContainerRef.current.addEventListener('scroll', handleScroll);
+                            // Initial check with the new container
+                            handleScroll();
+                        }
+                    }
+                }
+            }
+        });
+
+        // Start observing the document body for changes
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        return () => {
+            // Clean up all event listeners
+            if (snapScrollContainerRef.current) {
+                snapScrollContainerRef.current.removeEventListener('scroll', handleScroll);
+            }
+            window.removeEventListener('scroll', handleScroll);
+            observer.disconnect();
+        };
     }, []);
 
     // Close mobile menu on resize (if screen becomes large)
