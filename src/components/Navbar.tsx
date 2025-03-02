@@ -33,12 +33,17 @@ const Navbar: React.FC = () => {
                 snapScrollContainerRef.current = snapContainer;
                 return true;
             }
+            // If no snap container is found, reset the ref
+            snapScrollContainerRef.current = null;
             return false;
         };
 
         const handleScroll = () => {
+            // Always check if the snap container still exists
+            const hasSnapContainer = findSnapContainer();
+
             // If we have a snap container, use its scroll position
-            if (snapScrollContainerRef.current) {
+            if (hasSnapContainer && snapScrollContainerRef.current) {
                 setIsScrolled(snapScrollContainerRef.current.scrollTop > 80);
             } else {
                 // Otherwise use window scroll position
@@ -47,33 +52,46 @@ const Navbar: React.FC = () => {
         };
 
         // Initial check
-        const hasSnapContainer = findSnapContainer();
+        findSnapContainer();
         handleScroll();
 
         // Add event listeners to the appropriate scroll target
-        if (hasSnapContainer && snapScrollContainerRef.current) {
+        if (snapScrollContainerRef.current) {
             snapScrollContainerRef.current.addEventListener('scroll', handleScroll);
-        } else {
-            window.addEventListener('scroll', handleScroll);
         }
 
-        // Set up a MutationObserver to detect when the snap container is added to the DOM
-        const observer = new MutationObserver((mutations) => {
-            for (const mutation of mutations) {
-                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                    // Check if any of the added nodes contain our snap container
-                    if (findSnapContainer()) {
-                        // Remove the old scroll listener from window
-                        window.removeEventListener('scroll', handleScroll);
+        // Always add window scroll listener as a fallback
+        window.addEventListener('scroll', handleScroll);
 
-                        // Add the listener to the new snap container
-                        if (snapScrollContainerRef.current) {
-                            snapScrollContainerRef.current.addEventListener('scroll', handleScroll);
-                            // Initial check with the new container
-                            handleScroll();
-                        }
-                    }
+        // Set up a MutationObserver to detect when the snap container is added to or removed from the DOM
+        const observer = new MutationObserver((mutations) => {
+            // Check if the DOM has changed significantly
+            let shouldRecheck = false;
+
+            for (const mutation of mutations) {
+                if (mutation.type === 'childList' &&
+                    (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0)) {
+                    shouldRecheck = true;
+                    break;
                 }
+            }
+
+            if (shouldRecheck) {
+                // Clean up old listeners
+                if (snapScrollContainerRef.current) {
+                    snapScrollContainerRef.current.removeEventListener('scroll', handleScroll);
+                }
+
+                // Check for snap container
+                const hasSnapContainer = findSnapContainer();
+
+                // Set up appropriate listeners
+                if (hasSnapContainer && snapScrollContainerRef.current) {
+                    snapScrollContainerRef.current.addEventListener('scroll', handleScroll);
+                }
+
+                // Run initial check
+                handleScroll();
             }
         });
 

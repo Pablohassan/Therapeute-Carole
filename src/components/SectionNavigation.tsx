@@ -152,7 +152,7 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({
                 {/* Tooltip */}
                 {hoveredSection === index && (
                     <motion.div
-                        className="absolute right-6 top-0 bg-white/90 text-stone-800 px-2 py-1 rounded text-xs whitespace-nowrap shadow-md"
+                        className="absolute right-6 top-0 bg-white/90 text-stone-800 px-2 py-1 rounded text-xs whitespace-nowrap shadow-sm"
                         initial={{ opacity: 0, x: -5 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.2 }}
@@ -166,7 +166,7 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({
 
     return (
         <motion.div
-            className="fixed right-6 md:right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3 bg-stone-800/20 p-2 rounded-full backdrop-blur-sm"
+            className="hidden md:flex fixed right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3 bg-stone-800/10 p-2 rounded-full backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
