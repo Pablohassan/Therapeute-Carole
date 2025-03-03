@@ -24,8 +24,8 @@ const CouplePage: React.FC = () => {
         description: "La thérapie de couple vise à transformer votre relation pour vous permettre de vous sentir plus satisfait et épanoui. Elle aide à améliorer la communication et à résoudre les conflits."
     };
 
-    const totalSections = 6;
-    const sectionNames = ['Accueil', 'Introduction', 'Généalogie', 'Approche', 'Domaines', 'Réservation'];
+    const totalSections = 7;
+    const sectionNames = ['Accueil', 'Introduction', 'Généalogie', 'Approche', 'Domaines', "Effectivité", 'Réservation'];
 
     return (
         <>
@@ -294,7 +294,7 @@ const CouplePage: React.FC = () => {
 
                 {/* Effectiveness Section */}
                 <section className="py-20 px-6 bg-stone-50">
-                    <div className="container mx-auto max-w-3xl">
+                    <div className="container h-screen mx-auto max-w-3xl mt-[10%] pt-8 md:pt-16">
                         <motion.div
                             className="text-center space-y-8"
                             initial={{ opacity: 0, y: 20 }}
