@@ -27,7 +27,7 @@ const FamilyPage: React.FC = () => {
     const sectionNames = ['Accueil', 'Introduction', 'Communication', 'Approche', 'Informations', 'Domaines', 'Réservation'];
 
     return (
-        <>
+        <div className="bg-[#AB4D8C]/10">
             <SEO
                 title="Thérapie Familiale Systémique"
                 description="Retrouvez le lien familial, reprenez du plaisir ensemble, valorisez-vous mutuellement. La thérapie familiale permet d'améliorer la communication et de résoudre les conflits."
@@ -89,8 +89,8 @@ const FamilyPage: React.FC = () => {
                 </section>
 
                 {/* Introduction Section */}
-                <section className="py-20 px-4 md:px-8 bg-stone-50 flex items-center  pt-[10%] mt-8 md:mt-16">
-                    <div className="container h-full mx-auto max-w-5xl">
+                <section className="py-20 px-4 h-screen md:px-8 bg-[#AB4D8C]/10 flex items-center pt-[10%] md:pt-[15%] ">
+                    <div className="container  mx-auto max-w-5xl">
                         <motion.div
                             className="grid  grid-cols-1 lg:grid-cols-3 gap-12 items-center "
                             initial={{ opacity: 0, y: 20 }}
@@ -131,10 +131,11 @@ const FamilyPage: React.FC = () => {
                                     maison et de permettre à chacun de s'exprimer, de se sentir entendu sans pour cela nier l'autre.
                                 </p>
 
-                                <div className="pt-6">
+                                <div className="">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className="inline-block bg-stone-700 px-8 py-3 text-stone- font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 "
+                                        className="inline-block bg-[#AB4D8C]/60 px-8 py-3 text-stone-900  uppercase tracking-wider text-sm transition-all duration-300 hover:bg-[#AB4D8C] hover:text-stone-100 "
+                                        style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
                                     >
                                         Faire le premier pas
                                     </a>
@@ -149,17 +150,17 @@ const FamilyPage: React.FC = () => {
 
 
                 {/* Therapeutic Approach Section */}
-                <section className="py-8 md:py-20 px-6 bg-white flex items-center">
-                    <div className="container mx-auto max-w-6xl">
+                <section className="py-20 px-4 h-screen md:px-8 bg-[#AB4D8C]/10 flex items-center pt-[10%] md:pt-[15%] ">
+                    <div className="container h-screen  mx-auto max-w-5xl">
 
                         <motion.div
-                            className="py-16 px-6 text-stone- flex items-center justify-center"
+                            className="py-16 px-6 text-stone-100 flex items-center justify-center"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="container mx-auto p-4 md:p-6 max-w-[98%]  md:max-w-[80%] bg-stone-700 text-center">
+                            <div className="container mx-auto p-4 md:p-6 max-w-[98%] md:max-w-[80%] bg-[#AB4D8C] text-center">
                                 <p className=" mx-auto text-xl md:text-2xl lg:text-3xl italic font-light leading-relaxed">
                                     « En séance, le thérapeute porte une attention particulière aux besoins de chacun »
                                 </p>
@@ -183,7 +184,7 @@ const FamilyPage: React.FC = () => {
                                 />
                             </div>
 
-                            <div className="lg:col-span-2 space-y-6 font-light">
+                            <div className="lg:col-span-2 space-y-6  font-light">
                                 <div className="space-y-6">
                                     <p className="text-lg text-gray-600 leading-relaxed">
                                         En séance, le thérapeute porte une attention particulière aux besoins de chacun, à leurs
@@ -205,14 +206,7 @@ const FamilyPage: React.FC = () => {
                                     </p>
                                 </div>
 
-                                <div className="pt-6">
-                                    <a
-                                        href={`#${sectionIds.booking}`}
-                                        className="inline-block items-center bg-stone-700 px-8 py-3 text-stone- font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 "
-                                    >
-                                        Aller de l'avant
-                                    </a>
-                                </div>
+
                             </div>
                         </motion.div>
                     </div>
@@ -220,8 +214,8 @@ const FamilyPage: React.FC = () => {
 
 
                 {/* Alternative Communication Section */}
-                <section className="py-20 px-4 md:px-8 bg-amber-50 flex items-center  pt-[10%] mt-8 md:mt-16">
-                    <div className="container h-screen mx-auto font-light max-w-4xl">
+                <section className="py-20 px-4 md:px-8 mx-auto  bg-[#AB4D8C]/10 flex items-center h-screen  pt-[10%] md:pt-16">
+                    <div className="container mx-auto font-light max-w-4xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
                             initial={{ opacity: 0, y: 20 }}
@@ -230,7 +224,7 @@ const FamilyPage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <div className="lg:col-span-2 space-y-4 md:space-y-8 order-2 lg:order-1">
-                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-8">
+                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide ">
                                     Parfois les mots sont usés...
                                 </h2>
 
@@ -272,7 +266,7 @@ const FamilyPage: React.FC = () => {
 
 
                 {/* Practical Information Section */}
-                <section className="py-20 px-6 bg-stone-100 flex items-center mt-[10@] pt-8 md:pt-16">
+                <section className="py-20 px-6 bg-stone-100 flex items-center pt-[10@] pt-8 md:pt-16">
                     <div className="container h-screen mx-auto max-w-4xl">
                         <motion.div
                             className="space-y-10"
@@ -352,7 +346,7 @@ const FamilyPage: React.FC = () => {
             </SnapScrollContainer>
 
             <BookingSection />
-        </>
+        </div>
     );
 };
 

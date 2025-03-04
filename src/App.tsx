@@ -1,41 +1,45 @@
 // src/App.tsx
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router";
 import {
   SignIn,
   SignUp,
   SignedIn,
   SignedOut,
   ClerkLoaded,
-  SignInButton,
 } from "@clerk/clerk-react";
-import HomePage from "./pages/HomePage";
-import CouplePage from "./pages/Couple";
-import Apropos from "./pages/Apropos";
-import FamilyPage from "./pages/Family";
-import IndividuelPage from "./pages/Individuel";
+import { lazy, Suspense, useEffect } from "react";
 import Layout from "./components/Layout";
 import { HelmetProvider } from 'react-helmet-async';
-import ConditionsGenerales from "./pages/ConditionsGenerales";
-// import DashboardPage from "./pages/Dashboard";
+import LoadingFallback from "./components/LoadingFallback";
+import WelcomePage from "./components/WelcomePage";
 
-// Welcome/Login page component
-function WelcomePage() {
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-stone-100">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-montserrat mb-4">Bienvenue Carole</h1>
-        <p className="text-xl text-gray-600 mb-8">Click sur le bouton entre ton mail et le mot de passe que je t'ai envoyé</p>
-      </div>
-      <div className="flex gap-4">
-        <SignInButton mode="modal">
-          <button className="bg-green-800 hover:bg-natural-green/80 text-white px-6 py-3 rounded-md text-lg">
-            Connecte toi
-          </button>
-        </SignInButton>
-      </div>
-    </div>
-  );
+// Lazy load page components
+const HomePage = lazy(() => import("./pages/HomePage"));
+const CouplePage = lazy(() => import("./pages/Couple"));
+const FamilyPage = lazy(() => import("./pages/Family"));
+const IndividuelPage = lazy(() => import("./pages/Individuel"));
+const Apropos = lazy(() => import("./pages/Apropos"));
+const ConditionsGenerales = lazy(() => import("./pages/ConditionsGenerales"));
+
+// ScrollToTop component to reset scroll position on navigation
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Try to find the snap container first
+    const snapContainer = document.querySelector('.snap-y.snap-mandatory') as HTMLElement;
+
+    if (snapContainer) {
+      // If we have a snap container, scroll it to the top
+      snapContainer.scrollTo(0, 0);
+    }
+
+    // Also scroll the window to the top
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
 }
 
 function App() {
@@ -45,6 +49,7 @@ function App() {
     <ClerkLoaded>
       <HelmetProvider>
         <Router>
+          <ScrollToTop />
           <Routes>
             {/* Default route */}
             <Route path="/" element={
@@ -66,7 +71,9 @@ function App() {
             <Route path="/home" element={
               <SignedIn>
                 <Layout isHomePage={true}>
-                  <HomePage />
+                  <Suspense fallback={<LoadingFallback />}>
+                    <HomePage />
+                  </Suspense>
                 </Layout>
               </SignedIn>
             } />
@@ -74,7 +81,9 @@ function App() {
             <Route path="/couple" element={
               <SignedIn>
                 <Layout>
-                  <CouplePage />
+                  <Suspense fallback={<LoadingFallback />}>
+                    <CouplePage />
+                  </Suspense>
                 </Layout>
               </SignedIn>
             } />
@@ -82,7 +91,9 @@ function App() {
             <Route path="/family" element={
               <SignedIn>
                 <Layout>
-                  <FamilyPage />
+                  <Suspense fallback={<LoadingFallback />}>
+                    <FamilyPage />
+                  </Suspense>
                 </Layout>
               </SignedIn>
             } />
@@ -90,7 +101,9 @@ function App() {
             <Route path="/individuel" element={
               <SignedIn>
                 <Layout>
-                  <IndividuelPage />
+                  <Suspense fallback={<LoadingFallback />}>
+                    <IndividuelPage />
+                  </Suspense>
                 </Layout>
               </SignedIn>
             } />
@@ -98,7 +111,9 @@ function App() {
             <Route path="/apropos" element={
               <SignedIn>
                 <Layout>
-                  <Apropos />
+                  <Suspense fallback={<LoadingFallback />}>
+                    <Apropos />
+                  </Suspense>
                 </Layout>
               </SignedIn>
             } />
@@ -106,7 +121,9 @@ function App() {
             <Route path="/conditions-generales" element={
               <SignedIn>
                 <Layout>
-                  <ConditionsGenerales />
+                  <Suspense fallback={<LoadingFallback />}>
+                    <ConditionsGenerales />
+                  </Suspense>
                 </Layout>
               </SignedIn>
             } />

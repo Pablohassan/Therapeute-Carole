@@ -2,10 +2,10 @@ import React from 'react';
 
 const LoadingFallback: React.FC = () => {
     return (
-        <div className="flex items-center justify-center min-h-[50vh]">
-            <div className="text-center">
-                <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-stone-700 mb-4"></div>
-                <p className="text-stone-700 text-lg">Chargement en cours...</p>
+        <div className="min-h-screen flex items-center justify-center bg-stone-100">
+            <div className="animate-pulse flex flex-col items-center">
+                <div className="h-12 w-12 rounded-full bg-stone-300 mb-4"></div>
+                <div className="h-4 w-32 bg-stone-300 rounded"></div>
             </div>
         </div>
     );

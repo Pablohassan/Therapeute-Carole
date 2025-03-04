@@ -122,7 +122,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav
-            className={`fixed w-full text-stone-900 z-50 transition-all font-montserrat font-light duration-300 ${isScrolled ? 'bg-stone-700/90 backdrop-blur-sm shadow-md py-2' : 'bg-transparent py-4'
+            className={`fixed w-full text-stone-900 z-50 transition-all font-montserrat font-light duration-300 ${isScrolled ? 'bg-stone-700/60 backdrop-blur-sm shadow-md py-2' : 'bg-transparent py-4'
                 }`}
         >
             <div className="container mx-auto flex items-center justify-between px-4">
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
                     transition={{ duration: 1, delay: 0.2, ease: 'easeInOut' }}
                     className={`text-xl sm:text-xl lg:text-2xl tracking-wider ${isScrolled ? 'text-slate-100' : 'text-slate-950'
                         }`}
-                    style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)' }}
+                    style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.4)' }}
                 >
                     <Link to="/home" className="flex flex-col">
                         <span className="font-light uppercase">Carole Lagardère</span>
@@ -142,13 +142,15 @@ const Navbar: React.FC = () => {
                 </motion.div>
 
                 {/* Desktop Navigation */}
-                <div className={`hidden lg:flex items-center space-x-8 ${isScrolled ? 'md:text-slate-100' : 'md:text-slate-950'
-                    }`}>
-                    <NavLink to="/home" isScrolled={isScrolled}>Accueil</NavLink>
-                    <NavLink to="/family" isScrolled={isScrolled}> Famille</NavLink>
-                    <NavLink to="/couple" isScrolled={isScrolled}> Couple</NavLink>
-                    <NavLink to="/individuel" isScrolled={isScrolled}> Individuel</NavLink>
-                    <NavLink to="/apropos" isScrolled={isScrolled}>À Propos</NavLink>
+                <div className={`hidden lg:flex items-center  space-x-8 ${isScrolled ? 'md:text-slate-100' : 'md:text-slate-900'
+                    }`}
+                    style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
+                >
+                    <NavLink to="/home" isScrolled={isScrolled} underlineColor="bg-[#25926C]/90">Accueil</NavLink>
+                    <NavLink to="/family" isScrolled={isScrolled} underlineColor="bg-[#AB4D8C]/90">Famille</NavLink>
+                    <NavLink to="/couple" isScrolled={isScrolled} underlineColor="bg-[#EC6849]/80">Couple</NavLink>
+                    <NavLink to="/individuel" isScrolled={isScrolled} underlineColor="bg-[#FBC018]/80">Individuel</NavLink>
+                    <NavLink to="/apropos" isScrolled={isScrolled} underlineColor="bg-stone-200">À Propos</NavLink>
 
                     {/* Auth buttons */}
                     <div className="flex items-center space-x-3 ml-4">
@@ -206,19 +208,19 @@ const Navbar: React.FC = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <div className="bg-stone-700/95  backdrop-blur-sm shadow-lg py-4 px-4 flex flex-col space-y-4">
-                            <MobileNavLink to="/home" onClick={() => setIsMobileMenuOpen(false)}>
+                            <MobileNavLink to="/home" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-blue-400">
                                 Accueil
                             </MobileNavLink>
-                            <MobileNavLink to="/family" onClick={() => setIsMobileMenuOpen(false)}>
+                            <MobileNavLink to="/family" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-green-400">
                                 Famille
                             </MobileNavLink>
-                            <MobileNavLink to="/couple" onClick={() => setIsMobileMenuOpen(false)}>
+                            <MobileNavLink to="/couple" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-red-400">
                                 Couple
                             </MobileNavLink>
-                            <MobileNavLink to="/individuel" onClick={() => setIsMobileMenuOpen(false)}>
+                            <MobileNavLink to="/individuel" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-purple-400">
                                 Individuel
                             </MobileNavLink>
-                            <MobileNavLink to="/apropos" onClick={() => setIsMobileMenuOpen(false)}>
+                            <MobileNavLink to="/apropos" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-amber-400">
                                 À Propos
                             </MobileNavLink>
 
@@ -252,34 +254,109 @@ const Navbar: React.FC = () => {
 };
 
 // Desktop navigation link component
-const NavLink: React.FC<{ to: string; isScrolled: boolean; children: React.ReactNode }> = ({
+const NavLink: React.FC<{
+    to: string;
+    isScrolled: boolean;
+    children: React.ReactNode;
+    underlineColor?: string; // Add optional underline color prop
+}> = ({
     to,
     isScrolled,
-    children
-}) => (
-    <Link
-        to={to}
-        className={`uppercase tracking-wide text-sm lg:text-base ${isScrolled ? 'text-slate-100' : 'text-slate-950'
-            } hover:${isScrolled ? 'text-slate-300' : 'text-slate-800'} transition-colors relative group`}
-    >
-        {children}
-        <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${isScrolled ? 'bg-slate-100' : 'bg-slate-950'} transition-all duration-300 group-hover:w-full`}></span>
-    </Link>
-);
+    children,
+    underlineColor = 'bg-slate-100' // Default color if not provided
+}) => {
+        const handleClick = () => {
+            // First try to find the snap container
+            const snapContainer = document.querySelector('.snap-y.snap-mandatory') as HTMLElement;
+
+            if (snapContainer) {
+                // If we have a snap container, scroll it to the top
+                snapContainer.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Also scroll the window to the top as a fallback
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Add a small delay to ensure the scroll happens after navigation
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'auto'
+                });
+            }, 100);
+        };
+
+        return (
+            <Link
+                to={to}
+                className={`uppercase tracking-wide text-sm lg:text-base ${isScrolled ? 'text-slate-100' : 'text-slate-950'
+                    } hover:${isScrolled ? 'text-slate-300' : 'text-slate-800'} transition-colors relative group`}
+                onClick={handleClick}
+            >
+                {children}
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${underlineColor} transition-all duration-300 group-hover:w-full`}></span>
+            </Link>
+        );
+    };
 
 // Mobile navigation link component
-const MobileNavLink: React.FC<{ to: string; onClick: () => void; children: React.ReactNode }> = ({
+const MobileNavLink: React.FC<{
+    to: string;
+    onClick: () => void;
+    children: React.ReactNode;
+    underlineColor?: string; // Add optional underline color prop
+}> = ({
     to,
     onClick,
-    children
-}) => (
-    <Link
-        to={to}
-        className="text-slate-200 uppercase tracking-wide py-3 text-center border-b border-stone-600/30 hover:bg-stone-600/30 transition-colors"
-        onClick={onClick}
-    >
-        {children}
-    </Link>
-);
+    children,
+    underlineColor = 'bg-slate-200' // Default color if not provided
+}) => {
+        const handleClick = () => {
+            // First close the mobile menu
+            onClick();
+
+            // Try to find the snap container
+            const snapContainer = document.querySelector('.snap-y.snap-mandatory') as HTMLElement;
+
+            if (snapContainer) {
+                // If we have a snap container, scroll it to the top
+                snapContainer.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Also scroll the window to the top as a fallback
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Add a small delay to ensure the scroll happens after navigation
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'auto'
+                });
+            }, 100);
+        };
+
+        return (
+            <Link
+                to={to}
+                className="text-slate-200 uppercase tracking-wide py-3 text-center border-b border-stone-600/30 hover:bg-stone-600/30 transition-colors relative group"
+                onClick={handleClick}
+            >
+                {children}
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${underlineColor} transition-all duration-300 group-hover:w-full`}></span>
+            </Link>
+        );
+    };
 
 export default Navbar;
