@@ -80,14 +80,7 @@ const HeroSection = () => {
                     Je suis à votre écoute et engagée à vos côtés.
                     Je vous accueille sur rendez-vous au sein de mon cabinet à Talence.
                 </motion.p>
-                {/* <motion.a
-                    href="#services"
-                    className="inline-block border border-white px-16 py-4  hover:bg-soft-beige text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl transform   hover:bg-stone-100/90  hover:text-stone-900"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                >
-                    Découvrir Nos Services
-                </motion.a> */}
+
 
                 <motion.div
                     {...contentAnimations}
