@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import ResponsiveImage from '../components/ResponsiveImage';
 import livingroomImage from '../assets/livingroom.webp';
 import couplelaptopImage from '../assets/couplelaptop.webp';
-import mur from '../assets/mur.webp';
+import homefamily from '../assets/familyhome.jpeg';
 import famille from '../assets/famille-therapie-talence.webp';
 import SnapScrollContainer from '../components/SnapScrollContainer';
 import SectionNavigation from '../components/SectionNavigation';
@@ -43,12 +43,12 @@ const FamilyPage: React.FC = () => {
                 <section
                     className="relative h-screen flex items-center justify-center overflow-hidden"
                     style={{
-                        backgroundImage: `url(${mur})`,
+                        backgroundImage: `url(${homefamily})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}
                 >
-                    <div className="absolute inset-0 bg-black/40 bg-opacity-40"></div>
+                    <div className="absolute inset-0  bg-opacity-100"></div>
 
                     <motion.div
                         className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl py-4 md:py-16"
@@ -56,14 +56,14 @@ const FamilyPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-white mb-8 md:mb-16"
-                            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-stone-900 mb-8 md:mb-16"
+                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
                         >
                             Thérapie Familiale Systémique
                         </h1>
 
-                        <p className="text-md md:text-2xl text-white mb-12 italic font-light leading-relaxed"
-                            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                        <p className="text-md md:text-2xl text-stone- mb-12 italic font-light leading-relaxed"
+                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
                         >
                             « La thérapie familiale a pour but l'amélioration du fonctionnement familial à différents niveaux,
                             la revalorisation de la compréhension mutuelle et du soutien émotionnel entre les membres de
@@ -78,7 +78,7 @@ const FamilyPage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-transparent border-2 border-white px-12 sm:px-16 py-4 md:py-6 mt-8 text-white font-light uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-stone-800 shadow-lg hover:shadow-xl "
+                                className="inline-block bg-transparent border-2 border-[#AB4D8C] px-12 sm:px-16 py-4 md:py-6 mt-8 text-stone-900 uppercase tracking-wider text-sm md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-800 shadow-lg hover:shadow-xl "
                             >
                                 Réserver un rendez-vous
                             </a>
@@ -132,9 +132,9 @@ const FamilyPage: React.FC = () => {
                                 <div className="pt-6">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className="inline-block bg-stone-700 px-8 py-3 text-white font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 "
+                                        className="inline-block bg-stone-700 px-8 py-3 text-stone- font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 "
                                     >
-                                        Aller de l'avant
+                                        Faire le premier pas
                                     </a>
                                 </div>
                             </div>
@@ -142,56 +142,6 @@ const FamilyPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Alternative Communication Section */}
-                <section className="py-20 px-4 md:px-8 bg-amber-50 flex items-center  pt-[10%] mt-8 md:mt-16">
-                    <div className="container h-screen mx-auto font-light max-w-4xl">
-                        <motion.div
-                            className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="lg:col-span-2 space-y-4 md:space-y-8 order-2 lg:order-1">
-                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-8">
-                                    Car parfois les mots sont usés...
-                                </h2>
-
-                                <p className="text-lg text-gray-600 leading-relaxed">
-                                    Ont été trop entendu par la famille, et ne provoquent plus de
-                                    réaction. Le problème forme une boucle, il est à ce moment-là important de créer la surprise et
-                                    de changer les habitudes de communication, soit en invitant la famille à se raconter autrement
-                                    ou en utilisant d'autres moyens d'expression, comme le langage du corps, le jeu.
-                                </p>
-
-                                <p className="text-lg text-gray-600 leading-relaxed">
-                                    Outils de médiation, intermédiaire, le jeu en thérapie permet de créer des liens entre les
-                                    membres de la famille, de renforcer le sentiment d'appartenance, d'expliciter des émotions, des
-                                    ressentis, des représentations.
-                                </p>
-
-                                <p className="text-lg text-gray-600 leading-relaxed">
-                                    L'idée est de créer une expérience d'interaction positive permettant de se vivre, de vivre les
-                                    autres et de vivre la famille différemment de ce dont elle a l'habitude.
-                                </p>
-                            </div>
-
-                            <div className="lg:col-span-1 order-1 lg:order-2 h-full">
-                                <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
-                                    <ResponsiveImage
-                                        src={couplelaptopImage}
-                                        alt="Communication familiale"
-                                        className="absolute inset-0 h-full w-full object-cover shadow-md rounded-sm"
-                                        width={800}
-                                        height={600}
-                                        sizes="(max-width: 1024px) 100vw, 33vw"
-                                        priority={true}
-                                    />
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
 
                 {/* Quote Section */}
 
@@ -201,7 +151,7 @@ const FamilyPage: React.FC = () => {
                     <div className="container mx-auto max-w-6xl">
 
                         <motion.div
-                            className="py-16 px-6 text-white flex items-center justify-center"
+                            className="py-16 px-6 text-stone- flex items-center justify-center"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.8 }}
@@ -256,7 +206,7 @@ const FamilyPage: React.FC = () => {
                                 <div className="pt-6">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className="inline-block items-center bg-stone-700 px-8 py-3 text-white font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 "
+                                        className="inline-block items-center bg-stone-700 px-8 py-3 text-stone- font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 "
                                     >
                                         Aller de l'avant
                                     </a>
@@ -265,6 +215,59 @@ const FamilyPage: React.FC = () => {
                         </motion.div>
                     </div>
                 </section>
+
+
+                {/* Alternative Communication Section */}
+                <section className="py-20 px-4 md:px-8 bg-amber-50 flex items-center  pt-[10%] mt-8 md:mt-16">
+                    <div className="container h-screen mx-auto font-light max-w-4xl">
+                        <motion.div
+                            className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="lg:col-span-2 space-y-4 md:space-y-8 order-2 lg:order-1">
+                                <h2 className="text-2xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-8">
+                                    Parfois les mots sont usés...
+                                </h2>
+
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Ils ont été trop entendus par la famille et ne provoquent plus de
+                                    réaction. Le problème forme une boucle. Il est à ce moment-là important de créer la surprise et
+                                    de changer les habitudes de communication, soit en invitant la famille à se raconter autrement
+                                    ou en utilisant d'autres moyens d'expression, comme le langage du corps, le jeu.
+                                </p>
+
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Outils de médiation, intermédiaire, le jeu en thérapie permet de créer des liens entre les
+                                    membres de la famille, de renforcer le sentiment d'appartenance, d'expliciter des émotions, des
+                                    ressentis, des représentations.
+                                </p>
+
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    L'idée est de créer une expérience d'interaction positive permettant de se vivre, de vivre les
+                                    autres et de vivre la famille différemment de ce dont elle a l'habitude.
+                                </p>
+                            </div>
+
+                            <div className="lg:col-span-1 order-1 lg:order-2 h-full">
+                                <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
+                                    <ResponsiveImage
+                                        src={couplelaptopImage}
+                                        alt="Communication familiale"
+                                        className="absolute inset-0 h-full w-full object-cover shadow-md rounded-sm"
+                                        width={800}
+                                        height={600}
+                                        sizes="(max-width: 1024px) 100vw, 33vw"
+                                        priority={true}
+                                    />
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
 
                 {/* Practical Information Section */}
                 <section className="py-20 px-6 bg-stone-100 flex items-center mt-[10@] pt-8 md:pt-16">
@@ -304,7 +307,7 @@ const FamilyPage: React.FC = () => {
                             <div className="text-center mt-12">
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-stone-700 px-10 py-4 text-white font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-stone-600  shadow-md hover:shadow-lg"
+                                    className="inline-block bg-stone-700 px-10 py-4 text-stone- font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-stone-600  shadow-md hover:shadow-lg"
                                 >
                                     Réserver un rendez-vous
                                 </a>

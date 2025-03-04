@@ -1,7 +1,7 @@
 // src/pages/Individuel.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import abstractio from '../assets/abstraitbico.webp';
+import homeindividuel from '../assets/homeindividuel.jpeg';
 import psychologueImage from '../assets/psycho.webp';
 import piedsImage from '../assets/pieds.webp';
 import couplelaptopImage from '../assets/couplelaptop.webp';
@@ -44,12 +44,12 @@ const IndividuelPage: React.FC = () => {
                 <section
                     className="relative h-screen flex items-center justify-center overflow-hidden"
                     style={{
-                        backgroundImage: `url(${abstractio})`,
+                        backgroundImage: `url(${homeindividuel})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}
                 >
-                    <div className="absolute inset-0 bg-black/60"></div>
+                    <div className="absolute inset-0 "></div>
 
                     <motion.div
                         className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl"
@@ -57,13 +57,13 @@ const IndividuelPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-white mb-8 md:mb-16"
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-sonte-900 mb-8 md:mb-16"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
                             Thérapie Individuelle
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-white font-light mb-8 md:mb-16 leading-relaxed"
+                        <p className="text-xl md:text-2xl text-sonte-900 font-light mb-8 md:mb-16 leading-relaxed"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
                             Explorez vos pensées, émotions et comportements pour surmonter les difficultés personnelles et développer votre potentiel.
@@ -76,7 +76,7 @@ const IndividuelPage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-transparent border-2 border-white px-8 md:px-16 py-4 md:py-6 text-white font-light uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-white hover:text-stone-800 shadow-lg hover:shadow-xl"
+                                className="inline-block bg-transparent border-2 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-sonte-900 font-light uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-800 shadow-lg hover:shadow-xl"
                             >
                                 Réserver un rendez-vous
                             </a>
@@ -128,7 +128,7 @@ const IndividuelPage: React.FC = () => {
                                 <div className="pt-6">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className="inline-block bg-stone-700 px-8 py-3 text-white font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
+                                        className="inline-block bg-[#FBC018] px-8 py-3 text-sonte-900 font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-800 shadow-md hover:shadow-lg"
                                     >
                                         Aller de l'avant
                                     </a>
@@ -149,7 +149,7 @@ const IndividuelPage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="p-10 bg-yellow-950/60 text-white mb-12">
+                            <div className="p-10 bg-yellow-950/60 text-sonte-900 mb-12">
                                 <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
                                     « Se comprendre pour mieux avancer »
                                 </p>
@@ -314,7 +314,7 @@ const IndividuelPage: React.FC = () => {
                             <div className="pt-8">
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-stone-700 px-10 py-4 text-white font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
+                                    className="inline-block bg-stone-700 px-10 py-4 text-sonte-900 font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
                                 >
                                     Réserver un rendez-vous
                                 </a>

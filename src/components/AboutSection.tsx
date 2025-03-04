@@ -156,8 +156,8 @@ const AboutSection: React.FC = () => {
                             <p>Ou que cela concerne votre contexte professionnel ou social, nous pouvons vous accompagner.</p>
                         </div>
 
-                        <div className="text-center my-16">
-                            <p className="text-xl md:text-2xl lg:text-3xl  italic text-stone-700"
+                        <div className="text-center font-dancing my-16">
+                            <p className="text-xl md:text-2xl lg:text-3xl font-dancing italic text-stone-700"
                                 style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
                             >
                                 Et si on en parlait ?
@@ -205,13 +205,13 @@ const AboutSection: React.FC = () => {
                             <h3 className="font-semibold text-xl mb-3 text-stone-700">Accompagnement
                                 personnalisé et créatif</h3>
                             <p className="text-stone-600">Analyser les dynamiques
-                                familiales et de couple,
-                                mobiliser les ressources
+                                familiales et de couple.
+                                Mobiliser les ressources
                                 et les compétences de
                                 chacun. Utiliser différents
                                 outils et techniques
                                 (génogramme,
-                                métaphore, sculptures,
+                                métaphores, sculptures,
                                 jeux de rôles…)</p>
                         </div>
 
@@ -224,19 +224,19 @@ const AboutSection: React.FC = () => {
                     </motion.div>
                     {/* Approach section */}
                     <motion.div
-                        className="space-y-8 max-w-5xl mx-auto"
+                        className="space-y-8 max-w-4xl mx-auto"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 1 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-lg text-stone-600 leading-relaxed">
+                        <p className="text-lg md:text-xl text-stone-600 italic leading-relaxed pt-8 md:pt-16 text-center">
                             Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique,
                             j’espère par les contenus de ce site, pouvoir vous apporter quelques pistes susceptibles de
                             nourrir votre réflexion… et pourquoi pas, trouver l&#39;élan, faire le pas pour nous rencontrer !
                         </p>
 
-                        <p className="text-lg text-stone-600 leading-relaxed">
+                        {/* <p className="text-lg text-stone-600 leading-relaxed">
                             Educatrice spécialisée depuis 2006, 20 années de pratique en protection de l'enfance.
                             Expérience d'accompagnement des enfants, adolescents et leurs parents. Organiser des
                             rencontres, mener des entretiens familiaux, individuels, afin d'identifier les difficultés et
@@ -245,7 +245,7 @@ const AboutSection: React.FC = () => {
                         <p className="text-lg text-stone-600 leading-relaxed">
                             L’enfant, l’adolescent et la famille ont toujours été au cœur de mes préoccupations
                             professionnelles.
-                        </p>
+                        </p> */}
                     </motion.div>
                 </div>
             </div>

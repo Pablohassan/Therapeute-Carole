@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import hand from '../assets/hand.webp';
 import genealogieImage from '../assets/genealogie.webp';
 import therapistImage from '../assets/therapist.webp';
-import abstrait1 from '../assets/abstrait1.webp';
+import homecouple from '../assets/homecouple.jpeg';
 // import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
@@ -45,12 +45,12 @@ const CouplePage: React.FC = () => {
                 <section
                     className="relative  h-screen flex items-center justify-center overflow-hidden"
                     style={{
-                        backgroundImage: `url(${abstrait1})`,
+                        backgroundImage: `url(${homecouple})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}
                 >
-                    <div className="absolute inset-0 bg-black/60"></div>
+                    <div className="absolute inset-0 "></div>
 
                     <motion.div
                         className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl"
@@ -58,14 +58,14 @@ const CouplePage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-white mb-8 md:mb-16"
-                            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-stone-900 mb-8 md:mb-16"
+                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
                         >
                             Thérapie de Couple
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-white font-light mb-8  md:mb-16 leading-relaxed"
-                            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                        <p className="text-xl md:text-2xl text-stone-900 font-light mb-8  md:mb-16 leading-relaxed"
+                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
                         >
                             Transformez votre relation afin de vous permettre de vous sentir plus satisfait et de vous sentir plus rempli.
                         </p>
@@ -77,7 +77,7 @@ const CouplePage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-transparent border-2 border-white px-8 md:px-16 py-4 md:py-6 text-white font-light uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-white hover:text-stone-800 shadow-lg hover:shadow-xl "
+                                className="inline-block bg-transparent border-2 border-[#EC6849] px-8 md:px-16 py-4 md:py-6 text-stone-900 uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#EC6849]/50 hover:text-stone-800 hover:scale-105 shadow-lg hover:shadow-xl "
                             >
                                 Réserver un rendez-vous
                             </a>
@@ -95,12 +95,12 @@ const CouplePage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="lg:col-span-1 h-full">
+                            <div className="lg:col-span-1 h-full  rounded-2xl">
                                 <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
                                     <img
                                         src={hand}
                                         alt="Mains de couple"
-                                        className="absolute inset-0 h-full w-full object-cover shadow-md "
+                                        className="absolute inset-0 h-full w-full object-cover shadow-xl  rounded-2xl "
                                         loading="lazy"
                                     />
                                 </div>
@@ -133,9 +133,9 @@ const CouplePage: React.FC = () => {
                                 <div className="pt-6">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className="inline-block bg-stone-700 px-8 py-3 text-white font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
+                                        className="inline-block bg-[#EC6849] px-8 py-3 text-stone-900 font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:text-stone-800 border-2 border-[#EC6849] shadow-md hover:shadow-lg"
                                     >
-                                        Aller de l'avant
+                                        Faire le premier pas
                                     </a>
                                 </div>
                             </div>
@@ -151,14 +151,14 @@ const CouplePage: React.FC = () => {
                     <div className="container mx-auto max-w-5xl">
 
                         <motion.div
-                            className="py-16 px-6 text-white flex items-center justify-center"
+                            className="py-16 px-6 text-gray-900 flex items-center justify-center"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="container mx-auto p-16 max-w-[80%] bg-yellow-950/60 text-center">
-                                <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
+                            <div className="container mx-auto p-16 max-w-[80%]  bg-[#EC6849] text-center">
+                                <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic  leading-relaxed">
                                     « Réencrer le système couple dans l'histoire de chacun »
                                 </p>
                             </div>
@@ -263,7 +263,7 @@ const CouplePage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-6">
-                                Domaines d'intervention
+                                Motifs de consultation
                             </h2>
 
                             <div className="w-20 h-1 bg-stone-400 mx-auto mb-8"></div>
@@ -316,7 +316,7 @@ const CouplePage: React.FC = () => {
                             <div className="pt-8">
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-stone-700 px-10 py-4 text-white font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
+                                    className="inline-block bg-white border-2 border-[#EC6849] px-10 py-4 text-stone-900 font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-[#EC6849]/50 hover:text-stone-800 shadow-md hover:shadow-lg"
                                 >
                                     Réserver un rendez-vous
                                 </a>

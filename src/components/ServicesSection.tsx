@@ -1,6 +1,7 @@
 // src/components/ServicesSection.tsx
 import React from 'react';
 import { FaUsers, FaHeart, FaUser } from 'react-icons/fa';
+import tachevertefamille from '../assets/tachevertefamille.jpeg';
 import { Link } from 'react-router';
 
 const ServicesSection: React.FC = () => {
@@ -12,28 +13,25 @@ const ServicesSection: React.FC = () => {
 
                 </h2>
                 <div className=" grid md:grid-cols-3 gap-8">
-                    <div className="bg-stone-300/40 shadow hover:shadow-xl rounded p-6 flex flex-col items-center hover:scale-105 transition-all duration-500">
-                        <FaUsers className="text-3xl text-calming-blue mb-4" />
+                    <div className="bg-stone-200/40 shadow hover:shadow-xl rounded p-6 flex flex-col items-center hover:scale-105 transition-all duration-500">
+                        <img src={tachevertefamille} alt="Tache verte famille" className="w-1/3 h-full object-cover rounded-lg" />
                         <Link to="/family" className="font-semibold text-xl mb-2">Thérapie Familiale</Link>
                         <p className="text-center">
-                            Résolution des conflits familiaux, amélioration de la communication
-                            et renforcement des liens dans un environnement bienveillant.
+                            Accompagner le changement pour retrouver une forme d'équilibre et restaurer les relations au sein de la famille.
                         </p>
                     </div>
                     <div className="bg-stone-300/40 shadow hover:shadow-xl rounded p-6 flex flex-col items-center hover:scale-105 transition-all duration-500">
                         <FaHeart className="text-3xl text-calming-blue mb-4" />
                         <Link to="/couple" className="font-semibold text-xl mb-2 ">Thérapie de Couple</Link>
                         <p className="text-center">
-                            Retrouvez la confiance, approfondissez l'intimité et résolvez
-                            les problèmes récurrents grâce à des méthodes éprouvées.
+                            Explorer l'histoire du couple, améliorer la communication, favoriser l'écoute pour renforcer la relation au sein du couple.
                         </p>
                     </div>
                     <div className="bg-stone-300/40 shadow hover:shadow-xl rounded p-6 flex flex-col items-center hover:scale-105 transition-all duration-500">
                         <FaUser className="text-3xl text-calming-blue mb-4" />
-                        <h3 className="font-semibold text-xl mb-2">Therapie Individuelle</h3>
+                        <h3 className="font-semibold text-xl mb-2">Thérapie Individuelle</h3>
                         <p className="text-center">
-                            Développement personnel et découverte de soi pour vous épanouir
-                            dans tous les aspects de votre vie.
+                            Explorer l'ensemble de vos relations passées et présentes pour vous accompagner vers une meilleure compréhension de vous-même.
                         </p>
                     </div>
                 </div>

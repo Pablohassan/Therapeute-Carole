@@ -1,7 +1,8 @@
 // src/components/HeroSection.tsx
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import heroImage from '../assets/familytogether.webp';
+// import heroImage from '../assets/familytogether.webp';
+import fondHome from '../assets/fondhome.jpeg';
 import { sectionIds } from '../constants/navigation';
 
 
@@ -32,23 +33,23 @@ const HeroSection: React.FC = () => {
                 style={{ y, opacity: backgroundOpacity }}
             >
                 <img
-                    src={heroImage}
+                    src={fondHome}
                     alt="Famille souriante"
                     className="object-cover w-full h-full"
                 />
-                <div className="absolute inset-0 bg-opacity-40"></div>
+                <div className="absolute  inset-0 "></div>
             </motion.div>
 
             {/* Hero Content */}
             <motion.div
-                className="relative container mx-auto px-4 text-center text-slate-100 max-w-7xl"
+                className="relative container mx-auto px-4 text-center text-slate-900 max-w-7xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
                 <motion.h1
-                    className="text-lg md:text-2xl lg:text-4xl md:text-3xl font-light tracking-wider mb-48 sm:mb-16 leading-tight"
-                    style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                    className="text-lg md:text-2xl lg:text-4xl md:text-3xl font-bebas  tracking-wider mb-48 sm:mb-16 leading-tight"
+                    style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -57,7 +58,7 @@ const HeroSection: React.FC = () => {
                 </motion.h1>
                 <motion.p
                     className="text- md:text-xl mb-32 sm:mb-16 font-light tracking-wide max-w-2xl mx-auto"
-                    style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                    style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -81,7 +82,8 @@ const HeroSection: React.FC = () => {
                 >
                     <a
                         href={`#${sectionIds.booking}`}
-                        className="text-lg sm:text-lg inline-block border border-white px-8 sm:px-16 sm:py-4 py-2 hover:bg-soft-beige text-slate-100 font-light uppercase tracking-wide transition-colors text-lg shadow-lg hover:shadow-xl hover:scale-105 transform hover:duration-500 hover:ease-in-out hover:bg-stone-100/90 hover:text-stone-900"
+                        className="text-lg sm:text-lg inline-block border border-[#25926C] px-8 sm:px-16 sm:py-4 py-2 text-slate-900  uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 hover:bg-[#25926C]/30 hover:bg-opacity-80 hover:text-stone-900 hover:border-[#25926C]/10"
+
                     >
                         Réserver un rendez-vous
                     </a>
