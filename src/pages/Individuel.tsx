@@ -13,6 +13,7 @@ import { individualSpecialtyAreas } from '../constants/specialtyAreas';
 import SnapScrollContainer from '../components/SnapScrollContainer';
 import SectionNavigation from '../components/SectionNavigation';
 import { sectionIds } from '../constants/navigation';
+import KeyboardNavigationHelper from '../components/KeyboardNavigationHelper';
 
 const IndividuelPage: React.FC = () => {
     // Create specific service data for individual therapy
@@ -30,16 +31,17 @@ const IndividuelPage: React.FC = () => {
         <>
             <SEO
                 title="Thérapie Individuelle"
-                description="Explorez vos pensées, émotions et comportements pour surmonter les difficultés personnelles et développer votre potentiel grâce à la thérapie individuelle."
+                description="Retrouvez votre équilibre personnel et développez votre potentiel. La thérapie individuelle vous accompagne dans votre cheminement vers le mieux-être."
                 canonicalUrl="https://www.carole-lagardere.fr/individuel"
                 ogImage="/images/individuel.webp"
-                keywords={["thérapie individuelle", "psychothérapie", "développement personnel", "bien-être mental", "Talence"]}
+                keywords={["thérapie individuelle", "psychothérapie", "développement personnel", "bien-être", "Bordeaux"]}
                 structuredData={individualTherapyData}
             />
 
             <SectionNavigation totalSections={totalSections} sectionNames={sectionNames} />
+            <KeyboardNavigationHelper autoHideDelay={8000} />
 
-            <SnapScrollContainer>
+            <SnapScrollContainer preventFooterOverlap={true}>
                 {/* Hero Section */}
                 <section
                     className="relative h-screen flex items-center justify-center overflow-hidden"
@@ -66,7 +68,7 @@ const IndividuelPage: React.FC = () => {
                         <p className="text-xl md:text-2xl text-sonte-900 font-light mb-8 md:mb-16 leading-relaxed"
                             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
                         >
-                            Explorez vos pensées, émotions et comportements pour surmonter les difficultés personnelles et développer votre potentiel.
+                            Retrouvez votre équilibre personnel et développez votre potentiel. La thérapie individuelle vous accompagne dans votre cheminement vers le mieux-être.
                         </p>
 
                         <motion.div

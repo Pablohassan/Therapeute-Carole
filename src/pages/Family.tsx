@@ -12,6 +12,7 @@ import homefamily from '../assets/familyhome.jpeg';
 import famille from '../assets/famille-therapie-talence.webp';
 import SnapScrollContainer from '../components/SnapScrollContainer';
 import SectionNavigation from '../components/SectionNavigation';
+import KeyboardNavigationHelper from '../components/KeyboardNavigationHelper';
 
 const FamilyPage: React.FC = () => {
     // Create specific service data for family therapy
@@ -37,8 +38,9 @@ const FamilyPage: React.FC = () => {
             />
 
             <SectionNavigation totalSections={totalSections} sectionNames={sectionNames} />
+            <KeyboardNavigationHelper autoHideDelay={8000} />
 
-            <SnapScrollContainer>
+            <SnapScrollContainer preventFooterOverlap={true}>
                 {/* Hero Section */}
                 <section
                     className="relative h-screen flex items-center justify-center overflow-hidden"
@@ -347,10 +349,9 @@ const FamilyPage: React.FC = () => {
                         </motion.div>
                     </div>
                 </section>
-
-                {/* Booking Section */}
-                <BookingSection />
             </SnapScrollContainer>
+
+            <BookingSection />
         </>
     );
 };

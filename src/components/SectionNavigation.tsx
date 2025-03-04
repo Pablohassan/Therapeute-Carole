@@ -49,20 +49,20 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({
                 // For snap scroll pages, calculate which section is in view based on scroll position
                 const scrollPosition = snapScrollContainerRef.current.scrollTop;
                 const windowHeight = window.innerHeight;
-                const currentSection = Math.floor(scrollPosition / windowHeight);
+                const currentSection = Math.round(scrollPosition / windowHeight);
 
                 // Ensure we don't go out of bounds
-                if (currentSection >= 0 && currentSection < totalSections - 1) {
+                if (currentSection >= 0 && currentSection < totalSections) {
                     setActiveSection(currentSection);
                 }
             } else {
                 // For regular pages, use window.scrollY
                 const scrollPosition = window.scrollY;
                 const windowHeight = window.innerHeight;
-                const currentSection = Math.floor(scrollPosition / windowHeight);
+                const currentSection = Math.round(scrollPosition / windowHeight);
 
                 // Ensure we don't go out of bounds
-                if (currentSection >= 0 && currentSection < totalSections - 1) {
+                if (currentSection >= 0 && currentSection < totalSections) {
                     setActiveSection(currentSection);
                 }
             }
@@ -116,7 +116,7 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({
     // Navigate to a specific section
     const navigateToSection = (index: number) => {
         // Special case for the last section (Booking)
-        if (index === totalSections - 1) {
+        if (index === totalSections - 1 && document.getElementById(sectionIds.booking)) {
             // Navigate to the booking section which is outside the snap container
             const bookingSection = document.getElementById(sectionIds.booking);
             if (bookingSection) {
@@ -128,7 +128,20 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({
         // For other sections, use the section-X ID pattern
         const sectionElement = document.getElementById(`section-${index}`);
         if (sectionElement) {
-            sectionElement.scrollIntoView({ behavior: 'smooth' });
+            if (snapScrollContainerRef.current) {
+                // Calculate the scroll position based on the section index
+                const scrollPosition = index * window.innerHeight;
+                snapScrollContainerRef.current.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                });
+
+                // Update active section immediately for better UX
+                setActiveSection(index);
+            } else {
+                // Fallback to scrollIntoView if snap container is not found
+                sectionElement.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     };
 

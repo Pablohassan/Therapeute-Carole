@@ -14,6 +14,7 @@ import { therapyServiceData } from '../constants/structuredData';
 import { coupleSpecialtyAreas } from '../constants/specialtyAreas';
 import SnapScrollContainer from '../components/SnapScrollContainer';
 import SectionNavigation from '../components/SectionNavigation';
+import KeyboardNavigationHelper from '../components/KeyboardNavigationHelper';
 
 const CouplePage: React.FC = () => {
     // Create specific service data for couple therapy
@@ -31,16 +32,17 @@ const CouplePage: React.FC = () => {
         <>
             <SEO
                 title="Thérapie de Couple"
-                description="Transformez votre relation afin de vous permettre de vous sentir plus satisfait et épanoui. La thérapie de couple permet d'améliorer la communication et de résoudre les conflits."
+                description="Retrouvez l'harmonie dans votre relation. La thérapie de couple vous aide à améliorer votre communication, résoudre les conflits et renforcer votre lien."
                 canonicalUrl="https://www.carole-lagardere.fr/couple"
                 ogImage="/images/couple.webp"
-                keywords={["thérapie de couple", "problèmes de couple", "communication couple", "crise relationnelle", "Bordeaux"]}
+                keywords={["thérapie couple", "thérapie conjugale", "problèmes de couple", "communication couple", "Bordeaux"]}
                 structuredData={coupleTherapyData}
             />
 
             <SectionNavigation totalSections={totalSections} sectionNames={sectionNames} />
+            <KeyboardNavigationHelper autoHideDelay={8000} />
 
-            <SnapScrollContainer>
+            <SnapScrollContainer preventFooterOverlap={true}>
                 {/* Hero Section */}
                 <section
                     className="relative  h-screen flex items-center justify-center overflow-hidden"
