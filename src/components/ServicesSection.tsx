@@ -1,6 +1,6 @@
 // src/components/ServicesSection.tsx
 import React from 'react';
-import { FaUsers, FaHeart, FaUser } from 'react-icons/fa';
+import { FaHeart, FaUser } from 'react-icons/fa';
 import tachevertefamille from '../assets/tachevertefamille.jpeg';
 import { Link } from 'react-router';
 
