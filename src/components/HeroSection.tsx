@@ -3,8 +3,10 @@
 // src/components/HeroSection.tsx
 import { useEffect, useState, useMemo, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useIsMobile } from '../hooks/useIsMobile';
 // import heroImage from '../assets/familytogether.webp';
 import fondHome from '../assets/fondhome.jpeg';
+import fondHomeMobile from '../assets/fondhomemobile.jpeg';
 import { sectionIds } from '../constants/navigation';
 
 const HeroSection = () => {
@@ -19,6 +21,7 @@ const HeroSection = () => {
     const handleResize = useCallback(() => {
         setWindowHeight(window.innerHeight);
     }, []);
+    const isMobile = useIsMobile();
 
     useEffect(() => {
         // Get window height for parallax calculations
@@ -41,18 +44,14 @@ const HeroSection = () => {
                 className="absolute inset-0 w-full h-full"
                 style={{
                     y,
-                    opacity: backgroundOpacity
+                    opacity: backgroundOpacity,
+                    backgroundImage: `url(${isMobile ? fondHomeMobile : fondHome})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: isMobile ? 'center center' : 'center'
                 }}
             >
-                <img
-                    src={fondHome}
-                    alt="Famille souriante"
-                    className="object-cover w-full h-full"
-                    loading="eager" // Critical above-the-fold image
-                    width="1920"
-                    height="1080"
-                />
-                <div className="absolute inset-0"></div>
+                <div className="absolute inset-0 bg-black/10"></div>
             </motion.div>
 
             {/* Hero Content */}
@@ -63,7 +62,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.5 }}
             >
                 <motion.h1
-                    className="text-3xl md:text-5xl lg:text-6xl font-light text-stone-900 font-bebas tracking-wider  mb-8 md:mb-16 leading-tight"
+                    className="text-3xl md:text-5xl lg:text-6xl font-light text-stone-900 font-bebas tracking-wider mb-8 md:mb-16 leading-tight"
                     style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
                     {...contentAnimations}
                     transition={{ duration: 0.8 }}
@@ -71,8 +70,9 @@ const HeroSection = () => {
                     Thérapie familiale et thérapie de couple
                 </motion.h1>
                 <motion.p
-                    className="text- md:text-xl mb-32 sm:mb-16 font-light tracking-wide max-w-2xl mx-auto"
+                    className="text-lg md:text-2xl text-stone- mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-16"
                     style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
+
                     {...contentAnimations}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
@@ -88,9 +88,9 @@ const HeroSection = () => {
                 >
                     <a
                         href={`#${sectionIds.booking}`}
-                        className="text-lg sm:text-lg inline-block border border-[#25926C] px-8 sm:px-16 sm:py-4 py-2 text-slate-900 uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 hover:bg-[#25926C]/30 hover:bg-opacity-80 hover:text-stone-900 hover:border-[#25926C]/10"
+                        className="inline-block bg-white/70 md:bg-transparent md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-10 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-lg  text-stone-00 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#25926C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
                     >
-                        Je prends rendez-vous
+                        Réserver un rendez-vous
                     </a>
                 </motion.div>
             </motion.div>

@@ -7,14 +7,14 @@ import { Link } from 'react-router';
 
 const ServicesSection: React.FC = () => {
     return (
-        <section className="px-8 bg-[#25926C]/10 pb-8" id="services">
+        <section className="px-4 bg-[#25926C]/20 pb-8" id="services">
 
             <div className="max-w-5xl mx-auto">
                 {/* <h2 className="text-3xl font-bold text-center mt-16 mb-8 py-8 ">Vous souhaitez engager une démarche thérapeutique ?
 
                 </h2> */}
                 <div className=" grid md:grid-cols-3 gap-4">
-                    <Link to="/family" className="bg-stone-100 border-1 border-[#25926C]/10 shadow-xl hover:shadow-xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                    <Link to="/family" className="bg-stone-100 border-1 border-[#25926C]/20 shadow-xl hover:shadow-2xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
                         <div className="h-32 flex items-center justify-center mb-4">
                             <img src={logofamille} alt="Logo famille" className="max-h-full max-w-full object-contain rounded-lg" />
                         </div>
@@ -23,7 +23,7 @@ const ServicesSection: React.FC = () => {
                             Accompagner le changement pour retrouver une forme d'équilibre et restaurer les relations au sein de la famille.
                         </p>
                     </Link>
-                    <Link to="/couple" className="bg-stone-100 border-1 border-[#EC6849]/10 shadow-xl hover:shadow-xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                    <Link to="/couple" className="bg-stone-100 border-1 border-[#EC6849]/20 shadow-xl hover:shadow-2xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
                         <div className="h-32 flex items-center justify-center mb-4">
                             <img src={logocouple} alt="Logo couple" className="max-h-full max-w-full object-contain rounded-lg" />
                         </div>
@@ -32,7 +32,7 @@ const ServicesSection: React.FC = () => {
                             Explorer l'histoire du couple, améliorer la communication, favoriser l'écoute pour renforcer la relation au sein du couple.
                         </p>
                     </Link>
-                    <Link to="/individuel" className="bg-stone-100 border-1 border-[#FBC018]/10 shadow-xl hover:shadow-xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                    <Link to="/individuel" className="bg-stone-100 border-1 border-[#FBC018]/20 shadow-xl hover:shadow-2xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
                         <div className="h-32 flex items-center justify-center mb-4">
                             <img src={logoindividuel} alt="Logo individuel" className="max-h-full max-w-full object-contain rounded-lg" />
                         </div>

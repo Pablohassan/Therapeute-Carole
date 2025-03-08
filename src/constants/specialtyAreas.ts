@@ -66,9 +66,9 @@ export const familySpecialtyAreas = [
 
 export const individualSpecialtyAreas = [
   {
-    title: "Anxiété et stress",
+    title: "Soutien à la parentalité",
     description:
-      "Accompagnement pour gérer l'anxiété, les attaques de panique et le stress chronique à travers des techniques adaptées.",
+      "Tension et problème relationnel avec son enfant, problème pour mettre en place des limites éducatives, manque de confiance dans sa parentalité, sentiment d’impuissance face aux manifestations de son enfant, -burn out parental",
   },
   {
     title: "Dépression",

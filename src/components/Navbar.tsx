@@ -27,8 +27,8 @@ const Navbar: React.FC = () => {
     useEffect(() => {
         // Find the snap scroll container
         const findSnapContainer = () => {
-            // Look for the snap-y container
-            const snapContainer = document.querySelector('.snap-y.snap-mandatory') as HTMLElement;
+            // Look for the SnapScrollContainer using the data attribute
+            const snapContainer = document.querySelector('[data-snap-container="true"]') as HTMLElement;
             if (snapContainer) {
                 snapScrollContainerRef.current = snapContainer;
                 return true;
@@ -63,6 +63,25 @@ const Navbar: React.FC = () => {
         // Always add window scroll listener as a fallback
         window.addEventListener('scroll', handleScroll);
 
+        // Check for changes in the DOM that might affect our scroll container
+        const checkForChanges = () => {
+            // Clean up old listeners
+            if (snapScrollContainerRef.current) {
+                snapScrollContainerRef.current.removeEventListener('scroll', handleScroll);
+            }
+
+            // Check for snap container
+            const hasSnapContainer = findSnapContainer();
+
+            // Set up appropriate listeners
+            if (hasSnapContainer && snapScrollContainerRef.current) {
+                snapScrollContainerRef.current.addEventListener('scroll', handleScroll);
+            }
+
+            // Run initial check
+            handleScroll();
+        };
+
         // Set up a MutationObserver to detect when the snap container is added to or removed from the DOM
         const observer = new MutationObserver((mutations) => {
             // Check if the DOM has changed significantly
@@ -77,26 +96,15 @@ const Navbar: React.FC = () => {
             }
 
             if (shouldRecheck) {
-                // Clean up old listeners
-                if (snapScrollContainerRef.current) {
-                    snapScrollContainerRef.current.removeEventListener('scroll', handleScroll);
-                }
-
-                // Check for snap container
-                const hasSnapContainer = findSnapContainer();
-
-                // Set up appropriate listeners
-                if (hasSnapContainer && snapScrollContainerRef.current) {
-                    snapScrollContainerRef.current.addEventListener('scroll', handleScroll);
-                }
-
-                // Run initial check
-                handleScroll();
+                checkForChanges();
             }
         });
 
         // Start observing the document body for changes
         observer.observe(document.body, { childList: true, subtree: true });
+
+        // Also check periodically for changes that the MutationObserver might miss
+        const intervalId = setInterval(checkForChanges, 1000);
 
         return () => {
             // Clean up all event listeners
@@ -105,6 +113,7 @@ const Navbar: React.FC = () => {
             }
             window.removeEventListener('scroll', handleScroll);
             observer.disconnect();
+            clearInterval(intervalId);
         };
     }, []);
 
@@ -207,7 +216,9 @@ const Navbar: React.FC = () => {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <div className="bg-stone-700/95  backdrop-blur-sm shadow-lg py-4 px-4 flex flex-col space-y-4">
+                        <div className="bg-stone-600/80  py-4 px-4 flex flex-col space-y-4"
+                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
+                        >
                             <MobileNavLink to="/home" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-blue-400">
                                 Accueil
                             </MobileNavLink>

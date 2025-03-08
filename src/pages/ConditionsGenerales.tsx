@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import { showFooter } from '../components/Layout';
 
 const ConditionsGenerales: React.FC = () => {
+    // Force footer to be visible after a delay
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            showFooter();
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
             <SEO
@@ -100,7 +110,7 @@ const ConditionsGenerales: React.FC = () => {
                                 des tiers, sauf obligation légale.
                             </p>
                             <p className="mb-4">
-                                Nous attachons une importance particulière à la protection de vos données personnelles. Dans le cadre de la prise de rendez-vous en ligne, aucune donnée client n’est conservée sur notre site. L’ensemble des informations nécessaires à la réservation (nom, prénom, adresse e-mail, etc.) est directement collecté et traité par notre prestataire tiers Calendly, conformément à sa propre politique de confidentialité. Nous n’avons pas accès à vos informations de paiement ni à d’autres données sensibles. En utilisant notre service de prise de rendez-vous, vous acceptez les conditions générales de Calendly, disponibles sur leur site. Pour toute question relative à vos droits en matière de protection des données, nous vous invitons à contacter Calendly ou à consulter leur politique de confidentialité.
+                                Nous attachons une importance particulière à la protection de vos données personnelles. Dans le cadre de la prise de rendez-vous en ligne, aucune donnée client n'est conservée sur notre site. L'ensemble des informations nécessaires à la réservation (nom, prénom, adresse e-mail, etc.) est directement collecté et traité par notre prestataire tiers Calendly, conformément à sa propre politique de confidentialité. Nous n'avons pas accès à vos informations de paiement ni à d'autres données sensibles. En utilisant notre service de prise de rendez-vous, vous acceptez les conditions générales de Calendly, disponibles sur leur site. Pour toute question relative à vos droits en matière de protection des données, nous vous invitons à contacter Calendly ou à consulter leur politique de confidentialité.
                             </p>
                         </div>
 

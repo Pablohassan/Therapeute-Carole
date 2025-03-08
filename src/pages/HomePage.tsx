@@ -1,13 +1,23 @@
 // src/pages/HomePage.tsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import BookingSection from '../components/BookingSection';
 import FaqAndBlogSection from '../components/FaqAndBlogSection';
 import SEO from '../components/SEO';
+import { showFooter } from '../components/Layout';
 
 const HomePage: React.FC = () => {
+    // Force footer to be visible after a delay
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            showFooter();
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
             <SEO

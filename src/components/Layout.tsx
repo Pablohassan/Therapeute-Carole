@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { ParallaxProvider } from 'react-scroll-parallax';
@@ -9,12 +9,40 @@ interface LayoutProps {
     isHomePage?: boolean;
 }
 
+// Helper functions to create and dispatch events
+export function showFooter() {
+    window.dispatchEvent(new Event('show-footer'));
+}
+
+export function hideFooter() {
+    window.dispatchEvent(new Event('hide-footer'));
+}
+
 const Layout: React.FC<LayoutProps> = ({ children, isHomePage = false }) => {
+    const [isFooterVisible, setIsFooterVisible] = useState(false);
+
     // Add debugging code to check for multiple instances
     useEffect(() => {
         console.log('Layout component mounted');
+
+        // Listen for footer visibility events
+        const handleShowFooter = () => {
+            console.log('Show footer event received');
+            setIsFooterVisible(true);
+        };
+
+        const handleHideFooter = () => {
+            console.log('Hide footer event received');
+            setIsFooterVisible(false);
+        };
+
+        window.addEventListener('show-footer', handleShowFooter);
+        window.addEventListener('hide-footer', handleHideFooter);
+
         return () => {
             console.log('Layout component unmounted');
+            window.removeEventListener('show-footer', handleShowFooter);
+            window.removeEventListener('hide-footer', handleHideFooter);
         };
     }, []);
 
@@ -37,7 +65,7 @@ const Layout: React.FC<LayoutProps> = ({ children, isHomePage = false }) => {
                         <div className="flex-grow">{children}</div>
                     </>
                 )}
-                <Footer />
+                {isFooterVisible && <Footer />}
             </div>
         </ParallaxProvider>
     );

@@ -1,12 +1,21 @@
 // src/pages/BlogPage.tsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { sectionIds } from '../constants/navigation';
 import SEO from '../components/SEO';
 import therapistImage from '../assets/carole-lagardere-therapeute-familiale.webp'; // Assuming you have this image
-
+import { showFooter } from '../components/Layout';
 
 const AproposPage: React.FC = () => {
+    // Force footer to be visible after a delay
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            showFooter();
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
             <SEO
@@ -19,7 +28,7 @@ const AproposPage: React.FC = () => {
 
             <main className="font-montserrat text-stone-800 font-light">
                 {/* Hero Section */}
-                <section className="relative h-screen flex items-center justify-center py-32 bg-green-950/30">
+                <section className="relative h-screen flex items-center justify-center py-32 bg-[#25926C]/20">
                     <div className="container mx-auto px-6">
                         <motion.div
                             className="max-w-5xl mx-auto text-center"
@@ -30,11 +39,13 @@ const AproposPage: React.FC = () => {
                             <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-stone-800 mb-6">
                                 Carole Lagardère
                             </h1>
-                            <p className="text-xl md:text-2xl xl:text-3xl font-light text-stone-600 mb-4">
+                            <p className="text-xl md:text-2xl xl:text-3xl font-light text-stone-900 mb-4">
                                 Thérapeute familiale et de couple
                             </p>
-                            <div className="w-24 h-1 bg-stone-400 mx-auto my-8"></div>
-                            <p className="text-lg md:text-xl xl:text-2xl text-stone-600 italic max-w-2xl mx-auto font-light">
+                            <div className="w-24 h-1 bg-[#25926C]/60 mx-auto my-8"></div>
+                            <p className="text-lg md:text-xl xl:text-2xl text-stone-600 italic max-w-2xl mx-auto font-light"
+                                style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.4)' }}
+                            >
                                 "Accompagner le changement pour retrouver une forme d'équilibre et restaurer les relations"
                             </p>
                         </motion.div>
@@ -112,7 +123,7 @@ const AproposPage: React.FC = () => {
                                     </h2>
 
                                     <div className="space-y-8">
-                                        <div className="bg-amber-50/50 p-6 border-l-4 border-amber-200">
+                                        <div className="bg-[#25926C]/10 p-6 border-l-4 border-[#25926C]/80">
                                             <h3 className="text-xl font-medium text-stone-800 mb-3">
                                                 Thérapie Familiale
                                             </h3>
@@ -127,7 +138,7 @@ const AproposPage: React.FC = () => {
                                             </p>
                                         </div>
 
-                                        <div className="bg-stone-50 p-6 border-l-4 border-stone-300">
+                                        <div className="bg-[#EC6849]/20 p-6 border-l-4 border-[#EC6849]/80">
                                             <h3 className="text-xl font-medium text-stone-800 mb-3">
                                                 Thérapie de Couple
                                             </h3>
@@ -138,7 +149,7 @@ const AproposPage: React.FC = () => {
                                             </p>
                                         </div>
 
-                                        <div className="bg-stone-50/70 p-6 border-l-4 border-stone-300">
+                                        <div className="bg-[#FBC018]/10 p-6 border-l-4 border-[#FBC018]/80">
                                             <h3 className="text-xl font-medium text-stone-800 mb-3">
                                                 Thérapie Individuelle
                                             </h3>
@@ -157,7 +168,7 @@ const AproposPage: React.FC = () => {
                                 </div>
 
                                 <div className="pt-8">
-                                    <h2 className="text-2xl md:text-3xl uppercase text-stone-800 font-light tracking-wide mb-6 border-b border-stone-200 pb-3">
+                                    <h2 className="text-2xl md:text-3xl uppercase text-stone-800 font-light tracking-wide mb-6 border-b border-[#25926C]/80 pb-3">
                                         Ma philosophie
                                     </h2>
                                     <div className="space-y-4 text-stone-600 leading-relaxed">
@@ -220,21 +231,21 @@ const AproposPage: React.FC = () => {
                             transition={{ duration: 0.8, staggerChildren: 0.2 }}
                             viewport={{ once: true }}
                         >
-                            <div className="bg-white p-8 rounded-sm shadow-sm border-t-4 border-stone-400 hover:shadow-md transition-shadow">
+                            <div className="bg-white p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
                                 <h3 className="text-xl font-medium text-stone-800 mb-4">Bienveillance</h3>
                                 <p className="text-stone-600">
                                     Un espace d'accueil chaleureux et sécurisant où chacun peut s'exprimer librement sans jugement.
                                 </p>
                             </div>
 
-                            <div className="bg-white p-8 rounded-sm shadow-sm border-t-4 border-stone-400 hover:shadow-md transition-shadow">
+                            <div className="bg-white p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
                                 <h3 className="text-xl font-medium text-stone-800 mb-4">Engagement</h3>
                                 <p className="text-stone-600">
                                     Un accompagnement personnalisé et engagé pour vous aider à révéler votre potentiel et trouver vos solutions.
                                 </p>
                             </div>
 
-                            <div className="bg-white p-8 rounded-sm shadow-sm border-t-4 border-stone-400 hover:shadow-md transition-shadow">
+                            <div className="bg-white p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
                                 <h3 className="text-xl font-medium text-stone-800 mb-4">Créativité</h3>
                                 <p className="text-stone-600">
                                     Une approche qui favorise l'innovation et l'adaptation pour répondre aux besoins spécifiques de chaque situation.
@@ -257,7 +268,7 @@ const AproposPage: React.FC = () => {
                             <h2 className="text-2xl md:text-3xl uppercase text-stone-800 font-light tracking-wide mb-6">
                                 Contact & Réseaux Sociaux
                             </h2>
-                            <div className="w-20 h-1 bg-stone-400 mx-auto mb-8"></div>
+                            <div className="w-20 h-1 bg-[#25926C]/80 mx-auto mb-8"></div>
                             <p className="text-lg text-stone-600 max-w-2xl mx-auto">
                                 N'hésitez pas à me contacter pour toute question ou pour prendre rendez-vous.
                             </p>
@@ -266,7 +277,7 @@ const AproposPage: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             {/* Contact Information */}
                             <motion.div
-                                className="bg-stone-50 p-8 rounded-sm shadow-sm"
+                                className="bg-stone-50 border-1 border-[#25926C]/10 p-8 rounded-sm shadow-sm shadow-[#25926C]/10"
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6 }}
@@ -371,7 +382,7 @@ const AproposPage: React.FC = () => {
 
                             {/* Social Media */}
                             <motion.div
-                                className="bg-stone-50 p-8 rounded-sm shadow-sm"
+                                className="bg-stone-50 border-1 border-[#25926C]/10 p-8 rounded-sm shadow-sm shadow-[#25926C]/10"
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6 }}
@@ -445,8 +456,6 @@ const AproposPage: React.FC = () => {
                     </div>
                 </section>
             </main>
-
-
         </>
     );
 };
