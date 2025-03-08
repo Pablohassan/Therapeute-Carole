@@ -12,6 +12,9 @@ Disallow: /api/
 # Disallow specific file types
 Disallow: /*.json$
 Disallow: /*.xml$
+Disallow: /*?*
+Disallow: /*/temp/
+Disallow: /*/draft/
 
 # Allow specific assets
 Allow: /*.js$

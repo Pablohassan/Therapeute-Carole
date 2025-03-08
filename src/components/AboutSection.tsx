@@ -1,8 +1,8 @@
 // src/components/AboutSection.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import cabinetImage2 from '../assets/cabinet2carre.webp';
-import cabinetImage3 from '../assets/cabiner3carre.webp';
+import cabinetImage2 from '../assets/carole-lagardere-therapeute-talence-cabinet2carre.webp';
+import cabinetImage3 from '../assets/carole-lagardere-therapeute-talence-cabinet3carre.webp';
 
 
 const AboutSection: React.FC = () => {

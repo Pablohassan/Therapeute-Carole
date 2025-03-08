@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import hand from '../assets/hand.webp';
 import genealogieImage from '../assets/genealogie.webp';
 import therapistImage from '../assets/therapist.webp';
-import homecouple from '../assets/homecouple.jpeg';
+import homecouple from '../assets/carole-lagardere-therapeute-talence-couple.jpeg';
 
 // Import mobile-optimized images
 
-import homecoupleMobile from '../assets/couplemobile.jpeg'; // You'll need to create this mobile version
+import homecoupleMobile from '../assets/carole-lagardere-therapeute-couple-talence-mobile.jpeg'; // You'll need to create this mobile version
 // import { CheckIcon } from '@heroicons/react/24/outline';
 import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
@@ -55,11 +55,11 @@ const CouplePage: React.FC = () => {
     return (
         <div className="bg-[#EC6849]/20">
             <SEO
-                title="Thérapie de Couple"
-                description="Retrouvez l'harmonie dans votre relation. La thérapie de couple vous aide à améliorer votre communication, résoudre les conflits et renforcer votre lien."
+                title="Thérapie de Couple à Talence"
+                description="Consultations de couple à Talence (Bordeaux). Retrouvez l'harmonie dans votre relation, améliorez votre communication et résolvez les conflits avec une approche systémique bienveillante."
                 canonicalUrl="https://www.carole-lagardere.fr/couple"
                 ogImage="/images/couple.webp"
-                keywords={["thérapie couple", "thérapie conjugale", "problèmes de couple", "communication couple", "Bordeaux"]}
+                keywords={["thérapie couple Talence", "thérapie conjugale Bordeaux", "problèmes de couple", "communication couple", "conflits conjugaux", "conseil conjugal Talence", "thérapeute couple Bordeaux"]}
                 structuredData={coupleTherapyData}
             />
 

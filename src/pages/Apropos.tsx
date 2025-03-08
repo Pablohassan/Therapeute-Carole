@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { sectionIds } from '../constants/navigation';
 import SEO from '../components/SEO';
-import therapistImage from '../assets/carole-lagardere-therapeute-familiale.webp'; // Assuming you have this image
+import therapistImage from '../assets/carole-lagardere-therapeute-familiale-talence.webp'; // Assuming you have this image
 import { showFooter } from '../components/Layout';
 
 const AproposPage: React.FC = () => {
@@ -20,10 +20,10 @@ const AproposPage: React.FC = () => {
         <>
             <SEO
                 title="À Propos de Carole Lagardère"
-                description="Thérapeute familiale systémique certifiée EFTA, spécialisée dans la thérapie familiale, de couple et individuelle à Talence."
+                description="Découvrez Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence. Formation, approche thérapeutique et philosophie de soins. Consultations accessibles à tous."
                 canonicalUrl="https://www.carole-lagardere.fr/apropos"
                 ogImage="/carole-lagardere-therapeute-familiale.webp"
-                keywords={["thérapeute familiale", "thérapie systémique", "thérapie de couple", "thérapie individuelle", "Carole Lagardère", "Talence", "EFTA"]}
+                keywords={["thérapeute familiale Talence", "Carole Lagardère thérapeute", "thérapie systémique Bordeaux", "thérapie familiale EFTA", "thérapeute certifiée Talence", "consultation thérapie Bordeaux", "approche systémique"]}
             />
 
             <main className="font-montserrat text-stone-800 font-light">
@@ -198,7 +198,7 @@ const AproposPage: React.FC = () => {
                                 >
                                     <a
                                         href={`#${sectionIds.contact}`}
-                                        className="inline-block bg-stone-700 px-10 py-4 text-white font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-stone-600 shadow-md hover:shadow-lg"
+                                        className="inline-block bg-[#25926C] px-10 py-4 text-white font-light uppercase tracking-wider text-base transition-all duration-300 hover:scale-105 hover:font-medium shadow-md hover:shadow-lg"
                                     >
                                         Me contacter
                                     </a>

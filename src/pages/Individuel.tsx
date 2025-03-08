@@ -1,12 +1,12 @@
-// src/pages/Individuel.tsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import homeindividuel from '../assets/homeindividuel.jpeg';
-import homeindividuelmobile from '../assets/homeindividuelmobile.jpeg';
+import homeindividuel from '../assets/carole-lagardere-therapeute-talence-individuel.jpeg';
+import homeindividuelmobile from '../assets/carole-lagardere-therapeute-talence-ndividuel-mobile.jpeg';
 import escalierImage from '../assets/escalier.webp';
 import piedsImage from '../assets/pieds.webp';
 import couplelaptopImage from '../assets/couplelaptop.webp';
-import parentenfant from '../assets/parentenfant.webp'
+import tacheImage from '../assets/logofamille.jpeg'
 import BookingSection from '../components/BookingSection';
 import ResponsiveImage from '../components/ResponsiveImage';
 import SEO from '../components/SEO';
@@ -63,11 +63,11 @@ const IndividuelPage: React.FC = () => {
     return (
         <div className="bg-[#FBC018]/20">
             <SEO
-                title="Thérapie Individuelle"
-                description="Retrouvez votre équilibre personnel et développez votre potentiel. La thérapie individuelle vous accompagne dans votre cheminement vers le mieux-être."
+                title="Thérapie Individuelle à Talence"
+                description="Consultations individuelles à Talence (Bordeaux). Retrouvez votre équilibre personnel, développez votre potentiel et surmontez vos difficultés avec un accompagnement personnalisé."
                 canonicalUrl="https://www.carole-lagardere.fr/individuel"
                 ogImage="/images/individuel.webp"
-                keywords={["thérapie individuelle", "psychothérapie", "développement personnel", "bien-être", "Bordeaux"]}
+                keywords={["thérapie individuelle Talence", "psychothérapie Bordeaux", "développement personnel", "thérapie systémique", "soutien psychologique Talence", "bien-être émotionnel", "thérapeute Bordeaux"]}
                 structuredData={individualTherapyData}
             />
 
@@ -545,11 +545,11 @@ const IndividuelPage: React.FC = () => {
 
                             <div className="lg:col-span-1 h-full">
                                 <div className="sticky top-24">
-                                    <div className="h-full w-full relative" style={{ minHeight: '400px' }}>
+                                    <div className="h-full w-full  relative" style={{ minHeight: '400px' }}>
                                         <img
-                                            src={parentenfant}
+                                            src={tacheImage}
                                             alt="Soutien à la parentalité"
-                                            className="absolute inset-0 h-full w-full object-cover shadow-md rounded-lg"
+                                            className="absolute inset-0 h-full w-full object-contain shadow-md rounded-lg"
 
                                             sizes="(max-width: 1024px) 100vw, 33vw"
 

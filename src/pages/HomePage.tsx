@@ -22,9 +22,9 @@ const HomePage: React.FC = () => {
         <>
             <SEO
                 title="Carole Lagardère - Thérapeute Familiale Talence"
-                description="Carole Lagardère est une thérapeute familiale, spécialisée dans la thérapie familiale, de couple et individuelle à  Talence - Bordeaux."
+                description="Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence (Bordeaux). Consultations en thérapie familiale, de couple et individuelle. Approche bienveillante et solution-focused."
                 canonicalUrl="https://www.carole-lagardere.fr/"
-                keywords={["thérapeute familiale", "thérapie familiale", "thérapie de couple", "thérapie individuelle", "Bordeaux", "Talence"]}
+                keywords={["thérapeute familiale Talence", "thérapie familiale Bordeaux", "thérapie de couple Talence", "thérapie individuelle Talence", "thérapie systémique", "thérapie familiale EFTA", "therapeute Bordeaux"]}
             />
             <HeroSection />
             <AboutSection />

@@ -7,10 +7,10 @@ import { sectionIds } from '../constants/navigation';
 import { motion } from 'framer-motion';
 
 import { useIsMobile } from '../hooks/useIsMobile';
-import livingroomImage from '../assets/cabinetcarole1.webp';
+import livingroomImage from '../assets/carole-lagardere-therapeute-talence-cabinetcarole1.webp';
 import couplelaptopImage from '../assets/couplelaptop.webp';
-import homefamily from '../assets/familyhome.jpeg';
-import homefamilyMobile from '../assets/famillemobile.jpeg';
+import homefamily from '../assets/carole-lagardere-therapeute-talence-family-home.jpeg';
+import homefamilyMobile from '../assets/carole-lagardere-therapeute-famille-talence-mobile.jpeg'
 import famille from '../assets/famille-therapie-talence.webp';
 import SnapScrollContainer from '../components/SnapScrollContainer';
 import SectionNavigation from '../components/SectionNavigation';
@@ -50,11 +50,11 @@ const FamilyPage: React.FC = () => {
     return (
         <div className={`bg-[#AB4D8C]/20`}>
             <SEO
-                title="Thérapie Familiale Systémique"
-                description="Retrouvez le lien familial, reprenez du plaisir ensemble, valorisez-vous mutuellement. La thérapie familiale permet d'améliorer la communication et de résoudre les conflits."
-                canonicalUrl="https://www.carole-lagardere.de/family"
-                ogImage="/images/family.webp"
-                keywords={["thérapie familiale", "thérapie systémique", "conflits familiaux", "communication famille", "Bordeaux"]}
+                title="Thérapie Familiale Systémique à Talence"
+                description="Consultations familiales à Talence (Bordeaux). Retrouvez un lien familial harmonieux, améliorez la communication et résolvez les conflits avec une approche systémique adaptée à chaque famille."
+                canonicalUrl="https://www.carole-lagardere.fr/family"
+                ogImage="/images/carole-lagardere-therapeute-talence-home.jpeg"
+                keywords={["thérapie familiale Talence", "thérapie systémique Bordeaux", "conflits familiaux", "communication famille", "relation parent-enfant", "thérapeute familial EFTA", "thérapie famille Bordeaux"]}
                 structuredData={familyTherapyData}
             />
 

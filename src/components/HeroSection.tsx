@@ -5,8 +5,8 @@ import { useEffect, useState, useMemo, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useIsMobile } from '../hooks/useIsMobile';
 // import heroImage from '../assets/familytogether.webp';
-import fondHome from '../assets/fondhome.jpeg';
-import fondHomeMobile from '../assets/fondhomemobile.jpeg';
+import fondHome from '../assets/carole-lagardere-therapeute-talence-home.jpeg';
+import fondHomeMobile from '../assets/carole-lagardere-therapeute-talence-home-mobile.jpeg';
 import { sectionIds } from '../constants/navigation';
 
 const HeroSection = () => {
