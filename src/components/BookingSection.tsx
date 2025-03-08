@@ -27,8 +27,7 @@ const BookingSection: React.FC = () => {
                     <div className="w-20 h-1 bg-stone-400 mx-auto mb-6 md:mb-8"></div>
 
                     <p className="text-center mb-6 md:mb-8 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Choisissez une date et une heure qui vous conviennent pour votre consultation.
-                        Je vous répondrai dans les plus brefs délais pour confirmer notre rendez-vous.
+                        Si vous ne trouvez aucun créneau adapté, je vous propose de prendre rendez-vous par téléphone ou par mail.
                     </p>
 
                     <div className="bg-white rounded-lg shadow-xl p-4 md:p-6">
