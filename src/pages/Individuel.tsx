@@ -241,19 +241,6 @@ const IndividuelPage: React.FC = () => {
                 < section className="py-20 px-6 bg-gradient-to-b from-white to-stone-50" >
                     <div className="container mx-auto max-w-5xl">
                         {/* Quote at the top of the Approach section */}
-                        <motion.div
-                            className="text-center mb-16"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="p-10 bg-[#FBC018] text-stone-900 mb-12 shadow-md rounded-sm">
-                                <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
-                                    « Se comprendre pour mieux avancer »
-                                </p>
-                            </div>
-                        </motion.div>
 
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start"
@@ -476,6 +463,20 @@ const IndividuelPage: React.FC = () => {
                         >
                             <div className="lg:col-span-2">
                                 <div className="bg-white p-8 rounded-lg shadow-[#FBC018]/20 shadow-md border border-stone-100 mb-8">
+                                    <motion.div
+                                        className="text-center mb-16"
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ duration: 0.8 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <div className="p-10 bg-[#FBC018] text-stone-900 mb-12 shadow-md rounded-sm">
+                                            <p className="mx-auto text-2xl md:text-3xl lg:text-4xl italic font-light leading-relaxed">
+                                                « Je recois tout parent qui s'inquiète des difficultés de son enfant ou adolescent »
+                                            </p>
+                                        </div>
+                                    </motion.div>
+
                                     <div className="flex items-center mb-6">
 
                                         <h3 className="text-xl font-medium text-gray-900">Une approche flexible :</h3>
@@ -500,30 +501,7 @@ const IndividuelPage: React.FC = () => {
                                     </h3>
 
                                     <ul className="space-y-4">
-                                        <li className="flex items-start">
-                                            <span className="text-[#FBC018] mr-3 mt-1">•</span>
-                                            <p className="text-lg text-gray-600 leading-relaxed">
-                                                Un soutien psycho éducatif qui peut aider à améliorer la relation
-                                                avec l'enfant en évaluant au plus juste les problèmes rencontrés.
-                                            </p>
-                                        </li>
 
-                                        <li className="flex items-start">
-                                            <span className="text-[#FBC018] mr-3 mt-1">•</span>
-                                            <p className="text-lg text-gray-600 leading-relaxed">
-                                                Accompagner les parents dans les taches éducatives du quotidien pour rendre le parent
-                                                disponible à sa parentalité.
-                                            </p>
-                                        </li>
-
-                                        <li className="flex items-start">
-                                            <span className="text-[#FBC018] mr-3 mt-1">•</span>
-                                            <p className="text-lg text-gray-600 leading-relaxed">
-                                                Fournir aux parents des informations éclairées sur les sujets du quotidien qui les
-                                                préoccupent : éducation, limites éducatives, sécurité, importance du jeu, interactions,
-                                                attachement, violences éducatives, addictions, exposition aux écrans, etc.
-                                            </p>
-                                        </li>
 
                                         <li className="flex items-start">
                                             <span className="text-[#FBC018] mr-3 mt-1">•</span>
@@ -539,6 +517,37 @@ const IndividuelPage: React.FC = () => {
                                                 rencontrent et les accompagner dans la mobilisation de leurs ressources.
                                             </p>
                                         </li>
+
+
+                                        <li className="flex items-start">
+                                            <span className="text-[#FBC018] mr-3 mt-1">•</span>
+                                            <p className="text-lg text-gray-600 leading-relaxed">
+                                                Accompagner les parents dans les taches éducatives du quotidien pour les rendre disponibles à leur parentalité.
+                                            </p>
+                                        </li>
+
+                                        <li className="flex items-start">
+                                            <span className="text-[#FBC018] mr-3 mt-1">•</span>
+                                            <p className="text-lg text-gray-600 leading-relaxed">
+                                                Un soutien psycho éducatif qui peut aider à améliorer la relation
+                                                avec l'enfant en évaluant au plus juste les problèmes rencontrés.
+                                            </p>
+                                        </li>
+
+
+
+                                        <li className="flex items-start">
+                                            <span className="text-[#FBC018] mr-3 mt-1">•</span>
+                                            <p className="text-lg text-gray-600 leading-relaxed">
+                                                Fournir aux parents des informations éclairées sur les sujets du quotidien qui les
+                                                préoccupent : éducation, limites éducatives, sécurité, importance du jeu, interactions,
+                                                attachement, violences éducatives, addictions, exposition aux écrans, etc.
+                                            </p>
+                                        </li>
+
+
+
+
                                     </ul>
                                 </div>
                             </div>
@@ -578,15 +587,12 @@ const IndividuelPage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-6">
-                                Domaines d'intervention
+                                Motif de consultation
                             </h2>
 
                             <div className="w-20 h-1 bg-stone-400 mx-auto mb-8"></div>
 
-                            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                                La thérapie individuelle peut vous aider dans de nombreuses situations.
-                                Voici les principaux domaines dans lesquels j'interviens :
-                            </p>
+
                         </motion.div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -633,7 +639,7 @@ const IndividuelPage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-6">
-                                Est-ce que la thérapie individuelle fonctionne ?
+                                L'entretien de soutien à la parentalité
                             </h2>
 
                             <div className="w-20 h-1 bg-stone-400 mx-auto mb-8"></div>

@@ -261,9 +261,15 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.8 }}
                     >
                         <p className="text-lg lg:text-xl text-stone-700 italic leading-relaxed text-center">
-                            Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique,
-                            j'espère par les contenus de ce site, pouvoir vous apporter quelques pistes susceptibles de
-                            nourrir votre réflexion… et pourquoi pas, trouver l&#39;élan, faire le pas pour nous rencontrer !
+                            Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique?
+
+
+                        </p>
+
+                        <p className="text-lg lg:text-xl text-stone-700 italic leading-relaxed text-center">
+                            J'espère  pouvoir vous apporter quelques pistes susceptibles de
+                            nourrir votre réflexion… Et pourquoi pas, trouver l&#39;élan, faire le pas pour nous rencontrer !
+
                         </p>
                     </motion.div>
 

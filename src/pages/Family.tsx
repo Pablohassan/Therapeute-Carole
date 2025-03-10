@@ -134,7 +134,7 @@ const FamilyPage: React.FC = () => {
                                 </p>
 
                                 <p className="text-lg text-gray-600 leading-relaxed">
-                                    C'est souvent avec les personnes qui sont le plus proches de nous que nous éprouvons une
+                                    C'est souvent avec les personnes qui sont les plus proches de nous que nous éprouvons une
                                     forme d'appréhension à parler de nos émotions, de nos sentiments profonds. Peut-être parce
                                     que nous avons peur de les blesser, de leur faire du mal.
                                 </p>
@@ -200,21 +200,17 @@ const FamilyPage: React.FC = () => {
                                 <div className="space-y-6">
                                     <p className="text-lg text-gray-600 leading-relaxed">
                                         En séance, le thérapeute porte une attention particulière aux besoins de chacun, à leurs
-                                        expressions, à la manière dont la parole circule, son contenu, son adresse, son intention. Il
+                                        expressions, à la manière dont la parole circule. Il
                                         s'agit de faire un état des lieux et engager une réflexion sur les places et les rôles de chacun.
                                     </p>
 
                                     <p className="text-lg text-gray-600 leading-relaxed">
-                                        Chaque famille est unique, il n'existe pas de technique généralisée applicable à n'importe quelle
-                                        famille. Le thérapeute s'adapte à chaque famille, et tente de repérer et mobiliser les ressources,
+                                        Chaque famille est unique. Le thérapeute s'adapte et tente de repérer et mobiliser les ressources,
                                         en faisant preuve de souplesse et de créativité.
                                     </p>
 
                                     <p className="text-lg text-gray-600 leading-relaxed">
-                                        La thérapie familiale est un espace de rencontre entre les individus, le système, le thérapeute. Il
-                                        se crée un lieu, un univers unique, entre représentations, modèles internes, valeurs,
-                                        construction du monde, résonnances. Le thérapeute accueille cette complexité tout en assurant
-                                        un cadre contenant et rassurant.
+                                        La thérapie familiale est un espace de rencontre, et d'echanges dans unenvironement contenant et rassurant.
                                     </p>
                                 </div>
 
@@ -248,7 +244,7 @@ const FamilyPage: React.FC = () => {
                                 </p>
 
                                 <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                                    Outils de médiation, intermédiaire, le jeu en thérapie permet de créer des liens entre les
+                                    Le jeu en thérapie permet de créer des liens entre les
                                     membres de la famille, de renforcer le sentiment d'appartenance, d'expliciter des émotions, des
                                     ressentis, des représentations.
                                 </p>
@@ -289,7 +285,7 @@ const FamilyPage: React.FC = () => {
                         >
                             <div className="text-center mb-12 mt-8 md:mt-16">
                                 <h2 className="text-3xl font-light uppercase tracking-wide text-gray-900 mb-6">
-                                    Concrètement
+                                    Comment se déroule une thérapie familiale ?
                                 </h2>
                                 <div className="w-20 h-1 mx-auto"></div>
                             </div>

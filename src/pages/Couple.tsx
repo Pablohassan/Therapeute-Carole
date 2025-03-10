@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import hand from '../assets/hand.webp';
-import genealogieImage from '../assets/genealogie.webp';
 import therapistImage from '../assets/therapist.webp';
 import homecouple from '../assets/carole-lagardere-therapeute-talence-couple.jpeg';
 
@@ -172,63 +171,7 @@ const CouplePage: React.FC = () => {
                     </div>
                 </MobileOptimizedSection>
 
-                {/* Genealogy Section */}
-                <MobileOptimizedSection>
-                    <div className="container mx-auto max-w-4xl">
-                        <motion.div
-                            className="py-8 md:py-16 px-4 md:px-6 text-gray-900 flex items-center justify-center"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="container mx-auto p-8 md:p-16 max-w-[90%] md:max-w-[80%] bg-[#EC6849] text-center">
-                                <p className="mx-auto text-xl md:text-3xl lg:text-4xl italic leading-relaxed">
-                                    « Réencrer le système couple dans l'histoire de chacun »
-                                </p>
-                            </div>
-                        </motion.div>
 
-                        <motion.div
-                            className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-center"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="lg:col-span-2 space-y-4 md:space-y-6  mx-auto px-2 md:px-4">
-                                <h2 className="text-xl md:text-3xl text-gray-900 font-light tracking-wide mb-4 md:mb-6 text-center lg:text-left">
-                                    En analysant les liens transgénérationnels, en utilisant par exemple le génogramme.
-                                </h2>
-
-
-
-                                <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center lg:text-left ">
-                                    Comprendre les règles de fonctionnement du couple, son histoire spécifique au-delà de deux
-                                    histoires individuelles d'assouplir la structure qui le maintient pour permettre un
-                                    remaniement des places et des attentes de chacun.
-                                </p>
-                            </div>
-
-
-                            <div className="lg:col-span-1 h-full pt-[10%]">
-                                <div className="h-full w-full relative  overflow-hidden" style={{ minHeight: '400px' }}>
-                                    <ResponsiveImage
-                                        src={genealogieImage}
-                                        alt="Génogramme"
-                                        className="absolute inset-0 h-full w-full object-cover shadow-2xl"
-                                        width={800}
-                                        height={1000}
-                                        sizes="(max-width: 1024px) 100vw, 33vw"
-                                        priority={true}
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                                </div>
-                            </div>
-
-                        </motion.div>
-                    </div>
-                </MobileOptimizedSection>
 
                 {/* Therapist Approach Section */}
                 <MobileOptimizedSection>
@@ -295,7 +238,7 @@ const CouplePage: React.FC = () => {
 
                             <p className="text-base md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
                                 La thérapie de couple peut vous aider dans de nombreuses situations.
-                                Voici les principaux domaines dans lesquels j'interviens :
+
                             </p>
                         </motion.div>
 
@@ -330,16 +273,6 @@ const CouplePage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-2xl md:text-3xl font-light uppercase tracking-wide text-gray-900 mb-4 md:mb-6">
-                                Est-ce que la thérapie de couple fonctionne ?
-                            </h2>
-
-                            <div className="w-20 h-1 bg-stone-400 mx-auto mb-4 md:mb-8"></div>
-
-                            <p className="text-base md:text-xl text-gray-600 leading-relaxed">
-                                Effective pour ceux qui sont ouverts et prêts à engager le traitement. Bien que l'hésitation
-                                soit normale, l'engagement dans le processus mène à un changement significatif.
-                            </p>
 
                             <div className="pt-4 md:pt-8">
                                 <a

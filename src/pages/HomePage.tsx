@@ -4,7 +4,6 @@ import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import BookingSection from '../components/BookingSection';
-import FaqAndBlogSection from '../components/FaqAndBlogSection';
 import SEO from '../components/SEO';
 import { showFooter } from '../components/Layout';
 
@@ -30,7 +29,7 @@ const HomePage: React.FC = () => {
             <AboutSection />
             <ServicesSection />
             <BookingSection />
-            <FaqAndBlogSection />
+
         </>
     );
 };
