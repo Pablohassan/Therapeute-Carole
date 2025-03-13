@@ -351,7 +351,11 @@ const FamilyPage: React.FC = () => {
                                         viewport={{ once: true, margin: "-50px" }} // Trigger animation earlier
                                     >
                                         <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-2 md:mb-4">{area.title}</h3>
-                                        <p className="text-sm md:text-base text-gray-600">{area.description}</p>
+                                        <ul className="text-sm md:text-base text-gray-600 list-none space-y-1 text-left">
+                                            {area.items.map((item, itemIndex) => (
+                                                <li key={itemIndex} className="pl-0">{item}</li>
+                                            ))}
+                                        </ul>
                                     </motion.div>
                                 ))}
                             </div>
@@ -373,28 +377,73 @@ const FamilyPage: React.FC = () => {
 const specialtyAreas = [
     {
         title: "ENFANCE",
-        description: "Difficultés scolaires, énurésie, encoprésie,trouble du comportement, difficulté d'endormissement/ cauchemars/terreur nocturne, gestion des émotions, anxiété/replis sur soi/isolement, dépendance aux écrans, peur de la séparation."
+        items: [
+            "Difficultés scolaires",
+            "Énurésie, encoprésie",
+            "Trouble du comportement",
+            "Difficulté d'endormissement/ cauchemars/terreur nocturne",
+            "Gestion des émotions",
+            "Anxiété/replis sur soi/isolement",
+            "Dépendance aux écrans",
+            "Peur de la séparation"
+        ]
     },
     {
         title: "ADOLESCENCE ",
-        description: "Addictions / écrans, conflit, replis sur soi/isolement, mal être /anxiété, troubles alimentaires, gestion des émotions, difficultés scolaires"
+        items: [
+            "Addictions / écrans",
+            "Conflit",
+            "Replis sur soi/isolement",
+            "Mal être /anxiété",
+            "Troubles alimentaires",
+            "Gestion des émotions",
+            "Difficultés scolaires"
+        ]
     },
     {
         title: "ADULTE",
-        description: "Anxiété/tristesse, insomnies, dépression, troubles alimentaires, addictions, conjugalité (violence/conflit/impasse), mal être/questionnements, manque d'estime de soi, échecs répétés, angoisse/phobie."
+        items: [
+            "Anxiété/tristesse",
+            "Insomnies",
+            "Dépression",
+            "Troubles alimentaires",
+            "Addictions",
+            "Conjugalité (violence/conflit/impasse)",
+            "Mal être/questionnements",
+            "Manque d'estime de soi",
+            "Échecs répétés",
+            "Angoisse/phobie"
+        ]
     },
     {
         title: "PARENTALITE",
-        description: "Confiance en soi, parentalité, homoparentalité, beau parentalité, adoption, burn out parental."
+        items: [
+            "Co parentalité",
+            "Homoparentalité",
+            "Beau parentalité",
+            "Adoption",
+            "Burn out parental"
+        ]
     },
     {
         title: "CONFLITS FAMILIAUX",
-        description: "Difficultés relationnelles (parents/enfants, fratrie, grands parents/enfants/petits enfants), Dysfonctionnements familiaux"
+        items: [
+            "Difficultés relationnelles (parents/enfants, fratrie, grands parents/enfants/petits enfants)",
+            "Dysfonctionnements familiaux"
+        ]
     },
     {
         title: "EVENEMENTS internes ou externes à la famille",
-        description: "Décès, accidents, violences, perte d'emploi, incarcération, maladie, IVG"
-
+        items: [
+            "Décès",
+            "Accidents",
+            "Violences",
+            "Perte d'emploi",
+            "Incarcération",
+            "Maladie",
+            "IVG",
+            "Expériences traumatiques"
+        ]
     }
 ];
 

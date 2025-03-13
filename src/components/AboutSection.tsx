@@ -38,7 +38,7 @@ const AboutSection: React.FC = () => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
                     <p className="uppercase text-xl md:text-2xl lg:text-3xl tracking-wide italic text-stone-700 max-w-4xl mx-auto md:px-16"
-                        style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)' }}
+                        style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Vous cherchez à améliorer les relations avec vos proches ?
                     </p>
@@ -52,16 +52,16 @@ const AboutSection: React.FC = () => {
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
                     <div className="max-w-4xl mx-auto px-4 md:px-6  bg-white/60 rounded-lg p-4">
-                        <h3 className="mb-6 md:mb-8 text-center text-lg md:text-2xl uppercase text-stone-800"
-                            style={{ textShadow: '1px 0.5px 1px rgba(0,0,0,0.2)' }}
+                        <h3 className="mb-6 md:mb-8 text-center text-lg md:text-xl font-medium uppercase"
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             Que cela concerne votre contexte familial :
                         </h3>
 
                         {/* Vue Desktop : grille en deux colonnes avec effet de survol */}
                         <ul
-                            className="hidden md:grid grid-cols-2 gap-6 mb-8 px-4 font-medium uppercase"
-                            style={{ textShadow: '1px 0.5px 1px rgba(0,0,0,0.2)' }}
+                            className="hidden  md:grid grid-cols-2 gap-6 mb-8 px-4 font-medium uppercase"
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             {[
                                 "Votre jeune enfant",
@@ -83,7 +83,7 @@ const AboutSection: React.FC = () => {
                         {/* Vue Mobile : liste verticale pour une meilleure lisibilité */}
                         <ul
                             className="block md:hidden space-y-4 mb-8 "
-                            style={{ textShadow: '1px 1px 1px rgba(0,0,0,0.3)' }}
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             {[
                                 "Votre jeune enfant",
@@ -153,8 +153,8 @@ const AboutSection: React.FC = () => {
                     {...fadeIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h2 className="text-2xl uppercase md:text-3xl lg:text-4xl font-light text-stone-900"
-                        style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
+                    <h2 className="uppercase text-xl md:text-2xl lg:text-3xl tracking-wide italic text-stone-700 max-w-4xl mx-auto md:px-16"
+                        style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Mon parcours
                     </h2>
@@ -170,7 +170,7 @@ const AboutSection: React.FC = () => {
                         {/* Card 1 */}
                         <div className="bg-white/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                             <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-[#25926C] mb-6 text-center md:text-left"
-                                style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.05)' }}
+                                style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 Parcours & Certification
                             </h3>
@@ -189,7 +189,7 @@ const AboutSection: React.FC = () => {
                         {/* Card 2 */}
                         <div className="bg-white/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                             <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-[#25926C] mb-6 text-center md:text-left"
-                                style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.05)' }}
+                                style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 20 années d'expérience dans l'accompagnement des familles
                             </h3>
@@ -217,7 +217,7 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-stone-900"
-                            style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Mes valeurs
                         </h2>

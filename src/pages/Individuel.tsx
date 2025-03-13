@@ -20,33 +20,33 @@ import { sectionIds } from '../constants/navigation';
 
 // Import icons
 import {
-    FaChild,
-    FaSadTear,
+    // FaChild,
+    // FaSadTear,
     FaExchangeAlt,
-    FaHeart,
-    FaPray,
+    // FaHeart,
+    // FaPray,
     FaUsers
 } from 'react-icons/fa';
 
-// Function to get the appropriate icon for each specialty area
-function getSpecialtyIcon(title: string) {
-    switch (title) {
-        case "Soutien à la parentalité":
-            return <FaChild className="text-stone-500 text-lg" />;
-        case "Dépression":
-            return <FaSadTear className="text-stone-500 text-lg" />;
-        case "Transitions de vie":
-            return <FaExchangeAlt className="text-stone-500 text-lg" />;
-        case "Estime de soi":
-            return <FaHeart className="text-stone-500 text-lg" />;
-        case "Deuil et pertes":
-            return <FaPray className="text-stone-500 text-lg" />;
-        case "Difficultés relationnelles":
-            return <FaUsers className="text-stone-500 text-lg" />;
-        default:
-            return <FaHeart className="text-stone-500 text-lg" />; // Default icon
-    }
-}
+// // Function to get the appropriate icon for each specialty area
+// function getSpecialtyIcon(title: string) {
+//     switch (title) {
+//         case "Soutien à la parentalité":
+//             return <FaChild className="text-stone-500 text-lg" />;
+//         case "Dépression":
+//             return <FaSadTear className="text-stone-500 text-lg" />;
+//         case "Transitions de vie":
+//             return <FaExchangeAlt className="text-stone-500 text-lg" />;
+//         case "Estime de soi":
+//             return <FaHeart className="text-stone-500 text-lg" />;
+//         case "Deuil et pertes":
+//             return <FaPray className="text-stone-500 text-lg" />;
+//         case "Difficultés relationnelles":
+//             return <FaUsers className="text-stone-500 text-lg" />;
+//         default:
+//             return <FaHeart className="text-stone-500 text-lg" />; // Default icon
+//     }
+// }
 
 const IndividuelPage: React.FC = () => {
     // Create specific service data for individual therapy
@@ -607,9 +607,9 @@ const IndividuelPage: React.FC = () => {
                                 >
                                     <div className="p-6 flex-grow">
                                         <div className="flex items-center mb-4">
-                                            <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center mr-4">
+                                            {/* <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center mr-4">
                                                 {getSpecialtyIcon(area.title)}
-                                            </div>
+                                            </div> */}
                                             <h3 className="text-xl font-medium text-gray-900">{area.title}</h3>
                                         </div>
                                         <p className="text-gray-600 leading-relaxed">

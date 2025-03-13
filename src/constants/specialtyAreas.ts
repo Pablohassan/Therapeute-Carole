@@ -1,33 +1,22 @@
 export const coupleSpecialtyAreas = [
   {
-    title: "Communication de couple",
+    title: "DIFFICULTES DE COMMUNICATION",
     description:
-      "Développement de nouvelles manières de communiquer, moins défensives et plus authentiques pour renforcer votre lien.",
+      "Tension, non-dits, reproches, difficultés à exprimer ses émotions.",
   },
   {
-    title: "Crises relationnelles",
+    title: "CONFLITS REGULIERS",
     description:
-      "Accompagnement lors des périodes de tension et de remise en question pour transformer la crise en opportunité de croissance.",
+      "Éducation des enfants, relations avec la belle famille, choix professionnels.",
   },
   {
-    title: "Problèmes d'attachement",
+    title: "CRISE",
     description:
-      "Identification des besoins d'attachement et compréhension des dynamiques qui influencent votre relation actuelle.",
+      "Désir de séparation, épreuves, infidélité, maladie, perte d'emploi.",
   },
   {
-    title: "Reconstruction après infidélité",
-    description:
-      "Soutien pour reconstruire la confiance et redéfinir la relation après une trahison ou une rupture de confiance.",
-  },
-  {
-    title: "Transitions de vie",
-    description:
-      "Accompagnement lors des changements majeurs (parentalité, déménagement, retraite) qui impactent l'équilibre du couple.",
-  },
-  {
-    title: "Différences culturelles",
-    description:
-      "Médiation et compréhension des différences de valeurs, d'éducation et de culture au sein du couple.",
+    title: "ELOIGNEMENT/SOLITUDE",
+    description: "Détachement émotionnel, absence de partage, de tendresse.",
   },
 ];
 
@@ -64,35 +53,60 @@ export const familySpecialtyAreas = [
   },
 ];
 
+// export const individualSpecialtyAreas = [
+//   {
+//     title: "Dépression",
+//     description:
+//       "Soutien thérapeutique pour surmonter les périodes de dépression et retrouver un équilibre émotionnel.",
+//   },
+//   {
+//     title: "Transitions de vie",
+//     description:
+//       "Accompagnement lors des changements majeurs (déménagement, changement professionnel, séparation) qui nécessitent une adaptation.",
+//   },
+//   {
+//     title: "Estime de soi",
+//     description:
+//       "Travail sur la confiance en soi, l'image de soi et le développement personnel pour une vie plus épanouie.",
+//   },
+//   {
+//     title: "Deuil et pertes",
+//     description:
+//       "Soutien dans le processus de deuil et d'acceptation suite à une perte significative.",
+//   },
+//   {
+//     title: "Difficultés relationnelles",
+//     description:
+//       "Exploration des schémas relationnels et développement de compétences pour des relations plus satisfaisantes.",
+//   },
+// ];
+
+// Thématiques spécifiques pour le soutien à la parentalité
 export const individualSpecialtyAreas = [
   {
-    title: "Soutien à la parentalité",
-    description:
-      "Tension et problème relationnel avec son enfant, problème pour mettre en place des limites éducatives, manque de confiance dans sa parentalité, sentiment d’impuissance face aux manifestations de son enfant, -burn out parental",
+    title: "Tension et problème relationnel avec son enfant",
+    description: "Tension et problème relationnel avec son enfant",
+    icon: "relationship", // Placeholder pour une icône de relation
   },
   {
-    title: "Dépression",
-    description:
-      "Soutien thérapeutique pour surmonter les périodes de dépression et retrouver un équilibre émotionnel.",
+    title: "Problème pour mettre en place des limites éducatives",
+    description: "Problème pour mettre en place des limites éducatives",
+    icon: "boundaries", // Placeholder pour une icône de limites
   },
   {
-    title: "Transitions de vie",
-    description:
-      "Accompagnement lors des changements majeurs (déménagement, changement professionnel, séparation) qui nécessitent une adaptation.",
+    title: "Manque de confiance dans sa parentalité",
+    description: "Manque de confiance dans sa parentalité",
+    icon: "confidence", // Placeholder pour une icône de confiance
   },
   {
-    title: "Estime de soi",
+    title: "Sentiment d'impuissance face aux manifestations de son enfant",
     description:
-      "Travail sur la confiance en soi, l'image de soi et le développement personnel pour une vie plus épanouie.",
+      "Sentiment d'impuissance face aux manifestations de son enfant",
+    icon: "helplessness", // Placeholder pour une icône d'impuissance
   },
   {
-    title: "Deuil et pertes",
-    description:
-      "Soutien dans le processus de deuil et d'acceptation suite à une perte significative.",
-  },
-  {
-    title: "Difficultés relationnelles",
-    description:
-      "Exploration des schémas relationnels et développement de compétences pour des relations plus satisfaisantes.",
+    title: "Burn out parental",
+    description: "Burn out parental",
+    icon: "burnout", // Placeholder pour une icône d'épuisement
   },
 ];

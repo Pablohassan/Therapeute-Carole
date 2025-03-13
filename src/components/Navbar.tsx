@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
                     transition={{ duration: 1, delay: 0.2, ease: 'easeInOut' }}
                     className={`text-xl sm:text-xl lg:text-2xl tracking-wider ${isScrolled ? 'text-slate-100' : 'text-slate-950'
                         }`}
-                    style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.4)' }}
+                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                 >
                     <Link to="/home" className="flex flex-col">
                         <span className="font-light uppercase">Carole Lagardère</span>
@@ -153,7 +153,7 @@ const Navbar: React.FC = () => {
                 {/* Desktop Navigation */}
                 <div className={`hidden lg:flex items-center  space-x-8 ${isScrolled ? 'md:text-slate-100' : 'md:text-slate-900'
                     }`}
-                    style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
+                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                 >
                     <NavLink to="/home" isScrolled={isScrolled} underlineColor="bg-[#25926C]/90">Accueil</NavLink>
                     <NavLink to="/family" isScrolled={isScrolled} underlineColor="bg-[#AB4D8C]/90">Famille</NavLink>
@@ -214,10 +214,10 @@ const Navbar: React.FC = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 0.2 }}
                     >
                         <div className="bg-stone-600/80  py-4 px-4 flex flex-col space-y-4"
-                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                         >
                             <MobileNavLink to="/home" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-blue-400">
                                 Accueil
