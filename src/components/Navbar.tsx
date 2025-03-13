@@ -153,7 +153,7 @@ const Navbar: React.FC = () => {
                 {/* Desktop Navigation */}
                 <div className={`hidden lg:flex items-center  space-x-8 ${isScrolled ? 'md:text-slate-100' : 'md:text-slate-900'
                     }`}
-                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
+                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                 >
                     <NavLink to="/home" isScrolled={isScrolled} underlineColor="bg-[#25926C]/90">Accueil</NavLink>
                     <NavLink to="/family" isScrolled={isScrolled} underlineColor="bg-[#AB4D8C]/90">Famille</NavLink>

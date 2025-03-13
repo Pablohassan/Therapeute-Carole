@@ -93,13 +93,13 @@ const IndividuelPage: React.FC = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-sonte-900 mb-8 md:mb-16"
-                            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)' }}
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Thérapie Individuelle
                         </h1>
 
-                        <p className="text-lg md:text-2xl text-stone- mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
-                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
+                        <p className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Une thérapie individuelle systémique est une approche thérapeutique qui applique les
                             principes de la thérapie systémique à un travail en individuel. Elle considère que les
@@ -227,7 +227,7 @@ const IndividuelPage: React.FC = () => {
                                     <a
                                         href={`#${sectionIds.booking}`}
                                         className=" md:inline-block bg-[#FBC018]/80 px-12 md:px-12 py-3 sm:text-md text-xl py-5 md:py-4 text-stone-900 border-1 border-[#FBC018]/40  uppercase tracking-wider  transition-all duration-300 hover:bg-[#FBC018] hover:text-stone-950 hover:font-semibold "
-                                        style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
+                                        style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                                     >
                                         Faire le premier pas
                                     </a>

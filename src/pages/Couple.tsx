@@ -84,13 +84,13 @@ const CouplePage: React.FC = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <h1 className="text-3xl md:text-5xl lg:text-6xl font-light font-bebas uppercase tracking-wider my-2 md:my-8 text-stone-900 mb-8 md:mb-16"
-                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Thérapie de Couple
                         </h1>
 
-                        <p className="text-lg md:text-2xl text-stone- mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
-                            style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
+                        <p className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
+                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Transformez votre relation afin de vous permettre de vous sentir plus satisfait et de vous sentir plus rempli.
                         </p>

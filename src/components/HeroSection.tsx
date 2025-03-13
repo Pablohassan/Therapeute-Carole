@@ -51,7 +51,7 @@ const HeroSection = () => {
                     backgroundPosition: isMobile ? 'center center' : 'center'
                 }}
             >
-                <div className="absolute inset-0 bg-black/10"></div>
+                <div className="absolute inset-0 "></div>
             </motion.div>
 
             {/* Hero Content */}
@@ -63,15 +63,15 @@ const HeroSection = () => {
             >
                 <motion.h1
                     className="text-3xl md:text-5xl lg:text-6xl font-light text-stone-900 font-bebas tracking-wider mb-8 md:mb-16 leading-tight"
-                    style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
+                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     {...contentAnimations}
                     transition={{ duration: 0.8 }}
                 >
                     Thérapie familiale et thérapie de couple
                 </motion.h1>
                 <motion.p
-                    className="text-lg md:text-2xl text-stone- mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-16"
-                    style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
+                    className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-16"
+                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
 
                     {...contentAnimations}
                     transition={{ duration: 0.8, delay: 0.2 }}

@@ -80,13 +80,13 @@ const FamilyPage: React.FC = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
                             <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-stone-900 mb-6 md:mb-16"
-                                style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
+                                style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 Thérapie Familiale Systémique
                             </h1>
 
-                            <p className="text-lg md:text-2xl text-stone- mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
-                                style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
+                            <p className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
+                                style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 « La thérapie familiale a pour but l'amélioration du fonctionnement familial à différents niveaux, la revalorisation de la compréhension mutuelle et du soutien émotionnel entre les membres de la famille, le développement des compétences afin de résoudre les problèmes auxquels la famille est confrontée. » EFTA
                             </p>
@@ -148,7 +148,7 @@ const FamilyPage: React.FC = () => {
                                     <a
                                         href={`#${sectionIds.booking}`}
                                         className=" md:inline-block bg-[#AB4D8C]/60 px-16 md:px-12 py-3 sm:text-md text-xl py-5 md:py-4 text-stone-900 border-1 border-[#AB4D8C]/40  uppercase tracking-wider  transition-all duration-300 hover:bg-[#AB4D8C] hover:text-stone-100 "
-                                        style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)' }}
+                                        style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                                     >
                                         Faire le premier pas
                                     </a>
