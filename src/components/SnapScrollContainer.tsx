@@ -143,14 +143,14 @@ const SnapScrollContainer: React.FC<SnapScrollContainerProps> = ({
         >
             <div
                 ref={containerRef}
-                className={`h-screen w-full overflow-y-scroll ${isMobile ? 'scroll-smooth' : 'snap-y snap-mandatory scroll-smooth'} absolute inset-0`}
+                className={`h-screen w-full overflow-y-scroll ${isMobile ? 'scroll-smooth snap-y snap-mandatory' : 'scroll-auto'} absolute inset-0`}
                 tabIndex={0} // Make the container focusable for keyboard events
                 data-snap-container="true" // Add a data attribute for easier identification
             >
                 {React.Children.map(children, (child, index) => (
                     <div
                         key={index}
-                        className={`${isMobile ? 'min-h-screen' : 'h-screen snap-start'} w-full ${isMobile ? 'overflow-visible' : 'overflow-y-auto'}`}
+                        className={`w-full ${isMobile ? 'min-h-screen snap-start' : 'h-auto'} ${isMobile ? 'overflow-visible' : 'overflow-visible'}`}
                         id={`section-${index}`}
                     >
                         {child}

@@ -5,13 +5,16 @@ import { fr } from 'date-fns/locale';
 import "react-datepicker/dist/react-datepicker.css";
 import { motion } from 'framer-motion';
 import { InlineWidget } from 'react-calendly';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 // Register French locale
 registerLocale('fr', fr);
 
 const BookingSection: React.FC = () => {
+    const isMobile = useIsMobile();
+
     return (
-        <section id="rendez-vous" className="w-full h-full py-8 md:py-12 bg-stone-50">
+        <section id="rendez-vous" className={`w-full ${isMobile ? 'h-screen' : 'py-32'} bg-stone-50`}>
             <div className="container mx-auto px-4 sm:px-6 h-full flex flex-col justify-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

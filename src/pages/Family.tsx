@@ -21,12 +21,18 @@ const MobileOptimizedSection: React.FC<{
     children: React.ReactNode;
     className?: string;
     style?: React.CSSProperties;
-}> = ({ children, className = "", style = {} }) => {
+    adaptiveHeight?: boolean;
+}> = ({ children, className = "", style = {}, adaptiveHeight = false }) => {
     const isMobile = useIsMobile();
+
+    // Choose height class based on adaptiveHeight prop
+    const heightClass = adaptiveHeight
+        ? isMobile ? 'min-h-screen py-16' : 'min-h-screen py-24'
+        : isMobile ? 'py-10 min-h-[100vh]' : 'py-20 h-screen';
 
     return (
         <section
-            className={`${isMobile ? 'py-10 min-h-[100vh]' : 'py-20 h-screen'} px-4 md:px-8 mx-auto flex flex-col justify-center ${className}`}
+            className={`${heightClass} px-4 md:px-8 mx-auto flex flex-col justify-center ${className}`}
             style={style}
         >
             {children}
@@ -103,7 +109,7 @@ const FamilyPage: React.FC = () => {
                             >
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block w-full font-medium sm:w-1/2 bg-white/70 md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-8 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                                    className="inline-block w-full font-medium rounded-sm sm:w-1/2 bg-white/70 md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-8 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
                                 >
                                     Réserver un rendez-vous
                                 </a>
@@ -152,7 +158,7 @@ const FamilyPage: React.FC = () => {
                                 <div className=" md:pt-1 text-center">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className=" md:inline-block bg-[#AB4D8C] rounded-md px-16 md:px-12 py-3 sm:text-md text-xl py-5 md:py-4 text-stone-100 border-2 border-[#AB4D8C]  uppercase tracking-wider  transition-all duration-300 hover:bg-white/80 hover:text-[#AB4D8C] font-medium  hover:font-semibold"
+                                        className=" md:inline-block bg-[#AB4D8C] rounded-sm px-16 md:px-12 py-3 sm:text-md text-xl py-5 md:py-4 text-stone-100 border-2 border-[#AB4D8C]  uppercase tracking-wider  transition-all duration-300 hover:bg-white/80 hover:text-[#AB4D8C] font-medium  hover:font-semibold"
                                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                                     >
                                         Faire le premier pas
@@ -322,7 +328,7 @@ const FamilyPage: React.FC = () => {
                             <div className="text-center mt-12">
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-[#AB4D8C]/60 px-16 md:px-12 py-4 md:py-5  text-stone-900 sm:font-light uppercase tracking-wider text-base transition-all duration-300 hover:bg-[#AB4D8C]  shadow-md hover:shadow-xl hover:text-stone-100"
+                                    className="inline-block bg-[#AB4D8C] px-16 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 sm:font-medium uppercase border-2 border-[#AB4D8C]  uppercase tracking-wider transition-all duration-500 hover:bg-white/80 hover:text-[#AB4D8C]  shadow-md hover:shadow-xl hover:text-[#AB4D8C]"
                                 >
                                     Réserver un rendez-vous
                                 </a>
@@ -332,7 +338,7 @@ const FamilyPage: React.FC = () => {
                 </MobileOptimizedSection>
 
                 {/* Areas of Specialty Section */}
-                <MobileOptimizedSection>
+                <MobileOptimizedSection adaptiveHeight={true} className="pt-10 md:pt-16">
                     <div className="container mx-auto max-w-6xl">
                         <motion.div
                             className="text-center mb-8 md:mb-16"
@@ -342,17 +348,17 @@ const FamilyPage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <div className="text-center mb-8 md:mb-12">
-                                <h2 className="text-2xl md:text-3xl font-light uppercase tracking-wide text-gray-900 mb-4 md:mb-8">
+                                <h2 className="text-2xl font-medium md:text-3xl font-light tracking-wide text-gray-900 mb-4 md:mb-8">
                                     Motifs de consultation
                                 </h2>
                                 <div className="w-24 h-1 bg-[#AB4D8C]/60 mx-auto"></div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 md:px-4">
                                 {specialtyAreas.map((area, index) => (
                                     <motion.div
                                         key={index}
-                                        className="bg-white p-6 md:p-8 md:pr-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+                                        className="bg-white p-5 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{

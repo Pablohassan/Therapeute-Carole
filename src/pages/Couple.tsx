@@ -231,7 +231,7 @@ const CouplePage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-2xl md:text-3xl font-light uppercase tracking-wide text-gray-900 mb-4 md:mb-6">
+                            <h2 className="text-2xl md:text-3xl font-light font-medium tracking-wide text-gray-900 mb-4 md:mb-6">
                                 Motifs de consultation
                             </h2>
 
