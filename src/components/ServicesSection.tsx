@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 
 const ServicesSection: React.FC = () => {
     return (
-        <section className="px-4 bg-[#25926C]/20 pb-8" id="services">
+        <section className="px-4 bg-[#25926C]/50 pb-8" id="services">
 
             <div className="max-w-5xl mx-auto">
                 {/* <h2 className="text-3xl font-bold text-center mt-16 mb-8 py-8 ">Vous souhaitez engager une démarche thérapeutique ?

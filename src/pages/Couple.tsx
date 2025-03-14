@@ -1,9 +1,9 @@
 // src/pages/Couple.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import hand from '../assets/hand.webp';
-import therapistImage from '../assets/therapist.webp';
+import hand from '../assets/couple-premiere.jpg';
 import homecouple from '../assets/carole-lagardere-therapeute-talence-couple.jpeg';
+import posture from '../assets/posturetherapeute.jpg';
 
 // Import mobile-optimized images
 
@@ -52,7 +52,7 @@ const CouplePage: React.FC = () => {
     const isMobile = useIsMobile();
 
     return (
-        <div className="bg-[#EC6849]/20">
+        <div className="bg-[#EC6849]/30">
             <SEO
                 title="Thérapie de Couple à Talence"
                 description="Consultations de couple à Talence (Bordeaux). Retrouvez l'harmonie dans votre relation, améliorez votre communication et résolvez les conflits avec une approche systémique bienveillante."
@@ -92,7 +92,7 @@ const CouplePage: React.FC = () => {
                         <p className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
-                            Transformez votre relation afin de vous permettre de vous sentir plus satisfait et de vous sentir plus rempli.
+                            Pour améliorer la communication, apaiser les conflits, renforcer la relation au sein de votre couple...
                         </p>
 
                         <motion.div
@@ -102,7 +102,7 @@ const CouplePage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-white/70 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-12 sm:px-12 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#EC6849]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                                className="inline-block bg-white/70 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-12 sm:px-12 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 font-medium uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#EC6849]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
                             >
                                 Réserver un rendez-vous
                             </a>
@@ -112,7 +112,7 @@ const CouplePage: React.FC = () => {
 
                 {/* Introduction Section */}
                 <MobileOptimizedSection>
-                    <div className="container mx-auto max-w-4xl">
+                    <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-center"
                             initial={{ opacity: 0, y: 20 }}
@@ -120,48 +120,44 @@ const CouplePage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true, amount: 0.1 }}
                         >
-                            <div className="lg:col-span-1 h-full">
-                                <div className="h-full w-full relative rounded-md overflow-hidden" style={{ minHeight: '450px' }}>
+                            <div className="lg:col-span-1 h-full rounded-lg">
+                                <div className="h-full mx-auto relative  overflow-hidden" style={{ minHeight: '450px' }}>
                                     <ResponsiveImage
                                         src={hand}
                                         alt="Main réconfortante"
-                                        className="absolute inset-0 h-full w-full object-cover shadow-xl"
-                                        width={800}
+                                        className="absolute inset-0 h-full  object-contain shadow-xl"
+
                                         height={1000}
                                         sizes="(max-width: 1024px) 100vw, 33vw"
                                         priority={true}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+
                                 </div>
                             </div>
                             <div className="lg:col-span-2 space-y-4 md:space-y-6 px-2 md:px-4">
-                                <h2 className="text-xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-4 md:mb-6 text-center lg:text-left">
+                                <h2 className="text-xl md:text-3xl  text-gray-900 font-light tracking-wide mb-4 md:mb-6 text-center font-medium lg:text-left">
                                     « Vous traversez chacun, et ensemble, <br className="hidden md:block" /> une période douloureuse »
                                 </h2>
 
-                                <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
+                                <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center lg:text-left px-2">
                                     En thérapie, l'objectif n'est pas de déterminer qui a tort ou qui a raison, ni de faire changer
                                     l'autre mais d'arriver à une collaboration afin de modifier le fonctionnement du « système
-                                    couple » et ainsi de supprimer ou d'atténuer la souffrance.
+                                    couple »
                                 </p>
 
-                                <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
-                                    Pour cela, le thérapeute accueille le couple, observe le fonctionnement, interroge ce qui a
-                                    provoqué la crise et le choix du moment pour amorcer une thérapie. Il est essentiel que
-                                    chacun s'engage dans le travail thérapeutique.
-                                </p>
 
-                                <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
+
+                                <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center lg:text-left px-2">
                                     Il s'agit d'offrir la possibilité à chacun d'exposer sa perception de la situation, son vécu et ses
                                     attentes et aussi d'entendre et de reconnaître la perception de l'autre. Identifier les besoins
-                                    d'attachement, la construction du monde de chacun nous permettra d'éclairer les liens du
-                                    couple dans le présent.
+                                    d'attachement, la construction du monde de chacun pour éclairer les liens du
+                                    couple.
                                 </p>
 
                                 <div className="pt-4 md:pt-6 text-center ">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className="inline-block bg-[#EC6849] px-6 px-12 md:px-12 py-4 md:py-5 text-stone-900 font-light uppercase tracking-wider text-xl md:text-lg transition-all duration-300 hover:bg-white hover:text-stone-800 border-2 border-[#EC6849] shadow-md hover:shadow-lg"
+                                        className="inline-block bg-[#EC6849] px-6 px-12 md:px-12 py-4 md:py-5 text-stone-100 font-medium rounded-md uppercase tracking-wider text-xl md:text-lg transition-all duration-300 hover:bg-white hover:text-[#EC6849] hover:text-shadow-lg border-2 border-[#EC6849] shadow-md hover:shadow-lg"
                                     >
                                         Faire le premier pas
                                     </a>
@@ -184,9 +180,9 @@ const CouplePage: React.FC = () => {
                             viewport={{ once: true, amount: 0.1 }}
                         >
                             <div className="lg:col-span-1 h-full">
-                                <div className="h-full w-full relative rounded-md overflow-hidden" style={{ minHeight: '450px' }}>
+                                <div className="h-full w-full relative rounded-lg overflow-hidden border-2 border-[#EC6849]/30" style={{ minHeight: '450px' }}>
                                     <ResponsiveImage
-                                        src={therapistImage}
+                                        src={posture}
                                         alt="Thérapeute"
                                         className="absolute inset-0 h-full w-full object-cover shadow-xl"
                                         width={800}
@@ -198,23 +194,28 @@ const CouplePage: React.FC = () => {
                                 </div>
                             </div>
                             <div className="lg:col-span-2 space-y-4 md:space-y-6 px-2 md:px-4">
-                                <h2 className="text-xl md:text-3xl uppercase text-gray-900 font-light tracking-wide mb-4 md:mb-6 text-center lg:text-left">
-                                    La posture du thérapeute en séance :
+                                <h2 className="text-xl md:text-3xl  text-gray-900 font-light tracking-wide mb-4 md:mb-6 text-center font-medium lg:text-left">
+                                    La posture du thérapeute en séance
                                 </h2>
 
                                 <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
-                                    La simple présence du thérapeute produit du neuf. Il
+                                    La simple présence du thérapeute produit du neuf. <br />Il
                                     impacte le couple avec tout son être, il est partie prenante du système. Il met ses
-                                    résonnances au service du couple et partage ses hypothèses, ses observations. Il est attentif
-                                    aux sensations corporelles, manifestations émotionnelles dans l'ici et maintenant et aux faits
-                                    extérieurs ou antérieurs. Il favorise les échanges, pointe les évitements de contact, les
-                                    refuges dans le passé ou l'irresponsabilité.
+                                    résonnances au service du couple et partage ses hypothèses, ses observations.
+
+                                    <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center pt-4 lg:text-left">
+                                        Il est attentif
+                                        aux sensations corporelles, manifestations émotionnelles dans l'ici et maintenant et aux faits
+                                        extérieurs ou antérieurs.
+                                    </p>
+
+                                    <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center pt-4 lg:text-left">
+                                        Il favorise les échanges, pointe les évitements de contact, les
+                                        refuges dans le passé ou l'irresponsabilité.
+                                    </p>
                                 </p>
 
-                                <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
-                                    La reconstruction passe par un réaménagement du connu, de nouvelles manières de
-                                    communiquer, moins défensives.
-                                </p>
+
                             </div>
                         </motion.div>
                     </div>
@@ -263,28 +264,7 @@ const CouplePage: React.FC = () => {
                     </div>
                 </MobileOptimizedSection>
 
-                {/* Effectiveness Section */}
-                <MobileOptimizedSection className="bg-stone-50">
-                    <div className="container mx-auto max-w-3xl">
-                        <motion.div
-                            className="text-center space-y-4 md:space-y-8"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
 
-                            <div className="pt-4 md:pt-8">
-                                <a
-                                    href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-white border-2 border-[#EC6849] px-8 md:px-10 py-3 md:py-4 text-stone-900 font-light uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-[#EC6849]/50 hover:text-stone-800 shadow-md hover:shadow-lg"
-                                >
-                                    Réserver un rendez-vous
-                                </a>
-                            </div>
-                        </motion.div>
-                    </div>
-                </MobileOptimizedSection>
 
                 {/* Booking Section */}
 

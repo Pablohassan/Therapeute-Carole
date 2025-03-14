@@ -1,8 +1,7 @@
 // src/components/AboutSection.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import cabinetImage2 from '../assets/carole-lagardere-therapeute-talence-cabinet2carre.webp';
-import cabinetImage3 from '../assets/carole-lagardere-therapeute-talence-cabinet3carre.webp';
+import cabinetImage2 from '../assets/cabinet-nouvelle - Grande.jpeg';
 
 
 const AboutSection: React.FC = () => {
@@ -29,7 +28,7 @@ const AboutSection: React.FC = () => {
     };
 
     return (
-        <section className="py-16 md:py-24 bg-[#25926C]/20" id="about">
+        <section className="py-16 md:py-24 bg-[#25926C]/50" id="about">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Main headline with elegant animation */}
                 <motion.div
@@ -37,7 +36,7 @@ const AboutSection: React.FC = () => {
                     {...scaleIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <p className="uppercase text-xl md:text-2xl lg:text-3xl tracking-wide italic text-stone-700 max-w-4xl mx-auto md:px-16"
+                    <p className=" text-xl md:text-2xl lg:text-3xl tracking-wide  text-stone-700 max-w-4xl mx-auto md:px-16"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Vous cherchez à améliorer les relations avec vos proches ?
@@ -51,8 +50,8 @@ const AboutSection: React.FC = () => {
                     {...fadeInUp}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-white/60 rounded-lg p-4">
-                        <h3 className="mb-6 md:mb-8 text-center text-lg md:text-xl font-medium uppercase"
+                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-white/90 rounded-lg p-4">
+                        <h3 className="mb-6 md:mb-8 text-center text-lg md:text-xl font-medium "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             Que cela concerne votre contexte familial :
@@ -60,7 +59,7 @@ const AboutSection: React.FC = () => {
 
                         {/* Vue Desktop : grille en deux colonnes avec effet de survol */}
                         <ul
-                            className="hidden  md:grid grid-cols-2 gap-6 mb-8 px-4 font-medium uppercase"
+                            className="hidden  md:grid grid-cols-2 gap-6 mb-8 px-4 text-lg md:text-xl font-medium "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             {[
@@ -82,7 +81,7 @@ const AboutSection: React.FC = () => {
 
                         {/* Vue Mobile : liste verticale pour une meilleure lisibilité */}
                         <ul
-                            className="block md:hidden space-y-4 mb-8 "
+                            className="block md:hidden space-y-4 mb-8 text-lg md:text-xl font-medium "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             {[
@@ -97,12 +96,12 @@ const AboutSection: React.FC = () => {
                                     className="flex  items-center hover:scale-105 transition-transform duration-200"
                                 >
                                     <span className="text-[#25926C] mr-3 text-xl">•</span>
-                                    <span className="text-stone-700 text-base">{item}</span>
+                                    <span className="text-stone-900 text-base">{item}</span>
                                 </li>
                             ))}
                         </ul>
 
-                        <p className="text-center text-lg text-stone-700 mb-4">
+                        <p className="text-center text-lg md:text-xl font-medium ">
                             Ou que cela concerne votre contexte professionnel ou social, je peux vous accompagner.
                         </p>
                     </div>
@@ -117,34 +116,27 @@ const AboutSection: React.FC = () => {
                 >
 
 
-                    <p className="text-lg text-stone-700 leading-relaxed text-justify px-2 md:px-6 mb-8">
-                        Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant. Je serai à
-                        votre écoute et engagée à vos côtés pour vous aider à vous aider. Ensemble, pour
-                        comprendre vos fonctionnements, faire émerger de nouvelles possibilités en remobilisant
-                        vos ressources et compétences. Accompagner, verbaliser, expérimenter le changement au
-                        sein de vos relations.
-                    </p>
+
 
                     {/* Image grid with responsive behavior */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 px-2 md:px-6">
-                        <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 mt-6 px-2 md:px-6 pt-8">
+
+                        <div className="overflow-hidden rounded-lg  hover:shadow-lg transition-shadow duration-300 sm:col-span-2 rounded-xl border-2 border-white/60  ">
                             <img
                                 src={cabinetImage2}
                                 alt="Accompagnement thérapeutique"
-                                className="w-full h-auto object-cover aspect-square"
+                                className="w-full h-auto object-cover "
                                 loading="lazy"
                             />
                         </div>
-                        <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <img
-                                src={cabinetImage3}
-                                alt="Espace thérapeutique"
-                                className="w-full h-auto object-cover aspect-square"
-                                loading="lazy"
-                            />
-                        </div>
-                    </div>
 
+
+
+                    </div>
+                    <p className="text-lg text-stone-900 font-medium leading-relaxed sm:col-span-1 w-full px-2 md:px-2 pt-8 mb-8">
+                        Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant. Je serai à
+                        votre écoute et engagée à vos côtés.
+                    </p>
                 </motion.div>
 
                 {/* Section title with consistent styling */}
@@ -153,7 +145,7 @@ const AboutSection: React.FC = () => {
                     {...fadeIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h2 className="uppercase text-xl md:text-2xl lg:text-3xl tracking-wide italic text-stone-700 max-w-4xl mx-auto md:px-16"
+                    <h2 className=" text-xl md:text-2xl lg:text-3xl font-medium tracking-wide font-light  max-w-4xl mx-auto md:px-16"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Mon parcours
@@ -216,10 +208,10 @@ const AboutSection: React.FC = () => {
                         {...fadeIn}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-stone-900"
+                        <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-stone-900 pt-4"
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
-                            Mes valeurs
+                            Mes compétences
                         </h2>
                     </motion.div>
 
@@ -230,7 +222,7 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.6, staggerChildren: 0.2 }}
                     >
                         {/* Value Card 1 */}
-                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C] hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Écoute active</h3>
                             <p className="text-stone-600">
                                 Etre accueilli sans jugement, être entendu et reconnu dans l'expression de ses émotions et de sa souffrance.
@@ -238,7 +230,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Value Card 2 */}
-                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C] hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Accompagnement personnalisé et créatif</h3>
                             <p className="text-stone-600">
                                 Analyser les dynamiques familiales et de couple. Mobiliser les ressources et les compétences de chacun. Utiliser différents outils et techniques (génogramme, métaphores, sculptures, jeux de rôles…)
@@ -246,7 +238,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Value Card 3 */}
-                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C] hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Engagement éthique</h3>
                             <p className="text-stone-600">
                                 Proposer un cadre sécurisant, bienveillant, confidentiel et chaleureux
@@ -255,31 +247,31 @@ const AboutSection: React.FC = () => {
                     </motion.div>
 
                     {/* Final message with improved styling */}
-                    <motion.div
+                    {/* <motion.div
                         className="max-w-4xl mx-auto mb-16"
                         {...fadeIn}
                         transition={{ duration: 0.8, delay: 0.8 }}
                     >
-                        <p className="text-lg lg:text-xl text-stone-700 italic leading-relaxed text-center">
+                        <p className="text-lg lg:text-xl text-stone-700  leading-relaxed text-center">
                             Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique?
 
 
                         </p>
 
-                        <p className="text-lg lg:text-xl text-stone-700 italic leading-relaxed text-center">
+                        <p className="text-lg lg:text-xl text-stone-700  leading-relaxed text-center">
                             J'espère  pouvoir vous apporter quelques pistes susceptibles de
                             nourrir votre réflexion… Et pourquoi pas, trouver l&#39;élan, faire le pas pour nous rencontrer !
 
                         </p>
-                    </motion.div>
+                    </motion.div> */}
 
                     {/* Closing quote with elegant styling */}
                     <motion.div
-                        className="text-center mb-8"
+                        className="text-center "
                         {...scaleIn}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                        <p className="text-3xl md:text-3xl lg:text-4xl font-light italic text-stone-900"
+                        <p className="text-3xl md:text-3xl lg:text-4xl font-light italic text-stone-900 pt-16"
                             style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
                         >
                             « Que pouvons-nous faire ensemble ? »

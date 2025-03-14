@@ -44,7 +44,7 @@ const AproposPage: React.FC = () => {
                             </p>
                             <div className="w-24 h-1 bg-[#25926C]/60 mx-auto my-8"></div>
                             <p className="text-lg md:text-xl xl:text-2xl text-stone-600 italic max-w-2xl mx-auto font-light"
-                                style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.4)' }}
+                                style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 "Accompagner le changement pour retrouver une forme d'équilibre et restaurer les relations"
                             </p>
@@ -97,7 +97,7 @@ const AproposPage: React.FC = () => {
                             {/* Bio Content Column */}
                             <div className="lg:col-span-7 space-y-8">
                                 <div>
-                                    <h2 className="text-2xl md:text-3xl uppercase text-stone-800 font-light tracking-wide mb-6 border-b border-stone-200 pb-3">
+                                    <h2 className="text-2xl md:text-3xl text-stone-800 font-light tracking-wide mb-6 border-b border-stone-200 pb-3">
                                         Mon parcours
                                     </h2>
                                     <div className="space-y-4 text-stone-600 leading-relaxed">
@@ -219,7 +219,7 @@ const AproposPage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="text-2xl md:text-3xl uppercase text-stone-800 font-light tracking-wide mb-6">
-                                Mes valeurs
+                                Mes Compétences
                             </h2>
                             <div className="w-20 h-1 bg-stone-400 mx-auto mb-8"></div>
                         </motion.div>
@@ -433,17 +433,7 @@ const AproposPage: React.FC = () => {
                                         <span className="text-stone-800">LinkedIn</span>
                                     </a>
 
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center p-4 bg-white border border-stone-200 rounded-sm hover:shadow-md transition-shadow"
-                                    >
-                                        <svg className="w-6 h-6 text-blue-400 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                                        </svg>
-                                        <span className="text-stone-800">Twitter</span>
-                                    </a>
+
                                 </div>
 
                                 <div className="mt-8 p-4 bg-amber-50 border-l-4 border-amber-200 rounded-sm">

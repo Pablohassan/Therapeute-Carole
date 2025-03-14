@@ -67,7 +67,7 @@ const HeroSection = () => {
                     {...contentAnimations}
                     transition={{ duration: 0.8 }}
                 >
-                    Thérapie familiale et thérapie de couple
+                    Thérapie familiale, de couple et individuelle
                 </motion.h1>
                 <motion.p
                     className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-16"

@@ -16,32 +16,13 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
     className = '',
     width = 800,
     height = 600,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     sizes = '(max-width: 768px) 100vw, 50vw',
     priority = false,
 }) => {
-    // Extract file extension and path
-    const extension = src.split('.').pop()?.toLowerCase();
-    const basePath = src.substring(0, src.lastIndexOf('.'));
-
-    // Only create WebP source if original isn't already WebP
-    const hasWebPAlternative = extension !== 'webp';
-
+    // Simplified approach - directly use the provided image
     return (
         <picture>
-            {hasWebPAlternative && (
-                <>
-                    <source
-                        srcSet={`${basePath}.webp`}
-                        type="image/webp"
-                        sizes={sizes}
-                    />
-                    <source
-                        srcSet={src}
-                        type={`image/${extension === 'jpg' ? 'jpeg' : extension}`}
-                        sizes={sizes}
-                    />
-                </>
-            )}
             <img
                 src={src}
                 alt={alt}
