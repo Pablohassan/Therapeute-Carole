@@ -17,7 +17,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
     width = 800,
     height = 600,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    sizes = '(max-width: 768px) 100vw, 50vw',
+    // sizes = '(max-width: 768px) 100vw, 50vw',
     priority = false,
 }) => {
     // Simplified approach - directly use the provided image
