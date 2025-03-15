@@ -94,7 +94,7 @@ const FamilyPage: React.FC = () => {
                             <p className="text-lg md:text-2xl text-stone-960 mb-4 md:mb-8 italic font-medium sm:font-light leading-relaxed px-2 md:px-0"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                             >
-                                Pour comprendre vos fonctionnements, faire émerger de nouvelles possibilités en remobilisant vos ressources et vos compétences.
+                                Comprendre vos fonctionnements, faire émerger de nouvelles possibilités en remobilisant vos ressources et vos compétences.
                             </p>
                             <p className="text-lg md:text-2xl font-medium sm:font-light text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
@@ -143,7 +143,7 @@ const FamilyPage: React.FC = () => {
 
 
                                 <p className="text-lg text-gray-800 leading-relaxed">
-                                    Avec les personnes qui sont les plus proches de nous, nous éprouvons parfois une
+                                    Avec nos proches, nous éprouvons parfois une
                                     forme d'appréhension à parler de nos émotions, de nos sentiments profonds.
                                 </p>
 
