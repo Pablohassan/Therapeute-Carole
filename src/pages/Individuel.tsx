@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import homeindividuel from '../assets/carole-lagardere-therapeute-talence-individuel.jpeg';
 import homeindividuelmobile from '../assets/carole-lagardere-therapeute-talence-ndividuel-mobile.jpeg';
 import escalierImage from '../assets/escalier.webp';
-import piedsImage from '../assets/pieds.webp';
+import piedsImage from '../assets/setionparentalite.jpg';
 
-import tacheImage from '../assets/logofamille.jpeg'
+import tacheImage from '../assets/soutienparent.jpg'
 import BookingSection from '../components/BookingSection';
 import ResponsiveImage from '../components/ResponsiveImage';
 import SEO from '../components/SEO';
@@ -64,8 +64,8 @@ const IndividuelPage: React.FC = () => {
     const bgColor = "[#FCF6E9]";
     const textColor = "stone-900";
     const sectionPadding = "py-16 md:py-20 px-4 md:px-6";
-    const headingClass = "text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide text-stone-900";
-    const subHeadingClass = "text-xl md:text-2xl font-medium text-stone-800";
+    const headingClass = "text-2xl md:text-3xl lg:text-3xl font-medium tracking-wide text-stone-900";
+    const subHeadingClass = "text-2xl md:text-3xl font-medium text-stone-800";
     const paragraphClass = "text-base md:text-lg text-stone-700 leading-relaxed";
     const buttonClass = `inline-block bg-${primaryColor}/80 rounded-sm px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-${primaryColor} hover:text-stone-100 hover:shadow-lg hover:text-shadow-lg`;
 
@@ -142,7 +142,7 @@ const IndividuelPage: React.FC = () => {
                     >
                         <div className="lg:col-span-2 space-y-6 mt-6 lg:mt-0 order-2 lg:order-1">
                             <motion.h2
-                                className={`${subHeadingClass} relative inline-block`}
+                                className={`${subHeadingClass} relative inline-block text-2xl`}
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ duration: 0.5 }}
@@ -215,17 +215,17 @@ const IndividuelPage: React.FC = () => {
                             </motion.div>
                         </div>
                         <div className="lg:col-span-1 h-full order-1 lg:order-2">
-                            <div className="h-64 lg:h-full  relative rounded-md overflow-hidden shadow-lg" style={{ minHeight: '300px', maxHeight: '750px' }}>
+                            <div className="h-64 lg:h-full  relative  rounded-md overflow-hidden shadow-lg" style={{ minHeight: '300px', maxHeight: '750px' }}>
                                 <ResponsiveImage
                                     src={piedsImage}
                                     alt="Pieds dans le sable"
-                                    className="absolute inset-0 h-full w-full object-cover"
+                                    className="absolute inset-0 h-full w-full object-cover object-left"
                                     width={800}
                                     height={1000}
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                     priority={true}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
                             </div>
                         </div>
                     </motion.div>
@@ -266,7 +266,7 @@ const IndividuelPage: React.FC = () => {
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                     priority={true}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
+
                             </div>
                         </div>
 
@@ -279,7 +279,7 @@ const IndividuelPage: React.FC = () => {
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                                     <motion.div
-                                        className={`p-4 md:p-6 rounded-lg border-l-4 border-${primaryColor} shadow-md bg-white/60 transition-all duration-300 hover:shadow-md hover:bg-${primaryColor}/30`}
+                                        className={`p-4 md:p-6 rounded-lg border-l-4 border-${primaryColor} shadow-md bg-white/60 transition-all duration-300 hover:shadow-md hover:bg-[#FBC018]/30`}
                                         whileHover={{ y: -5 }}
                                     >
                                         <div className="flex items-center">
@@ -348,9 +348,21 @@ const IndividuelPage: React.FC = () => {
                         <h2 className={headingClass}>
                             Entretien de soutien à la parentalité
                         </h2>
-                        <div className={`w-20 h-1 bg-${primaryColor} mx-auto mt-4 mb-6`}></div>
-                    </motion.div>
 
+                    </motion.div>
+                    <div className={`p-6 md:p-8 rounded-lg shadow-md border border-stone-50 bg-${bgColor} mb-6 md:mb-8`}>
+                        <div className="flex items-center mb-4">
+                            <h3 className="text-2xl font-medium">Une approche flexible :</h3>
+                        </div>
+
+                        <div className="space-y-4">
+                            <p className={`${paragraphClass} ml-4 md:ml-8 italic`}>
+                                Il n&#39;est pas toujours nécessaire de s&#39;engager dans un travail thérapeutique.
+                                En tant que parent, nous pouvons simplement avoir besoin d&#39;échanger autour d&#39;une
+                                situation précise, d&#39;évoquer une thématique liée à l&#39;éducation de son enfant.
+                            </p>
+                        </div>
+                    </div>
                     <motion.div
                         className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start"
                         initial={{ opacity: 0, y: 20 }}
@@ -358,23 +370,12 @@ const IndividuelPage: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <div className="lg:col-span-2 order-2 lg:order-1">
-                            <div className={`p-6 md:p-8 rounded-lg shadow-md border border-stone-100 bg-${bgColor} mb-6 md:mb-8`}>
-                                <div className="flex items-center mb-4">
-                                    <h3 className={subHeadingClass}>Une approche flexible :</h3>
-                                </div>
 
-                                <div className="space-y-4">
-                                    <p className={`${paragraphClass} ml-4 md:ml-8 italic`}>
-                                        Il n&#39;est pas toujours nécessaire de s&#39;engager dans un travail thérapeutique.
-                                        En tant que parent, nous pouvons simplement avoir besoin d&#39;échanger autour d&#39;une
-                                        situation précise, d&#39;évoquer une thématique liée à l&#39;éducation de son enfant.
-                                    </p>
-                                </div>
-                            </div>
+                        <div className="lg:col-span-2 order-2 lg:order-1">
+
 
                             <div className={`p-6 md:p-8 rounded-lg shadow-md border border-stone-100 bg-${bgColor}`}>
-                                <h3 className={`${subHeadingClass} mb-4 md:mb-6 border-b border-stone-200 pb-3`}>
+                                <h3 className="text-2xl font-medium mb-4 md:mb-6 border-b border-stone-200 pb-3">
                                     Le soutien à la parentalité, mais pour quoi faire ?
                                 </h3>
 
@@ -422,16 +423,16 @@ const IndividuelPage: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="lg:col-span-1 h-full order-1 lg:order-2">
-                            <div className="sticky top-24">
-                                <div className="h-64 md:h-auto w-full relative rounded-lg shadow-md" style={{ minHeight: '250px', maxHeight: '400px' }}>
-                                    <img
-                                        src={tacheImage}
-                                        alt="Soutien à la parentalité"
-                                        className="h-full w-full object-contain"
-                                    />
-                                </div>
-                            </div>
+                        <div className="lg:col-span-1 h-full order-1 lg:order-2 flex  ">
+
+
+                            <img
+                                src={tacheImage}
+                                alt="Soutien à la parentalité"
+                                className="h-full w-full object-contain "
+                            />
+
+
                         </div>
                     </motion.div>
                 </div>
@@ -479,7 +480,7 @@ const IndividuelPage: React.FC = () => {
                                     <FaUsers className={`text-${primaryColor} text-xl`} />
                                 </div>
                                 <div>
-                                    <h3 className={`${subHeadingClass} mb-3`}>Un facteur d'apaisement</h3>
+                                    <h3 className={` text-2xl font-medium mb-3`}>Un facteur d'apaisement</h3>
                                     <p className={paragraphClass}>
                                         Tant pour les enfants que pour les parents, le fait de venir rencontrer une tierce personne
                                         qui comprend les difficultés qu'ils rencontrent, constitue déjà un facteur d'apaisement et
@@ -493,7 +494,7 @@ const IndividuelPage: React.FC = () => {
                                     <FaExchangeAlt className={`text-${primaryColor} text-xl`} />
                                 </div>
                                 <div>
-                                    <h3 className={`${subHeadingClass} mb-3`}>Une première étape</h3>
+                                    <h3 className={` text-2xl font-medium mb-3`}>Une première étape</h3>
                                     <p className={paragraphClass}>
                                         Ces entretiens de soutien à la parentalité peuvent également s'envisager lorsqu'il est difficile
                                         voire impossible de réunir toute la famille en consultation, ou bien, ils peuvent représenter

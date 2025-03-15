@@ -26,7 +26,7 @@ const BookingSection: React.FC = () => {
                     viewport={{ once: true }}
                     className="max-w-5xl mx-auto w-full"
                 >
-                    <h2 className="text-2xl md:text-4xl font-light uppercase tracking-wide text-center mb-4 md:mb-6">
+                    <h2 className="text-2xl md:text-4xl font-medium  tracking-wide text-center mb-4 md:mb-6">
                         Prenez Rendez-vous
                     </h2>
 
