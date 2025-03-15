@@ -14,8 +14,8 @@ const BookingSection: React.FC = () => {
     const isMobile = useIsMobile();
 
     return (
-        <section id="rendez-vous" className={`w-full ${isMobile ? 'h-screen' : 'py-32'} bg-stone-50`}>
-            <div className="container mx-auto px-4 sm:px-6 h-full flex flex-col justify-center">
+        <section id="rendez-vous" className={`w-full ${isMobile ? 'h-screen' : 'py-32'} bg-[#FCF6E9]`}>
+            <div className={`container mx-auto px-4 sm:px-6 h-full flex flex-col justify-center ${isMobile ? 'pt-40' : ''}`}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -23,17 +23,17 @@ const BookingSection: React.FC = () => {
                     viewport={{ once: true }}
                     className="max-w-5xl mx-auto w-full"
                 >
-                    <h2 className="text-3xl md:text-4xl font-light uppercase tracking-wide text-center mb-4 md:mb-6">
+                    <h2 className="text-2xl md:text-4xl font-light uppercase tracking-wide text-center mb-4 md:mb-6">
                         Prenez Rendez-vous
                     </h2>
 
-                    <div className="w-20 h-1 bg-stone-400 mx-auto mb-6 md:mb-8"></div>
 
-                    <p className="text-center mb-6 md:mb-8 text-lg text-gray-600 max-w-2xl mx-auto">
+
+                    <p className="text-center mb-6 md:mb-8 text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
                         Si vous ne trouvez aucun créneau adapté, je vous propose de prendre rendez-vous par téléphone ou par mail.
                     </p>
 
-                    <div className="bg-white rounded-lg shadow-xl p-4 md:p-6">
+                    <div className="bg-[#FCF6E9]/80 rounded-md shadow-xl  md:p-6">
                         <div className="h-[500px] md:h-[600px]">
                             <InlineWidget
                                 url="https://calendly.com/carolelagardere33/consultation/"

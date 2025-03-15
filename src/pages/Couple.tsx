@@ -102,7 +102,7 @@ const CouplePage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-white/70 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-12 sm:px-12 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 font-medium uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#EC6849]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                                className="inline-block bg-[#FCF6E9]/70 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-12 sm:px-12 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 font-medium uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#EC6849]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
                             >
                                 Réserver un rendez-vous
                             </a>
@@ -157,7 +157,7 @@ const CouplePage: React.FC = () => {
                                 <div className="pt-4 md:pt-6 text-center ">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className="inline-block bg-[#EC6849] px-6 px-12 md:px-12 py-4 md:py-5 text-stone-100 font-medium rounded-md uppercase tracking-wider text-xl md:text-lg transition-all duration-300 hover:bg-white hover:text-[#EC6849] hover:text-shadow-lg border-2 border-[#EC6849] shadow-md hover:shadow-lg"
+                                        className="inline-block bg-[#EC6849] px-6 px-12 md:px-12 py-4 md:py-5 text-stone-100 font-medium rounded-md uppercase tracking-wider text-xl md:text-lg transition-all duration-300 hover:bg-[#FCF6E9] hover:text-[#EC6849] hover:text-shadow-lg border-2 border-[#EC6849] shadow-md hover:shadow-lg"
                                     >
                                         Faire le premier pas
                                     </a>
@@ -247,7 +247,7 @@ const CouplePage: React.FC = () => {
                             {coupleSpecialtyAreas.map((area, index: number) => (
                                 <motion.div
                                     key={index}
-                                    className="bg-white p-6 md:p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+                                    className="bg-[#FCF6E9] p-6 md:p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{

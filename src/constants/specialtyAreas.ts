@@ -85,28 +85,28 @@ export const familySpecialtyAreas = [
 export const individualSpecialtyAreas = [
   {
     title: "Tension et problème relationnel avec son enfant",
-    description: "Tension et problème relationnel avec son enfant",
+
     icon: "relationship", // Placeholder pour une icône de relation
   },
-  {
-    title: "Problème pour mettre en place des limites éducatives",
-    description: "Problème pour mettre en place des limites éducatives",
-    icon: "boundaries", // Placeholder pour une icône de limites
-  },
+
   {
     title: "Manque de confiance dans sa parentalité",
-    description: "Manque de confiance dans sa parentalité",
+
     icon: "confidence", // Placeholder pour une icône de confiance
   },
   {
     title: "Sentiment d'impuissance face aux manifestations de son enfant",
-    description:
-      "Sentiment d'impuissance face aux manifestations de son enfant",
+
     icon: "helplessness", // Placeholder pour une icône d'impuissance
   },
   {
+    title: "Difficulté pour mettre en place des limites éducatives",
+
+    icon: "boundaries", // Placeholder pour une icône de limites
+  },
+  {
     title: "Burn out parental",
-    description: "Burn out parental",
+
     icon: "burnout", // Placeholder pour une icône d'épuisement
   },
 ];

@@ -29,7 +29,7 @@ const AboutSection: React.FC = () => {
 
     return (
         <section className="py-16 md:py-24 bg-[#25926C]/50" id="about">
-            <div className="container mx-auto px-4 md:px-8">
+            <div className="container mx-auto ">
                 {/* Main headline with elegant animation */}
                 <motion.div
                     className="text-center mb-16 md:mb-20"
@@ -46,11 +46,11 @@ const AboutSection: React.FC = () => {
                 {/* Context section with improved layout */}
 
                 <motion.div
-                    className="mb-16 md:mb-20"
+                    className="mb-16 md:mb-20 py-4  md:py-8"
                     {...fadeInUp}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-white/90 rounded-lg p-4">
+                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-[#FCF6E9] rounded-lg py-4 md:py-12">
                         <h3 className="mb-6 md:mb-8 text-center text-lg md:text-xl font-medium "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
@@ -101,7 +101,7 @@ const AboutSection: React.FC = () => {
                             ))}
                         </ul>
 
-                        <p className="text-center text-lg md:text-xl font-medium ">
+                        <p className="text-center text-lg md:text-xl font-medium pt-4 ">
                             Ou que cela concerne votre contexte professionnel ou social, je peux vous accompagner.
                         </p>
                     </div>
@@ -110,7 +110,7 @@ const AboutSection: React.FC = () => {
 
                 {/* Approach section with improved typography and spacing */}
                 <motion.div
-                    className="max-w-4xl mx-auto mb-16 md:mb-20 px-2 md:px-6"
+                    className=" mx-auto mb-16 md:mb-20 px-2 md:px-6"
                     {...fadeIn}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
@@ -119,9 +119,9 @@ const AboutSection: React.FC = () => {
 
 
                     {/* Image grid with responsive behavior */}
-                    <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 mt-6 px-2 md:px-6 pt-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 gap-4- mt-6 px-2 md:px-6 pt-8">
 
-                        <div className="overflow-hidden rounded-lg  hover:shadow-lg transition-shadow duration-300 sm:col-span-2 rounded-xl border-2 border-white/60  ">
+                        <div className="overflow-hidden rounded-lg aspect-16/9  hover:shadow-lg transition-shadow duration-300 sm:col-span-2 rounded-xl   ">
                             <img
                                 src={cabinetImage2}
                                 alt="Accompagnement thérapeutique"
@@ -133,8 +133,8 @@ const AboutSection: React.FC = () => {
 
 
                     </div>
-                    <p className="text-lg text-stone-900 font-medium leading-relaxed sm:col-span-1 w-full px-2 md:px-2 pt-8 mb-8">
-                        Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant. Je serai à
+                    <p className="text-lg  text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-4 mb-8">
+                        Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant. <br />Je serai à
                         votre écoute et engagée à vos côtés.
                     </p>
                 </motion.div>
@@ -160,7 +160,7 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
                         {/* Card 1 */}
-                        <div className="bg-white/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                             <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-[#25926C] mb-6 text-center md:text-left"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
@@ -179,7 +179,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Card 2 */}
-                        <div className="bg-white/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                             <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-[#25926C] mb-6 text-center md:text-left"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
@@ -222,7 +222,7 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.6, staggerChildren: 0.2 }}
                     >
                         {/* Value Card 1 */}
-                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Écoute active</h3>
                             <p className="text-stone-600">
                                 Etre accueilli sans jugement, être entendu et reconnu dans l'expression de ses émotions et de sa souffrance.
@@ -230,7 +230,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Value Card 2 */}
-                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Accompagnement personnalisé et créatif</h3>
                             <p className="text-stone-600">
                                 Analyser les dynamiques familiales et de couple. Mobiliser les ressources et les compétences de chacun. Utiliser différents outils et techniques (génogramme, métaphores, sculptures, jeux de rôles…)
@@ -238,7 +238,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Value Card 3 */}
-                        <div className="bg-white/90 p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Engagement éthique</h3>
                             <p className="text-stone-600">
                                 Proposer un cadre sécurisant, bienveillant, confidentiel et chaleureux
