@@ -80,23 +80,23 @@ const FamilyPage: React.FC = () => {
                     <div className="absolute inset-0  bg-opacity-40"></div>
                     <div className="container mx-auto max-w-6xl relative z-10">
                         <motion.div
-                            className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl py-2 md:py-8"
+                            className="relative container mx-auto px-2 sm:px-4 md:px-8 text-center z-10 max-w-4xl py-2 md:py-8"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-stone-900 mb-6 md:mb-16"
+                            <h1 className="text-3xl md:text-5xl lg:text-6xl  uppercase tracking-wider text-stone-900 mb-6 md:mb-16 mt-12"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 Thérapie Familiale Systémique
                             </h1>
 
-                            <p className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-8 italic font-light leading-relaxed px-2 md:px-0"
-                                style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
+                            <p className="text-lg md:text-2xl text-stone-960 mb-4 md:mb-8 italic font-medium sm:font-light leading-relaxed px-2 md:px-0"
+                                style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                             >
                                 Pour comprendre vos fonctionnements, faire émerger de nouvelles possibilités en remobilisant vos ressources et vos compétences.
                             </p>
-                            <p className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
+                            <p className="text-lg md:text-2xl font-medium sm:font-light text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 Accompagner, verbaliser, expérimenter le changement au sein de vos relations familiales.
@@ -109,7 +109,7 @@ const FamilyPage: React.FC = () => {
                             >
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block w-full font-medium rounded-sm sm:w-1/2 bg-[#FCF6E9] md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-8 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                                    className="inline-block w-full font-medium rounded-sm sm:w-1/2 bg-[#FCF6E9] md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
                                 >
                                     Réserver un rendez-vous
                                 </a>
@@ -135,8 +135,8 @@ const FamilyPage: React.FC = () => {
                                 />
                             </div>
 
-                            <div className="lg:col-span-2 space-y-4 font-light">
-                                <h2 className="hidden md:block text-2xl md:text-3xl text-gray-900 font-medium tracking-wide mb-6">
+                            <div className="lg:col-span-2 space-y-4 px-2 md:px-4 font-light">
+                                <h2 className=" md:block text-2xl md:text-3xl text-gray-900 font-medium tracking-wide mb-6">
                                     La relation est au cœur de la thérapie
                                 </h2>
 
@@ -151,14 +151,14 @@ const FamilyPage: React.FC = () => {
                                     La thérapie permet de faire vivre à la famille des échanges différents et offre à chacun la possibilité de s'exprimer, de se sentir entendu.
                                 </p>
 
-                                <p className="text-xl sm:text-lg text-center md:text-left font-medium  sm:font-medium italic mb-8">
+                                <p className="text-lg sm:text-xl sm:text-lg text-center md:text-left font-medium  sm:font-medium italic mb-8">
                                     "La famille est un lieu où les esprits se façonnent mutuellement avec patience et amour"
                                 </p>
 
-                                <div className=" md:pt-1 text-center">
+                                <div className=" pt-4 md:pt-1 text-center">
                                     <a
                                         href={`#${sectionIds.booking}`}
-                                        className=" md:inline-block bg-[#AB4D8C] rounded-sm px-16 md:px-12 py-3 sm:text-md text-xl py-5 md:py-4 text-stone-100 border-2 border-[#AB4D8C]  uppercase tracking-wider  transition-all duration-300 hover:bg-[#FCF6E9] hover:text-[#AB4D8C] font-medium  hover:font-semibold"
+                                        className=" md:inline-block bg-[#AB4D8C] rounded-sm px-8 md:px-12 py-3 sm:text-md text-xl py-5 md:py-4 text-stone-100 border-2 border-[#AB4D8C]  uppercase tracking-wider  transition-all duration-300 hover:bg-[#FCF6E9] hover:text-[#AB4D8C] font-medium  hover:font-semibold"
                                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                                     >
                                         Faire le premier pas
@@ -176,20 +176,20 @@ const FamilyPage: React.FC = () => {
                 <MobileOptimizedSection>
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
-                            className="py-16 px-6 text-stone-100 font-medium flex items-center justify-center"
+                            className="py-8 md:py-16 px-2 md:px-6 text-stone-100 font-medium flex items-center justify-center"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="container mx-auto p-4 md:p-6  md:max-w-[90%] bg-[#AB4D8C]/80 text-center mb-12 rounded-md">
-                                <p className=" mx-auto text-xl md:text-2xl lg:text-2xl italic font-light leading-relaxed">
+                            <div className="container mx-auto p-4 md:p-6 md:max-w-[90%] bg-[#AB4D8C]/80 text-center mb-8 md:mb-12 rounded-md">
+                                <p className="mx-auto text-xl md:text-2xl lg:text-2xl italic font-light leading-relaxed">
                                     La thérapie familiale est un espace de rencontre, et d'échanges dans un environnement contenant et rassurant.
                                 </p>
                             </div>
                         </motion.div>
                         <motion.div
-                            className="grid grid-cols-1 mx-auto px-8 lg:grid-cols-3 gap-8 "
+                            className="grid grid-cols-1 mx-auto px-4 md:px-8 lg:grid-cols-3 gap-6 md:gap-8"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
@@ -203,35 +203,26 @@ const FamilyPage: React.FC = () => {
                                     loading="lazy"
                                     width="600"
                                     height="800"
-
                                 />
                             </div>
 
-                            <div className="lg:col-span-2 max-w-xl space-y-4 max-w-lg pr-12 font-light ml-4 ">
+                            <div className="lg:col-span-2 space-y-4 pr-0 sm:pr-12 font-light">
                                 <div className="space-y-4">
-                                    <h3 className="text-lg text-gray-600  leading-relaxed  text-2xl md:text-3xl text-gray-900 font-medium">
+                                    <h3 className="text-2xl md:text-2xl lg:text-3xl text-gray-900 font-medium">
                                         Chaque famille est unique.
                                     </h3>
-                                    <p className="text-lg text-gray-600 leading-relaxed pt-4">
+                                    <p className="text-lg text-gray-600 leading-relaxed">
                                         En séance, le thérapeute porte une attention particulière aux besoins de chacun, à leurs
                                         expressions, à la manière dont la parole circule.
-                                        <p className="text-lg text-gray-600 leading-relaxed pt-4">
-                                            Il
-                                            s'agit de faire un état des lieux et engager une réflexion sur les places et les rôles de chacun.
-                                        </p>
                                     </p>
-
-
-                                    <p className="text-lg text-gray-600 leading-relaxed pt-4">
+                                    <p className="text-lg text-gray-600 leading-relaxed">
+                                        Il s'agit de faire un état des lieux et engager une réflexion sur les places et les rôles de chacun.
+                                    </p>
+                                    <p className="text-lg text-gray-600 leading-relaxed">
                                         Le thérapeute s'adapte et tente de repérer et mobiliser les ressources,
                                         en faisant preuve de souplesse et de créativité.
                                     </p>
-
-
-
                                 </div>
-
-
                             </div>
                         </motion.div>
                     </div>
@@ -301,25 +292,25 @@ const FamilyPage: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <div className="text-center mb-12 mt-8 md:mt-16">
-                                <h2 className=" text-2xl md:text-3xl text-gray-900 font-medium  tracking-wide text-gray-900 mb-6">
+                                <h2 className=" text-2xl md:text-3xl text-gray-900 font-medium  tracking-wide text-gray-900 mb-0 md:mb-6">
                                     Comment se déroule une thérapie familiale ?
                                 </h2>
                                 <div className="w-20 h-1 mx-auto"></div>
                             </div>
 
                             <div className="bg-stone-50 p-8 rounded-md shadow-md">
-                                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+                                <p className="text-lg font-medium sm:font-light text-gray-600 leading-relaxed mb-6">
                                     Une séance de thérapie familiale dure entre 60 et 90 minutes; l'intervalle entre les séances
                                     varie de une à plusieurs semaines en fonction des problèmes présentés, des besoins des
                                     membres de la famille, de l'étape du traitement et d'autres variables.
                                 </p>
 
-                                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+                                <p className="text-lg font-medium sm:font-light text-gray-600 leading-relaxed mb-6">
                                     Les séances regroupent plusieurs membres de la famille mais les séances individuelles ou les
                                     rencontres avec les parents (sans leur enfant par exemple) sont également proposées si cela
                                     se révèle nécessaire.
                                 </p>
-                                <p className="text-lg  text-gray-600 leading-relaxed mb-6">
+                                <p className="text-lg font-medium sm:font-light text-gray-600 leading-relaxed mb-6">
                                     La longueur et la configuration de la thérapie familiale est le résultat
                                     d'une collaboration et d'un accord mutuel entre le thérapeute et la famille.
                                 </p>
@@ -328,7 +319,7 @@ const FamilyPage: React.FC = () => {
                             <div className="text-center mt-12">
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-[#AB4D8C] px-16 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 sm:font-medium uppercase border-2 border-[#AB4D8C]  uppercase tracking-wider transition-all duration-500 hover:bg-[#FCF6E9] hover:text-[#AB4D8C]  shadow-md hover:shadow-xl hover:text-[#AB4D8C]"
+                                    className="inline-block bg-[#AB4D8C] px-16 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 font-medium sm:font-medium uppercase border-2 border-[#AB4D8C]  uppercase tracking-wider transition-all duration-500 hover:bg-[#FCF6E9] hover:text-[#AB4D8C]  shadow-md hover:shadow-xl hover:text-[#AB4D8C]"
                                 >
                                     Réserver un rendez-vous
                                 </a>

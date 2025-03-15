@@ -39,11 +39,11 @@ const AproposPage: React.FC = () => {
                             <h1 className="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider text-stone-800 mb-6">
                                 Carole Lagardère
                             </h1>
-                            <p className="text-xl md:text-2xl xl:text-3xl font-light text-stone-900 mb-4">
+                            <p className="text-xl md:text-2xl xl:text-3xl font-medium sm:font-light text-stone-900 mb-4">
                                 Thérapeute familiale et de couple
                             </p>
                             <div className="w-24 h-1 bg-[#25926C]/60 mx-auto my-8"></div>
-                            <p className="text-lg md:text-xl xl:text-2xl text-stone-600 italic max-w-2xl mx-auto font-light"
+                            <p className="text-lg md:text-xl xl:text-2xl text-stone-900 font-medium sm:font-light italic max-w-2xl mx-auto font-light"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 "Accompagner le changement pour retrouver une forme d'équilibre et restaurer les relations"
@@ -53,7 +53,7 @@ const AproposPage: React.FC = () => {
                 </section>
 
                 {/* Bio Section with Photo */}
-                <section className="py-20 px-6 bg-white">
+                <section className="py-20 px-4 md:px-6 bg-white">
                     <div className="container mx-auto max-w-6xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
@@ -97,7 +97,7 @@ const AproposPage: React.FC = () => {
                             {/* Bio Content Column */}
                             <div className="lg:col-span-7 space-y-8">
                                 <div>
-                                    <h2 className="text-2xl md:text-3xl text-stone-800 font-light tracking-wide mb-6 border-b border-stone-200 pb-3">
+                                    <h2 className="text-2xl md:text-3xl text-stone-800 font-medium tracking-wide mb-6 border-b border-stone-200 pb-3">
                                         Mon parcours
                                     </h2>
                                     <div className="space-y-4 text-stone-600 leading-relaxed">
@@ -118,7 +118,7 @@ const AproposPage: React.FC = () => {
                                 </div>
 
                                 <div className="pt-8">
-                                    <h2 className="text-2xl md:text-3xl uppercase text-stone-800 font-light tracking-wide mb-6 border-b border-stone-200 pb-3">
+                                    <h2 className="text-2xl md:text-3xl text-stone-800 font-medium tracking-wide mb-6 border-b border-stone-200 pb-3">
                                         Mes approches thérapeutiques
                                     </h2>
 
@@ -168,7 +168,7 @@ const AproposPage: React.FC = () => {
                                 </div>
 
                                 <div className="pt-8">
-                                    <h2 className="text-2xl md:text-3xl uppercase text-stone-800 font-light tracking-wide mb-6 border-b border-[#25926C]/80 pb-3">
+                                    <h2 className="text-2xl md:text-3xl  text-stone-800 font-medium tracking-wide mb-6 border-b border-[#25926C]/80 pb-3">
                                         Ma philosophie
                                     </h2>
                                     <div className="space-y-4 text-stone-600 leading-relaxed">
@@ -218,10 +218,10 @@ const AproposPage: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-2xl md:text-3xl uppercase text-stone-800 font-light tracking-wide mb-6">
+                            <h2 className="text-2xl md:text-3xl font-medium text-stone-800 font-light tracking-wide mb-6">
                                 Mes Compétences
                             </h2>
-                            <div className="w-20 h-1 bg-stone-400 mx-auto mb-8"></div>
+                            <div className="w-20 h-1 bg-[#25926C]/80 mx-auto mb-8"></div>
                         </motion.div>
 
                         <motion.div

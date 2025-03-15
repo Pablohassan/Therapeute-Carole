@@ -83,13 +83,13 @@ const CouplePage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light font-bebas uppercase tracking-wider my-2 md:my-8 text-stone-900 mb-8 md:mb-16"
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light text-stone-900 font-bebas tracking-wider mb-8 md:mb-16 leading-tight"
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Thérapie de Couple
                         </h1>
 
-                        <p className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-0"
+                        <p className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-medium sm:font-light leading-relaxed px-2 md:px-0"
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Pour améliorer la communication, apaiser les conflits, renforcer la relation au sein de votre couple...
@@ -102,7 +102,7 @@ const CouplePage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-[#FCF6E9]/70 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-12 sm:px-12 md:px-16 py-5 md:py-6 mt-4 md:mt-8 md:text-stone-950 font-medium uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#EC6849]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                                className="inline-block bg-[#FCF6E9]/70 rounded-sm md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 sm:px-12 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 font-medium uppercase tracking-wider text-lg  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#EC6849]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
                             >
                                 Réserver un rendez-vous
                             </a>

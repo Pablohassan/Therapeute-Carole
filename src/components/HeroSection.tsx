@@ -38,7 +38,7 @@ const HeroSection = () => {
     }), []);
 
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative h-screen bg-[#FCF6E9] flex items-center justify-center overflow-hidden">
             {/* Background Image with Overlay */}
             <motion.div
                 className="absolute inset-0 w-full h-full"
@@ -70,7 +70,7 @@ const HeroSection = () => {
                     Thérapie familiale, de couple et individuelle
                 </motion.h1>
                 <motion.p
-                    className="text-lg md:text-2xl text-stone-900 mb-8 md:mb-12 italic font-light leading-relaxed px-2 md:px-16"
+                    className="text-lg md:text-2xl text-stone-950  mb-8 md:mb-12 italic font-medium sm:font-light leading-relaxed px-2 md:px-16"
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
 
                     {...contentAnimations}
@@ -88,7 +88,7 @@ const HeroSection = () => {
                 >
                     <a
                         href={`#${sectionIds.booking}`}
-                        className="inline-block bg-[#FCF6E9]  md:bg-[#FCF6E9]/50 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4  md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-lg  text-stone-00 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#25926C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                        className="inline-block bg-[#FCF6E9] rounded-sm font-medium  md:bg-[#FCF6E9]/50 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4  md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-md  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#25926C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
                     >
                         Réserver un rendez-vous
                     </a>

@@ -29,14 +29,14 @@ const AboutSection: React.FC = () => {
 
     return (
         <section className="py-16 md:py-24 bg-[#25926C]/50" id="about">
-            <div className="container mx-auto ">
+            <div className="container mx-auto px-2 md:px-6 ">
                 {/* Main headline with elegant animation */}
                 <motion.div
-                    className="text-center mb-16 md:mb-20"
+                    className="text-center mb-4 md:mb-20 px-2 md:px-6"
                     {...scaleIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <p className=" text-xl md:text-2xl lg:text-3xl tracking-wide  text-stone-700 max-w-4xl mx-auto md:px-16"
+                    <p className=" text-xl md:text-2xl lg:text-3xl tracking-wide font-medium text-stone-700 max-w-4xl mx-auto px-2 md:px-16"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Vous cherchez à améliorer les relations avec vos proches ?
@@ -93,7 +93,7 @@ const AboutSection: React.FC = () => {
                             ].map((item, index) => (
                                 <li
                                     key={index}
-                                    className="flex  items-center hover:scale-105 transition-transform duration-200"
+                                    className="flex items-center hover:scale-105 transition-transform duration-200"
                                 >
                                     <span className="text-[#25926C] mr-3 text-xl">•</span>
                                     <span className="text-stone-900 text-base">{item}</span>
@@ -101,7 +101,7 @@ const AboutSection: React.FC = () => {
                             ))}
                         </ul>
 
-                        <p className="text-center text-lg md:text-xl font-medium pt-4 ">
+                        <p className="text-left text-lg md:text-xl font-medium pt-4 ">
                             Ou que cela concerne votre contexte professionnel ou social, je peux vous accompagner.
                         </p>
                     </div>
@@ -110,7 +110,7 @@ const AboutSection: React.FC = () => {
 
                 {/* Approach section with improved typography and spacing */}
                 <motion.div
-                    className=" mx-auto mb-16 md:mb-20 px-2 md:px-6"
+                    className=" mx-auto mb-16 md:mb-20  md:px-6"
                     {...fadeIn}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
@@ -119,9 +119,9 @@ const AboutSection: React.FC = () => {
 
 
                     {/* Image grid with responsive behavior */}
-                    <div className="grid grid-cols-1 sm:grid-cols-1 gap-4- mt-6 px-2 md:px-6 pt-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 mt-6 pt-8">
 
-                        <div className="overflow-hidden rounded-lg aspect-16/9  hover:shadow-lg transition-shadow duration-300 sm:col-span-2 rounded-xl   ">
+                        <div className="overflow-hidden aspect-square  sm:aspect-16/9  hover:shadow-lg transition-shadow duration-300 sm:col-span-2    ">
                             <img
                                 src={cabinetImage2}
                                 alt="Accompagnement thérapeutique"
@@ -133,7 +133,7 @@ const AboutSection: React.FC = () => {
 
 
                     </div>
-                    <p className="text-lg  text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-4 mb-8">
+                    <p className="text-sm md:text-lg  text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-4 mb-8">
                         Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant. <br />Je serai à
                         votre écoute et engagée à vos côtés.
                     </p>

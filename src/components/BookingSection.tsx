@@ -14,8 +14,11 @@ const BookingSection: React.FC = () => {
     const isMobile = useIsMobile();
 
     return (
-        <section id="rendez-vous" className={`w-full ${isMobile ? 'h-screen' : 'py-32'} bg-[#FCF6E9]`}>
-            <div className={`container mx-auto px-4 sm:px-6 h-full flex flex-col justify-center ${isMobile ? 'pt-40' : ''}`}>
+        <section id="rendez-vous" className="w-full bg-[#FCF6E9] relative mt-2">
+            {/* Visual separator at the top of the section */}
+
+
+            <div className={`container mx-auto px-4 sm:px-6 ${isMobile ? 'py-16' : 'py-32'}`}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

@@ -67,7 +67,7 @@ const IndividuelPage: React.FC = () => {
     const headingClass = "text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide text-stone-900";
     const subHeadingClass = "text-xl md:text-2xl font-medium text-stone-800";
     const paragraphClass = "text-base md:text-lg text-stone-700 leading-relaxed";
-    const buttonClass = `inline-block bg-${primaryColor}/80 px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-${primaryColor} hover:text-stone-950 hover:shadow-lg`;
+    const buttonClass = `inline-block bg-${primaryColor}/80 rounded-sm px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-${primaryColor} hover:text-stone-100 hover:shadow-lg hover:text-shadow-lg`;
 
     return (
         <div className="bg-[#FBC018]/30">
@@ -107,7 +107,7 @@ const IndividuelPage: React.FC = () => {
                         THERAPIE INDIVIDUELLE et ENTRETIEN DE SOUTIEN A LA PARENTALITE
                     </h1>
 
-                    <p className="text-base md:text-xl text-stone-900 mb-6 md:mb-10 italic font-light leading-relaxed px-2 md:px-0"
+                    <p className="text-base md:text-xl text-stone-900 mb-6 md:mb-10 italic font-medium sm:font-light leading-relaxed px-2 md:px-0"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Un accompagnement individuel (enfant, adolescent, adulte) pour explorer vos difficultés en
@@ -122,7 +122,7 @@ const IndividuelPage: React.FC = () => {
                     >
                         <a
                             href={`#${sectionIds.booking}`}
-                            className="inline-block bg-[#FCF6E9]/80 border-2 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                            className="inline-block rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                         >
                             Réserver un rendez-vous
                         </a>
@@ -459,8 +459,8 @@ const IndividuelPage: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <div className={`p-6 md:p-10 bg-${primaryColor} text-stone-900 mb-8 md:mb-12 shadow-md rounded-sm`}>
-                            <p className="mx-auto text-xl md:text-2xl lg:text-3xl italic font-light leading-relaxed">
+                        <div className={`p-6 md:p-10 bg-[#FBC018] text-stone-900 mb-8 md:mb-12 shadow-md rounded-sm`}>
+                            <p className="mx-auto text-xl md:text-2xl lg:text-3xl italic font-medium  leading-relaxed">
                                 « Je recois tout parent qui s'inquiète des difficultés de son enfant ou adolescent »
                             </p>
                         </div>
@@ -505,7 +505,7 @@ const IndividuelPage: React.FC = () => {
                     </motion.div>
 
                     <motion.div
-                        className="text-center"
+                        className="text-center r"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
