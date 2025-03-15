@@ -101,7 +101,7 @@ const IndividuelPage: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-2xl md:text-4xl lg:text-5xl font-medium uppercase tracking-wider text-stone-900 mb-6 md:mb-10"
+                    <h1 className="text-3xl md:text-5xl lg:text-5xl font-medium uppercase tracking-wider text-stone-900 mb-6 md:mb-10"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         THERAPIE INDIVIDUELLE et ENTRETIEN DE SOUTIEN A LA PARENTALITE
