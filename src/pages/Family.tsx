@@ -109,7 +109,7 @@ const FamilyPage: React.FC = () => {
                             >
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block w-full font-medium rounded-sm sm:w-1/2 bg-[#FCF6E9] md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                                    className="inline-block  font-medium rounded-sm w-full md:w-1/2 bg-[#FCF6E9]/70 md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
                                 >
                                     Réserver un rendez-vous
                                 </a>
