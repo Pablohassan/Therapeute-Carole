@@ -125,7 +125,7 @@ const CouplePage: React.FC = () => {
                                     <ResponsiveImage
                                         src={hand}
                                         alt="Main réconfortante"
-                                        className="absolute inset-0 h-full  object-contain shadow-xl"
+                                        className="absolute inset-0 h-full  object-contain "
 
                                         height={1000}
                                         sizes="(max-width: 1024px) 100vw, 33vw"
