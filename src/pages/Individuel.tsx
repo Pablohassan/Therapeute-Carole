@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import homeindividuel from '../assets/carole-lagardere-therapeute-talence-individuel.jpeg';
 import homeindividuelmobile from '../assets/carole-lagardere-therapeute-talence-ndividuel-mobile.jpeg';
-import escalierImage from '../assets/escalier.webp';
+import escalierImage from '../assets/soleil.jpg';
 import piedsImage from '../assets/setionparentalite.jpg';
 
 import tacheImage from '../assets/soutienparent.jpg'
@@ -215,7 +215,7 @@ const IndividuelPage: React.FC = () => {
                             </motion.div>
                         </div>
                         <div className="lg:col-span-1 h-full order-1 lg:order-2">
-                            <div className="h-64 lg:h-full  relative  rounded-md overflow-hidden shadow-lg" style={{ minHeight: '300px', maxHeight: '750px' }}>
+                            <div className="h-64 lg:h-full  relative  overflow-hidden shadow-lg" style={{ minHeight: '300px', maxHeight: '750px' }}>
                                 <ResponsiveImage
                                     src={piedsImage}
                                     alt="Pieds dans le sable"
