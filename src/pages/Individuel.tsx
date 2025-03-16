@@ -98,7 +98,7 @@ const IndividuelPage: React.FC = () => {
     const headingClass = "text-2xl md:text-3xl lg:text-3xl font-medium tracking-wide text-stone-900";
     const subHeadingClass = "text-2xl md:text-3xl font-medium text-stone-800";
     const paragraphClass = "text-base md:text-lg text-stone-700 leading-relaxed";
-    const buttonClass = `inline-block w-full  max-w-sm bg-${primaryColor}/80 rounded-sm px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-lg md:text-base transition-all duration-300 text-center hover:bg-${primaryColor} hover:text-stone-100 hover:shadow-lg hover:text-shadow-lg`;
+    const buttonClass = `inline-block w-full max-w-sm bg-${primaryColor}/80 rounded-sm px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-lg md:text-base transition-all duration-300 text-center hover:bg-${primaryColor} hover:text-stone-100 hover:shadow-lg hover:text-shadow-lg mobile-link mobile-link-ripple`;
 
     return (
         <div className="bg-[#FBC018]/30">
@@ -161,7 +161,7 @@ const IndividuelPage: React.FC = () => {
                     >
                         <a
                             href={`#${sectionIds.booking}`}
-                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-stone-900 font-medium uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-stone-900 font-medium uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl mobile-link mobile-link-ripple"
                         >
                             Réserver un rendez-vous
                         </a>

@@ -50,7 +50,7 @@ const AboutSection: React.FC = () => {
                     {...fadeInUp}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-[#FCF6E9] rounded-lg py-4 md:py-12 shadow-lg  transition-transform ease-in-out duration-500 hover:shadow-lg hover:shadow-stone-900/40 hover:shadow-stone-900/40 delay-500">
+                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-[#FCF6E9] rounded-lg py-4 md:py-12 shadow-lg transition-transform ease-in-out duration-500 hover:shadow-lg hover:shadow-stone-900/40 hover:shadow-stone-900/40 delay-500 mobile-link mobile-link-ripple active:scale-[0.99]">
                         <h3 className="mb-6 md:mb-8 text-center text-lg md:text-xl font-medium "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
@@ -93,7 +93,7 @@ const AboutSection: React.FC = () => {
                             ].map((item, index) => (
                                 <li
                                     key={index}
-                                    className="flex items-center hover:scale-105 transition-transform duration-200"
+                                    className="flex items-center mobile-link mobile-link-ripple p-2 rounded-md active:bg-[#25926C]/10"
                                 >
                                     <span className="text-[#25926C] mr-3 text-xl">•</span>
                                     <span className="text-stone-900 text-base">{item}</span>
@@ -158,7 +158,7 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
                         {/* Card 1 */}
-                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40">
+                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md shadow-md transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 mobile-link mobile-link-ripple active:scale-[0.99]">
                             <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-[#25926C] mb-6 text-center md:text-left"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
@@ -177,7 +177,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Card 2 */}
-                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40">
+                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 mobile-link mobile-link-ripple active:scale-[0.99]">
                             <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-[#25926C] mb-6 text-center md:text-left"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
@@ -220,7 +220,7 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.6, staggerChildren: 0.2 }}
                     >
                         {/* Value Card 1 */}
-                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 mobile-link mobile-link-ripple active:scale-[0.99] text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Écoute active</h3>
                             <p className="text-stone-600">
                                 Etre accueilli sans jugement, être entendu et reconnu dans l'expression de ses émotions et de sa souffrance.
@@ -228,7 +228,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Value Card 2 */}
-                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 mobile-link mobile-link-ripple active:scale-[0.99] text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Accompagnement personnalisé et créatif</h3>
                             <p className="text-stone-600">
                                 Analyser les dynamiques familiales et de couple. Mobiliser les ressources et les compétences de chacun. Utiliser différents outils et techniques (génogramme, métaphores, sculptures, jeux de rôles…)
@@ -236,7 +236,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Value Card 3 */}
-                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 mobile-link mobile-link-ripple active:scale-[0.99] text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Engagement éthique</h3>
                             <p className="text-stone-600">
                                 Proposer un cadre sécurisant, bienveillant, confidentiel et chaleureux

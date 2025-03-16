@@ -137,7 +137,7 @@ const FamilyPage: React.FC = () => {
                         >
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block font-medium rounded-sm  w-full max-w-sm  sm:max-w-md bg-[#FCF6E9]/70 md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                                className="inline-block font-medium rounded-sm w-full max-w-sm sm:max-w-md bg-[#FCF6E9]/70 md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl mobile-link mobile-link-ripple"
                             >
                                 Réserver un rendez-vous
                             </a>
@@ -184,7 +184,7 @@ const FamilyPage: React.FC = () => {
                             <div className="pt-2 md:pt-4 text-center">
                                 <a
                                     href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-[#AB4D8C] w-full md:w-1/2 px-8 md:px-12 py-4 md:py-5 rounded-sm text-stone-100  font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] uppercase tracking-wider transition-all duration-500 hover:bg-[#FCF6E9] hover:text-[#AB4D8C] shadow-md hover:shadow-xl hover:text-[#AB4D8C]"
+                                    className="inline-block bg-[#AB4D8C] w-full md:w-1/2 px-8 md:px-12 py-4 md:py-5 rounded-sm text-stone-100  font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] uppercase tracking-wider transition-all duration-500 hover:bg-[#FCF6E9] hover:text-[#AB4D8C] shadow-md hover:shadow-xl hover:text-[#AB4D8C] mobile-link mobile-link-ripple"
                                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                                 >
                                     Faire le premier pas
@@ -338,7 +338,7 @@ const FamilyPage: React.FC = () => {
                         <div className="text-center mt-12">
                             <a
                                 href={`#${sectionIds.booking}`}
-                                className="inline-block bg-[#AB4D8C] px-16 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] uppercase tracking-wider transition-all duration-500 hover:bg-[#FCF6E9] hover:text-[#AB4D8C] shadow-md hover:shadow-xl hover:text-[#AB4D8C]"
+                                className="inline-block bg-[#AB4D8C] px-16 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] uppercase tracking-wider transition-all duration-500 hover:bg-[#FCF6E9] hover:text-[#AB4D8C] shadow-md hover:shadow-xl hover:text-[#AB4D8C] mobile-link mobile-link-ripple"
                             >
                                 Réserver un rendez-vous
                             </a>

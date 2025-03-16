@@ -1,0 +1,77 @@
+/* Mobile-friendly link styles */
+.mobile-link {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.mobile-link:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Press and hold effect */
+@media (hover: none) {
+  .mobile-link:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+/* Hover effect for desktop */
+@media (hover: hover) {
+  .mobile-link:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+/* Ripple effect for mobile */
+.mobile-link-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-link-ripple::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 10%,
+    transparent 10.01%
+  );
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+.mobile-link-ripple:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* Button press animation */
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button-press {
+  animation: buttonPress 0.2s ease-in-out;
+}
