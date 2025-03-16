@@ -309,7 +309,7 @@ const IndividuelPage: React.FC = () => {
                         </div>
 
                         <div className="lg:col-span-2">
-                            <div className={`p-6 md:p-8 rounded-lg shadow-md border border-stone-100 bg-${bgColor}`}>
+                            <div className={`p-4 md:p-8 rounded-lg shadow-md border border-stone-100 bg-${bgColor}`}>
                                 <p className={`${paragraphClass} mb-6`}>
                                     Elle s'adresse à toutes les personnes qui traversent des difficultés, des situations de tension,
                                     d'incompréhension ou de souffrance.
@@ -472,12 +472,12 @@ const IndividuelPage: React.FC = () => {
                             Domaines d'intervention
                         </h2>
                         <div className={`w-20 h-1 bg-${primaryColor} mx-auto mt-4 mb-6`}></div>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto px-4 md:px-0">
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto px-2 md:px-0">
                             La thérapie individuelle peut vous aider dans de nombreuses situations de vie.
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-0 md:px-4">
                         {individualSpecialtyAreas.map((area, index) => (
                             <motion.div
                                 key={index}
