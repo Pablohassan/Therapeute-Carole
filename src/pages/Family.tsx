@@ -5,6 +5,7 @@ import { therapyServiceData } from '../constants/structuredData';
 import BookingSection from '../components/BookingSection';
 import { sectionIds } from '../constants/navigation';
 import { motion } from 'framer-motion';
+import { LongPressHover } from '../components/LongPressHover';
 
 import { useIsMobile } from '../hooks/useIsMobile';
 import livingroomImage from '../assets/illustration-family.jpg';
@@ -98,7 +99,7 @@ const FamilyPage: React.FC = () => {
 
             {/* Hero Section */}
             <section
-                className="relative h-screen bg-cover bg-center px-0 md:px-8 mx-auto flex flex-col justify-center"
+                className="relative h-screen bg-cover bg-center px-4 md:px-8 mx-auto flex flex-col justify-center"
                 style={{
                     backgroundImage: `url(${isMobile ? homefamilyMobile : homefamily})`,
                     backgroundSize: isMobile ? 'cover' : 'cover',
@@ -135,12 +136,13 @@ const FamilyPage: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                         >
-                            <a
-                                href={`#${sectionIds.booking}`}
-                                className="inline-block font-medium rounded-sm w-full max-w-sm sm:max-w-md bg-[#FCF6E9]/70 md:bg-transparent md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#AB4D8C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl mobile-link mobile-link-ripple"
+                            <LongPressHover
+                                className="inline-block font-medium rounded-sm w-full max-w-sm sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300"
+                                hoverClassName="scale-105 bg-[#AB4D8C]/40 text-stone-900 font-semibold shadow-xl"
+                                onClick={() => window.location.href = `#${sectionIds.booking}`}
                             >
                                 Réserver un rendez-vous
-                            </a>
+                            </LongPressHover>
                         </motion.div>
                     </motion.div>
                 </div>
@@ -182,13 +184,13 @@ const FamilyPage: React.FC = () => {
                             </p>
 
                             <div className="pt-2 md:pt-4 text-center">
-                                <a
-                                    href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-[#AB4D8C] w-full md:w-1/2 px-8 md:px-12 py-4 md:py-5 rounded-sm text-stone-100  font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] uppercase tracking-wider transition-all duration-500 hover:bg-[#FCF6E9] hover:text-[#AB4D8C] shadow-md hover:shadow-xl hover:text-[#AB4D8C] mobile-link mobile-link-ripple"
-                                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
+                                <LongPressHover
+                                    className="inline-block bg-[#AB4D8C] w-full md:w-1/2 px-8 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] uppercase tracking-wider transition-all duration-500 shadow-md"
+                                    hoverClassName="bg-[#FCF6E9] text-[#AB4D8C] shadow-xl"
+                                    onClick={() => window.location.href = `#${sectionIds.booking}`}
                                 >
                                     Faire le premier pas
-                                </a>
+                                </LongPressHover>
                             </div>
                         </div>
                     </motion.div>
@@ -336,12 +338,13 @@ const FamilyPage: React.FC = () => {
                         </div>
 
                         <div className="text-center mt-12">
-                            <a
-                                href={`#${sectionIds.booking}`}
-                                className="inline-block bg-[#AB4D8C] px-16 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] uppercase tracking-wider transition-all duration-500 hover:bg-[#FCF6E9] hover:text-[#AB4D8C] shadow-md hover:shadow-xl hover:text-[#AB4D8C] mobile-link mobile-link-ripple"
+                            <LongPressHover
+                                className="inline-block w-full font-medium rounded-sm w-full md:w-1/2 bg-[#AB4D8C] md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 text-stone-100 uppercase tracking-wider  hover:text-stone-900  transition-all duration-300 ease-in-out"
+                                hoverClassName="bg-[#FCF6E9] text-[#AB4D8C] shadow-xl"
+                                onClick={() => window.location.href = `#${sectionIds.booking}`}
                             >
                                 Réserver un rendez-vous
-                            </a>
+                            </LongPressHover>
                         </div>
                     </motion.div>
                 </div>

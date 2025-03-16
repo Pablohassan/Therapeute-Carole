@@ -3,7 +3,7 @@ import React from 'react';
 import logofamille from '../assets/logofamille.jpeg';
 import logocouple from '../assets/logocouple.jpeg';
 import logoindividuel from '../assets/logoindividuel.jpeg';
-import { Link } from 'react-router';
+import { LongPressHover } from './LongPressHover';
 
 const ServicesSection: React.FC = () => {
     return (
@@ -14,33 +14,45 @@ const ServicesSection: React.FC = () => {
 
                 </h2> */}
                 <div className=" grid md:grid-cols-3 gap-4">
-                    <Link to="/family" className="bg-stone-100 border-1 border-[#25926C]/20 shadow-xl hover:shadow-2xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                    <LongPressHover
+                        className="bg-stone-100 border-1 border-[#25926C]/20 shadow-xl rounded-xl p-8 flex flex-col items-center transition-all duration-500"
+                        hoverClassName="scale-105 shadow-2xl"
+                        onClick={() => window.location.href = '/family'}
+                    >
                         <div className="h-32 flex items-center justify-center mb-4">
                             <img src={logofamille} alt="Logo famille" className="max-h-full max-w-full object-contain rounded-lg" />
                         </div>
-                        <Link to="/family" className="font-semibold text-xl mb-2">Thérapie Familiale</Link>
+                        <div className="font-semibold text-xl mb-2">Thérapie Familiale</div>
                         <p className="text-center">
                             Accompagner le changement pour retrouver une forme d'équilibre et restaurer les relations au sein de la famille.
                         </p>
-                    </Link>
-                    <Link to="/couple" className="bg-stone-100 border-1 border-[#EC6849]/20 shadow-xl hover:shadow-2xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                    </LongPressHover>
+                    <LongPressHover
+                        className="bg-stone-100 border-1 border-[#EC6849]/20 shadow-xl rounded-xl p-8 flex flex-col items-center transition-all duration-500"
+                        hoverClassName="scale-105 shadow-2xl"
+                        onClick={() => window.location.href = '/couple'}
+                    >
                         <div className="h-32 flex items-center justify-center mb-4">
                             <img src={logocouple} alt="Logo couple" className="max-h-full max-w-full object-contain rounded-lg" />
                         </div>
-                        <Link to="/couple" className="font-semibold text-xl mb-2 ">Thérapie de Couple</Link>
+                        <div className="font-semibold text-xl mb-2">Thérapie de Couple</div>
                         <p className="text-center">
                             Explorer l'histoire du couple, améliorer la communication, favoriser l'écoute pour renforcer la relation au sein du couple.
                         </p>
-                    </Link>
-                    <Link to="/individuel" className="bg-stone-100 border-1 border-[#FBC018]/20 shadow-xl hover:shadow-2xl rounded-xl p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                    </LongPressHover>
+                    <LongPressHover
+                        className="bg-stone-100 border-1 border-[#FBC018]/20 shadow-xl rounded-xl p-8 flex flex-col items-center transition-all duration-500"
+                        hoverClassName="scale-105 shadow-2xl"
+                        onClick={() => window.location.href = '/individuel'}
+                    >
                         <div className="h-32 flex items-center justify-center mb-4">
                             <img src={logoindividuel} alt="Logo individuel" className="max-h-full max-w-full object-contain rounded-lg" />
                         </div>
-                        <Link to="/individuel" className="font-semibold text-xl mb-2">Thérapie Individuelle</Link>
+                        <div className="font-semibold text-xl mb-2">Thérapie Individuelle</div>
                         <p className="text-center">
                             Explorer l'ensemble de vos relations passées et présentes pour vous accompagner vers une meilleure compréhension de vous-même.
                         </p>
-                    </Link>
+                    </LongPressHover>
                 </div>
                 <section className="mt-12 mb-16 p-6 bg-stone-100 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500">
                     <div className="max-w-2xl mx-auto">

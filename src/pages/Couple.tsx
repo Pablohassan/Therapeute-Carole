@@ -16,6 +16,7 @@ import SEO from '../components/SEO';
 import { therapyServiceData } from '../constants/structuredData';
 import { coupleSpecialtyAreas } from '../constants/specialtyAreas';
 import ResponsiveImage from '../components/ResponsiveImage';
+import { LongPressHover } from '../components/LongPressHover';
 
 
 // import KeyboardNavigationHelper from '../components/KeyboardNavigationHelper';
@@ -139,12 +140,13 @@ const CouplePage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        <a
-                            href={`#${sectionIds.booking}`}
-                            className="inline-block w-full font-medium rounded-sm w-full md:w-1/2 bg-[#FCF6E9]/80 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#EC6849]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl mobile-link mobile-link-ripple"
+                        <LongPressHover
+                            className="inline-block w-full font-medium rounded-sm w-full md:w-1/2 bg-[#FCF6E9]/80 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300"
+                            hoverClassName="scale-105 bg-[#EC6849]/40 text-stone-900 font-semibold shadow-xl"
+                            onClick={() => window.location.href = `#${sectionIds.booking}`}
                         >
                             Réserver un rendez-vous
-                        </a>
+                        </LongPressHover>
                     </motion.div>
                 </motion.div>
             </section>
@@ -194,12 +196,13 @@ const CouplePage: React.FC = () => {
                             </p>
 
                             <div className="pt-4 md:pt-6 text-center ">
-                                <a
-                                    href={`#${sectionIds.booking}`}
-                                    className="inline-block bg-[#EC6849] w-full max-w-sm  px-8 px-12 md:px-12 py-4 md:py-5 text-stone-100 font-medium rounded-md uppercase tracking-wider text-xl md:text-lg transition-all duration-300 hover:bg-[#FCF6E9] hover:text-[#EC6849] hover:text-shadow-lg border-2 border-[#EC6849] shadow-md hover:shadow-lg"
+                                <LongPressHover
+                                    className="inline-block bg-[#EC6849] w-full max-w-sm px-8 px-12 md:px-12 py-4 md:py-5 text-stone-100 font-medium rounded-md uppercase tracking-wider text-xl md:text-lg transition-all duration-300 border-2 border-[#EC6849] shadow-md"
+                                    hoverClassName="bg-[#FCF6E9] text-[#EC6849] shadow-lg"
+                                    onClick={() => window.location.href = `#${sectionIds.booking}`}
                                 >
                                     Faire le premier pas
-                                </a>
+                                </LongPressHover>
                             </div>
                         </div>
                     </motion.div>

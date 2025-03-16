@@ -25,6 +25,8 @@ import {
     FaUsers
 } from 'react-icons/fa';
 
+import { LongPressHover } from '../components/LongPressHover';
+
 // Standardize section padding and margins
 const sectionClasses = "py-12 md:py-20 px-6 md:px-8 mx-auto";
 const containerClasses = "container mx-auto max-w-5xl";
@@ -98,7 +100,7 @@ const IndividuelPage: React.FC = () => {
     const headingClass = "text-2xl md:text-3xl lg:text-3xl font-medium tracking-wide text-stone-900";
     const subHeadingClass = "text-2xl md:text-3xl font-medium text-stone-800";
     const paragraphClass = "text-base md:text-lg text-stone-700 leading-relaxed";
-    const buttonClass = `inline-block w-full max-w-sm bg-${primaryColor}/80 rounded-sm px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-lg md:text-base transition-all duration-300 text-center hover:bg-${primaryColor} hover:text-stone-100 hover:shadow-lg hover:text-shadow-lg mobile-link mobile-link-ripple`;
+    const buttonClass = `inline-block w-full  max-w-sm bg-${primaryColor}/80 rounded-sm px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-lg md:text-base transition-all duration-300 text-center hover:bg-${primaryColor} hover:text-stone-100 hover:shadow-lg hover:text-shadow-lg`;
 
     return (
         <div className="bg-[#FBC018]/30">
@@ -159,12 +161,13 @@ const IndividuelPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        <a
-                            href={`#${sectionIds.booking}`}
-                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-stone-900 font-medium uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl mobile-link mobile-link-ripple"
+                        <LongPressHover
+                            className="inline-block w-full max-w-sm sm:max-w-md rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-6 md:px-16 py-4 md:py-6 text-stone-900 font-medium uppercase tracking-wider text-md md:text-base transition-all duration-300 shadow-md"
+                            hoverClassName="scale-105 bg-[#FBC018]/50 text-stone-950 font-semibold shadow-xl"
+                            onClick={() => window.location.href = `#${sectionIds.booking}`}
                         >
                             Réserver un rendez-vous
-                        </a>
+                        </LongPressHover>
                     </motion.div>
                 </motion.div>
             </section>
@@ -245,12 +248,13 @@ const IndividuelPage: React.FC = () => {
                                 transition={{ duration: 0.5, delay: 0.6 }}
                                 viewport={{ once: true }}
                             >
-                                <a
-                                    href={`#${sectionIds.booking}`}
+                                <LongPressHover
                                     className={buttonClass}
+                                    hoverClassName="bg-[#FBC018] text-stone-100"
+                                    onClick={() => window.location.href = `#${sectionIds.booking}`}
                                 >
                                     Faire le premier pas
-                                </a>
+                                </LongPressHover>
                             </motion.div>
                         </div>
                         <div className="lg:col-span-1 h-full order-1 lg:order-2">
