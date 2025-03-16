@@ -18,8 +18,7 @@ RUN pnpm install
 COPY . .
 
 # Set build-time arguments and environment variables
-ARG VITE_CLERK_PUBLISHABLE_KEY
-ENV VITE_CLERK_PUBLISHABLE_KEY=${VITE_CLERK_PUBLISHABLE_KEY}
+# Removed Clerk environment variables
 
 # Build the application
 RUN pnpm run build

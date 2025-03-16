@@ -1,13 +1,7 @@
 // src/App.tsx
 
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router";
-import {
-  SignIn,
-  SignUp,
-  SignedIn,
-  SignedOut,
-  ClerkLoaded,
-} from "@clerk/clerk-react";
+
 import { lazy, Suspense, useEffect } from "react";
 import Layout from "./components/Layout";
 import { HelmetProvider } from 'react-helmet-async';
@@ -46,98 +40,97 @@ function App() {
   console.log('App rendering');
 
   return (
-    <ClerkLoaded>
-      <HelmetProvider>
-        <Router>
-          <ScrollToTop />
-          <Routes>
-            {/* Default route */}
-            <Route path="/" element={
-              <>
-                <SignedIn>
-                  <Navigate to="/home" replace />
-                </SignedIn>
-                <SignedOut>
-                  <WelcomePage />
-                </SignedOut>
-              </>
-            } />
 
-            {/* Auth routes */}
-            <Route path="/sign-in/*" element={<SignIn routing="path" path="/sign-in" signUpUrl="/sign-up" />} />
-            <Route path="/sign-up/*" element={<SignUp routing="path" path="/sign-up" signInUrl="/sign-in" />} />
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          {/* Default route */}
+          <Route path="/" element={
+            <>
 
-            {/* Protected routes */}
-            <Route path="/home" element={
-              <SignedIn>
-                <Layout isHomePage={true}>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <HomePage />
-                  </Suspense>
-                </Layout>
-              </SignedIn>
-            } />
+              <Navigate to="/home" replace />
 
-            <Route path="/couple" element={
-              <SignedIn>
-                <Layout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <CouplePage />
-                  </Suspense>
-                </Layout>
-              </SignedIn>
-            } />
 
-            <Route path="/family" element={
-              <SignedIn>
-                <Layout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <FamilyPage />
-                  </Suspense>
-                </Layout>
-              </SignedIn>
-            } />
+              <WelcomePage />
 
-            <Route path="/individuel" element={
-              <SignedIn>
-                <Layout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <IndividuelPage />
-                  </Suspense>
-                </Layout>
-              </SignedIn>
-            } />
+            </>
+          } />
 
-            <Route path="/apropos" element={
-              <SignedIn>
-                <Layout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <Apropos />
-                  </Suspense>
-                </Layout>
-              </SignedIn>
-            } />
+          {/* Auth routes */}
 
-            <Route path="/conditions-generales" element={
-              <SignedIn>
-                <Layout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <ConditionsGenerales />
-                  </Suspense>
-                </Layout>
-              </SignedIn>
-            } />
 
-            {/* Catch-all route */}
-            <Route path="*" element={
-              <SignedIn>
-                <Navigate to="/home" replace />
-              </SignedIn>
-            } />
-          </Routes>
-        </Router>
-      </HelmetProvider>
-    </ClerkLoaded>
+          {/* Protected routes */}
+          <Route path="/home" element={
+
+            <Layout isHomePage={true}>
+              <Suspense fallback={<LoadingFallback />}>
+                <HomePage />
+              </Suspense>
+            </Layout>
+
+          } />
+
+          <Route path="/couple" element={
+
+            <Layout>
+              <Suspense fallback={<LoadingFallback />}>
+                <CouplePage />
+              </Suspense>
+            </Layout>
+
+          } />
+
+          <Route path="/family" element={
+
+            <Layout>
+              <Suspense fallback={<LoadingFallback />}>
+                <FamilyPage />
+              </Suspense>
+            </Layout>
+
+          } />
+
+          <Route path="/individuel" element={
+
+            <Layout>
+              <Suspense fallback={<LoadingFallback />}>
+                <IndividuelPage />
+              </Suspense>
+            </Layout>
+
+          } />
+
+          <Route path="/apropos" element={
+
+            <Layout>
+              <Suspense fallback={<LoadingFallback />}>
+                <Apropos />
+              </Suspense>
+            </Layout>
+
+          } />
+
+          <Route path="/conditions-generales" element={
+
+            <Layout>
+              <Suspense fallback={<LoadingFallback />}>
+                <ConditionsGenerales />
+              </Suspense>
+            </Layout>
+
+          } />
+
+          {/* Catch-all route */}
+          <Route path="*" element={
+
+            <Navigate to="/home" replace />
+
+          } />
+        </Routes>
+      </Router>
+    </HelmetProvider>
+
   );
 }
 

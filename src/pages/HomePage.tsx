@@ -6,6 +6,7 @@ import ServicesSection from '../components/ServicesSection';
 import BookingSection from '../components/BookingSection';
 import SEO from '../components/SEO';
 import { showFooter } from '../components/Layout';
+import { therapyPracticeData } from '../constants/structuredData';
 
 const HomePage: React.FC = () => {
     // Force footer to be visible after a delay
@@ -20,16 +21,28 @@ const HomePage: React.FC = () => {
     return (
         <>
             <SEO
-                title="Carole Lagardère - Thérapeute Familiale Talence"
-                description="Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence (Bordeaux). Consultations en thérapie familiale, de couple et individuelle. Approche bienveillante et solution-focused."
+                title="Thérapeute Familiale et de Couple à Talence | Carole Lagardère"
+                description="Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence (Bordeaux). Consultations en thérapie familiale, de couple et individuelle avec une approche bienveillante et personnalisée."
                 canonicalUrl="https://www.carole-lagardere.fr/"
-                keywords={["thérapeute familiale Talence", "thérapie familiale Bordeaux", "thérapie de couple Talence", "thérapie individuelle Talence", "thérapie systémique", "thérapie familiale EFTA", "therapeute Bordeaux"]}
+                ogImage="/carole-lagardere-therapeute-familiale.webp"
+                keywords={[
+                    "thérapeute familiale Talence",
+                    "thérapie familiale Bordeaux",
+                    "thérapie de couple Talence",
+                    "thérapie individuelle Bordeaux",
+                    "thérapie systémique Talence",
+                    "thérapie familiale EFTA",
+                    "thérapeute couple Bordeaux",
+                    "problèmes relationnels",
+                    "conflits familiaux",
+                    "soutien à la parentalité Talence"
+                ]}
+                structuredData={therapyPracticeData}
             />
             <HeroSection />
             <AboutSection />
             <ServicesSection />
             <BookingSection />
-
         </>
     );
 };

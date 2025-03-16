@@ -16,17 +16,75 @@ const AproposPage: React.FC = () => {
         return () => clearTimeout(timer);
     }, []);
 
+    // Create structured data for the therapist
+    const therapistStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Carole Lagardère",
+        "jobTitle": "Thérapeute Familiale Systémique",
+        "description": "Thérapeute familiale systémique certifiée EFTA, spécialisée dans les thérapies familiales, de couple et individuelles à Talence.",
+        "image": "https://www.carole-lagardere.fr/carole-lagardere-therapeute-familiale-talence.webp",
+        "url": "https://www.carole-lagardere.fr/apropos",
+        "telephone": "+33 7 78 24 09 60",
+        "email": "therapie@carole-lagardere.fr",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "184 cours du Maréchal Gallieni",
+            "addressLocality": "Talence",
+            "postalCode": "33400",
+            "addressCountry": "FR"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/carole-lagardere-ba828b33a/"
+        ],
+        "knowsAbout": [
+            "Thérapie familiale systémique",
+            "Thérapie de couple",
+            "Thérapie individuelle",
+            "Soutien à la parentalité",
+            "Approche systémique"
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "certification",
+                "name": "Thérapeute familiale systémique certifiée EFTA",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "European Family Therapy Association (EFTA)"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Diplôme d'État d'Éducatrice Spécialisée"
+            }
+        ]
+    };
+
     return (
         <>
             <SEO
-                title="À Propos de Carole Lagardère"
-                description="Découvrez Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence. Formation, approche thérapeutique et philosophie de soins. Consultations accessibles à tous."
+                title="À Propos de Carole Lagardère | Thérapeute Familiale à Talence"
+                description="Découvrez Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence. Formation, approche thérapeutique et philosophie de soins. Plus de 20 ans d'expérience en accompagnement familial."
                 canonicalUrl="https://www.carole-lagardere.fr/apropos"
                 ogImage="/carole-lagardere-therapeute-familiale.webp"
-                keywords={["thérapeute familiale Talence", "Carole Lagardère thérapeute", "thérapie systémique Bordeaux", "thérapie familiale EFTA", "thérapeute certifiée Talence", "consultation thérapie Bordeaux", "approche systémique"]}
+                keywords={[
+                    "thérapeute familiale Talence",
+                    "Carole Lagardère thérapeute",
+                    "thérapie systémique Bordeaux",
+                    "thérapie familiale EFTA",
+                    "thérapeute certifiée Talence",
+                    "consultation thérapie Bordeaux",
+                    "approche systémique",
+                    "parcours thérapeute familiale",
+                    "formation thérapie familiale",
+                    "expérience protection de l'enfance"
+                ]}
+                structuredData={therapistStructuredData}
             />
 
-            <main className="font-montserrat text-stone-800 font-light">
+            <main className="font-montserrat text-stone-800  font-light">
                 {/* Hero Section */}
                 <section className="relative h-screen flex items-center justify-center py-32 bg-[#25926C]/20">
                     <div className="container mx-auto px-6">
@@ -53,7 +111,7 @@ const AproposPage: React.FC = () => {
                 </section>
 
                 {/* Bio Section with Photo */}
-                <section className="py-20 px-4 md:px-6 bg-white">
+                <section className="py-20 px-6 md:px-6 bg-[#FCF6E9]">
                     <div className="container mx-auto max-w-6xl">
                         <motion.div
                             className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
@@ -73,8 +131,8 @@ const AproposPage: React.FC = () => {
                                     />
                                 </div>
 
-                                <div className="mt-8 bg-stone-50 p-6 border-l-4 border-stone-400">
-                                    <h3 className="text-xl uppercase tracking-wider text-stone-800 mb-4">
+                                <div className="mt-8 bg-white/70 p-6 border-l-4 rounded-sm shadow-md border-[#25926C]">
+                                    <h3 className="text-xl text-center uppercase font-medium tracking-wider text-stone-800 mb-6">
                                         Certifications
                                     </h3>
                                     <ul className="space-y-3 text-stone-600">
@@ -97,7 +155,7 @@ const AproposPage: React.FC = () => {
                             {/* Bio Content Column */}
                             <div className="lg:col-span-7 space-y-8">
                                 <div>
-                                    <h2 className="text-2xl md:text-3xl text-stone-800 font-medium tracking-wide mb-6 border-b border-stone-200 pb-3">
+                                    <h2 className="text-2xl md:text-3xl text-center  text-stone-800 font-medium tracking-wide mb-6 border-b border-[#25926C]/80 pb-3">
                                         Mon parcours
                                     </h2>
                                     <div className="space-y-4 text-stone-600 leading-relaxed">
@@ -118,12 +176,12 @@ const AproposPage: React.FC = () => {
                                 </div>
 
                                 <div className="pt-8">
-                                    <h2 className="text-2xl md:text-3xl text-stone-800 font-medium tracking-wide mb-6 border-b border-stone-200 pb-3">
+                                    <h2 className="text-2xl md:text-3xl text-center  text-stone-800 font-medium tracking-wide mb-6 border-b border-[#25926C]/80 pb-4">
                                         Mes approches thérapeutiques
                                     </h2>
 
                                     <div className="space-y-8">
-                                        <div className="bg-[#25926C]/10 p-6 border-l-4 border-[#25926C]/80">
+                                        <div className="bg-[#25926C]/10 p-6 border-l-4 rounded-sm shadow-md border-[#25926C]/80">
                                             <h3 className="text-xl font-medium text-stone-800 mb-3">
                                                 Thérapie Familiale
                                             </h3>
@@ -138,7 +196,7 @@ const AproposPage: React.FC = () => {
                                             </p>
                                         </div>
 
-                                        <div className="bg-[#EC6849]/20 p-6 border-l-4 border-[#EC6849]/80">
+                                        <div className="bg-[#EC6849]/20 p-6 border-l-4 rounded-sm shadow-md border-[#EC6849]/80">
                                             <h3 className="text-xl font-medium text-stone-800 mb-3">
                                                 Thérapie de Couple
                                             </h3>
@@ -149,7 +207,7 @@ const AproposPage: React.FC = () => {
                                             </p>
                                         </div>
 
-                                        <div className="bg-[#FBC018]/10 p-6 border-l-4 border-[#FBC018]/80">
+                                        <div className="bg-[#FBC018]/10 p-6 border-l-4 rounded-sm shadow-md border-[#FBC018]/80">
                                             <h3 className="text-xl font-medium text-stone-800 mb-3">
                                                 Thérapie Individuelle
                                             </h3>
@@ -168,7 +226,7 @@ const AproposPage: React.FC = () => {
                                 </div>
 
                                 <div className="pt-8">
-                                    <h2 className="text-2xl md:text-3xl  text-stone-800 font-medium tracking-wide mb-6 border-b border-[#25926C]/80 pb-3">
+                                    <h2 className="text-2xl md:text-3xl text-center  text-stone-800 font-medium tracking-wide mb-6 border-b border-[#25926C]/80 pb-3">
                                         Ma philosophie
                                     </h2>
                                     <div className="space-y-4 text-stone-600 leading-relaxed">
@@ -198,7 +256,7 @@ const AproposPage: React.FC = () => {
                                 >
                                     <a
                                         href={`#${sectionIds.contact}`}
-                                        className="inline-block bg-[#25926C] px-10 py-4 text-white font-light uppercase tracking-wider text-base transition-all duration-300 hover:scale-105 hover:font-medium shadow-md hover:shadow-lg"
+                                        className="inline-block bg-[#25926C] rounded-sm px-10 py-4 text-white font-light border-1 border-[#25926C] uppercase tracking-wider text-base transition-all duration-300 hover:scale-105 hover:font-medium hover:text-stone-900 hover:bg-[#25926C]/10  shadow-md hover:shadow-lg"
                                     >
                                         Me contacter
                                     </a>
@@ -225,7 +283,7 @@ const AproposPage: React.FC = () => {
                         </motion.div>
 
                         <motion.div
-                            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, staggerChildren: 0.2 }}

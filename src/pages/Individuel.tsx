@@ -5,14 +5,12 @@ import homeindividuelmobile from '../assets/carole-lagardere-therapeute-talence-
 import escalierImage from '../assets/soleil.jpg';
 import piedsImage from '../assets/setionparentalite.jpg';
 
-import tacheImage from '../assets/soutienparent.jpg'
 import BookingSection from '../components/BookingSection';
 import ResponsiveImage from '../components/ResponsiveImage';
 import SEO from '../components/SEO';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { therapyServiceData } from '../constants/structuredData';
 import { individualSpecialtyAreas } from '../constants/specialtyAreas';
-
 
 import { sectionIds } from '../constants/navigation';
 // import KeyboardNavigationHelper from '../components/KeyboardNavigationHelper';
@@ -27,35 +25,69 @@ import {
     FaUsers
 } from 'react-icons/fa';
 
-// // Function to get the appropriate icon for each specialty area
-// function getSpecialtyIcon(title: string) {
-//     switch (title) {
-//         case "Soutien à la parentalité":
-//             return <FaChild className="text-stone-500 text-lg" />;
-//         case "Dépression":
-//             return <FaSadTear className="text-stone-500 text-lg" />;
-//         case "Transitions de vie":
-//             return <FaExchangeAlt className="text-stone-500 text-lg" />;
-//         case "Estime de soi":
-//             return <FaHeart className="text-stone-500 text-lg" />;
-//         case "Deuil et pertes":
-//             return <FaPray className="text-stone-500 text-lg" />;
-//         case "Difficultés relationnelles":
-//             return <FaUsers className="text-stone-500 text-lg" />;
-//         default:
-//             return <FaHeart className="text-stone-500 text-lg" />; // Default icon
-//     }
-// }
+// Standardize section padding and margins
+const sectionClasses = "py-12 md:py-20 px-6 md:px-8 mx-auto";
+const containerClasses = "container mx-auto max-w-5xl";
 
 const IndividuelPage: React.FC = () => {
-    // Create specific service data for individual therapy
+    // Create enhanced specific service data for individual therapy
     const individualTherapyData = {
         ...therapyServiceData,
-        name: "Thérapie Individuelle",
-        serviceType: "Thérapie Individuelle",
-        description: "La thérapie individuelle vous aide à explorer vos pensées, émotions et comportements pour surmonter les difficultés personnelles et développer votre potentiel."
+        "@type": "MedicalTherapy",
+        "name": "Thérapie Individuelle et Soutien à la Parentalité",
+        "alternateName": ["Thérapie Personnelle", "Soutien à la Parentalité"],
+        "medicalSpecialty": {
+            "@type": "MedicalSpecialty",
+            "name": "Thérapie Systémique"
+        },
+        "relevantSpecialty": [
+            {
+                "@type": "MedicalSpecialty",
+                "name": "Thérapie Individuelle"
+            },
+            {
+                "@type": "MedicalSpecialty",
+                "name": "Soutien à la Parentalité"
+            }
+        ],
+        "description": "La thérapie individuelle systémique et le soutien à la parentalité vous aident à explorer vos pensées, émotions et comportements en tenant compte de l'ensemble de vos relations. Un accompagnement personnalisé pour surmonter les difficultés personnelles, développer votre potentiel et renforcer vos compétences parentales.",
+        "procedureType": "Thérapeutique",
+        "followup": "Séances régulières adaptées aux besoins individuels et familiaux",
+        "howPerformed": "Séances individuelles de 45 à 60 minutes",
+        "preparation": "Aucune préparation spécifique requise",
+        "procedure": "Exploration des relations passées et présentes, analyse des schémas comportementaux, développement de nouvelles stratégies, soutien aux compétences parentales",
+        "recognizingAuthority": "European Family Therapy Association (EFTA)",
+        "status": "Établie",
+        "study": [
+            {
+                "@type": "MedicalStudy",
+                "description": "Études démontrant l'efficacité de la thérapie individuelle systémique et du soutien à la parentalité"
+            }
+        ],
+        "guideline": {
+            "@type": "MedicalGuideline",
+            "evidenceLevel": "B",
+            "evidenceOrigin": "Études cliniques",
+            "guidelineSubject": {
+                "@type": "MedicalEntity",
+                "name": "Thérapie Individuelle et Soutien à la Parentalité"
+            }
+        },
+        "audience": {
+            "@type": "PeopleAudience",
+            "audienceType": "Adultes, adolescents, enfants et parents en difficulté personnelle, relationnelle ou parentale"
+        },
+        "serviceType": ["Thérapie Individuelle", "Soutien à la Parentalité"],
+        "serviceOutput": "Amélioration du bien-être personnel, des relations et des compétences parentales",
+        "offers": {
+            "@type": "Offer",
+            "price": "70.00",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.carole-lagardere.fr/individuel",
+            "validFrom": "2023-01-01"
+        }
     };
-
 
     const isMobile = useIsMobile();
 
@@ -63,26 +95,33 @@ const IndividuelPage: React.FC = () => {
     const primaryColor = "[#FBC018]";
     const bgColor = "[#FCF6E9]";
     const textColor = "stone-900";
-    const sectionPadding = "py-16 md:py-20 px-4 md:px-6";
     const headingClass = "text-2xl md:text-3xl lg:text-3xl font-medium tracking-wide text-stone-900";
     const subHeadingClass = "text-2xl md:text-3xl font-medium text-stone-800";
     const paragraphClass = "text-base md:text-lg text-stone-700 leading-relaxed";
-    const buttonClass = `inline-block bg-${primaryColor}/80 rounded-sm px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-sm md:text-base transition-all duration-300 hover:bg-${primaryColor} hover:text-stone-100 hover:shadow-lg hover:text-shadow-lg`;
+    const buttonClass = `inline-block w-full  max-w-sm bg-${primaryColor}/80 rounded-sm px-6 md:px-10 py-3 md:py-4 text-${textColor} font-medium uppercase tracking-wider text-lg md:text-base transition-all duration-300 text-center hover:bg-${primaryColor} hover:text-stone-100 hover:shadow-lg hover:text-shadow-lg`;
 
     return (
         <div className="bg-[#FBC018]/30">
             <SEO
-                title="Thérapie Individuelle à Talence"
-                description="Consultations individuelles à Talence (Bordeaux). Retrouvez votre équilibre personnel, développez votre potentiel et surmontez vos difficultés avec un accompagnement personnalisé."
+                title="Thérapie Individuelle et Soutien à la Parentalité | Talence"
+                description="Consultations individuelles et soutien à la parentalité à Talence près de Bordeaux. Retrouvez votre équilibre personnel, développez votre potentiel et surmontez vos difficultés avec un accompagnement personnalisé pour enfants, adolescents et adultes."
                 canonicalUrl="https://www.carole-lagardere.fr/individuel"
-                ogImage="/images/individuel.webp"
-                keywords={["thérapie individuelle Talence", "psychothérapie Bordeaux", "développement personnel", "thérapie systémique", "soutien psychologique Talence", "bien-être émotionnel", "thérapeute Bordeaux"]}
+                ogImage="/carole-lagardere-therapeute-talence-individuel.jpeg"
+                keywords={[
+                    "thérapie individuelle Talence",
+                    "psychothérapie Bordeaux",
+                    "développement personnel thérapie",
+                    "thérapie systémique individuelle",
+                    "soutien psychologique Talence",
+                    "bien-être émotionnel thérapie",
+                    "thérapeute individuel Bordeaux",
+                    "soutien à la parentalité Talence",
+                    "accompagnement enfants adolescents",
+                    "difficultés relationnelles",
+                    "problèmes comportementaux enfants"
+                ]}
                 structuredData={individualTherapyData}
             />
-
-
-            {/* <KeyboardNavigationHelper autoHideDelay={8000} /> */}
-
 
             {/* Hero Section */}
             <section
@@ -93,7 +132,7 @@ const IndividuelPage: React.FC = () => {
                     backgroundPosition: isMobile ? 'center top' : 'center'
                 }}
             >
-                <div className="absolute inset-0 "></div>
+                <div className="absolute inset-0"></div>
 
                 <motion.div
                     className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl"
@@ -107,7 +146,7 @@ const IndividuelPage: React.FC = () => {
                         THERAPIE INDIVIDUELLE et ENTRETIEN DE SOUTIEN A LA PARENTALITE
                     </h1>
 
-                    <p className="text-base md:text-xl text-stone-900 mb-6 md:mb-10 italic font-medium sm:font-light leading-relaxed px-2 md:px-0"
+                    <p className="text-base md:text-xl text-stone-900 mb-6 md:mb-10 italic font-medium sm:font-light leading-relaxed px-4 md:px-0"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Un accompagnement individuel (enfant, adolescent, adulte) pour explorer vos difficultés en
@@ -122,7 +161,7 @@ const IndividuelPage: React.FC = () => {
                     >
                         <a
                             href={`#${sectionIds.booking}`}
-                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-stone-900 font-medium uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/50 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                         >
                             Réserver un rendez-vous
                         </a>
@@ -131,8 +170,8 @@ const IndividuelPage: React.FC = () => {
             </section>
 
             {/* Introduction Section */}
-            <section className={`${sectionPadding} flex items-center`}>
-                <div className="container mx-auto max-w-5xl">
+            <section className={`${sectionClasses} flex items-center`}>
+                <div className={containerClasses}>
                     <motion.div
                         className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-start"
                         initial={{ opacity: 0, y: 20 }}
@@ -200,7 +239,7 @@ const IndividuelPage: React.FC = () => {
                             </motion.p>
 
                             <motion.div
-                                className="pt-6 text-center lg:text-left"
+                                className="pt-6 text-center "
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -215,7 +254,7 @@ const IndividuelPage: React.FC = () => {
                             </motion.div>
                         </div>
                         <div className="lg:col-span-1 h-full order-1 lg:order-2">
-                            <div className="h-64 lg:h-full  relative  overflow-hidden shadow-lg" style={{ minHeight: '300px', maxHeight: '750px' }}>
+                            <div className="h-64 lg:h-full relative overflow-hidden shadow-lg" style={{ minHeight: '300px', maxHeight: '750px' }}>
                                 <ResponsiveImage
                                     src={piedsImage}
                                     alt="Pieds dans le sable"
@@ -233,8 +272,8 @@ const IndividuelPage: React.FC = () => {
             </section>
 
             {/* Therapeutic Approach Section */}
-            <section className={sectionPadding}>
-                <div className="container mx-auto max-w-5xl">
+            <section className={sectionClasses}>
+                <div className={containerClasses}>
                     <motion.div
                         className="text-center mb-8 md:mb-12"
                         initial={{ opacity: 0, y: 20 }}
@@ -266,7 +305,6 @@ const IndividuelPage: React.FC = () => {
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                     priority={true}
                                 />
-
                             </div>
                         </div>
 
@@ -336,8 +374,8 @@ const IndividuelPage: React.FC = () => {
             </section>
 
             {/* Approach Section with Quote */}
-            <section className={sectionPadding}>
-                <div className="container mx-auto max-w-5xl">
+            <section className={sectionClasses}>
+                <div className={containerClasses}>
                     <motion.div
                         className="text-center mb-8 md:mb-12"
                         initial={{ opacity: 0 }}
@@ -347,108 +385,6 @@ const IndividuelPage: React.FC = () => {
                     >
                         <h2 className={headingClass}>
                             Entretien de soutien à la parentalité
-                        </h2>
-
-                    </motion.div>
-                    <div className={`p-6 md:p-8 rounded-lg shadow-md border border-stone-50 bg-${bgColor} mb-6 md:mb-8`}>
-                        <div className="flex items-center mb-4">
-                            <h3 className="text-2xl font-medium">Une approche flexible :</h3>
-                        </div>
-
-                        <div className="space-y-4">
-                            <p className={`${paragraphClass} ml-4 md:ml-8 italic`}>
-                                Il n&#39;est pas toujours nécessaire de s&#39;engager dans un travail thérapeutique.
-                                En tant que parent, nous pouvons simplement avoir besoin d&#39;échanger autour d&#39;une
-                                situation précise, d&#39;évoquer une thématique liée à l&#39;éducation de son enfant.
-                            </p>
-                        </div>
-                    </div>
-                    <motion.div
-                        className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-
-                        <div className="lg:col-span-2 order-2 lg:order-1">
-
-
-                            <div className={`p-6 md:p-8 rounded-lg shadow-md border border-stone-100 bg-${bgColor}`}>
-                                <h3 className="text-2xl font-medium mb-4 md:mb-6 border-b border-stone-200 pb-3">
-                                    Le soutien à la parentalité, mais pour quoi faire ?
-                                </h3>
-
-                                <ul className="space-y-4">
-                                    <li className="flex items-start">
-                                        <span className={`text-${primaryColor} mr-3 mt-1`}>•</span>
-                                        <p className={paragraphClass}>
-                                            Accompagner et soutenir les parents, les écouter, les conseiller.
-                                        </p>
-                                    </li>
-
-                                    <li className="flex items-start">
-                                        <span className={`text-${primaryColor} mr-3 mt-1`}>•</span>
-                                        <p className={paragraphClass}>
-                                            Leur proposer une écoute active afin qu&#39;ils puissent évoquer les difficultés qu&#39;ils rencontrent
-                                            et les accompagner dans la mobilisation de leurs ressources.
-                                        </p>
-                                    </li>
-
-                                    <li className="flex items-start">
-                                        <span className={`text-${primaryColor} mr-3 mt-1`}>•</span>
-                                        <p className={paragraphClass}>
-                                            Les accompagner dans les taches éducatives du quotidien pour les rendre plus disponibles à
-                                            leur parentalité.
-                                        </p>
-                                    </li>
-
-                                    <li className="flex items-start">
-                                        <span className={`text-${primaryColor} mr-3 mt-1`}>•</span>
-                                        <p className={paragraphClass}>
-                                            Les aider à améliorer la relation avec l&#39;enfant par un soutien psycho éducatif et en évaluant
-                                            au plus juste les problèmes rencontrés.
-                                        </p>
-                                    </li>
-
-                                    <li className="flex items-start">
-                                        <span className={`text-${primaryColor} mr-3 mt-1`}>•</span>
-                                        <p className={paragraphClass}>
-                                            Leur fournir des informations éclairées sur les sujets du quotidien qui les préoccupent :
-                                            éducation, limites éducatives, sécurité, importance du jeu, interactions, attachement,
-                                            violences éducatives, addictions, exposition aux écrans, etc
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="lg:col-span-1 h-full order-1 lg:order-2 flex  ">
-
-
-                            <img
-                                src={tacheImage}
-                                alt="Soutien à la parentalité"
-                                className="h-full w-full object-contain "
-                            />
-
-
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
-            <section className={sectionPadding}>
-                <div className="container mx-auto max-w-4xl">
-                    <motion.div
-                        className="text-center mb-8 md:mb-12"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className={headingClass}>
-                            L'entretien de soutien à la parentalité
                         </h2>
                         <div className={`w-20 h-1 bg-${primaryColor} mx-auto mt-4 mb-6`}></div>
                     </motion.div>
@@ -461,7 +397,7 @@ const IndividuelPage: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <div className={`p-6 md:p-10 bg-[#FBC018] text-stone-900 mb-8 md:mb-12 shadow-md rounded-sm`}>
-                            <p className="mx-auto text-xl md:text-2xl lg:text-3xl italic font-medium  leading-relaxed">
+                            <p className="mx-auto text-xl md:text-2xl lg:text-3xl italic font-medium leading-relaxed">
                                 « Je recois tout parent qui s'inquiète des difficultés de son enfant ou adolescent »
                             </p>
                         </div>
@@ -480,7 +416,7 @@ const IndividuelPage: React.FC = () => {
                                     <FaUsers className={`text-${primaryColor} text-xl`} />
                                 </div>
                                 <div>
-                                    <h3 className={` text-2xl font-medium mb-3`}>Un facteur d'apaisement</h3>
+                                    <h3 className="text-2xl font-medium mb-3">Un facteur d'apaisement</h3>
                                     <p className={paragraphClass}>
                                         Tant pour les enfants que pour les parents, le fait de venir rencontrer une tierce personne
                                         qui comprend les difficultés qu'ils rencontrent, constitue déjà un facteur d'apaisement et
@@ -494,7 +430,7 @@ const IndividuelPage: React.FC = () => {
                                     <FaExchangeAlt className={`text-${primaryColor} text-xl`} />
                                 </div>
                                 <div>
-                                    <h3 className={` text-2xl font-medium mb-3`}>Une première étape</h3>
+                                    <h3 className="text-2xl font-medium mb-3">Une première étape</h3>
                                     <p className={paragraphClass}>
                                         Ces entretiens de soutien à la parentalité peuvent également s'envisager lorsqu'il est difficile
                                         voire impossible de réunir toute la famille en consultation, ou bien, ils peuvent représenter
@@ -506,7 +442,7 @@ const IndividuelPage: React.FC = () => {
                     </motion.div>
 
                     <motion.div
-                        className="text-center r"
+                        className="text-center"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -523,7 +459,7 @@ const IndividuelPage: React.FC = () => {
             </section>
 
             {/* Specialty Areas Section */}
-            <section className={`${sectionPadding} min-h-screen`}>
+            <section className={`${sectionClasses} min-h-screen`}>
                 <div className="container mx-auto max-w-6xl">
                     <motion.div
                         className="text-center mb-8 md:mb-12"
@@ -533,27 +469,29 @@ const IndividuelPage: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <h2 className={headingClass}>
-                            Motif de consultation
+                            Domaines d'intervention
                         </h2>
                         <div className={`w-20 h-1 bg-${primaryColor} mx-auto mt-4 mb-6`}></div>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto px-4 md:px-0">
+                            La thérapie individuelle peut vous aider dans de nombreuses situations de vie.
+                        </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                        {individualSpecialtyAreas.map((area, index: number) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-4">
+                        {individualSpecialtyAreas.map((area, index) => (
                             <motion.div
                                 key={index}
-                                className={`rounded-lg shadow-md border border-stone-100 overflow-hidden hover:shadow-xl transition-all duration-500 ease-in-out flex flex-col h-full bg-${bgColor}`}
+                                className={`bg-${bgColor} p-6 md:p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out`}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                whileHover={{ y: -5 }}
+                                transition={{
+                                    duration: 0.4,
+                                    delay: Math.min(index * 0.05, 0.3) // Limit maximum delay to 0.3s
+                                }}
+                                viewport={{ once: true, margin: "-50px" }} // Trigger animation earlier
                             >
-                                <div className="p-4 md:p-6 flex-grow">
-                                    <div className="flex items-center justify-center mb-2">
-                                        <h3 className="text-base md:text-lg font-medium text-stone-900 text-center">{area.title}</h3>
-                                    </div>
-                                </div>
+                                <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-2 md:mb-4">{area.title}</h3>
+                                <p className="text-sm md:text-base text-gray-600">{area.title}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -561,10 +499,7 @@ const IndividuelPage: React.FC = () => {
             </section>
 
             {/* Booking Section */}
-            <section id="rendez-vous" className="h-screen flex items-center">
-                <BookingSection />
-            </section>
-
+            <BookingSection />
         </div>
     );
 };

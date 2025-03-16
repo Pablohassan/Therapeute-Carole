@@ -2,13 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import { ClerkProvider } from '@clerk/clerk-react'
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary'
-
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
-if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key")
-}
 
 // Error fallback component
 function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
@@ -31,9 +25,7 @@ function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-        <App />
-      </ClerkProvider>
+      <App />
     </ErrorBoundary>
   </StrictMode>,
 )

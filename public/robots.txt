@@ -11,7 +11,6 @@ Disallow: /api/
 
 # Disallow specific file types
 Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /*?*
 Disallow: /*/temp/
 Disallow: /*/draft/
@@ -28,7 +27,7 @@ Allow: /*.webp$
 Allow: /sitemap.xml$
 
 # Crawl delay for better server performance
-Crawl-delay: 10
+Crawl-delay: 5
 
 # Sitemap location
 Sitemap: https://www.carole-lagardere.fr/sitemap.xml 

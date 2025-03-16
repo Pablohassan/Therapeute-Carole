@@ -29,14 +29,14 @@ const AboutSection: React.FC = () => {
 
     return (
         <section className="py-16 md:py-24 bg-[#25926C]/50" id="about">
-            <div className="container mx-auto px-2 md:px-6 ">
+            <div className="container mx-auto px-4 md:px-6 ">
                 {/* Main headline with elegant animation */}
                 <motion.div
                     className="text-center mb-4 md:mb-20 px-2 md:px-6"
                     {...scaleIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <p className=" text-xl md:text-2xl lg:text-3xl tracking-wide font-medium text-stone-700 max-w-4xl mx-auto px-2 md:px-16"
+                    <p className=" text-2xl md:text-2xl lg:text-3xl tracking-wide font-medium text-stone-700 max-w-4xl mx-auto px-2 md:px-16"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Vous cherchez à améliorer les relations avec vos proches ?
@@ -50,7 +50,7 @@ const AboutSection: React.FC = () => {
                     {...fadeInUp}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-[#FCF6E9] rounded-lg py-4 md:py-12">
+                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-[#FCF6E9] rounded-lg py-4 md:py-12 shadow-lg  transition-transform ease-in-out duration-500 hover:shadow-lg hover:shadow-stone-900/40 hover:shadow-stone-900/40 delay-500">
                         <h3 className="mb-6 md:mb-8 text-center text-lg md:text-xl font-medium "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
@@ -71,7 +71,7 @@ const AboutSection: React.FC = () => {
                             ].map((item, index) => (
                                 <li
                                     key={index}
-                                    className="flex items-center hover:scale-105 transition-transform duration-200"
+                                    className="flex items-center "
                                 >
                                     <span className="text-[#25926C] mr-3 text-2xl">•</span>
                                     <span className="text-stone-700 text-lg">{item}</span>
@@ -119,9 +119,9 @@ const AboutSection: React.FC = () => {
 
 
                     {/* Image grid with responsive behavior */}
-                    <div className="grid grid-cols-1 sm:grid-cols-1 mt-6 pt-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 mt-6 pt-2 md:pt-8">
 
-                        <div className="overflow-hidden aspect-square  sm:aspect-16/9  hover:shadow-lg transition-shadow duration-300 sm:col-span-2    ">
+                        <div className="overflow-hidden  sm:aspect-16/9  hover:shadow-lg transition-shadow duration-300 sm:col-span-2    ">
                             <img
                                 src={cabinetImage2}
                                 alt="Accompagnement thérapeutique"
@@ -130,11 +130,9 @@ const AboutSection: React.FC = () => {
                             />
                         </div>
 
-
-
                     </div>
-                    <p className="text-sm md:text-lg  text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-4 mb-8">
-                        Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant. <br />Je serai à
+                    <p className="text-md text-left md:text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-2 mb-8">
+                        Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant.<br />Je serai à
                         votre écoute et engagée à vos côtés.
                     </p>
                 </motion.div>
@@ -145,7 +143,7 @@ const AboutSection: React.FC = () => {
                     {...fadeIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h2 className=" text-xl md:text-2xl lg:text-3xl font-medium tracking-wide font-light  max-w-4xl mx-auto md:px-16"
+                    <h2 className=" text-2xl md:text-2xl lg:text-3xl font-medium tracking-wide font-light  max-w-4xl mx-auto md:px-16"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Mon parcours
@@ -160,15 +158,15 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
                         {/* Card 1 */}
-                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40">
                             <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-[#25926C] mb-6 text-center md:text-left"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 Parcours & Certification
                             </h3>
-                            <ul className="space-y-4 list-none text-stone-600 leading-relaxed">
+                            <ul className="space-y-4 list-none text-stone-600 leading-relaxed ">
                                 <li className="flex items-start">
-                                    <span className="text-[#25926C] mr-3 mt-1 text-lg">•</span>
+                                    <span className="text-[#25926C] mr-3 mt-1 text-lg ">•</span>
                                     <span>Formation longue, thérapie familiale approche systémique (4 ans) à l'IDES Bordeaux (Institut D'Etudes Systémique) 2014</span>
                                 </li>
                                 <li className="flex items-start">
@@ -179,7 +177,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Card 2 */}
-                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div className="bg-[#FCF6E9] p-8 rounded-lg shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40">
                             <h3 className="text-xl uppercase tracking-wider text-stone-800 border-l-4 pl-4 py-2 border-[#25926C] mb-6 text-center md:text-left"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
@@ -208,7 +206,7 @@ const AboutSection: React.FC = () => {
                         {...fadeIn}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-stone-900 pt-4"
+                        <h2 className="text-2xl md:text-2xl lg:text-3xl font-medium text-stone-900 pt-4"
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Mes compétences
@@ -222,7 +220,7 @@ const AboutSection: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.6, staggerChildren: 0.2 }}
                     >
                         {/* Value Card 1 */}
-                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Écoute active</h3>
                             <p className="text-stone-600">
                                 Etre accueilli sans jugement, être entendu et reconnu dans l'expression de ses émotions et de sa souffrance.
@@ -230,7 +228,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Value Card 2 */}
-                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Accompagnement personnalisé et créatif</h3>
                             <p className="text-stone-600">
                                 Analyser les dynamiques familiales et de couple. Mobiliser les ressources et les compétences de chacun. Utiliser différents outils et techniques (génogramme, métaphores, sculptures, jeux de rôles…)
@@ -238,7 +236,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         {/* Value Card 3 */}
-                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 hover:shadow-lg transition-all duration-300 text-center md:text-left">
+                        <div className="bg-[#FCF6E9] p-6 rounded-lg shadow-md flex-1 border-t-4 border-[#25926C]/70 shadow-md  transition-transform duration-500 hover:shadow-lg hover:shadow-stone-900/40 text-center md:text-left">
                             <h3 className="font-semibold text-xl mb-4 text-stone-700">Engagement éthique</h3>
                             <p className="text-stone-600">
                                 Proposer un cadre sécurisant, bienveillant, confidentiel et chaleureux
@@ -271,10 +269,10 @@ const AboutSection: React.FC = () => {
                         {...scaleIn}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                        <p className="text-3xl md:text-3xl lg:text-4xl font-light italic text-stone-900 pt-16"
+                        <p className="text-2xl md:text-3xl lg:text-4xl font-medium italic text-stone-900 pt-16"
                             style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)' }}
                         >
-                            « Que pouvons-nous faire ensemble ? »
+                            Que pouvons-nous faire ensemble ?
                         </p>
                     </motion.div>
                 </div>

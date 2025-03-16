@@ -1,13 +1,12 @@
 // src/components/Navbar.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
-import { UserButton, SignInButton, SignUpButton, useUser } from "@clerk/clerk-react";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const { isSignedIn } = useUser();
+
     const snapScrollContainerRef = useRef<HTMLElement | null>(null);
 
     // Close mobile menu when clicking outside
@@ -151,7 +150,7 @@ const Navbar: React.FC = () => {
                 </motion.div>
 
                 {/* Desktop Navigation */}
-                <div className={`hidden lg:flex items-center  space-x-8 ${isScrolled ? 'md:text-slate-100' : 'md:text-slate-900'
+                <div className={`hidden lg:flex items-center space-x-8 ${isScrolled ? 'md:text-slate-100' : 'md:text-slate-950'
                     }`}
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                 >
@@ -161,25 +160,7 @@ const Navbar: React.FC = () => {
                     <NavLink to="/individuel" isScrolled={isScrolled} underlineColor="bg-[#FBC018]/80">Individuel</NavLink>
                     <NavLink to="/apropos" isScrolled={isScrolled} underlineColor="bg-stone-200">À Propos</NavLink>
 
-                    {/* Auth buttons */}
-                    <div className="flex items-center space-x-3 ml-4">
-                        {isSignedIn ? (
-                            <UserButton afterSignOutUrl="/" />
-                        ) : (
-                            <>
-                                <SignInButton mode="modal">
-                                    <button className="bg-stone-600 hover:bg-stone-500 text-slate-900 px-4 py-2 rounded-sm text-sm transition-all duration-300 hover:shadow-md">
-                                        Se connecter
-                                    </button>
-                                </SignInButton>
-                                <SignUpButton mode="modal">
-                                    <button className="bg-slate-200 hover:bg- text-stone-700 px-4 py-2 rounded-sm text-sm transition-all duration-300 hover:shadow-md">
-                                        S'inscrire
-                                    </button>
-                                </SignUpButton>
-                            </>
-                        )}
-                    </div>
+
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -216,46 +197,26 @@ const Navbar: React.FC = () => {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <div className="bg-stone-600/80  py-4 px-4 flex flex-col space-y-4"
+                        <div className="bg-stone-600/80 py-4 px-4 flex flex-col space-y-4"
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                         >
-                            <MobileNavLink to="/home" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-blue-400">
+                            <MobileNavLink to="/home" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#25926C]/90">
                                 Accueil
                             </MobileNavLink>
-                            <MobileNavLink to="/family" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-green-400">
+                            <MobileNavLink to="/family" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#AB4D8C]/90">
                                 Famille
                             </MobileNavLink>
-                            <MobileNavLink to="/couple" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-red-400">
+                            <MobileNavLink to="/couple" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#EC6849]/90">
                                 Couple
                             </MobileNavLink>
-                            <MobileNavLink to="/individuel" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-purple-400">
+                            <MobileNavLink to="/individuel" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#FBC018]/90">
                                 Individuel
                             </MobileNavLink>
-                            <MobileNavLink to="/apropos" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-amber-400">
+                            <MobileNavLink to="/apropos" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#FCF6E9]/90">
                                 À Propos
                             </MobileNavLink>
 
-                            {/* Auth buttons */}
-                            <div className="flex flex-col space-y-2 pt-2 border-t border-stone-600/30">
-                                {isSignedIn ? (
-                                    <div className="flex justify-center py-2">
-                                        <UserButton afterSignOutUrl="/" />
-                                    </div>
-                                ) : (
-                                    <>
-                                        <SignInButton mode="modal">
-                                            <button className="w-full bg-stone-600 hover:bg-stone-500 text-slate-900 py-2 rounded-sm text-sm transition-all duration-300">
-                                                Se connecter
-                                            </button>
-                                        </SignInButton>
-                                        <SignUpButton mode="modal">
-                                            <button className="w-full bg-slate-200 hover:bg-black text-stone-700 py-2 rounded-sm text-sm transition-all duration-300">
-                                                S'inscrire
-                                            </button>
-                                        </SignUpButton>
-                                    </>
-                                )}
-                            </div>
+
                         </div>
                     </motion.div>
                 )}
@@ -361,11 +322,11 @@ const MobileNavLink: React.FC<{
         return (
             <Link
                 to={to}
-                className="text-slate-200 uppercase tracking-wide py-3 text-center border-b border-stone-600/30 hover:bg-stone-600/30 transition-colors relative group"
+                className="text-slate-200 uppercase tracking-wide py-3 text-center border-b border-stone-600/30 hover:bg-stone-600/30 transition-colors relative group "
                 onClick={handleClick}
             >
                 {children}
-                <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${underlineColor} transition-all duration-300 group-hover:w-full`}></span>
+                <span className={`absolute bottom-0 left-[37%] w-0 h-0.5 ${underlineColor} transition-all duration-300 group-hover:w-1/4 `}></span>
             </Link>
         );
     };

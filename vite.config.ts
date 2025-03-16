@@ -32,7 +32,6 @@ export default defineConfig({
         manualChunks: {
           "react-vendor": ["react", "react-dom"],
           "ui-vendor": ["framer-motion", "react-icons"],
-          "clerk-vendor": ["@clerk/clerk-react"],
         },
       },
     },
@@ -47,6 +46,6 @@ export default defineConfig({
 
   // Optimize dependencies
   optimizeDeps: {
-    include: ["react", "react-dom", "framer-motion", "@clerk/clerk-react"],
+    include: ["react", "react-dom", "framer-motion"],
   },
 });

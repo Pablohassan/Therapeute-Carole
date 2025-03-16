@@ -71,7 +71,7 @@ const HeroSection = () => {
                 </motion.h1>
                 <motion.p
                     className="text-lg md:text-2xl text-stone-950  mb-8 md:mb-12 italic font-medium sm:font-light leading-relaxed px-2 md:px-16"
-                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
+                    style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
 
                     {...contentAnimations}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -84,11 +84,12 @@ const HeroSection = () => {
 
                 <motion.div
                     {...contentAnimations}
-                    transition={{ duration: 0.8, delay: 0.3 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
                 >
                     <a
                         href={`#${sectionIds.booking}`}
                         className="inline-block bg-[#FCF6E9] w-full md:w-1/2 lg:w-1/3 rounded-sm font-medium  md:bg-[#FCF6E9]/50 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4  md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-md  text-stone-900 md:text-base hover:scale-105 transition-all duration-300 hover:bg-[#25926C]/40 hover:text-stone-900 hover:font-semibold shadow-lg hover:shadow-xl"
+                        style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                     >
                         Réserver un rendez-vous
                     </a>
