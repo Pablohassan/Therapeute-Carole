@@ -352,11 +352,12 @@ const IndividuelPage: React.FC = () => {
                         <h2 className={headingClass}>
                             Entretien de soutien à la parentalité
                         </h2>
+                        <div className={`w-20 h-1 bg-${primaryColor} mx-auto mt-4 mb-6`}></div>
 
                     </motion.div>
                     <div className={`p-6 md:p-8 rounded-lg shadow-md border border-stone-50 bg-${bgColor} mb-6 md:mb-8`}>
                         <div className="flex items-center mb-4">
-                            <h3 className="text-2xl font-medium">Une approche flexible :</h3>
+                            <h3 className="text-xl sm:text-2xl font-medium">Une approche flexible :</h3>
                         </div>
 
                         <div className="space-y-4">
@@ -379,7 +380,7 @@ const IndividuelPage: React.FC = () => {
 
 
                             <div className={`p-6 md:p-8 rounded-lg shadow-md border border-stone-100 bg-${bgColor}`}>
-                                <h3 className="text-2xl font-medium mb-4 md:mb-6 border-b border-stone-200 pb-3">
+                                <h3 className="text-xl sm:text-2xl font-medium mb-4 md:mb-6 border-b border-stone-200 pb-3">
                                     Le soutien à la parentalité, mais pour quoi faire ?
                                 </h3>
 
@@ -444,18 +445,6 @@ const IndividuelPage: React.FC = () => {
 
             <section className={sectionPadding}>
                 <div className="container mx-auto max-w-4xl">
-                    <motion.div
-                        className="text-center mb-8 md:mb-12"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className={headingClass}>
-                            L'entretien de soutien à la parentalité
-                        </h2>
-                        <div className={`w-20 h-1 bg-${primaryColor} mx-auto mt-4 mb-6`}></div>
-                    </motion.div>
 
 
 
@@ -472,7 +461,7 @@ const IndividuelPage: React.FC = () => {
                                     <FaUsers className={`text-${primaryColor} text-xl`} />
                                 </div>
                                 <div>
-                                    <h3 className={` text-2xl font-medium mb-3`}>Un facteur d'apaisement</h3>
+                                    <h3 className={` text-xl sm:text-2xl font-medium mb-3`}>Un facteur d'apaisement</h3>
                                     <p className={paragraphClass}>
                                         Tant pour les enfants que pour les parents, le fait de venir rencontrer une tierce personne
                                         qui comprend les difficultés qu'ils rencontrent, constitue déjà un facteur d'apaisement et
@@ -486,7 +475,7 @@ const IndividuelPage: React.FC = () => {
                                     <FaExchangeAlt className={`text-${primaryColor} text-xl`} />
                                 </div>
                                 <div>
-                                    <h3 className={` text-2xl font-medium mb-3`}>Une première étape</h3>
+                                    <h3 className={` text-xl sm:text-2xl font-medium mb-3`}>Une première étape</h3>
                                     <p className={paragraphClass}>
                                         Ces entretiens de soutien à la parentalité peuvent également s'envisager lorsqu'il est difficile
                                         voire impossible de réunir toute la famille en consultation, ou bien, ils peuvent représenter
