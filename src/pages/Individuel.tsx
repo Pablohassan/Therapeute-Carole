@@ -504,7 +504,7 @@ const IndividuelPage: React.FC = () => {
             </section>
 
             {/* Specialty Areas Section */}
-            <section className={`${sectionPadding} min-h-screen`}>
+            <section className={`${sectionPadding} min-h-screen mb-32`}>
                 <div className="container mx-auto max-w-6xl">
                     <motion.div
                         className="text-center mb-8 md:mb-12"
