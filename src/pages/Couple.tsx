@@ -22,7 +22,7 @@ import { LongPressHover } from '../components/LongPressHover';
 // import KeyboardNavigationHelper from '../components/KeyboardNavigationHelper';
 
 // Standardize section padding and margins
-const sectionClasses = "py-12 md:py-20 px-6 md:px-8 mx-auto";
+const sectionClasses = "py-12 md:py-20 px-4 md:px-8 mx-auto";
 const containerClasses = "container mx-auto max-w-5xl";
 
 const CouplePage: React.FC = () => {
