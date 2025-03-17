@@ -88,7 +88,7 @@ const HeroSection = () => {
                     transition={{ duration: 0.8, delay: 0.5 }}
                 >
                     <LongPressHover
-                        className="inline-block bg-[#FCF6E9] w-full md:w-1/2 lg:w-1/3 rounded-sm font-medium md:bg-[#FCF6E9]/50 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-md text-stone-900 md:text-base transition-all duration-300 shadow-lg"
+                        className="inline-block bg-[#FCF6E9] w-full md:w-1/2 lg:w-1/3 rounded-sm font-medium md:bg-[#FCF6E9]/50 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-md text-stone-900 md:text-base transition-all duration-300 shadow-lg hover:bg-[#25926C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                         hoverClassName="scale-105 bg-[#25926C]/40 text-stone-900 font-semibold shadow-xl"
                         onClick={() => window.location.href = `#${sectionIds.booking}`}
                     >

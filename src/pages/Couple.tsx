@@ -1,9 +1,9 @@
 // src/pages/Couple.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import hand from '../assets/couple-premiere.jpg';
+import hand from '../assets/carole-lagardere-therapeute-talence-couple-premiere.jpg';
 import homecouple from '../assets/carole-lagardere-therapeute-talence-couple.jpeg';
-import posture from '../assets/posturetherapeute.jpg';
+import posture from '../assets/carole-lagardere-therapeute-talence-posturetherapeute.jpg';
 
 // Import mobile-optimized images
 
@@ -141,7 +141,7 @@ const CouplePage: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         <LongPressHover
-                            className="inline-block w-full font-medium rounded-sm w-full md:w-1/2 bg-[#FCF6E9]/80 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300"
+                            className="inline-block w-full font-medium rounded-sm w-full md:w-1/2 bg-[#FCF6E9]/80 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#EC6849]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                             hoverClassName="scale-105 bg-[#EC6849]/40 text-stone-900 font-semibold shadow-xl"
                             onClick={() => window.location.href = `#${sectionIds.booking}`}
                         >
@@ -198,7 +198,7 @@ const CouplePage: React.FC = () => {
                             <div className="pt-4 md:pt-6 text-center ">
                                 <LongPressHover
                                     className="inline-block bg-[#EC6849] w-full max-w-sm px-8 px-12 md:px-12 py-4 md:py-5 text-stone-100 font-medium rounded-md uppercase tracking-wider text-xl md:text-lg transition-all duration-300 border-2 border-[#EC6849] shadow-md"
-                                    hoverClassName="bg-[#FCF6E9] text-[#EC6849] shadow-lg"
+                                    hoverClassName="bg-[#FCF6E9] text-[#EC6849] shadow-lg hover:text-[#EC6849]"
                                     onClick={() => window.location.href = `#${sectionIds.booking}`}
                                 >
                                     Faire le premier pas
@@ -310,7 +310,7 @@ const CouplePage: React.FC = () => {
 
             {/* Booking Section */}
 
-            <BookingSection />
+            <BookingSection calendlyUrl="https://calendly.com/carolelagardere33/therapie-de-couple" />
 
 
 

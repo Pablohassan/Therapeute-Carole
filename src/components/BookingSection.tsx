@@ -10,7 +10,11 @@ import { useIsMobile } from '../hooks/useIsMobile';
 // Register French locale
 registerLocale('fr', fr);
 
-const BookingSection: React.FC = () => {
+interface BookingSectionProps {
+    calendlyUrl: string;
+}
+
+const BookingSection: React.FC<BookingSectionProps> = ({ calendlyUrl }) => {
     const isMobile = useIsMobile();
 
     return (
@@ -39,7 +43,7 @@ const BookingSection: React.FC = () => {
                     <div className="bg-[#FCF6E9]/80 rounded-md shadow-xl  md:p-6">
                         <div className="h-[500px] md:h-[600px]">
                             <InlineWidget
-                                url="https://calendly.com/carolelagardere33/consultation/"
+                                url={calendlyUrl}
                                 pageSettings={{
                                     backgroundColor: 'ffffff',
                                     hideEventTypeDetails: false,

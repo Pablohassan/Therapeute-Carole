@@ -8,11 +8,11 @@ import { motion } from 'framer-motion';
 import { LongPressHover } from '../components/LongPressHover';
 
 import { useIsMobile } from '../hooks/useIsMobile';
-import livingroomImage from '../assets/illustration-family.jpg';
-import couplelaptopImage from '../assets/comunication-famille.jpg';
+import livingroomImage from '../assets/carole-lagardere-therapeute-talence-illustration-family.jpg';
+import couplelaptopImage from '../assets/carole-lagardere-therapeute-talence-comunication-famille.jpg';
 import homefamily from '../assets/carole-lagardere-therapeute-talence-family-home.jpeg';
 import homefamilyMobile from '../assets/carole-lagardere-therapeute-famille-talence-mobile.jpeg'
-import famille from '../assets/image-illustration-famille.jpg';
+import famille from '../assets/carole-lagardere-therapeute-talence-image-illustration-famille.jpg';
 
 // Standardize section padding and margins
 const sectionClasses = "py-12 md:py-20 px-4 md:px-8 mx-auto flex flex-col justify-center";
@@ -137,8 +137,8 @@ const FamilyPage: React.FC = () => {
                             transition={{ duration: 0.8, delay: 0.3 }}
                         >
                             <LongPressHover
-                                className="inline-block font-medium rounded-sm w-full max-w-sm sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300"
-                                hoverClassName="scale-105 bg-[#AB4D8C]/40 text-stone-900 font-semibold shadow-xl"
+                                className="inline-block font-medium rounded-sm w-full max-w-sm sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#AB4D8C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                                hoverClassName="scale-105 bg-[#AB4D8C] text-stone-900 font-semibold shadow-xl"
                                 onClick={() => window.location.href = `#${sectionIds.booking}`}
                             >
                                 Réserver un rendez-vous
@@ -185,7 +185,7 @@ const FamilyPage: React.FC = () => {
 
                             <div className="pt-2 md:pt-4 text-center">
                                 <LongPressHover
-                                    className="inline-block bg-[#AB4D8C] w-full md:w-1/2 px-8 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] uppercase tracking-wider transition-all duration-500 shadow-md"
+                                    className="inline-block bg-[#AB4D8C] w-full md:w-1/2 px-8 md:px-12 py-4 md:py-5 rounded-sm text-stone-100 font-medium sm:font-medium uppercase border-2 border-[#AB4D8C] hover:text-[#AB4D8C] uppercase tracking-wider transition-all duration-500 shadow-md"
                                     hoverClassName="bg-[#FCF6E9] text-[#AB4D8C] shadow-xl"
                                     onClick={() => window.location.href = `#${sectionIds.booking}`}
                                 >
@@ -339,7 +339,7 @@ const FamilyPage: React.FC = () => {
 
                         <div className="text-center mt-12">
                             <LongPressHover
-                                className="inline-block w-full font-medium rounded-sm w-full md:w-1/2 bg-[#AB4D8C] md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 text-stone-100 uppercase tracking-wider  hover:text-stone-900  transition-all duration-300 ease-in-out"
+                                className="inline-block w-full font-medium rounded-sm w-full md:w-1/2 bg-[#AB4D8C] md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 text-stone-100 uppercase tracking-wider  hover:text-[#AB4D8C]  transition-all duration-300 ease-in-out"
                                 hoverClassName="bg-[#FCF6E9] text-[#AB4D8C] shadow-xl"
                                 onClick={() => window.location.href = `#${sectionIds.booking}`}
                             >
@@ -394,7 +394,7 @@ const FamilyPage: React.FC = () => {
             </section>
 
             {/* Booking Section */}
-            <BookingSection />
+            <BookingSection calendlyUrl="https://calendly.com/carolelagardere33/consultation" />
         </div>
     );
 };

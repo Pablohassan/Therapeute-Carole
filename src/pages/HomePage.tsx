@@ -42,7 +42,7 @@ const HomePage: React.FC = () => {
             <HeroSection />
             <AboutSection />
             <ServicesSection />
-            <BookingSection />
+            <BookingSection calendlyUrl="https://calendly.com/carolelagardere33" />
         </>
     );
 };
