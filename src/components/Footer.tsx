@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
                                     href={`/apropos#${sectionIds.contact}`}
                                     className="hover:text-white transition-colors"
                                 >
-                                    Contact
+                                    A propos
                                 </a>
                             </li>
                         </ul>

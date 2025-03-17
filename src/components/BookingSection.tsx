@@ -18,7 +18,7 @@ const BookingSection: React.FC = () => {
             {/* Visual separator at the top of the section */}
 
 
-            <div className={`container mx-auto px-4 sm:px-6 ${isMobile ? 'py-16' : 'py-32'}`}>
+            <div className={`container mx-auto  sm:px-6 ${isMobile ? 'py-16' : 'py-32'}`}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const BookingSection: React.FC = () => {
 
 
 
-                    <p className="text-center mb-6 md:mb-8 text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-center mb-6 md:mb-8 text-sm md:text-base text-gray-600 max-w-2xl px-4 mx-auto">
                         Si vous ne trouvez aucun créneau adapté, je vous propose de prendre rendez-vous par téléphone ou par mail.
                     </p>
 
