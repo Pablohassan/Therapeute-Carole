@@ -256,7 +256,7 @@ const IndividuelPage: React.FC = () => {
                                     alt="Accompagnement thérapeutique"
                                     className="absolute inset-0 h-full w-full object-cover"
                                     width={800}
-                                    height={800}
+                                    height={1000}
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                     priority={true}
                                 />
@@ -323,9 +323,19 @@ const IndividuelPage: React.FC = () => {
                                         </div>
                                     </motion.div>
                                 </div>
+
                             </div>
+
                         </div>
                     </motion.div>
+                    <div className={`mt-8 p-4 md:p-8 rounded-lg shadow-md border border-stone-50 bg-${bgColor} mb-6 md:mb-8`}>
+                        <div className="flex items-center mb-4">
+                            <h3 className={`${paragraphClass} sm:text-center text-stone-950 `}> Chaque personne a sa propre compétence pour trouver la meilleure solution, ensemble
+                                nous solliciterons vos ressources dans une démarche de co-construction.</h3>
+                        </div>
+
+
+                    </div>
                 </div>
             </section>
 
