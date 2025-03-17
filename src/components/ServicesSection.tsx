@@ -1,6 +1,6 @@
 // src/components/ServicesSection.tsx
 import React from 'react';
-import logofamille from '../assets/logofamille.jpeg';
+import logofamille from '../assets/logo-famille.jpeg';
 import logocouple from '../assets/logocouple.jpeg';
 import logoindividuel from '../assets/logoindividuel.jpeg';
 import { LongPressHover } from './LongPressHover';
