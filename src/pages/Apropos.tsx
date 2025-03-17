@@ -5,8 +5,22 @@ import { sectionIds } from '../constants/navigation';
 import SEO from '../components/SEO';
 import therapistImage from '../assets/carole-lagardere-therapeute-familiale-talence.webp'; // Assuming you have this image
 import { showFooter } from '../components/Layout';
+import { useLocation } from 'react-router';
 
 const AproposPage: React.FC = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.scrollToContact) {
+            const contactSection = document.getElementById(sectionIds.contact);
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            // Clear the state after scrolling
+            window.history.replaceState({}, document.title);
+        }
+    }, [location.state]);
+
     // Force footer to be visible after a delay
     useEffect(() => {
         const timer = setTimeout(() => {

@@ -1,5 +1,6 @@
 // src/components/ServicesSection.tsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import logofamille from '../assets/logo-famille.jpeg';
 import logocouple from '../assets/logocouple.jpeg';
 import logoindividuel from '../assets/logoindividuel.jpeg';
@@ -69,9 +70,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
 const ServicesSection: React.FC = () => {
     const [confirmingCard, setConfirmingCard] = useState<string | null>(null);
+    const navigate = useNavigate();
 
     const handleCardConfirm = (cardId: string) => {
         setConfirmingCard(cardId);
+    };
+
+    const handlePricingClick = () => {
+        navigate('/apropos', { state: { scrollToContact: true } });
     };
 
     return (
@@ -112,7 +118,10 @@ const ServicesSection: React.FC = () => {
                         onConfirm={() => handleCardConfirm('individuel')}
                     />
                 </div>
-                <section className="mt-12 mb-16 p-6 bg-stone-100 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500">
+                <section
+                    className="mt-12 mb-16 p-6 bg-stone-100 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                    onClick={handlePricingClick}
+                >
                     <div className="max-w-2xl mx-auto">
                         <h3 className="text-2xl font-bold mb-4 text-calming-blue">Tarifs</h3>
                         <div className="text-xl font-semibold mb-3">
