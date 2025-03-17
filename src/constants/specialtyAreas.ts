@@ -84,7 +84,7 @@ export const familySpecialtyAreas = [
 // Thématiques spécifiques pour le soutien à la parentalité
 export const individualSpecialtyAreas = [
   {
-    title: "Tension et problème relationnel avec son enfant",
+    title: "Tension et difficultés relationnelles avec son enfant",
 
     icon: "relationship", // Placeholder pour une icône de relation
   },
@@ -95,12 +95,13 @@ export const individualSpecialtyAreas = [
     icon: "confidence", // Placeholder pour une icône de confiance
   },
   {
-    title: "Sentiment d'impuissance face aux manifestations de son enfant",
+    title:
+      "Sentiment d'impuissance face aux comportements et manifestations de son enfant",
 
     icon: "helplessness", // Placeholder pour une icône d'impuissance
   },
   {
-    title: "Difficulté pour mettre en place des limites éducatives",
+    title: "Difficulté dans la mise en place de limites éducatives",
 
     icon: "boundaries", // Placeholder pour une icône de limites
   },

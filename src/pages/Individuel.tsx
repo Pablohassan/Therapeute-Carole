@@ -362,7 +362,7 @@ const IndividuelPage: React.FC = () => {
 
                         <div className="space-y-4">
                             <p className={`${paragraphClass} ml-4 md:ml-8 italic`}>
-                                Il n&#39;est pas toujours nécessaire de s&#39;engager dans un travail thérapeutique.
+                                Il n&#39;est pas toujours nécessaire de s&#39;engager dans un travail thérapeutique. <br />
                                 En tant que parent, nous pouvons simplement avoir besoin d&#39;échanger autour d&#39;une
                                 situation précise, d&#39;évoquer une thématique liée à l&#39;éducation de son enfant.
                             </p>

@@ -59,7 +59,7 @@ const AboutSection: React.FC = () => {
 
                         {/* Vue Desktop : grille en deux colonnes avec effet de survol */}
                         <ul
-                            className="hidden  md:grid grid-cols-2 gap-6 mb-8 px-4 text-lg md:text-xl font-medium "
+                            className="hidden  md:grid grid-cols-2 gap-6 mb-8 px-4 text-lg md:text-lg font-medium "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             {[
@@ -81,7 +81,7 @@ const AboutSection: React.FC = () => {
 
                         {/* Vue Mobile : liste verticale pour une meilleure lisibilité */}
                         <ul
-                            className="block md:hidden space-y-4 mb-8 text-lg md:text-xl font-medium "
+                            className="block md:hidden space-y-4 mb-8 text-lg md:text-lg font-medium "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             {[
@@ -101,7 +101,7 @@ const AboutSection: React.FC = () => {
                             ))}
                         </ul>
 
-                        <p className="text-left text-lg md:text-xl font-medium pt-4 ">
+                        <p className="text-left text-lg md:text-lg font-medium pt-4 ">
                             Ou que cela concerne votre contexte professionnel ou social, je peux vous accompagner.
                         </p>
                     </div>

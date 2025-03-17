@@ -98,7 +98,7 @@ const AproposPage: React.FC = () => {
                 structuredData={therapistStructuredData}
             />
 
-            <main className="font-montserrat text-stone-800  font-light">
+            <main className="font-bebas-neue text-stone-800  ">
                 {/* Hero Section */}
                 <section className="relative h-screen flex items-center justify-center py-32 bg-[#25926C]/20">
                     <div className="container mx-auto px-6">
@@ -206,7 +206,9 @@ const AproposPage: React.FC = () => {
                                             </p>
                                             <p className="text-stone-600 leading-relaxed">
                                                 La thérapie familiale s'appuie sur les ressources de la famille, les compétences parentales.
-                                                C'est une approche utile pour surmonter des crises, tensions ou blocages au sein de la famille.
+
+                                            </p>
+                                            <p className="text-stone-600 leading-relaxed pt-4">  Cette approche est utile pour surmonter des crises, tensions ou blocages au sein de la famille.
                                             </p>
                                         </div>
 
@@ -216,8 +218,11 @@ const AproposPage: React.FC = () => {
                                             </h3>
                                             <p className="text-stone-600 leading-relaxed">
                                                 Il s'agit d'explorer l'histoire du couple, de travailler sur la communication, de favoriser l'écoute et
-                                                de percevoir les attentes de chacun. Cette approche est utile pour améliorer la communication,
-                                                apaiser les conflits, renforcer la relation au sein du couple.
+                                                de percevoir les attentes de chacun.
+                                                <p className="text-stone-600 leading-relaxed pt-4">
+                                                    Cette approche est utile pour améliorer la communication,
+                                                    apaiser les conflits, renforcer la relation au sein du couple.
+                                                </p>
                                             </p>
                                         </div>
 
@@ -281,7 +286,7 @@ const AproposPage: React.FC = () => {
                 </section>
 
                 {/* Values Section */}
-                <section className="py-20 px-6 bg-soft-beige">
+                <section className="py-20 px-6  bg-[#FCF6E9]">
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="text-center mb-16"
@@ -328,7 +333,7 @@ const AproposPage: React.FC = () => {
                 </section>
 
                 {/* Contact & Social Media Section */}
-                <section id={sectionIds.contact} className="py-20 px-6 bg-white">
+                <section id={sectionIds.contact} className="py-20 px-6  bg-[#FCF6E9]">
                     <div className="container mx-auto max-w-5xl">
                         <motion.div
                             className="text-center mb-16"
