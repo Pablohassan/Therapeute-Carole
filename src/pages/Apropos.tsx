@@ -115,7 +115,7 @@ const AproposPage: React.FC = () => {
                                 Thérapeute familiale et de couple
                             </p>
                             <div className="w-24 h-1 bg-[#25926C]/60 mx-auto my-8"></div>
-                            <p className="text-lg md:text-xl xl:text-2xl text-stone-900 font-medium sm:font-light italic max-w-2xl mx-auto font-light"
+                            <p className="text-lg md:text-2xl xl:text-2xl text-stone-900 font-medium sm:font-light italic max-w-2xl mx-auto font-light"
                                 style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                             >
                                 "Accompagner le changement pour retrouver une forme d'équilibre et restaurer les relations"
@@ -145,7 +145,7 @@ const AproposPage: React.FC = () => {
                                     />
                                 </div>
 
-                                <div className="mt-8 bg-white/70 p-6 border-l-4 rounded-sm shadow-md border-[#25926C]">
+                                <div className="mt-8 bg-white/50 p-6 border-l-4 rounded-sm shadow-md border-[#25926C]">
                                     <h3 className="text-xl text-center uppercase font-medium tracking-wider text-stone-800 mb-6">
                                         Certifications
                                     </h3>
@@ -240,7 +240,19 @@ const AproposPage: React.FC = () => {
                                                 Cette approche est utile pour ceux qui rencontrent des problèmes relationnels, des conflits
                                                 familiaux, des répétitions de schémas de vie.
                                             </p>
+                                            <h3 className="text-xl font-medium text-stone-800 mb-3 mt-4">
+                                                Entretien de soutien à la parentalité
+                                            </h3>
+                                            <p className="text-stone-600 leading-relaxed mb-4">
+                                                Soutenir les parents, les écouter, les conseiller.
+                                                Leur proposer une écoute active afin qu'ils puissent évoquer les difficultés qu'ils rencontrent et les accompagner dans la mobilisation de leurs ressources.
+                                                Proposer un soutien psycho éducatif.
+                                            </p>
+                                            <p className="text-stone-600 leading-relaxed">
+                                                Ces entretiens sont utiles pour réfléchir à sa parentalité, améliorer les relations parents / enfant ou adolescent.
+                                            </p>
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -308,21 +320,21 @@ const AproposPage: React.FC = () => {
                             transition={{ duration: 0.8, staggerChildren: 0.2 }}
                             viewport={{ once: true }}
                         >
-                            <div className="bg-white p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
+                            <div className="bg-white/50 p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
                                 <h3 className="text-xl font-medium text-stone-800 mb-4">Bienveillance</h3>
                                 <p className="text-stone-600">
                                     Un espace d'accueil chaleureux et sécurisant où chacun peut s'exprimer librement sans jugement.
                                 </p>
                             </div>
 
-                            <div className="bg-white p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
+                            <div className="bg-white/50 p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
                                 <h3 className="text-xl font-medium text-stone-800 mb-4">Engagement</h3>
                                 <p className="text-stone-600">
                                     Un accompagnement personnalisé et engagé pour vous aider à révéler votre potentiel et trouver vos solutions.
                                 </p>
                             </div>
 
-                            <div className="bg-white p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
+                            <div className="bg-white/50 p-8 rounded-sm shadow-sm shadow-[#25926C]/20 border-t-4 border-[#25926C]/80 hover:shadow-md hover:shadow-[#25926C]/20 transition-all">
                                 <h3 className="text-xl font-medium text-stone-800 mb-4">Créativité</h3>
                                 <p className="text-stone-600">
                                     Une approche qui favorise l'innovation et l'adaptation pour répondre aux besoins spécifiques de chaque situation.

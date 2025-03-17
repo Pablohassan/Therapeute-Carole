@@ -101,7 +101,7 @@ const IndividuelPage: React.FC = () => {
                         THERAPIE INDIVIDUELLE et ENTRETIEN DE SOUTIEN A LA PARENTALITE
                     </h1>
 
-                    <p className="text-base md:text-xl text-stone-900 mb-6 md:mb-10 italic font-medium sm:font-light leading-relaxed px-2 md:px-0"
+                    <p className="text-base md:text-2xl text-stone-900 mb-6 md:mb-10 italic font-medium sm:font-light leading-relaxed px-2 md:px-0"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Un accompagnement individuel (enfant, adolescent, adulte) pour explorer vos difficultés en
@@ -411,7 +411,7 @@ const IndividuelPage: React.FC = () => {
                                     <li className="flex items-start">
                                         <span className={`text-${primaryColor} mr-3 mt-1`}>•</span>
                                         <p className={paragraphClass}>
-                                            Les aider à améliorer la relation avec l&#39;enfant par un soutien psycho éducatif et en évaluant
+                                            Les aider à améliorer la relation parent/enfant, par un soutien psycho éducatif et en évaluant
                                             au plus juste les problèmes rencontrés.
                                         </p>
                                     </li>
@@ -514,7 +514,7 @@ const IndividuelPage: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <h2 className={headingClass}>
-                            Motif de consultation
+                            Motifs de consultation
                         </h2>
                         <div className={`w-20 h-1 bg-${primaryColor} mx-auto mt-4 mb-6`}></div>
                     </motion.div>
