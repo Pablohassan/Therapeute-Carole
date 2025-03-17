@@ -158,7 +158,7 @@ const Navbar: React.FC = () => {
                     <NavLink to="/family" isScrolled={isScrolled} underlineColor="bg-[#AB4D8C]/90">Famille</NavLink>
                     <NavLink to="/couple" isScrolled={isScrolled} underlineColor="bg-[#EC6849]/80">Couple</NavLink>
                     <NavLink to="/individuel" isScrolled={isScrolled} underlineColor="bg-[#FBC018]/80">Individuel</NavLink>
-                    <NavLink to="/apropos" isScrolled={isScrolled} underlineColor="bg-stone-200">À Propos</NavLink>
+                    <NavLink to="/apropos" isScrolled={isScrolled} underlineColor="bg-[#25926C]/15">À Propos</NavLink>
 
 
                 </div>
@@ -212,7 +212,7 @@ const Navbar: React.FC = () => {
                             <MobileNavLink to="/individuel" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#FBC018]/90">
                                 Individuel
                             </MobileNavLink>
-                            <MobileNavLink to="/apropos" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#FCF6E9]/90">
+                            <MobileNavLink to="/apropos" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#25926C]/30">
                                 À Propos
                             </MobileNavLink>
 
@@ -221,7 +221,7 @@ const Navbar: React.FC = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </nav >
     );
 };
 
