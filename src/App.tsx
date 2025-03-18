@@ -7,7 +7,7 @@ import Layout from "./components/Layout";
 import { HelmetProvider } from 'react-helmet-async';
 import LoadingFallback from "./components/LoadingFallback";
 import WelcomePage from "./components/WelcomePage";
-import TestLongPress from './components/TestLongPress';
+
 
 // Lazy load page components
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -122,7 +122,7 @@ function App() {
 
           } />
 
-          <Route path="/test-long-press" element={<TestLongPress />} />
+
 
           {/* Catch-all route */}
           <Route path="*" element={

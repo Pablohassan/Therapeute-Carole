@@ -9,7 +9,7 @@ interface LayoutProps {
     isHomePage?: boolean;
 }
 
-// Helper functions to create and dispatch events
+// Create custom events for showing/hiding footer
 export function showFooter() {
     window.dispatchEvent(new Event('show-footer'));
 }
@@ -20,6 +20,21 @@ export function hideFooter() {
 
 const Layout: React.FC<LayoutProps> = ({ children, isHomePage = false }) => {
     const [isFooterVisible, setIsFooterVisible] = useState(false);
+    const [isSmallHeight, setIsSmallHeight] = useState(false);
+
+    // Check screen height
+    useEffect(() => {
+        const checkScreenHeight = () => {
+            setIsSmallHeight(window.innerHeight < 600);
+        };
+
+        // Check on initial load
+        checkScreenHeight();
+
+        // Check on resize
+        window.addEventListener('resize', checkScreenHeight);
+        return () => window.removeEventListener('resize', checkScreenHeight);
+    }, []);
 
     // Add debugging code to check for multiple instances
     useEffect(() => {
@@ -54,7 +69,7 @@ const Layout: React.FC<LayoutProps> = ({ children, isHomePage = false }) => {
                     // For HomePage, Navbar is positioned absolutely over the HeroSection
                     <div className="relative flex-grow">
                         {children}
-                        <div className="absolute top-0 left-0 right-0 z-10">
+                        <div className={`absolute top-0 left-0 right-0 z-10 ${isSmallHeight ? 'pt-1' : ''}`}>
                             <Navbar />
                         </div>
                     </div>
@@ -62,10 +77,16 @@ const Layout: React.FC<LayoutProps> = ({ children, isHomePage = false }) => {
                     // For other pages, Navbar is fixed at the top with content below
                     <>
                         <Navbar />
-                        <div className="flex-grow">{children}</div>
+                        <div className={`flex-grow ${isSmallHeight ? 'pt-16' : 'pt-20'}`}>
+                            {children}
+                        </div>
                     </>
                 )}
-                {isFooterVisible && <Footer />}
+                {isFooterVisible && (
+                    <div className={isSmallHeight ? 'mt-2' : 'mt-4'}>
+                        <Footer />
+                    </div>
+                )}
             </div>
         </ParallaxProvider>
     );

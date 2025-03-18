@@ -12,6 +12,7 @@ import { LongPressHover } from './LongPressHover';
 
 const HeroSection = () => {
     const [windowHeight, setWindowHeight] = useState(0);
+    const [isSmallHeight, setIsSmallHeight] = useState(false);
     const { scrollY } = useScroll();
 
     // Create transform functions outside of callbacks
@@ -21,7 +22,9 @@ const HeroSection = () => {
     // Memoized callback for resize handler
     const handleResize = useCallback(() => {
         setWindowHeight(window.innerHeight);
+        setIsSmallHeight(window.innerHeight < 600);
     }, []);
+
     const isMobile = useIsMobile();
 
     useEffect(() => {
@@ -38,8 +41,14 @@ const HeroSection = () => {
         animate: { opacity: 1, y: 0 },
     }), []);
 
+    // Adjust margin and padding based on screen height
+    const titleMargin = isSmallHeight ? 'mb-2 md:mb-4' : 'mb-8 md:mb-16';
+    const textMargin = isSmallHeight ? 'mb-2 md:mb-4' : 'mb-8 md:mb-12';
+    const buttonMargin = isSmallHeight ? 'mt-2 md:mt-4' : 'mt-4 md:mt-8';
+    const buttonPadding = isSmallHeight ? 'py-2 md:py-3' : 'py-4 md:py-6';
+
     return (
-        <section className="relative h-screen bg-[#FCF6E9] flex items-center justify-center overflow-hidden">
+        <section className={`relative ${isSmallHeight ? 'min-h-[90vh]' : 'h-screen min-h-[70vh]'} bg-[#FCF6E9] flex items-center justify-center overflow-hidden`}>
             {/* Background Image with Overlay */}
             <motion.div
                 className="absolute inset-0 w-full h-full"
@@ -57,13 +66,13 @@ const HeroSection = () => {
 
             {/* Hero Content */}
             <motion.div
-                className="relative container mx-auto px-4 text-center text-slate-900 max-w-7xl"
+                className={`relative container mx-auto px-4 text-center text-slate-900 max-w-7xl ${isSmallHeight ? 'pt-16' : ''}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
                 <motion.h1
-                    className="text-3xl md:text-5xl lg:text-6xl font-light text-stone-900 font-bebas tracking-wider mb-8 md:mb-16 leading-tight"
+                    className={`${isSmallHeight ? 'text-2xl md:text-4xl lg:text-5xl' : 'text-3xl md:text-5xl lg:text-6xl'} font-light text-stone-900 font-bebas tracking-wider ${titleMargin} leading-tight`}
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     {...contentAnimations}
                     transition={{ duration: 0.8 }}
@@ -71,24 +80,31 @@ const HeroSection = () => {
                     Thérapie familiale, de couple et individuelle
                 </motion.h1>
                 <motion.p
-                    className="text-lg md:text-2xl text-stone-950  mb-8 md:mb-12 italic font-medium sm:font-light leading-relaxed px-2 md:px-16"
+                    className={`${isSmallHeight ? 'text-base md:text-xl' : 'text-lg md:text-2xl'} text-stone-950 ${textMargin} italic font-medium sm:font-light leading-relaxed px-2 md:px-16`}
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
-
                     {...contentAnimations}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    Carole Lagardère, thérapeute familiale et de couple certifiée.
-                    Je suis à votre écoute et engagée à vos côtés.
-                    Je vous accueille sur rendez-vous au sein de mon cabinet à Talence.
+                    {isSmallHeight ? (
+                        <>
+                            Carole Lagardère, thérapeute familiale et de couple certifiée.
+                            Je vous accueille sur rendez-vous à Talence.
+                        </>
+                    ) : (
+                        <>
+                            Carole Lagardère, thérapeute familiale et de couple certifiée.
+                            Je suis à votre écoute et engagée à vos côtés.
+                            Je vous accueille sur rendez-vous au sein de mon cabinet à Talence.
+                        </>
+                    )}
                 </motion.p>
-
 
                 <motion.div
                     {...contentAnimations}
                     transition={{ duration: 0.8, delay: 0.5 }}
                 >
                     <LongPressHover
-                        className="inline-block bg-[#FCF6E9] w-full md:w-1/2 lg:w-1/3 rounded-sm font-medium md:bg-[#FCF6E9]/50 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-md text-stone-900 md:text-base transition-all duration-300 shadow-lg hover:bg-[#25926C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                        className={`inline-block bg-[#FCF6E9] w-full md:w-1/2 lg:w-1/3 rounded-sm font-medium md:bg-[#FCF6E9]/50 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 ${buttonPadding} ${buttonMargin} md:text-stone-950 uppercase tracking-wider ${isSmallHeight ? 'text-sm' : 'text-md'} text-stone-900 md:text-base transition-all duration-300 shadow-lg hover:bg-[#25926C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl`}
                         hoverClassName="scale-105 bg-[#25926C]/40 text-stone-900 font-semibold shadow-xl"
                         onClick={() => window.location.href = `#${sectionIds.booking}`}
                     >

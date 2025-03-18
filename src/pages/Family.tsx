@@ -114,7 +114,7 @@ const FamilyPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl uppercase tracking-wider text-stone-900 mb-6 md:mb-16 mt-12"
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl uppercase tracking-wider text-stone-900 mb-6 md:mb-16 "
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                         >
                             Thérapie Familiale Systémique

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,500;1,600;1,700&display=swap");
 @import "tailwindcss";
 
 h1 {
@@ -13,13 +13,11 @@ h2 {
 
 h3 {
   font-family: "Montserrat", sans-serif;
-} 
+}
 
 h4 {
   font-family: "Montserrat", sans-serif;
-}   
-
-
+}
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -37,7 +35,6 @@ theme {
   font-family: "Montserrat", sans-serif;
 }
 
-
 .font-dancing {
   font-family: "Dancing Script", serif;
   font-optical-sizing: auto;
@@ -51,7 +48,6 @@ theme {
   font-style: normal;
 }
 
-
 /* Add smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
@@ -60,4 +56,45 @@ html {
 /* Offset for fixed navbar */
 section {
   scroll-margin-top: 100px;
+}
+
+/* Responsive styles for small height screens */
+@media (max-height: 600px) {
+  /* Reduce scroll margin for sections */
+  section {
+    scroll-margin-top: 70px;
+  }
+
+  /* Reduce padding for all sections */
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Tighten up vertical spacing */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Adjust spacing for form elements */
+  input,
+  select,
+  textarea,
+  button {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
 }

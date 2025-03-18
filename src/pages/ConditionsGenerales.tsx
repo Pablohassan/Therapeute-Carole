@@ -34,8 +34,8 @@ const ConditionsGenerales: React.FC = () => {
                         <div className="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
                             <h2 className="text-xl md:text-2xl font-semibold mb-4 text-teal-600">Préambule</h2>
                             <p className="mb-4">
-                                Les présentes conditions générales régissent les relations entre MADAME Carole Lagardère,
-                                thérapeute exerçant en libéral, SIREN 749 979 225, ci-après dénommée "le Praticien",
+                                Les présentes conditions générales régissent les relations entre  MADAME Carole Lagardère,
+                                thérapeute exerçant en libéral EI, SIREN 749 979 225, ci-après dénommée "le Praticien",
                                 et toute personne physique, ci-après dénommée "le Client", souhaitant bénéficier des
                                 services proposés.
                             </p>

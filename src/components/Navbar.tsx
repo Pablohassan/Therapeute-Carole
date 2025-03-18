@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isSmallHeight, setIsSmallHeight] = useState(false);
 
     const snapScrollContainerRef = useRef<HTMLElement | null>(null);
 
@@ -46,7 +47,7 @@ const Navbar: React.FC = () => {
                 setIsScrolled(snapScrollContainerRef.current.scrollTop > 80);
             } else {
                 // Otherwise use window scroll position
-                setIsScrolled(window.scrollY > 80);
+                setIsScrolled(window.scrollY > 20);
             }
         };
 
@@ -116,6 +117,20 @@ const Navbar: React.FC = () => {
         };
     }, []);
 
+    // Check screen height
+    useEffect(() => {
+        const checkScreenHeight = () => {
+            setIsSmallHeight(window.innerHeight < 600);
+        };
+
+        // Check on initial load
+        checkScreenHeight();
+
+        // Check on resize
+        window.addEventListener('resize', checkScreenHeight);
+        return () => window.removeEventListener('resize', checkScreenHeight);
+    }, []);
+
     // Close mobile menu on resize (if screen becomes large)
     useEffect(() => {
         const handleResize = () => {
@@ -128,10 +143,15 @@ const Navbar: React.FC = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, [isMobileMenuOpen]);
 
+    // Determine padding based on scroll state and screen height
+    const navPadding = isScrolled
+        ? 'py-1'
+        : (isSmallHeight ? 'py-2' : 'py-4');
+
     return (
         <nav
-            className={`fixed w-full text-stone-900 z-50 transition-all font-montserrat font-light duration-300 ${isScrolled ? 'bg-stone-700/60 backdrop-blur-sm shadow-md py-2' : 'bg-transparent py-4'
-                }`}
+            className={`fixed w-full text-stone-900 z-50 transition-all font-montserrat font-light duration-300 ${isScrolled ? 'bg-stone-700/60 backdrop-blur-sm shadow-md' : 'bg-transparent'
+                } ${navPadding}`}
         >
             <div className="container mx-auto flex items-center justify-between px-4">
                 {/* Logo/Brand */}
@@ -139,13 +159,15 @@ const Navbar: React.FC = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.2, ease: 'easeInOut' }}
-                    className={`text-xl sm:text-xl lg:text-2xl tracking-wider ${isScrolled ? 'text-slate-100' : 'text-slate-950'
+                    className={`${isSmallHeight ? 'text-base sm:text-lg' : 'text-xl sm:text-xl lg:text-2xl'} tracking-wider ${isScrolled ? 'text-slate-100' : 'text-slate-950'
                         }`}
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                 >
                     <Link to="/home" className="flex flex-col">
                         <span className="font-light uppercase">Carole Lagardère</span>
-                        <span className="text-sm sm:text-base font-light opacity-90">Thérapeute Familiale</span>
+                        <span className={`${isSmallHeight ? 'text-xs sm:text-sm' : 'text-sm sm:text-base'} font-light opacity-90`}>
+                            Thérapeute Familiale
+                        </span>
                     </Link>
                 </motion.div>
 
@@ -154,13 +176,11 @@ const Navbar: React.FC = () => {
                     }`}
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                 >
-                    <NavLink to="/home" isScrolled={isScrolled} underlineColor="bg-[#25926C]/90">Accueil</NavLink>
-                    <NavLink to="/family" isScrolled={isScrolled} underlineColor="bg-[#AB4D8C]/90">Famille</NavLink>
-                    <NavLink to="/couple" isScrolled={isScrolled} underlineColor="bg-[#EC6849]/80">Couple</NavLink>
-                    <NavLink to="/individuel" isScrolled={isScrolled} underlineColor="bg-[#FBC018]/80">Individuel</NavLink>
-                    <NavLink to="/apropos" isScrolled={isScrolled} underlineColor="bg-[#25926C]/15">À Propos</NavLink>
-
-
+                    <NavLink to="/home" isScrolled={isScrolled} underlineColor="bg-[#25926C]/90" isSmallHeight={isSmallHeight}>Accueil</NavLink>
+                    <NavLink to="/family" isScrolled={isScrolled} underlineColor="bg-[#AB4D8C]/90" isSmallHeight={isSmallHeight}>Famille</NavLink>
+                    <NavLink to="/couple" isScrolled={isScrolled} underlineColor="bg-[#EC6849]/80" isSmallHeight={isSmallHeight}>Couple</NavLink>
+                    <NavLink to="/individuel" isScrolled={isScrolled} underlineColor="bg-[#FBC018]/80" isSmallHeight={isSmallHeight}>Individuel</NavLink>
+                    <NavLink to="/apropos" isScrolled={isScrolled} underlineColor="bg-[#25926C]/15" isSmallHeight={isSmallHeight}>À Propos</NavLink>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -215,8 +235,6 @@ const Navbar: React.FC = () => {
                             <MobileNavLink to="/apropos" onClick={() => setIsMobileMenuOpen(false)} underlineColor="bg-[#25926C]/30">
                                 À Propos
                             </MobileNavLink>
-
-
                         </div>
                     </motion.div>
                 )}
@@ -229,13 +247,15 @@ const Navbar: React.FC = () => {
 const NavLink: React.FC<{
     to: string;
     isScrolled: boolean;
+    isSmallHeight?: boolean;
     children: React.ReactNode;
-    underlineColor?: string; // Add optional underline color prop
+    underlineColor?: string;
 }> = ({
     to,
     isScrolled,
+    isSmallHeight = false,
     children,
-    underlineColor = 'bg-slate-100' // Default color if not provided
+    underlineColor = 'bg-slate-100'
 }) => {
         const handleClick = () => {
             // First try to find the snap container
@@ -267,8 +287,10 @@ const NavLink: React.FC<{
         return (
             <Link
                 to={to}
-                className={`uppercase tracking-wide text-sm lg:text-base ${isScrolled ? 'text-slate-100' : 'text-slate-950'
-                    } hover:${isScrolled ? 'text-slate-300' : 'text-slate-800'} transition-colors relative group`}
+                className={`uppercase tracking-wide ${isSmallHeight ? 'text-xs lg:text-sm' : 'text-sm lg:text-base'
+                    } ${isScrolled ? 'text-slate-100' : 'text-slate-950'
+                    } hover:${isScrolled ? 'text-slate-300' : 'text-slate-800'
+                    } transition-colors relative group`}
                 onClick={handleClick}
             >
                 {children}

@@ -116,7 +116,7 @@ const IndividuelPage: React.FC = () => {
                     >
                         <a
                             href={`#${sectionIds.booking}`}
-                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-8 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 border-1 border-[#FBC018] px-6 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                         >
                             Réserver un rendez-vous
                         </a>

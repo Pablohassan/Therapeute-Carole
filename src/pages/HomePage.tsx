@@ -1,5 +1,5 @@
 // src/pages/HomePage.tsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
@@ -9,14 +9,30 @@ import { showFooter } from '../components/Layout';
 import { therapyPracticeData } from '../constants/structuredData';
 
 const HomePage: React.FC = () => {
-    // Force footer to be visible after a delay
+    const [isSmallHeight, setIsSmallHeight] = useState(false);
+
+    // Check if screen height is small
+    useEffect(() => {
+        const checkScreenHeight = () => {
+            setIsSmallHeight(window.innerHeight < 600);
+        };
+
+        // Check on initial load
+        checkScreenHeight();
+
+        // Check on resize
+        window.addEventListener('resize', checkScreenHeight);
+        return () => window.removeEventListener('resize', checkScreenHeight);
+    }, []);
+
+    // Force footer to be visible after a delay - shorter delay for small height screens
     useEffect(() => {
         const timer = setTimeout(() => {
             showFooter();
-        }, 1000);
+        }, isSmallHeight ? 500 : 1000);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [isSmallHeight]);
 
     return (
         <>
