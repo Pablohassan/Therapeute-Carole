@@ -10,7 +10,7 @@ interface SEOProps {
     articlePublishedTime?: string;
     articleModifiedTime?: string;
     keywords?: string[];
-    structuredData?: Record<string, unknown>;
+    structuredData?: Record<string, unknown> | Record<string, unknown>[];
     lang?: string;
     author?: string;
 }
@@ -86,14 +86,20 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="theme-color" content="#25926C" />
 
             {/* Structured Data */}
-            {structuredData && (
+            {structuredData && Array.isArray(structuredData) ? (
+                // If it's an array of structured data objects
+                structuredData.map((data, index) => (
+                    <script key={index} type="application/ld+json">
+                        {JSON.stringify(data)}
+                    </script>
+                ))
+            ) : structuredData ? (
+                // If it's a single structured data object
                 <script type="application/ld+json">
                     {JSON.stringify(structuredData)}
                 </script>
-            )}
-
-            {/* Default Local Business Structured Data if none provided */}
-            {!structuredData && (
+            ) : (
+                // Default Local Business Structured Data if none provided
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",

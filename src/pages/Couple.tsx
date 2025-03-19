@@ -13,7 +13,7 @@ import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
 import { useIsMobile } from '../hooks/useIsMobile';
 import SEO from '../components/SEO';
-import { therapyServiceData } from '../constants/structuredData';
+import { coupleTherapyServiceData } from '../constants/structuredData';
 import { coupleSpecialtyAreas } from '../constants/specialtyAreas';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { LongPressHover } from '../components/LongPressHover';
@@ -26,60 +26,7 @@ const sectionClasses = "py-12 md:py-20 px-4 md:px-8 mx-auto";
 const containerClasses = "container mx-auto max-w-5xl";
 
 const CouplePage: React.FC = () => {
-    // Create enhanced specific service data for couple therapy
-    const coupleTherapyData = {
-        ...therapyServiceData,
-        "@type": "MedicalTherapy",
-        "name": "Thérapie de Couple",
-        "alternateName": "Thérapie Conjugale",
-        "medicalSpecialty": {
-            "@type": "MedicalSpecialty",
-            "name": "Thérapie Systémique"
-        },
-        "relevantSpecialty": {
-            "@type": "MedicalSpecialty",
-            "name": "Thérapie Conjugale"
-        },
-        "description": "La thérapie de couple vise à transformer votre relation pour vous permettre de vous sentir plus satisfaits et épanouis. Elle aide à améliorer la communication, à résoudre les conflits et à renforcer les liens affectifs.",
-        "procedureType": "Thérapeutique",
-        "followup": "Séances régulières adaptées aux besoins du couple",
-        "howPerformed": "Séances de 60 à 90 minutes en présence des deux partenaires",
-        "preparation": "Aucune préparation spécifique requise",
-        "procedure": "Exploration de la dynamique relationnelle, amélioration de la communication, résolution de conflits",
-        "recognizingAuthority": "European Family Therapy Association (EFTA)",
-        "status": "Établie",
-        "study": [
-            {
-                "@type": "MedicalStudy",
-                "description": "Études démontrant l'efficacité de la thérapie de couple systémique"
-            }
-        ],
-        "guideline": {
-            "@type": "MedicalGuideline",
-            "evidenceLevel": "B",
-            "evidenceOrigin": "Études cliniques",
-            "guidelineSubject": {
-                "@type": "MedicalEntity",
-                "name": "Thérapie de Couple"
-            }
-        },
-        "audience": {
-            "@type": "PeopleAudience",
-            "audienceType": "Couples en difficulté, couples en crise, couples souhaitant améliorer leur relation"
-        },
-        "serviceType": "Thérapie de Couple",
-        "serviceOutput": "Amélioration de la relation conjugale et de la communication",
-        "offers": {
-            "@type": "Offer",
-            "price": "70.00",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://www.carole-lagardere.fr/couple",
-            "validFrom": "2023-01-01"
-        }
-    };
-
-
+    // Use the imported coupleTherapyServiceData directly
     const isMobile = useIsMobile();
 
     return (
@@ -102,7 +49,7 @@ const CouplePage: React.FC = () => {
                     "médiation conjugale Talence",
                     "thérapie systémique couple"
                 ]}
-                structuredData={coupleTherapyData}
+                structuredData={coupleTherapyServiceData}
             />
 
 

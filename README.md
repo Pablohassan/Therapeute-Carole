@@ -2,7 +2,7 @@
 
 ## 🚀 Vue d'ensemble
 
-Ce projet est une application web moderne construite avec React, TypeScript et Vite. Il utilise Tailwind CSS pour le styling et intègre plusieurs bibliothèques modernes pour une expérience utilisateur optimale.
+Ce projet est une application web construite avec React, TypeScript et Vite. Il utilise Tailwind CSS pour le styling et intègre plusieurs bibliothèques modernes pour une expérience utilisateur optimale.
 
 ## 🛠️ Technologies principales
 
@@ -95,12 +95,6 @@ Le projet suit une approche mobile-first et utilise Tailwind CSS pour le respons
 5. Ouvrir une Pull Request
 
 ## 📝 Documentation
-
-La documentation du projet est en cours de développement. Actuellement disponible :
-
-- Guide d'optimisation des images mobiles (`docs/MOBILE_IMAGES.md`) : Instructions détaillées sur l'implémentation et l'utilisation d'images optimisées pour mobile
-- Documentation des composants via JSDoc dans le code source
-- Documentation des types TypeScript via TSDoc
 
 La documentation complète sera enrichie au fur et à mesure du développement du projet.
 

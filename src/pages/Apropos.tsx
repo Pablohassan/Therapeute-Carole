@@ -462,8 +462,8 @@ const AproposPage: React.FC = () => {
                                         </svg>
                                         <div>
                                             <p className="font-medium text-stone-800">Horaires</p>
-                                            <p className="text-stone-600">Mardi : 8h30 - 13h30</p>
-                                            <p className="text-stone-600">Mercredi : 8h30 - 19h30</p>
+                                            <p className="text-stone-600">Lundi au Vendredi : 8h30 - 19h30</p>
+
                                         </div>
                                     </div>
                                 </div>

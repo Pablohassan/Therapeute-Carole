@@ -23,12 +23,7 @@ Le fichier `robots.txt` est situé à la racine du site et contrôle l'accès de
 User-agent: *
 Allow: /
 
-# Interdire les pages d'administration et d'authentification
-Disallow: /sign-in/
-Disallow: /sign-up/
-Disallow: /dashboard/
-Disallow: /admin/
-Disallow: /api/
+
 
 # Sitemap
 Sitemap: https://www.carole-lagardere.fr/sitemap.xml
@@ -85,7 +80,6 @@ function MaPage() {
 - **Title** : Chaque page doit avoir un titre unique de 50-60 caractères
 - **Description** : 150-160 caractères décrivant précisément le contenu de la page
 - **Canonical URL** : Évite les problèmes de contenu dupliqué
-- **Open Graph** : Optimise le partage sur les réseaux sociaux
 - **Structured Data** : Améliore la compréhension du contenu par les moteurs de recherche
 
 ## Données structurées
@@ -109,21 +103,9 @@ import { therapyPracticeData } from "../constants/structuredData";
 
 ## Optimisation des images
 
-### Composant OptimizedImage
 
-Utilisez le composant `OptimizedImage` pour toutes les images du site :
 
-```tsx
-import { OptimizedImage } from "../utils/imageOptimization";
 
-<OptimizedImage
-  src="/images/hero.webp"
-  alt="Description détaillée de l'image"
-  width={800}
-  height={600}
-  priority={true} // Pour les images above-the-fold
-/>;
-```
 
 ### Bonnes pratiques pour les images
 

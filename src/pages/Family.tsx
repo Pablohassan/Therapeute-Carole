@@ -163,6 +163,9 @@ const FamilyPage: React.FC = () => {
                                 alt="Communication familiale"
                                 className="absolute inset-0 h-full w-full object-cover shadow-xl rounded-md"
                             />
+                            <div className="absolute bottom-0 right-0 bg-black/20 text-white/70 text-xs px-1 py-[2px] rounded-tl-md">
+                                © Bea Muller
+                            </div>
                         </div>
 
                         <div className="lg:col-span-2 space-y-4 md:px-4 font-light">
@@ -221,14 +224,19 @@ const FamilyPage: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <div className="lg:col-span-1">
-                            <img
-                                src={livingroomImage}
-                                alt="Espace thérapeutique"
-                                className="w-full h-auto object-cover rounded-md shadow-md"
-                                loading="lazy"
-                                width="600"
-                                height="800"
-                            />
+                            <div className="relative">
+                                <img
+                                    src={livingroomImage}
+                                    alt="Espace thérapeutique"
+                                    className="w-full h-auto object-cover rounded-md shadow-md"
+                                    loading="lazy"
+                                    width="600"
+                                    height="800"
+                                />
+                                <div className="absolute bottom-0 right-0 bg-black/30 text-white/80 text-xs px-1 py-[2px] rounded-tl-md">
+                                    © Claire Ritchie
+                                </div>
+                            </div>
                         </div>
 
                         <div className="lg:col-span-2 space-y-4 pr-0 sm:pr-12 font-light">
@@ -296,6 +304,9 @@ const FamilyPage: React.FC = () => {
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                     loading="lazy"
                                 />
+                                <div className="absolute bottom-0 right-0 bg-black/20 text-white/80 text-xs px-1 py-[2px] rounded-tl-md">
+                                    © Anna Kovecses
+                                </div>
                             </div>
                         </div>
                     </motion.div>

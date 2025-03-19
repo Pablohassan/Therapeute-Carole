@@ -9,7 +9,7 @@ import BookingSection from '../components/BookingSection';
 import ResponsiveImage from '../components/ResponsiveImage';
 import SEO from '../components/SEO';
 import { useIsMobile } from '../hooks/useIsMobile';
-import { therapyServiceData } from '../constants/structuredData';
+import { therapyServiceData, parentingSupportServiceData } from '../constants/structuredData';
 import { individualSpecialtyAreas } from '../constants/specialtyAreas';
 
 import { sectionIds } from '../constants/navigation';
@@ -33,11 +33,43 @@ const IndividuelPage: React.FC = () => {
     // Create specific service data for individual therapy
     const individualTherapyData = {
         ...therapyServiceData,
+        "@type": "MedicalTherapy",
         name: "Thérapie Individuelle",
+        alternateName: "Psychothérapie Individuelle",
         serviceType: "Thérapie Individuelle",
-        description: "La thérapie individuelle vous aide à explorer vos pensées, émotions et comportements pour surmonter les difficultés personnelles et développer votre potentiel."
+        medicalSpecialty: {
+            "@type": "MedicalSpecialty",
+            name: "Thérapie Systémique"
+        },
+        relevantSpecialty: {
+            "@type": "MedicalSpecialty",
+            name: "Thérapie Individuelle"
+        },
+        description: "La thérapie individuelle vous aide à explorer vos pensées, émotions et comportements pour surmonter les difficultés personnelles et développer votre potentiel.",
+        procedureType: "Thérapeutique",
+        followup: "Séances régulières adaptées aux besoins individuels",
+        howPerformed: "Séances de 60 minutes en individuel",
+        preparation: "Aucune préparation spécifique requise",
+        procedure: "Exploration personnelle, amélioration de la communication, résolution de difficultés relationnelles",
+        recognizingAuthority: "European Family Therapy Association (EFTA)",
+        status: "Établie",
+        audience: {
+            "@type": "PeopleAudience",
+            audienceType: "Adultes, adolescents et enfants rencontrant des difficultés personnelles"
+        },
+        serviceOutput: "Amélioration du bien-être personnel et des relations",
+        offers: {
+            "@type": "Offer",
+            price: "70.00",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+            url: "https://www.carole-lagardere.fr/individuel",
+            validFrom: "2023-01-01"
+        }
     };
 
+    // For the parenting support section, we'll use the imported data
+    const parentingSupportData = parentingSupportServiceData;
 
     const isMobile = useIsMobile();
 
@@ -71,7 +103,7 @@ const IndividuelPage: React.FC = () => {
                     "difficultés relationnelles",
                     "problèmes comportementaux enfants"
                 ]}
-                structuredData={individualTherapyData}
+                structuredData={[individualTherapyData, parentingSupportData]}
             />
 
 
@@ -219,6 +251,9 @@ const IndividuelPage: React.FC = () => {
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                     priority={true}
                                 />
+                                <div className="absolute bottom-0 right-0 bg-black/20 text-white/70 text-xs px-1 py-[2px] rounded-tl-md">
+                                    © Bea Muller
+                                </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
                             </div>
                         </div>
@@ -428,17 +463,23 @@ const IndividuelPage: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="lg:col-span-1 h-full order-1 lg:order-2 flex  ">
-
-
-                            <img
-                                src={tacheImage}
-                                alt="Soutien à la parentalité"
-                                className="h-full w-full object-contain "
-                            />
-
-
+                        <div className="lg:col-span-1 h-full order-1 lg:order-2">
+                            <div className="relative h-full w-full overflow-hidden shadow-lg">
+                                <ResponsiveImage
+                                    src={tacheImage}
+                                    alt="Soutien à la parentalité"
+                                    className="h-full w-full object-cover"
+                                    width={800}
+                                    height={1000}
+                                    sizes="(max-width: 1024px) 100vw, 33vw"
+                                    priority={true}
+                                />
+                                <div className="absolute bottom-0 right-0 bg-black/20 text-white/70 text-xs px-1 py-[2px] rounded-tl-md">
+                                    © Jeane Massey
+                                </div>
+                            </div>
                         </div>
+
                     </motion.div>
                 </div>
             </section>
