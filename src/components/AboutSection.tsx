@@ -2,7 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import cabinetImage2 from '../assets/carole-lagardere-therapeute-talence-cabinet.jpeg';
-
+// Import icons
+import { FaChild, FaUser, FaUsers, FaHeart } from 'react-icons/fa';
 
 const AboutSection: React.FC = () => {
     // Animation variants for consistent animations throughout the component
@@ -46,64 +47,81 @@ const AboutSection: React.FC = () => {
                 {/* Context section with improved layout */}
 
                 <motion.div
-                    className="mb-16 md:mb-20 py-4  md:py-8"
+                    className="mb-16 md:mb-20 py-4 md:py-8"
                     {...fadeInUp}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <div className="max-w-4xl mx-auto px-4 md:px-6  bg-[#FCF6E9] rounded-lg py-4 md:py-12 shadow-lg  transition-transform ease-in-out duration-500 hover:shadow-lg hover:shadow-stone-900/40 hover:shadow-stone-900/40 delay-500">
-                        <h3 className="mb-6 md:mb-8 text-center text-lg md:text-xl font-medium "
+                    <div className="max-w-4xl mx-auto px-4 md:px-6 bg-gradient-to-br from-[#FCF6E9] to-[#f5efe0] rounded-lg py-6 md:py-12 shadow-lg transition-all duration-500 hover:shadow-xl hover:shadow-stone-900/30 border border-stone-200/50">
+                        <motion.h3
+                            className="mb-8 md:mb-10 text-center text-lg md:text-2xl font-medium text-stone-800"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
                             style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
                         >
                             Que cela concerne votre contexte familial :
-                        </h3>
+                        </motion.h3>
 
-                        {/* Vue Desktop : grille en deux colonnes avec effet de survol */}
-                        <ul
-                            className="hidden  md:grid grid-cols-2 gap-6 mb-8 px-4 text-lg md:text-lg font-medium "
-                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
-                        >
+                        {/* Vue Desktop : grille avec cartes animées */}
+                        <div className="hidden md:grid grid-cols-2 gap-6 mb-10 px-4">
                             {[
-                                "Votre jeune enfant",
-                                "Votre adolescent",
-                                "Un adulte ou vous-même",
-                                "Votre couple (conjugalité)",
-                                "La relation avec vos enfants (parentalité)"
+                                { text: "Votre jeune enfant", icon: <FaChild className="text-[#25926C] text-xl" /> },
+                                { text: "Votre adolescent", icon: <FaUser className="text-[#25926C] text-xl" /> },
+                                { text: "Un adulte ou vous-même", icon: <FaUser className="text-[#25926C] text-xl" /> },
+                                { text: "Votre couple (conjugalité)", icon: <FaHeart className="text-[#25926C] text-xl" /> },
+                                { text: "La relation avec vos enfants (parentalité)", icon: <FaUsers className="text-[#25926C] text-xl" /> }
                             ].map((item, index) => (
-                                <li
+                                <motion.div
                                     key={index}
-                                    className="flex items-center "
+                                    className="flex items-center bg-white/70 p-4 rounded-lg shadow-sm hover:shadow-md cursor-pointer group"
+                                    whileHover={{ scale: 1.03, backgroundColor: "rgba(255,255,255,0.9)" }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.3, delay: index * 0.1 }}
                                 >
-                                    <span className="text-[#25926C] mr-3 text-2xl">•</span>
-                                    <span className="text-stone-700 text-lg">{item}</span>
-                                </li>
+                                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#25926C]/10 mr-3 group-hover:bg-[#25926C]/20 transition-colors duration-300">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-stone-700 text-lg font-medium group-hover:text-[#25926C] transition-colors duration-300">{item.text}</span>
+                                </motion.div>
                             ))}
-                        </ul>
+                        </div>
 
-                        {/* Vue Mobile : liste verticale pour une meilleure lisibilité */}
-                        <ul
-                            className="block md:hidden space-y-4 mb-8 text-lg md:text-lg font-medium "
-                            style={{ textShadow: '0.5px 0.5px 0.5px rgba(0,0,0,0.1)' }}
-                        >
+                        {/* Vue Mobile : liste verticale avec animations subtiles */}
+                        <div className="block md:hidden space-y-3 mb-8">
                             {[
-                                "Votre jeune enfant",
-                                "Votre adolescent",
-                                "Un adulte ou vous-même",
-                                "Votre couple (conjugalité)",
-                                "La relation avec vos enfants (parentalité)"
+                                { text: "Votre jeune enfant", icon: <FaChild className="text-[#25926C] text-lg" /> },
+                                { text: "Votre adolescent", icon: <FaUser className="text-[#25926C] text-lg" /> },
+                                { text: "Un adulte ou vous-même", icon: <FaUser className="text-[#25926C] text-lg" /> },
+                                { text: "Votre couple (conjugalité)", icon: <FaHeart className="text-[#25926C] text-lg" /> },
+                                { text: "La relation avec vos enfants (parentalité)", icon: <FaUsers className="text-[#25926C] text-lg" /> }
                             ].map((item, index) => (
-                                <li
+                                <motion.div
                                     key={index}
-                                    className="flex items-center hover:scale-105 transition-transform duration-200"
+                                    className="flex items-center bg-white/60 p-3 rounded-md shadow-sm active:bg-white/90"
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.3, delay: index * 0.1 }}
                                 >
-                                    <span className="text-[#25926C] mr-3 text-xl">•</span>
-                                    <span className="text-stone-900 text-base">{item}</span>
-                                </li>
+                                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#25926C]/10 mr-3">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-stone-800 text-base font-medium">{item.text}</span>
+                                </motion.div>
                             ))}
-                        </ul>
+                        </div>
 
-                        <p className="text-left text-lg md:text-lg font-medium pt-4 ">
+                        <motion.p
+                            className="text-center  text-lg md:text-2xl font-medium pt-4 px-4 text-stone-700"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                        >
                             Ou que cela concerne votre contexte professionnel ou social, je peux vous accompagner.
-                        </p>
+                        </motion.p>
                     </div>
                 </motion.div>
 
@@ -131,7 +149,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                     </div>
-                    <p className="text-md text-left md:text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-2 mb-8">
+                    <p className="text-md sm:text-lg text-left md:text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-2 mb-8">
                         Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant.<br />Je serai à
                         votre écoute et engagée à vos côtés.
                     </p>
