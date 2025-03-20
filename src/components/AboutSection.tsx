@@ -69,7 +69,7 @@ const AboutSection: React.FC = () => {
                                 { text: "Votre adolescent", icon: <FaUser className="text-[#25926C] text-xl" /> },
                                 { text: "Un adulte ou vous-même", icon: <FaUser className="text-[#25926C] text-xl" /> },
                                 { text: "Votre couple (conjugalité)", icon: <FaHeart className="text-[#25926C] text-xl" /> },
-                                { text: "La relation avec vos enfants (parentalité)", icon: <FaUsers className="text-[#25926C] text-xl" /> }
+                                { text: "La relation avec vos enfants (parentalité)", icon: <FaUsers className="text-[#25926C] min-w-10  text-xl" /> }
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
@@ -95,11 +95,11 @@ const AboutSection: React.FC = () => {
                                 { text: "Votre adolescent", icon: <FaUser className="text-[#25926C] text-lg" /> },
                                 { text: "Un adulte ou vous-même", icon: <FaUser className="text-[#25926C] text-lg" /> },
                                 { text: "Votre couple (conjugalité)", icon: <FaHeart className="text-[#25926C] text-lg" /> },
-                                { text: "La relation avec vos enfants (parentalité)", icon: <FaUsers className="text-[#25926C] text-lg" /> }
+                                { text: "La relation avec vos enfants (parentalité)", icon: <FaUsers className="text-[#25926C] min-w-8  text-lg" /> }
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex items-center bg-white/60 p-3 rounded-md shadow-sm active:bg-white/90"
+                                    className="flex items-center bg-white/60 p-4 rounded-md shadow-sm active:bg-white/90"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
