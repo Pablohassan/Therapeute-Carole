@@ -114,7 +114,7 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         <motion.p
-                            className="text-center  text-lg md:text-2xl font-medium pt-4 px-4 text-stone-700"
+                            className="text-center  text-lg md:text-2xl font-medium pt-4 px-2 sm:px-4 text-stone-700"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
@@ -132,24 +132,21 @@ const AboutSection: React.FC = () => {
                     {...fadeIn}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
-
-
-
-
                     {/* Image grid with responsive behavior */}
                     <div className="grid grid-cols-1 sm:grid-cols-1 mt-6 pt-2 md:pt-8">
-
-                        <div className="overflow-hidden  sm:aspect-16/9  hover:shadow-lg transition-shadow duration-300 sm:col-span-2    ">
+                        <div className="overflow-hidden sm:aspect-16/9 hover:shadow-lg transition-shadow duration-300 sm:col-span-2">
                             <img
                                 src={cabinetImage2}
-                                alt="Accompagnement thérapeutique"
-                                className="w-full h-auto object-cover "
+                                alt="Cabinet de thérapie familiale à Talence"
+                                className="w-full h-auto object-cover"
+                                width="800"
+                                height="450"
                                 loading="lazy"
+                                fetchPriority="low"
                             />
                         </div>
-
                     </div>
-                    <p className="text-md sm:text-lg text-left md:text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-2 mb-8">
+                    <p className="text-sm sm:text-lg text-center  text-stone-900  leading-relaxed sm:col-span-1 w-full px-2 md:px-4 pt-2 mb-8">
                         Je vous accueille dans un espace chaleureux, confidentiel, sécurisé et bienveillant.<br />Je serai à
                         votre écoute et engagée à vos côtés.
                     </p>
@@ -157,7 +154,7 @@ const AboutSection: React.FC = () => {
 
                 {/* Section title with consistent styling */}
                 <motion.div
-                    className="text-center mb-16"
+                    className="text-center mb-8 sm:mb-16"
                     {...fadeIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
@@ -261,25 +258,6 @@ const AboutSection: React.FC = () => {
                             </p>
                         </div>
                     </motion.div>
-
-                    {/* Final message with improved styling */}
-                    {/* <motion.div
-                        className="max-w-4xl mx-auto mb-16"
-                        {...fadeIn}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                    >
-                        <p className="text-lg lg:text-xl text-stone-700  leading-relaxed text-center">
-                            Vous vous questionnez sur la pertinence de vous engager dans un processus thérapeutique?
-
-
-                        </p>
-
-                        <p className="text-lg lg:text-xl text-stone-700  leading-relaxed text-center">
-                            J'espère  pouvoir vous apporter quelques pistes susceptibles de
-                            nourrir votre réflexion… Et pourquoi pas, trouver l&#39;élan, faire le pas pour nous rencontrer !
-
-                        </p>
-                    </motion.div> */}
 
                     {/* Closing quote with elegant styling */}
                     <motion.div

@@ -60,9 +60,14 @@ const HeroSection = () => {
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: isMobile ? 'center center' : 'center'
                 }}
+                aria-hidden="true"
             >
                 <div className="absolute inset-0 "></div>
             </motion.div>
+
+            {/* Preload hero images */}
+            <link rel="preload" as="image" href={fondHome} />
+            <link rel="preload" as="image" href={fondHomeMobile} />
 
             {/* Hero Content */}
             <motion.div
