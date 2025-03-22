@@ -1,6 +1,6 @@
 // src/pages/Couple.tsx
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useCallback } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import hand from '../assets/carole-lagardere-therapeute-talence-couple-premiere.jpg';
 import homecouple from '../assets/carole-lagardere-therapeute-talence-couple.jpeg';
 import posture from '../assets/carole-lagardere-therapeute-talence-posturetherapeute.jpg';
@@ -28,6 +28,27 @@ const containerClasses = "container mx-auto max-w-5xl";
 const CouplePage: React.FC = () => {
     // Use the imported coupleTherapyServiceData directly
     const isMobile = useIsMobile();
+    const [windowHeight, setWindowHeight] = useState(0);
+    const { scrollY } = useScroll();
+
+    // Create transform functions for parallax effect
+    const y = useTransform(scrollY, [0, windowHeight], [0, 200]);
+    const backgroundOpacity = useTransform(scrollY, [0, windowHeight * 0.5], [1, 0]);
+    // Button subtle movement for parallax effect
+    const buttonY = useTransform(scrollY, [0, windowHeight], [0, 100]);
+
+    // Handle window resize
+    const handleResize = useCallback(() => {
+        setWindowHeight(window.innerHeight);
+    }, []);
+
+    useEffect(() => {
+        // Get window height for parallax calculations
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [handleResize]);
 
     return (
         <div className="bg-[#EC6849]/30">
@@ -55,14 +76,21 @@ const CouplePage: React.FC = () => {
 
             {/* Hero Section */}
             <section
-                className="relative h-screen flex items-center justify-center overflow-hidden "
-                style={{
-                    backgroundImage: `url(${isMobile ? homecoupleMobile : homecouple})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: isMobile ? 'center center' : 'center'
-                }}
+                className="relative h-screen flex items-center justify-center overflow-hidden"
             >
-                <div className="absolute inset-0"></div>
+                <motion.div
+                    className="absolute inset-0 w-full h-full"
+                    style={{
+                        y,
+                        opacity: backgroundOpacity,
+                        backgroundImage: `url(${isMobile ? homecoupleMobile : homecouple})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: isMobile ? 'center center' : 'center'
+                    }}
+                    aria-hidden="true"
+                >
+                    <div className="absolute inset-0"></div>
+                </motion.div>
 
                 <motion.div
                     className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl mb-24 md:mb-20"
@@ -86,9 +114,10 @@ const CouplePage: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
+                        style={{ y: buttonY }}
                     >
                         <LongPressHover
-                            className="inline-block w-full font-medium rounded-sm w-full md:w-1/2 bg-[#FCF6E9]/80 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#EC6849]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#EC6849]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                             hoverClassName="scale-105 bg-[#EC6849]/40 text-stone-900 font-semibold shadow-xl"
                             onClick={() => window.location.href = `#${sectionIds.booking}`}
                         >

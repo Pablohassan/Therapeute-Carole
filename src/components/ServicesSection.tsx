@@ -1,5 +1,5 @@
 // src/components/ServicesSection.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import logofamille from '../assets/logo-famille.jpeg';
 import logocouple from '../assets/logocouple.jpeg';
@@ -13,8 +13,6 @@ interface ServiceCardProps {
     href: string;
     borderColor: string;
     textColor: string;
-    isConfirming: boolean;
-    onConfirm: () => void;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -24,15 +22,26 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     href,
     borderColor,
     textColor,
-    isConfirming,
-    onConfirm
 }) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Detect if device is mobile
+    useEffect(() => {
+        const checkIfMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkIfMobile();
+        window.addEventListener('resize', checkIfMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkIfMobile);
+        };
+    }, []);
+
     const handleClick = () => {
-        if (!isConfirming) {
-            onConfirm();
-        } else {
-            window.location.href = href;
-        }
+        window.location.href = href;
     };
 
     return (
@@ -40,7 +49,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             className={`bg-stone-100 border-1 ${borderColor} shadow-xl rounded-xl p-8 flex flex-col items-center transition-all duration-500 relative`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={handleClick}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={isMobile ? undefined : handleClick}
         >
             <div className="h-32 flex items-center justify-center mb-4">
                 <img src={image} alt={`Logo ${title}`} className="max-h-full max-w-full object-contain rounded-lg" />
@@ -50,8 +61,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                 {description}
             </p>
 
+            {/* Desktop hover message */}
             <AnimatePresence>
-                {isConfirming && (
+                {isHovered && !isMobile && (
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -64,17 +76,24 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* Mobile explicit button */}
+            {isMobile && (
+                <motion.button
+                    className={`mt-2 py-2 px-4 rounded-sm bg-${textColor.replace('text-', '')} text-white font-medium shadow-md`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleClick}
+                >
+                    En savoir plus
+                </motion.button>
+            )}
         </motion.div>
     );
 };
 
 const ServicesSection: React.FC = () => {
-    const [confirmingCard, setConfirmingCard] = useState<string | null>(null);
     const navigate = useNavigate();
-
-    const handleCardConfirm = (cardId: string) => {
-        setConfirmingCard(cardId);
-    };
 
     const handlePricingClick = () => {
         navigate('/apropos', { state: { scrollToContact: true } });
@@ -94,8 +113,6 @@ const ServicesSection: React.FC = () => {
                         href="/family"
                         borderColor="border-[#AB4D8C]/20"
                         textColor="text-[#AB4D8C] text-shadow-md"
-                        isConfirming={confirmingCard === 'family'}
-                        onConfirm={() => handleCardConfirm('family')}
                     />
                     <ServiceCard
                         title="Thérapie de Couple"
@@ -104,8 +121,6 @@ const ServicesSection: React.FC = () => {
                         href="/couple"
                         borderColor="border-[#EC6849]/20"
                         textColor="text-[#EC6849] text-shadow-md"
-                        isConfirming={confirmingCard === 'couple'}
-                        onConfirm={() => handleCardConfirm('couple')}
                     />
                     <ServiceCard
                         title="Thérapie Individuelle"
@@ -114,8 +129,6 @@ const ServicesSection: React.FC = () => {
                         href="/individuel"
                         borderColor="border-[#FBC018]/20"
                         textColor="text-[#FBC018] text-shadow-md"
-                        isConfirming={confirmingCard === 'individuel'}
-                        onConfirm={() => handleCardConfirm('individuel')}
                     />
                 </div>
                 <section

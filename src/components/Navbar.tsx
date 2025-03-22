@@ -150,10 +150,10 @@ const Navbar: React.FC = () => {
 
     return (
         <nav
-            className={`fixed w-full text-stone-900 z-50 transition-all font-montserrat font-light duration-300 ${isScrolled ? 'bg-stone-700/60 backdrop-blur-sm shadow-md' : 'bg-transparent'
+            className={`fixed w-full text-stone-900 z-50 transition-all font-montserrat font-light duration-300 ${isScrolled ? 'bg-stone-700/60 backdrop-blur-sm shadow-md z-20' : 'bg-transparent z-20'
                 } ${navPadding}`}
         >
-            <div className="container mx-auto flex items-center justify-between px-4">
+            <div className="container mx-auto flex items-center justify-between px-4 z-20">
                 {/* Logo/Brand */}
                 <motion.div
                     initial={{ opacity: 0 }}

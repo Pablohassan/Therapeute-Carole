@@ -1,10 +1,10 @@
 // src/pages/Family.tsx
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import SEO from '../components/SEO';
 import { therapyServiceData } from '../constants/structuredData';
 import BookingSection from '../components/BookingSection';
 import { sectionIds } from '../constants/navigation';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { LongPressHover } from '../components/LongPressHover';
 
 import { useIsMobile } from '../hooks/useIsMobile';
@@ -19,6 +19,29 @@ const sectionClasses = "py-12 md:py-20 px-4 md:px-8 mx-auto flex flex-col justif
 const containerClasses = "container mx-auto";
 
 const FamilyPage: React.FC = () => {
+    const [windowHeight, setWindowHeight] = useState(0);
+    const { scrollY } = useScroll();
+    const isMobile = useIsMobile();
+
+    // Create transform functions for parallax effect
+    const y = useTransform(scrollY, [0, windowHeight], [0, 200]);
+    const backgroundOpacity = useTransform(scrollY, [0, windowHeight * 0.5], [1, 0]);
+    // Button subtle movement for parallax effect
+    const buttonY = useTransform(scrollY, [0, windowHeight], [0, 100]);
+
+    // Handle window resize
+    const handleResize = useCallback(() => {
+        setWindowHeight(window.innerHeight);
+    }, []);
+
+    useEffect(() => {
+        // Get window height for parallax calculations
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [handleResize]);
+
     // Create enhanced specific service data for family therapy
     const familyTherapyData = {
         ...therapyServiceData,
@@ -72,8 +95,6 @@ const FamilyPage: React.FC = () => {
         }
     };
 
-    const isMobile = useIsMobile();
-
     return (
         <div className={`bg-[#AB4D8C]/30`}>
             <SEO
@@ -99,14 +120,22 @@ const FamilyPage: React.FC = () => {
 
             {/* Hero Section */}
             <section
-                className="relative h-screen bg-cover bg-center px-4 md:px-8 mx-auto flex flex-col justify-center"
-                style={{
-                    backgroundImage: `url(${isMobile ? homefamilyMobile : homefamily})`,
-                    backgroundSize: isMobile ? 'cover' : 'cover',
-                    backgroundPosition: isMobile ? 'center' : 'center'
-                }}
+                className="relative h-screen px-4 md:px-8 mx-auto flex flex-col justify-center overflow-hidden"
             >
-                <div className="absolute inset-0 bg-opacity-40"></div>
+                <motion.div
+                    className="absolute inset-0 w-full h-full"
+                    style={{
+                        y,
+                        opacity: backgroundOpacity,
+                        backgroundImage: `url(${isMobile ? homefamilyMobile : homefamily})`,
+                        backgroundSize: isMobile ? 'cover' : 'cover',
+                        backgroundPosition: isMobile ? 'center center' : 'center'
+                    }}
+                    aria-hidden="true"
+                >
+                    <div className="absolute inset-0 bg-opacity-40"></div>
+                </motion.div>
+
                 <div className={containerClasses + " max-w-6xl relative z-10"}>
                     <motion.div
                         className="relative text-center z-10 max-w-4xl mx-auto py-2 md:py-8"
@@ -135,10 +164,11 @@ const FamilyPage: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
+                            style={{ y: buttonY }}
                         >
                             <LongPressHover
-                                className="inline-block font-medium rounded-sm w-full max-w-sm sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#AB4D8C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
-                                hoverClassName="scale-105 bg-[#AB4D8C] text-stone-900 font-semibold shadow-xl"
+                                className="inline-block w-full md:w-1/2  rounded-sm font-medium w-full max-w-sm sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-8 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#AB4D8C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                                hoverClassName="scale-105 bg-[#AB4D8C]/40 text-stone-900 font-semibold shadow-xl"
                                 onClick={() => window.location.href = `#${sectionIds.booking}`}
                             >
                                 Réserver un rendez-vous

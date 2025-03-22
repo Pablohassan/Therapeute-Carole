@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useCallback } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import homeindividuel from '../assets/carole-lagardere-therapeute-talence-individuel.jpeg';
 import homeindividuelmobile from '../assets/carole-lagardere-therapeute-talence-ndividuel-mobile.jpeg';
 import escalierImage from '../assets/carole-lagardere-therapeute-talence-soleil.jpg';
@@ -30,6 +30,29 @@ const sectionClasses = "py-12 md:py-20 px-6 md:px-8 mx-auto";
 const containerClasses = "container mx-auto max-w-5xl";
 
 const IndividuelPage: React.FC = () => {
+    const isMobile = useIsMobile();
+    const [windowHeight, setWindowHeight] = useState(0);
+    const { scrollY } = useScroll();
+
+    // Create transform functions for parallax effect
+    const y = useTransform(scrollY, [0, windowHeight], [0, 200]);
+    const backgroundOpacity = useTransform(scrollY, [0, windowHeight * 0.5], [1, 0]);
+    // Button subtle movement for parallax effect
+    const buttonY = useTransform(scrollY, [0, windowHeight], [0, 100]);
+
+    // Handle window resize
+    const handleResize = useCallback(() => {
+        setWindowHeight(window.innerHeight);
+    }, []);
+
+    useEffect(() => {
+        // Get window height for parallax calculations
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [handleResize]);
+
     // Create specific service data for individual therapy
     const individualTherapyData = {
         ...therapyServiceData,
@@ -71,8 +94,6 @@ const IndividuelPage: React.FC = () => {
     // For the parenting support section, we'll use the imported data
     const parentingSupportData = parentingSupportServiceData;
 
-    const isMobile = useIsMobile();
-
     // Common style constants for consistency
     const primaryColor = "[#FBC018]";
     const bgColor = "[#FCF6E9]";
@@ -113,13 +134,20 @@ const IndividuelPage: React.FC = () => {
             {/* Hero Section */}
             <section
                 className="relative h-screen flex items-center justify-center overflow-hidden"
-                style={{
-                    backgroundImage: `url(${isMobile ? homeindividuelmobile : homeindividuel})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: isMobile ? 'center top' : 'center'
-                }}
             >
-                <div className="absolute inset-0 "></div>
+                <motion.div
+                    className="absolute inset-0 w-full h-full"
+                    style={{
+                        y,
+                        opacity: backgroundOpacity,
+                        backgroundImage: `url(${isMobile ? homeindividuelmobile : homeindividuel})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: isMobile ? 'center top' : 'center'
+                    }}
+                    aria-hidden="true"
+                >
+                    <div className="absolute inset-0 "></div>
+                </motion.div>
 
                 <motion.div
                     className="relative container mx-auto px-4 md:px-8 text-center z-10 max-w-4xl"
@@ -145,6 +173,7 @@ const IndividuelPage: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
+                        style={{ y: buttonY }}
                     >
                         <a
                             href={`#${sectionIds.booking}`}

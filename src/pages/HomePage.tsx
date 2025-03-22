@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
     }, [isSmallHeight]);
 
     return (
-        <>
+        <div className="bg-[#FCF6E9]">
             <SEO
                 title="Thérapeute Familiale et de Couple à Talence | Carole Lagardère"
                 description="Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence (Bordeaux). Consultations en thérapie familiale, de couple et individuelle avec une approche bienveillante et personnalisée."
@@ -59,7 +59,7 @@ const HomePage: React.FC = () => {
             <AboutSection />
             <ServicesSection />
             <BookingSection calendlyUrl="https://calendly.com/carolelagardere33" />
-        </>
+        </div>
     );
 };
 

@@ -16,8 +16,10 @@ const HeroSection = () => {
     const { scrollY } = useScroll();
 
     // Create transform functions outside of callbacks
-    const y = useTransform(scrollY, [0, windowHeight], [0, 150]);
+    const y = useTransform(scrollY, [0, windowHeight], [0, 200]);
     const backgroundOpacity = useTransform(scrollY, [0, windowHeight * 0.5], [1, 0]);
+    // Button subtle movement for parallax effect
+    const buttonY = useTransform(scrollY, [0, windowHeight], [0, 105]);
 
     // Memoized callback for resize handler
     const handleResize = useCallback(() => {
@@ -49,9 +51,12 @@ const HeroSection = () => {
 
     return (
         <section className={`relative ${isSmallHeight ? 'min-h-[90vh]' : 'h-screen min-h-[70vh]'} bg-[#FCF6E9] flex items-center justify-center overflow-hidden`}>
+            {/* Background Color that appears when scrolling */}
+            <div className="absolute inset-0 w-full h-full bg-[#25926C]/50 z-0"></div>
+
             {/* Background Image with Overlay */}
             <motion.div
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-0 w-full h-full z-10"
                 style={{
                     y,
                     opacity: backgroundOpacity,
@@ -62,7 +67,7 @@ const HeroSection = () => {
                 }}
                 aria-hidden="true"
             >
-                <div className="absolute inset-0 "></div>
+                <div className="absolute inset-0"></div>
             </motion.div>
 
             {/* Preload hero images */}
@@ -71,7 +76,7 @@ const HeroSection = () => {
 
             {/* Hero Content */}
             <motion.div
-                className={`relative container mx-auto px-4 text-center text-slate-900 max-w-7xl ${isSmallHeight ? 'pt-16' : ''}`}
+                className={`relative container mx-auto px-4 text-center text-slate-900 max-w-7xl ${isSmallHeight ? 'pt-16' : ''} z-10`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -107,9 +112,10 @@ const HeroSection = () => {
                 <motion.div
                     {...contentAnimations}
                     transition={{ duration: 0.8, delay: 0.5 }}
+                    style={{ y: buttonY }}
                 >
                     <LongPressHover
-                        className={`inline-block bg-[#FCF6E9] w-full md:w-1/2 lg:w-1/3 rounded-sm font-medium md:bg-[#FCF6E9]/50 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 ${buttonPadding} ${buttonMargin} md:text-stone-950 uppercase tracking-wider ${isSmallHeight ? 'text-sm' : 'text-md'} text-stone-900 md:text-base transition-all duration-300 shadow-lg hover:bg-[#25926C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl`}
+                        className={`inline-block bg-[#FCF6E9] w-full md:w-1/2 lg:w-1/3 rounded-sm font-medium md:bg-[#FCF6E9]/90 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 ${buttonPadding} ${buttonMargin} md:text-stone-950 uppercase tracking-wider ${isSmallHeight ? 'text-sm' : 'text-md'} text-stone-900 md:text-base transition-all duration-300 shadow-lg hover:bg-[#25926C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl`}
                         hoverClassName="scale-105 bg-[#25926C]/40 text-stone-900 font-semibold shadow-xl"
                         onClick={() => window.location.href = `#${sectionIds.booking}`}
                     >
