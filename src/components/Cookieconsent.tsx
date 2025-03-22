@@ -53,30 +53,29 @@ const CookieConsent: React.FC = () => {
   return (
     <>
       {isVisible && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-gray-600/90">
-          <div className="mx-auto max-w-6xl px-4 py-3">
-            <div className="flex flex-col gap-4 md:flex-row items-center justify-between">
-              <p className="text-sm text-justify text-gray-600 mb-2 md:mb-0 md:mr-6">
-                Ce site utilise des cookies tiers pour l'analyse d'audience (Google Analytics) ces données sont anonymisées et ne permettent pas de vous identifier. Leurs finalités sont de nous aider à améliorer notre site et de vous offrir un meilleur service. Notre système de rendez-vous (Calendly) utilise également ses propres cookies et vous demandera votre consentement séparément.
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-2 bg-white border-t border-gray-600/90 shadow-lg">
+          <div className="mx-auto max-w-6xl px-2 py-1">
+            <div className="flex flex-row items-center justify-between gap-2">
+              <p className="text-xs text-gray-600 line-clamp-2 flex-1">
+                Ce site utilise des cookies pour améliorer votre expérience.
                 <button
-
                   onClick={() => setIsModalOpen(true)}
-                  className="ml-1 text-blue-600 hover:underline font-medium"
+                  className="ml-1 text-blue-600 hover:underline font-medium inline-block"
                 >
                   En savoir plus
                 </button>
               </p>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-shrink-0">
                 <button
                   onClick={handleDecline}
-                  className="px-4 py-2 text-sm bg-gray-200 text-gray-800 rounded-sm hover:bg-gray-300"
+                  className="px-3 py-1 text-sm bg-stone-200 text-gray-800 rounded-sm hover:bg-gray-300"
                 >
                   Refuser
                 </button>
                 <button
                   onClick={handleAccept}
-                  className="px-4 py-2 text-sm bg-green-600 text-white rounded-sm hover:bg-green-700"
+                  className="px-3 py-1 text-sm bg-green-600 text-white rounded-sm hover:bg-green-700"
                 >
                   Accepter
                 </button>

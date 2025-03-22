@@ -77,7 +77,7 @@ const Layout: React.FC<LayoutProps> = ({ children, isHomePage = false }) => {
                     // For other pages, Navbar is fixed at the top with content below
                     <>
                         <Navbar />
-                        <div className={`flex-grow ${isSmallHeight ? 'pt-16' : 'pt-20'}`}>
+                        <div className={`flex-grow ${isSmallHeight ? 'pt-16' : 'pt-20'}   bg-[#FCF6E9]`}>
                             {children}
                         </div>
                     </>

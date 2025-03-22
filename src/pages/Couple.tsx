@@ -117,8 +117,8 @@ const CouplePage: React.FC = () => {
                         style={{ y: buttonY }}
                     >
                         <LongPressHover
-                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/80 md:bg-transparent md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#EC6849]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
-                            hoverClassName="scale-105 bg-[#EC6849]/40 text-stone-900 font-semibold shadow-xl"
+                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/70  md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#EC6849]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                            hoverClassName="scale-105 bg-white text-stone-900 font-semibold shadow-xl"
                             onClick={() => window.location.href = `#${sectionIds.booking}`}
                         >
                             Réserver un rendez-vous

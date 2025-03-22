@@ -50,7 +50,7 @@ const HeroSection = () => {
     const buttonPadding = isSmallHeight ? 'py-2 md:py-3' : 'py-4 md:py-6';
 
     return (
-        <section className={`relative ${isSmallHeight ? 'min-h-[90vh]' : 'h-screen min-h-[70vh]'} bg-[#FCF6E9] flex items-center justify-center overflow-hidden`}>
+        <section className={`relative ${isSmallHeight ? 'min-h-[90vh]' : 'h-screen min-h-[70vh]'}  flex items-center justify-center overflow-hidden`}>
             {/* Background Color that appears when scrolling */}
             <div className="absolute inset-0 w-full h-full bg-[#25926C]/50 z-0"></div>
 
@@ -85,7 +85,7 @@ const HeroSection = () => {
                     className={`${isSmallHeight ? 'text-2xl md:text-4xl lg:text-5xl' : 'text-3xl md:text-5xl lg:text-6xl'} font-light text-stone-900 font-bebas tracking-wider ${titleMargin} leading-tight`}
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     {...contentAnimations}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.5 }}
                 >
                     Thérapie familiale, de couple et individuelle
                 </motion.h1>
@@ -93,7 +93,8 @@ const HeroSection = () => {
                     className={`${isSmallHeight ? 'text-base md:text-xl' : 'text-lg md:text-2xl'} text-stone-950 ${textMargin} italic font-medium sm:font-light leading-relaxed px-2 md:px-16`}
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                     {...contentAnimations}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.4 }}
+                    data-lcp-element="true"
                 >
                     {isSmallHeight ? (
                         <>
@@ -111,7 +112,7 @@ const HeroSection = () => {
 
                 <motion.div
                     {...contentAnimations}
-                    transition={{ duration: 0.8, delay: 0.5 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
                     style={{ y: buttonY }}
                 >
                     <LongPressHover
