@@ -2,15 +2,25 @@
 <html lang="fr">
 
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-KV2XC482');</script>
+  <!-- Google Tag Manager - deferred to improve initial page load -->
+  <script>
+    window.addEventListener('load', function () {
+      // Detect if mobile for longer delay
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      var delay = isMobile ? 2000 : 1000; // 2 seconds on mobile, 1 second on desktop
+
+      setTimeout(function () {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+              new Date().getTime(), event: 'gtm.js'
+          }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+              'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KV2XC482');
+      }, delay);
+    });
+  </script>
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/Carole-Lagardere-Therapeute-Talence-logo.png" />
@@ -42,9 +52,25 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV2XC482" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Google Tag Manager (noscript) - deferred -->
+  <noscript>
+    <iframe id="gtm-frame" data-src="https://www.googletagmanager.com/ns.html?id=GTM-KV2XC482" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <script>
+    window.addEventListener('load', function () {
+      // Detect if mobile for longer delay
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      var delay = isMobile ? 2000 : 1000; // 2 seconds on mobile, 1 second on desktop
+
+      setTimeout(function () {
+        var iframe = document.getElementById('gtm-frame');
+        if (iframe && iframe.dataset.src) {
+          iframe.src = iframe.dataset.src;
+        }
+      }, delay);
+    });
+  </script>
   <!-- End Google Tag Manager (noscript) -->
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>

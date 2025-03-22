@@ -39,7 +39,7 @@ const HeroSection = () => {
 
     // Memoized animation variants
     const contentAnimations = useMemo(() => ({
-        initial: { opacity: 0, y: 20 },
+        initial: { opacity: 0.2, y: 10 }, // Less movement, start at higher opacity
         animate: { opacity: 1, y: 0 },
     }), []);
 
@@ -50,7 +50,31 @@ const HeroSection = () => {
     const buttonPadding = isSmallHeight ? 'py-2 md:py-3' : 'py-4 md:py-6';
 
     return (
-        <section className={`relative ${isSmallHeight ? 'min-h-[90vh]' : 'h-screen min-h-[70vh]'}  flex items-center justify-center overflow-hidden`}>
+        <section className={`relative ${isSmallHeight ? 'min-h-[90vh]' : 'h-screen min-h-[70vh]'} bg-[#FCF6E9] flex items-center justify-center overflow-hidden`}>
+            {/* Immediately render the critical LCP content with high priority */}
+            <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
+                <div className={`container mx-auto px-4 text-center ${isSmallHeight ? 'pt-16' : ''}`}>
+                    <p
+                        className={`${isSmallHeight ? 'text-base md:text-xl' : 'text-lg md:text-2xl'} text-stone-950 ${textMargin} italic font-medium sm:font-light leading-relaxed px-2 md:px-16 opacity-0`}
+                        style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
+                        data-lcp-element="true"
+                    >
+                        {isSmallHeight ? (
+                            <>
+                                Carole Lagardère, thérapeute familiale et de couple certifiée.
+                                Je vous accueille sur rendez-vous à Talence.
+                            </>
+                        ) : (
+                            <>
+                                Carole Lagardère, thérapeute familiale et de couple certifiée.
+                                Je suis à votre écoute et engagée à vos côtés.
+                                Je vous accueille sur rendez-vous au sein de mon cabinet à Talence.
+                            </>
+                        )}
+                    </p>
+                </div>
+            </div>
+
             {/* Background Color that appears when scrolling */}
             <div className="absolute inset-0 w-full h-full bg-[#25926C]/50 z-0"></div>
 
@@ -93,7 +117,7 @@ const HeroSection = () => {
                     className={`${isSmallHeight ? 'text-base md:text-xl' : 'text-lg md:text-2xl'} text-stone-950 ${textMargin} italic font-medium sm:font-light leading-relaxed px-2 md:px-16`}
                     style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2)' }}
                     {...contentAnimations}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.3 }}
                     data-lcp-element="true"
                 >
                     {isSmallHeight ? (
