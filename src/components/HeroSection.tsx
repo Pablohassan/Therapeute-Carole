@@ -123,13 +123,13 @@ const HeroSection = () => {
                     {isSmallHeight ? (
                         <>
                             Carole Lagardère, thérapeute familiale et de couple certifiée.
-                            Je vous accueille sur rendez-vous à Talence.
+                            Je vous accueille sur rendez vous, en visio ou au sein de mon cabinet à talence.
                         </>
                     ) : (
                         <>
                             Carole Lagardère, thérapeute familiale et de couple certifiée.
-                            Je suis à votre écoute et engagée à vos côtés.
-                            Je vous accueille sur rendez-vous au sein de mon cabinet à Talence.
+                            Je vous accueille sur rendez vous, en visio ou au sein de mon cabinet à talence.
+
                         </>
                     )}
                 </motion.p>
@@ -140,14 +140,28 @@ const HeroSection = () => {
                     style={{ y: buttonY }}
                 >
                     <LongPressHover
-                        className={`inline-block bg-[#FCF6E9] w-full md:w-1/2 lg:w-1/3 rounded-sm font-medium md:bg-[#FCF6E9]/90 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 ${buttonPadding} ${buttonMargin} md:text-stone-950 uppercase tracking-wider ${isSmallHeight ? 'text-sm' : 'text-md'} text-stone-900 md:text-base transition-all duration-300 shadow-lg hover:bg-[#25926C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl`}
+                        className={`inline-block bg-[#FCF6E9] w-full md:w-1/2  rounded-sm font-medium md:bg-[#FCF6E9]/90 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 ${buttonPadding} ${buttonMargin} md:text-stone-950 uppercase tracking-wider ${isSmallHeight ? 'text-sm' : 'text-md'} text-stone-900 md:text-base transition-all duration-300 hover:bg-[#25926C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl`}
                         hoverClassName="scale-105 bg-[#25926C]/40 text-stone-900 font-semibold shadow-xl"
                         onClick={() => window.location.href = `#${sectionIds.booking}`}
                     >
-                        Réserver un rendez-vous
+                        Réserver un rdv au cabinet
+                    </LongPressHover>
+                </motion.div>
+                <motion.div
+                    {...contentAnimations}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    style={{ y: buttonY }}
+                >
+                    <LongPressHover
+                        className={`inline-block bg-[#FCF6E9] w-full md:w-1/2  rounded-sm font-medium md:bg-[#FCF6E9]/90 md:border-2 border-1 border-[#25926C] md:border-[#25926C] px-4 md:px-16 ${buttonPadding} ${buttonMargin} md:text-stone-950 uppercase tracking-wider ${isSmallHeight ? 'text-sm' : 'text-md'} text-stone-900 md:text-base transition-all duration-300  hover:bg-[#25926C]/90 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl`}
+                        hoverClassName="scale-105 bg-[#25926C]/40 text-stone-900 font-semibold shadow-xl"
+                        onClick={() => window.open('https://calendly.com/carolelagardere33/consultation-en-visio', '_blank')}
+                    >
+                        Réserver une visio
                     </LongPressHover>
                 </motion.div>
             </motion.div>
+
         </section>
     );
 };

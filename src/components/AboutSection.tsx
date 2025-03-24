@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
                     {...scaleIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <p className=" text-2xl md:text-2xl lg:text-3xl tracking-wide font-medium text-stone-700 max-w-4xl mx-auto px-2 md:px-16"
+                    <p className=" text-2xl md:text-2xl lg:text-3xl font-medium tracking-wide font-medium max-w-4xl mx-auto px-2 md:px-16"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Vous cherchez à améliorer les relations avec vos proches ?
@@ -158,7 +158,7 @@ const AboutSection: React.FC = () => {
                     {...fadeIn}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h2 className=" text-2xl md:text-2xl lg:text-3xl font-medium tracking-wide font-light  max-w-4xl mx-auto md:px-16"
+                    <h2 className=" text-2xl md:text-2xl lg:text-3xl font-medium tracking-wide  max-w-4xl mx-auto md:px-16"
                         style={{ textShadow: '0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1)' }}
                     >
                         Mon parcours
