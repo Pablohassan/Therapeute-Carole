@@ -167,11 +167,25 @@ const FamilyPage: React.FC = () => {
                             style={{ y: buttonY }}
                         >
                             <LongPressHover
-                                className="inline-block w-full md:w-1/2  rounded-sm font-medium w-full max-w-sm sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-8 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#AB4D8C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                                className="inline-block w-full md:w-2/3 md:max-w-md rounded-sm font-medium max-w-md sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#AB4D8C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                                 hoverClassName="scale-105 bg-[#AB4D8C]/40 text-stone-900 font-semibold shadow-xl"
                                 onClick={() => window.location.href = `#${sectionIds.booking}`}
                             >
-                                Réserver un rendez-vous
+                                Réserver un rdv au cabinet
+                            </LongPressHover>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            style={{ y: buttonY }}
+                        >
+                            <LongPressHover
+                                className="inline-block w-full md:w-2/3 md:max-w-md rounded-sm font-medium max-w-md sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#AB4D8C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                                hoverClassName="scale-105 bg-[#AB4D8C]/40 text-stone-900 font-semibold shadow-xl"
+                                onClick={() => window.open('https://calendly.com/carolelagardere33/consultation-en-visio', '_blank')}
+                            >
+                                Réserver une visio
                             </LongPressHover>
                         </motion.div>
                     </motion.div>

@@ -24,6 +24,7 @@ import {
     // FaPray,
     FaUsers
 } from 'react-icons/fa';
+import { LongPressHover } from '../components/LongPressHover';
 
 // Standardize section padding and margins
 const sectionClasses = "py-12 md:py-20 px-6 md:px-8 mx-auto";
@@ -173,15 +174,31 @@ const IndividuelPage: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        style={{ y: buttonY }}
+                        style={{ y: buttonY, marginBottom: '10px' }}
                     >
                         <a
                             href={`#${sectionIds.booking}`}
-                            className="inline-block w-full md:w-1/2 rounded-sm bg-[#FCF6E9]/70 border-1 border-[#FBC018] px-6 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                            className="inline-block w-full md:w-2/3 md:max-w-md rounded-sm bg-[#FCF6E9]/70 border-1 border-[#FBC018] px-4 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                         >
-                            Réserver un rendez-vous
+                            Réserver un rdv au cabinet
                         </a>
                     </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        style={{ y: buttonY, paddingTop: '10px' }}
+                    >
+                        <LongPressHover
+                            hoverClassName="scale-105 bg-[#AB4D8C]/40 text-stone-900 font-semibold shadow-xl"
+                            onClick={() => window.open('https://calendly.com/carolelagardere33/consultation-en-visio', '_blank')}
+                            className="inline-block w-full md:w-2/3 md:max-w-md rounded-sm bg-[#FCF6E9]/70 border-1 border-[#FBC018] px-6 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
+                        >
+                            Réserver une visio
+                        </LongPressHover>
+                    </motion.div>
+
                 </motion.div>
             </section>
 
