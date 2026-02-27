@@ -137,7 +137,7 @@ const AboutSection: React.FC = () => {
                         <div className="overflow-hidden sm:aspect-16/9 hover:shadow-lg transition-shadow duration-300 sm:col-span-2">
                             <img
                                 src={cabinetImage2}
-                                alt="Cabinet de thérapie familiale à Talence"
+                                alt="Cabinet de thérapie familiale à Bordeaux-Talence"
                                 className="w-full h-auto object-cover"
                                 width="800"
                                 height="450"

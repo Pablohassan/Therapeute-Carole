@@ -1,7 +1,7 @@
 // src/pages/Family.tsx
 import React, { useEffect, useState, useCallback } from 'react';
 import SEO from '../components/SEO';
-import { therapyServiceData } from '../constants/structuredData';
+import { therapyServiceData, breadcrumbData } from '../constants/structuredData';
 import BookingSection from '../components/BookingSection';
 import { sectionIds } from '../constants/navigation';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -98,24 +98,25 @@ const FamilyPage: React.FC = () => {
     return (
         <div className={`bg-[#AB4D8C]/30`}>
             <SEO
-                title="Thérapie Familiale Systémique à Talence | Carole Lagardère"
-                description="Consultations en thérapie familiale à Talence près de Bordeaux. Retrouvez l'harmonie familiale, améliorez la communication et résolvez les conflits avec une approche systémique personnalisée pour chaque famille."
+                title="Thérapie Familiale Systémique à Bordeaux-Talence | Carole Lagardère"
+                description="Consultations en thérapie familiale à Bordeaux/Talence. Retrouvez l'harmonie familiale, améliorez la communication et résolvez les conflits avec une approche systémique personnalisée pour chaque famille."
                 canonicalUrl="https://www.carole-lagardere.fr/family"
                 ogImage="/carole-lagardere-therapeute-talence-family-home.jpeg"
                 keywords={[
+                    "thérapie familiale Bordeaux",
                     "thérapie familiale Talence",
                     "thérapie systémique Bordeaux",
                     "conflits familiaux résolution",
                     "communication famille amélioration",
                     "relation parent-enfant",
-                    "thérapeute familial EFTA Talence",
-                    "thérapie famille Bordeaux",
+                    "thérapeute familial EFTA Bordeaux",
+                    "thérapie famille Bordeaux Talence",
                     "problèmes adolescence",
                     "difficultés parentalité",
                     "dysfonctionnements familiaux",
-                    "soutien familial Talence"
+                    "soutien familial Bordeaux"
                 ]}
-                structuredData={familyTherapyData}
+                structuredData={[familyTherapyData, breadcrumbData("Thérapie Familiale", "/family")]}
             />
 
             {/* Hero Section */}
@@ -183,7 +184,7 @@ const FamilyPage: React.FC = () => {
                             <LongPressHover
                                 className="inline-block w-full md:w-2/3 md:max-w-md rounded-sm font-medium max-w-md sm:max-w-md bg-[#FCF6E9]/70  md:border-2 border-1 border-[#AB4D8C] md:border-[#AB4D8C] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#AB4D8C]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                                 hoverClassName="scale-105 bg-[#AB4D8C]/40 text-stone-900 font-semibold shadow-xl"
-                                onClick={() => window.open('https://calendly.com/carolelagardere33/consultation-en-visio', '_blank')}
+                                onClick={() => window.open('https://calendly.com/carolelagarderetherapie/consultation-en-visio', '_blank')}
                             >
                                 Réserver une visio
                             </LongPressHover>
@@ -449,7 +450,7 @@ const FamilyPage: React.FC = () => {
             </section>
 
             {/* Booking Section */}
-            <BookingSection calendlyUrl="https://calendly.com/carolelagardere33/consultation" />
+            <BookingSection calendlyUrl="https://calendly.com/carolelagarderetherapie/therapie-familiale" />
         </div>
     );
 };

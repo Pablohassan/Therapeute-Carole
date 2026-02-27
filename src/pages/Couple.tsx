@@ -13,7 +13,7 @@ import { sectionIds } from '../constants/navigation';
 import BookingSection from '../components/BookingSection';
 import { useIsMobile } from '../hooks/useIsMobile';
 import SEO from '../components/SEO';
-import { coupleTherapyServiceData } from '../constants/structuredData';
+import { coupleTherapyServiceData, breadcrumbData } from '../constants/structuredData';
 import { coupleSpecialtyAreas } from '../constants/specialtyAreas';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { LongPressHover } from '../components/LongPressHover';
@@ -53,24 +53,25 @@ const CouplePage: React.FC = () => {
     return (
         <div className="bg-[#EC6849]/30">
             <SEO
-                title="Thérapie de Couple à Talence | Carole Lagardère"
-                description="Consultations de couple à Talence près de Bordeaux. Retrouvez l'harmonie dans votre relation, améliorez votre communication et résolvez les conflits avec une approche systémique bienveillante et personnalisée."
+                title="Thérapie de Couple à Bordeaux-Talence | Carole Lagardère"
+                description="Consultations de couple à Bordeaux/Talence. Retrouvez l'harmonie dans votre relation, améliorez votre communication et résolvez les conflits avec une approche systémique bienveillante et personnalisée."
                 canonicalUrl="https://www.carole-lagardere.fr/couple"
                 ogImage="/carole-lagardere-therapeute-talence-couple.jpeg"
                 keywords={[
+                    "thérapie couple Bordeaux",
                     "thérapie couple Talence",
                     "thérapie conjugale Bordeaux",
                     "problèmes de couple résolution",
                     "communication couple amélioration",
                     "conflits conjugaux",
-                    "conseil conjugal Talence",
+                    "conseil conjugal Bordeaux Talence",
                     "thérapeute couple Bordeaux",
                     "crise de couple",
                     "relation amoureuse difficultés",
-                    "médiation conjugale Talence",
+                    "médiation conjugale Bordeaux",
                     "thérapie systémique couple"
                 ]}
-                structuredData={coupleTherapyServiceData}
+                structuredData={[coupleTherapyServiceData, breadcrumbData("Thérapie de Couple", "/couple")]}
             />
 
 
@@ -133,7 +134,7 @@ const CouplePage: React.FC = () => {
                         <LongPressHover
                             className="inline-block w-full md:w-2/3 md:max-w-md font-medium rounded-sm bg-[#FCF6E9]/70  md:border-2 border-1 border-[#EC6849] md:border-[#EC6849] px-4 md:px-16 py-4 md:py-6 mt-4 md:mt-8 md:text-stone-950 uppercase tracking-wider text-stone-900 md:text-base transition-all duration-300 hover:bg-[#EC6849]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                             hoverClassName="scale-105 bg-white text-stone-900 font-semibold shadow-xl"
-                            onClick={() => window.open('https://calendly.com/carolelagardere33/consultation-en-visio', '_blank')}
+                            onClick={() => window.open('https://calendly.com/carolelagarderetherapie/consultation-en-visio', '_blank')}
                         >
                             Réserver une visio
                         </LongPressHover>
@@ -300,7 +301,7 @@ const CouplePage: React.FC = () => {
 
             {/* Booking Section */}
 
-            <BookingSection calendlyUrl="https://calendly.com/carolelagardere33/therapie-de-couple" />
+            <BookingSection calendlyUrl="https://calendly.com/carolelagarderetherapie/therapie-de-couple" />
 
 
 

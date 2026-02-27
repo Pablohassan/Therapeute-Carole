@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { sectionIds } from '../constants/navigation';
 import SEO from '../components/SEO';
+import { breadcrumbData } from '../constants/structuredData';
 import therapistImage from '../assets/carole-lagardere-therapeute-familiale-talence.webp'; // Assuming you have this image
 import { showFooter } from '../components/Layout';
 import { useLocation } from 'react-router';
@@ -36,16 +37,16 @@ const AproposPage: React.FC = () => {
         "@type": "Person",
         "name": "Carole Lagardère",
         "jobTitle": "Thérapeute Familiale Systémique",
-        "description": "Thérapeute familiale systémique certifiée EFTA, spécialisée dans les thérapies familiales, de couple et individuelles à Talence.",
+        "description": "Thérapeute familiale systémique certifiée EFTA, spécialisée dans les thérapies familiales, de couple et individuelles à Bordeaux (limite Talence).",
         "image": "https://www.carole-lagardere.fr/carole-lagardere-therapeute-familiale-talence.webp",
         "url": "https://www.carole-lagardere.fr/apropos",
         "telephone": "+33 7 78 24 09 60",
         "email": "therapie@carole-lagardere.fr",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "184 cours du Maréchal Gallieni",
-            "addressLocality": "Talence",
-            "postalCode": "33400",
+            "streetAddress": "192 Rue de Pessac",
+            "addressLocality": "Bordeaux",
+            "postalCode": "33000",
             "addressCountry": "FR"
         },
         "sameAs": [
@@ -79,23 +80,24 @@ const AproposPage: React.FC = () => {
     return (
         <>
             <SEO
-                title="À Propos de Carole Lagardère | Thérapeute Familiale à Talence"
-                description="Découvrez Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence. Formation, approche thérapeutique et philosophie de soins. Plus de 20 ans d'expérience en accompagnement familial."
+                title="À Propos de Carole Lagardère | Thérapeute Familiale à Bordeaux-Talence"
+                description="Découvrez Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Bordeaux (limite Talence). Formation, approche thérapeutique et philosophie de soins. Plus de 20 ans d'expérience en accompagnement familial."
                 canonicalUrl="https://www.carole-lagardere.fr/apropos"
                 ogImage="/carole-lagardere-therapeute-familiale.webp"
                 keywords={[
+                    "thérapeute familiale Bordeaux",
                     "thérapeute familiale Talence",
                     "Carole Lagardère thérapeute",
                     "thérapie systémique Bordeaux",
                     "thérapie familiale EFTA",
-                    "thérapeute certifiée Talence",
+                    "thérapeute certifiée Bordeaux Talence",
                     "consultation thérapie Bordeaux",
                     "approche systémique",
                     "parcours thérapeute familiale",
                     "formation thérapie familiale",
                     "expérience protection de l'enfance"
                 ]}
-                structuredData={therapistStructuredData}
+                structuredData={[therapistStructuredData, breadcrumbData("À Propos", "/apropos")]}
             />
 
             <main className="font-bebas-neue text-stone-800  ">
@@ -385,14 +387,14 @@ const AproposPage: React.FC = () => {
                                         <div>
                                             <p className="font-medium text-stone-800">Adresse</p>
                                             <a
-                                                href="https://maps.google.com/?q=184+cours+du+Maréchal+Gallieni+33400+Talence+France"
+                                                href="https://maps.google.com/?q=192+Rue+de+Pessac+33000+Bordeaux+France"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-stone-600 hover:text-stone-800 transition-colors"
                                             >
                                                 <p>Cabinet de thérapie familiale</p>
-                                                <p>184 cours du Maréchal Gallieni</p>
-                                                <p>33400 Talence</p>
+                                                <p>192 Rue de Pessac</p>
+                                                <p>33000 Bordeaux</p>
                                             </a>
                                             <a
                                                 href="https://www.google.com/search?q=carole+lagardere+talence+therapeute"

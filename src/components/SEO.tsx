@@ -30,7 +30,7 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
     const siteName = 'Carole Lagardère - Thérapeute Familiale';
     const fullTitle = `${title} | ${siteName}`;
-    const defaultImage = '/carole-lagardere-therapeute-familiale.webp'; // Updated to use an existing image
+    const defaultImage = '/carole-lagardere-therapeute-familiale.webp';
     const domain = 'https://www.carole-lagardere.fr';
     const fullCanonicalUrl = canonicalUrl ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${domain}${canonicalUrl}`) : undefined;
     const fullOgImage = ogImage ? (ogImage.startsWith('http') ? ogImage : `${domain}${ogImage}`) : `${domain}${defaultImage}`;
@@ -58,6 +58,7 @@ const SEO: React.FC<SEOProps> = ({
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={description} />
             <meta property="og:site_name" content={siteName} />
+            <meta property="og:locale" content="fr_FR" />
             <meta property="og:image" content={fullOgImage} />
             <meta property="og:image:alt" content={title} />
             <meta property="og:image:width" content="1200" />
@@ -78,28 +79,28 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="twitter:image:alt" content={title} />
             {fullCanonicalUrl && <meta name="twitter:url" content={fullCanonicalUrl} />}
 
-            {/* Additional Meta Tags for SEO */}
-            <meta name="robots" content="index, follow" />
-            <meta name="googlebot" content="index, follow" />
+            {/* Robots & AI Crawlers */}
+            <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="format-detection" content="telephone=no" />
             <meta name="theme-color" content="#25926C" />
 
+            {/* LLMs.txt discovery */}
+            <link rel="alternate" type="text/plain" href={`${domain}/llms.txt`} title="LLM-readable site information" />
+
             {/* Structured Data */}
             {structuredData && Array.isArray(structuredData) ? (
-                // If it's an array of structured data objects
                 structuredData.map((data, index) => (
                     <script key={index} type="application/ld+json">
                         {JSON.stringify(data)}
                     </script>
                 ))
             ) : structuredData ? (
-                // If it's a single structured data object
                 <script type="application/ld+json">
                     {JSON.stringify(structuredData)}
                 </script>
             ) : (
-                // Default Local Business Structured Data if none provided
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
@@ -108,28 +109,33 @@ const SEO: React.FC<SEOProps> = ({
                         "image": fullOgImage,
                         "url": domain,
                         "telephone": "+33 7 78 24 09 60",
+                        "email": "therapie@carole-lagardere.fr",
                         "address": {
                             "@type": "PostalAddress",
-                            "streetAddress": "184 cours du Maréchal Gallieni",
-                            "addressLocality": "Talence",
-                            "postalCode": "33400",
+                            "streetAddress": "192 Rue de Pessac",
+                            "addressLocality": "Bordeaux",
+                            "postalCode": "33000",
                             "addressCountry": "FR"
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 44.8078,
-                            "longitude": -0.5917
+                            "latitude": 44.8332,
+                            "longitude": -0.5922
                         },
+                        "areaServed": [
+                            { "@type": "City", "name": "Bordeaux" },
+                            { "@type": "City", "name": "Talence" }
+                        ],
                         "openingHoursSpecification": [
                             {
                                 "@type": "OpeningHoursSpecification",
-                                "dayOfWeek": "Tuesday",
+                                "dayOfWeek": "Monday",
                                 "opens": "08:30",
                                 "closes": "13:30"
                             },
                             {
                                 "@type": "OpeningHoursSpecification",
-                                "dayOfWeek": "Wednesday",
+                                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
                                 "opens": "08:30",
                                 "closes": "19:30"
                             }
@@ -143,4 +149,4 @@ const SEO: React.FC<SEOProps> = ({
     );
 };
 
-export default SEO; 
+export default SEO;

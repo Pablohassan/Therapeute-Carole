@@ -16,8 +16,8 @@ const Footer: React.FC = () => {
                         <p className="mb-4">Thérapeute spécialisée dans la thérapie familiale, de couple et individuelle.</p>
                         <p className="text-sm">
                             Cabinet de thérapie familiale<br />
-                            184 cours du Maréchal Gallieni<br />
-                            33400 Talence
+                            192 Rue de Pessac<br />
+                            33000 Bordeaux
                         </p>
                     </div>
 

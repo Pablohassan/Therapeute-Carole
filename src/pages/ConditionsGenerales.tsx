@@ -17,9 +17,9 @@ const ConditionsGenerales: React.FC = () => {
         <>
             <SEO
                 title="Conditions Générales | Carole Lagardère"
-                description="Conditions générales d'utilisation et de service pour les consultations avec Carole Lagardère, thérapeute à Bordeaux."
+                description="Conditions générales d'utilisation et de service pour les consultations avec Carole Lagardère, thérapeute à Bordeaux-Talence."
                 canonicalUrl="https://www.carole-lagardere.fr/conditions-generales"
-                keywords={["conditions générales", "thérapeute", "Carole Lagardère", "Bordeaux", "consultation"]}
+                keywords={["conditions générales", "thérapeute", "Carole Lagardère", "Bordeaux", "Talence", "consultation"]}
             />
 
             <div className="pt-24 pb-16 bg-gray-50">

@@ -9,7 +9,7 @@ import BookingSection from '../components/BookingSection';
 import ResponsiveImage from '../components/ResponsiveImage';
 import SEO from '../components/SEO';
 import { useIsMobile } from '../hooks/useIsMobile';
-import { therapyServiceData, parentingSupportServiceData } from '../constants/structuredData';
+import { therapyServiceData, parentingSupportServiceData, breadcrumbData } from '../constants/structuredData';
 import { individualSpecialtyAreas } from '../constants/specialtyAreas';
 
 import { sectionIds } from '../constants/navigation';
@@ -108,24 +108,25 @@ const IndividuelPage: React.FC = () => {
     return (
         <div className="bg-[#FBC018]/30">
             <SEO
-                title="Thérapie Individuelle et Soutien à la Parentalité | Talence"
-                description="Consultations individuelles et soutien à la parentalité à Talence près de Bordeaux. Retrouvez votre équilibre personnel, développez votre potentiel et surmontez vos difficultés avec un accompagnement personnalisé pour enfants, adolescents et adultes."
+                title="Thérapie Individuelle et Soutien à la Parentalité | Bordeaux-Talence"
+                description="Consultations individuelles et soutien à la parentalité à Bordeaux/Talence. Retrouvez votre équilibre personnel, développez votre potentiel et surmontez vos difficultés avec un accompagnement personnalisé pour enfants, adolescents et adultes."
                 canonicalUrl="https://www.carole-lagardere.fr/individuel"
                 ogImage="/carole-lagardere-therapeute-talence-individuel.jpeg"
                 keywords={[
+                    "thérapie individuelle Bordeaux",
                     "thérapie individuelle Talence",
                     "psychothérapie Bordeaux",
                     "développement personnel thérapie",
                     "thérapie systémique individuelle",
-                    "soutien psychologique Talence",
+                    "soutien psychologique Bordeaux Talence",
                     "bien-être émotionnel thérapie",
                     "thérapeute individuel Bordeaux",
-                    "soutien à la parentalité Talence",
+                    "soutien à la parentalité Bordeaux",
                     "accompagnement enfants adolescents",
                     "difficultés relationnelles",
                     "problèmes comportementaux enfants"
                 ]}
-                structuredData={[individualTherapyData, parentingSupportData]}
+                structuredData={[individualTherapyData, parentingSupportData, breadcrumbData("Thérapie Individuelle", "/individuel")]}
             />
 
 
@@ -192,7 +193,7 @@ const IndividuelPage: React.FC = () => {
                     >
                         <LongPressHover
                             hoverClassName="scale-105 bg-[#AB4D8C]/40 text-stone-900 font-semibold shadow-xl"
-                            onClick={() => window.open('https://calendly.com/carolelagardere33/consultation-en-visio', '_blank')}
+                            onClick={() => window.open('https://calendly.com/carolelagarderetherapie/consultation-en-visio', '_blank')}
                             className="inline-block w-full md:w-2/3 md:max-w-md rounded-sm bg-[#FCF6E9]/70 border-1 border-[#FBC018] px-6 md:px-16 py-4 md:py-6 text-stone-900 font-medium  uppercase tracking-wider text-md md:text-base transition-all duration-300 hover:bg-[#FBC018]/10 hover:text-stone-950 hover:font-semibold hover:scale-105 shadow-lg hover:shadow-xl"
                         >
                             Réserver une visio
@@ -643,7 +644,7 @@ const IndividuelPage: React.FC = () => {
 
             {/* Booking Section */}
             <section id="rendez-vous" className="h-screen flex items-center">
-                <BookingSection calendlyUrl="https://calendly.com/carolelagardere33" />
+                <BookingSection calendlyUrl="https://calendly.com/carolelagarderetherapie" />
             </section>
 
         </div>

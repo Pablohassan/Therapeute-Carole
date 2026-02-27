@@ -6,7 +6,7 @@ import ServicesSection from '../components/ServicesSection';
 import BookingSection from '../components/BookingSection';
 import SEO from '../components/SEO';
 import { showFooter } from '../components/Layout';
-import { therapyPracticeData } from '../constants/structuredData';
+import { therapyPracticeData, faqStructuredData } from '../constants/structuredData';
 
 const HomePage: React.FC = () => {
     const [isSmallHeight, setIsSmallHeight] = useState(false);
@@ -37,28 +37,30 @@ const HomePage: React.FC = () => {
     return (
         <div className="bg-[#FCF6E9]">
             <SEO
-                title="Thérapeute Familiale et de Couple à Talence | Carole Lagardère"
-                description="Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Talence (Bordeaux). Consultations en thérapie familiale, de couple et individuelle avec une approche bienveillante et personnalisée."
+                title="Thérapeute Familiale et de Couple à Bordeaux-Talence | Carole Lagardère"
+                description="Carole Lagardère, thérapeute familiale systémique certifiée EFTA à Bordeaux (limite Talence). Consultations en thérapie familiale, de couple et individuelle avec une approche bienveillante et personnalisée."
                 canonicalUrl="https://www.carole-lagardere.fr/"
                 ogImage="/carole-lagardere-therapeute-familiale.webp"
                 keywords={[
+                    "thérapeute familiale Bordeaux",
                     "thérapeute familiale Talence",
                     "thérapie familiale Bordeaux",
+                    "thérapie de couple Bordeaux",
                     "thérapie de couple Talence",
                     "thérapie individuelle Bordeaux",
-                    "thérapie systémique Talence",
+                    "thérapie systémique Bordeaux Talence",
                     "thérapie familiale EFTA",
                     "thérapeute couple Bordeaux",
                     "problèmes relationnels",
                     "conflits familiaux",
-                    "soutien à la parentalité Talence"
+                    "soutien à la parentalité Bordeaux"
                 ]}
-                structuredData={therapyPracticeData}
+                structuredData={[therapyPracticeData, faqStructuredData]}
             />
             <HeroSection />
             <AboutSection />
             <ServicesSection />
-            <BookingSection calendlyUrl="https://calendly.com/carolelagardere33" />
+            <BookingSection calendlyUrl="https://calendly.com/carolelagarderetherapie" />
         </div>
     );
 };
