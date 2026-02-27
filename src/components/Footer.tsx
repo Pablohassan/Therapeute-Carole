@@ -124,6 +124,22 @@ const Footer: React.FC = () => {
                             </span>
                         </a>
                     </p>
+                    <p className="mt-4 text-stone-500 text-xs flex items-center justify-center gap-1.5">
+                        Site conçu et hébergé par
+                        <a
+                            href="https://agi-so.fr"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center hover:opacity-80 transition-opacity"
+                        >
+                            <img
+                                src="/agiso-logo.png"
+                                alt="AGI-SO"
+                                className="h-4 inline-block"
+                                loading="lazy"
+                            />
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
