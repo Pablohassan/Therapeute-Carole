@@ -123,7 +123,7 @@ const HeroSection = () => {
                     {isSmallHeight ? (
                         <>
                             Carole Lagardère, thérapeute familiale et de couple certifiée.
-                            Je vous accueille sur rendez vous, en visio ou au sein de mon cabinet à talence.
+                            Je vous accueille sur rendez vous, en visio ou au sein de mon cabinet à Bordeaux près de talence.
                         </>
                     ) : (
                         <>
